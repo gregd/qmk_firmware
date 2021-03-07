@@ -5,6 +5,7 @@
 
 bool is_alt_tab_active = false;
 uint16_t alt_tab_timer = 0;
+uint16_t prev_keycode = 0;
 
 void print_default_layer(void);
 
@@ -57,6 +58,24 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             break;
 
+        case GD_ARROW:
+            if (record->event.pressed) {
+                SEND_STRING(" -> ");
+            }
+            return false;
+
+        case GD_FARROW:
+            if (record->event.pressed) {
+                SEND_STRING(" => ");
+            }
+            return false;
+
+        case GD_ABRACKET:
+            if (record->event.pressed) {
+                SEND_STRING(IMCTL(X_LEFT) SS_TAP(X_BSPACE) "<" IMCTL(X_RIGHT) ">");
+            }
+            return false;
+
         case GD_INFO:
             if (record->event.pressed) {
                 print_default_layer();
@@ -88,10 +107,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-        default:
-            return true;
+        // default:
+        //     return true;
     }
 
+    prev_keycode = keycode;
     return true;
 }
 
