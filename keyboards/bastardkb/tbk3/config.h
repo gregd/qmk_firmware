@@ -33,8 +33,11 @@
 #define MASTER_RIGHT
 #define USE_I2C
 
-#define ONESHOT_TAP_TOGGLE 3  /* Tapping this number of times holds the key until tapped once again. */
-#define ONESHOT_TIMEOUT 5000  /* Time (in ms) before the one shot key is released */
+#define ONESHOT_TAP_TOGGLE 2  /* Tapping this number of times holds the key until tapped once again. */
+#define ONESHOT_TIMEOUT 3000  /* Time (in ms) before the one shot key is released */
+
+#define LEADER_PER_KEY_TIMING
+#define LEADER_TIMEOUT 1000
 
 #define USE_BABBLEPASTE
 #define BABL_WINDOWS

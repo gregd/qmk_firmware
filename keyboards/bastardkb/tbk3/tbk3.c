@@ -119,12 +119,23 @@ void keyboard_post_init_user(void) {
   //debug_mouse=true;
 }
 
+LEADER_EXTERNS();
+
 void matrix_scan_user(void) {
   // The very important timer.
   if (is_alt_tab_active) {
-    if (timer_elapsed(alt_tab_timer) > 2000) {
+    if (timer_elapsed(alt_tab_timer) > 1500) {
       unregister_code(KC_LALT);
       is_alt_tab_active = false;
+    }
+  }
+
+  LEADER_DICTIONARY() {
+    leading = false;
+    leader_end();
+
+    SEQ_ONE_KEY(KC_F) {
+      SEND_STRING("QMK is awesome.");
     }
   }
 }
