@@ -3,59 +3,67 @@
 #include <print.h>
 #include "tbk3.h"
 
-// #define SSFT ACTION_MODS_ONESHOT(MOD_LSFT)
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-	[_QWERTY] = LAYOUT_split_4x6_3( \
-        KC_GRV,  KC_1, KC_2, KC_3, KC_4, KC_5,                KC_6, KC_7, KC_8, KC_9, KC_0, KC_UNDS, \
-        OSM(MOD_LALT), KC_Q, KC_W, KC_E, KC_R, KC_T,          KC_Y, KC_U, KC_I, KC_O, KC_P, KC_MINS, \
-        OSM(MOD_LSFT), KC_A, KC_S, KC_D, KC_F, KC_G,          KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, \
-        OSM(MOD_LCTL), KC_Z, KC_X, KC_C, KC_V, KC_B,          KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_BSLS, \
-        LT(_IDE_ACTIONS,KC_LGUI), LT(_MOVE,KC_BSPC), LT(_SYMBOLS,KC_ESC),     LT(_SYMBOLS,KC_ENT), LT(_MOVE,KC_SPC), LT(_IDE_ACTIONS,KC_TAB)),
+  [_QWERTY] = LAYOUT_split_4x6_3( \
+    /*                 pinky  ring   middle index                                                          index         middle       ring     pinky */
+    GD_RST,            KC_1,  KC_2,  KC_3,  KC_4,  KC_5,                               /**/ KC_6,          KC_7,         KC_8,        KC_9,    KC_0,     GD_TGL_NAV, \
+    OSM(MOD_LSFT),     KC_Q,  KC_W,  KC_E,  KC_R,  KC_T,                               /**/ KC_Y,          KC_U,         KC_I,        KC_O,    KC_P,     GD_CAPS, \
+    OSM(MOD_LCTL),     KC_A,  KC_S,  KC_D,  KC_F,  KC_G,                               /**/ KC_H,          KC_J,         KC_K,        KC_L,    KC_SCLN,  OSM(MOD_RCTL), \
+    KC_LGUI,           KC_Z,  KC_X,  KC_C,  KC_V,  KC_B,                               /**/ KC_N,          KC_M,         KC_COMM,     KC_DOT,  KC_SLSH,  KC_RGUI, \
+    \
+    LT(_IDE_LEFT, KC_DEL), LT(_SYMBOLS, KC_ENT), LT(_NAV, KC_ESC),                     /**/ LT(_NAV, KC_TAB), LT(_SYMBOLS, KC_SPC), LT(_IDE_RIGHT, KC_BSPC)),
 
-	[_POLISH] = LAYOUT_split_4x6_3( \
-        _______, RALT(KC_A), RALT(KC_S), RALT(KC_E), RALT(KC_Z), RALT(KC_C),     RALT(KC_X), RALT(KC_L), RALT(KC_N), RALT(KC_O), GD_PL_SZ, KC_UNDS, \
-        _______, KC_Q, KC_W, KC_E, KC_R, KC_T,          KC_Y, KC_U, KC_I, KC_O, KC_P, KC_MINS, \
-        _______, KC_A, KC_S, KC_D, KC_F, KC_G,          KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, \
-        _______, KC_Z, KC_X, KC_C, KC_V, KC_B,          KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_BSLS, \
-        _______, _______, _______,     _______, _______, _______),
+  [_POLISH] = LAYOUT_split_4x6_3( \
+    /*       pinky    ring     middle   index                                                        index    middle   ring     pinky */
+    GD_RST,  _______, _______, _______, _______, _______,                              /**/ _______, _______, _______, _______, _______, _______, \
+    _______, _______, _______, _______, _______, _______,                              /**/ _______, _______, _______, _______, _______, _______, \
+    _______, _______, _______, _______, _______, _______,                              /**/ _______, _______, _______, _______, _______, _______, \
+    _______, _______, _______, _______, _______, _______,                              /**/ _______, _______, _______, _______, _______, _______, \
+    \
+    LT(_SYMBOLS, KC_DEL), MT(MOD_RALT, KC_ENT), _______,                               /**/ _______, MT(MOD_RALT, KC_SPC), LT(_SYMBOLS, KC_BSPC)),
 
-	[_MOVE] = LAYOUT_split_4x6_3( \
-        _______, BABL_CLOSE_APP,  KC_NO,              GD_MOVE,            GD_QWERTY,              GD_POLISH,                  BABL_DO_LINUX,      BABL_DO_MAC,        BABL_DO_VI,         BABL_DO_READMUX ,   BABL_DO_WINDOWS,        GD_INFO, \
-        _______, BABL_REDO,       BABL_WINDOW_PREV,   BABL_WINDOW_NEXT,   BABL_SWITCH_APP_NEXT,   GD_ALT_TAB,                 BABL_GO_START_DOC,  BABL_PGUP,          BABL_GO_PREV_LINE,  BABL_PGDN,          BABL_GO_PARA_START,     _______, \
-        _______, BABL_SELECT_ALL, BABL_FIND_PREV,     BABL_FIND_NEXT,     BABL_FIND,              BABL_DEL_LEFT_WORD,         BABL_GO_START_LINE, BABL_GO_LEFT_1C,    BABL_GO_NEXT_LINE,  BABL_GO_RIGHT_1C,   BABL_GO_END_LINE,       BABL_SCREENCAPTURE, \
-        _______, BABL_UNDO,       BABL_CUT,           BABL_COPY,          BABL_PASTE,             BABL_DEL_TO_LINE_END,       BABL_GO_END_DOC,    BABL_GO_LEFT_WORD,  KC_APP,             BABL_GO_RIGHT_WORD, BABL_GO_PARA_END,       KC_NO, \
-        _______, _______, _______,                                                   _______, _______, _______),
+  [_FAST_SPC] = LAYOUT_split_4x6_3( \
+    /*       pinky    ring     middle   index                                                        index    middle   ring     pinky */
+    GD_RST,  _______, _______, _______, _______, _______,                              /**/ _______, _______, _______, _______, _______, _______, \
+    _______, _______, _______, _______, _______, _______,                              /**/ _______, _______, _______, _______, _______, _______, \
+    _______, _______, _______, _______, _______, _______,                              /**/ _______, _______, _______, _______, _______, _______, \
+    _______, _______, _______, _______, _______, _______,                              /**/ _______, _______, _______, _______, _______, _______, \
+    \
+    _______, LT(_SYMBOLS, KC_ENT), _______,                                            /**/ _______, KC_SPC, _______),
 
-	[_SYMBOLS] = LAYOUT_split_4x6_3( \
-        KC_F12, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,              KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, \
-        _______, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,               KC_PAST, KC_7, KC_8, KC_9, KC_PPLS, KC_PCMM, \
-        _______, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,               KC_0, KC_4, KC_5, KC_6, KC_PEQL, KC_PDOT, \
-        _______, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,               KC_PSLS, KC_1, KC_2, KC_3, KC_PMNS, KC_PENT, \
-        KC_TRNS, KC_TRNS, KC_TRNS,                              KC_TRNS, KC_TRNS, KC_TRNS),
+  [_NAV] = LAYOUT_split_4x6_3( \
+    /*            pinky         ring          middle        index                                        index        middle     ring         pinky */
+    GD_RST,       GD_APP_CLOSE, GD_WIN_NEXT,  GD_REPLACE,   GD_B_ZOOMI, GD_B_ZOOMO,    /**/ GD_GO_SD,    GD_UNDO,     GD_REDO,   GD_I_SE_DUP, GD_I_COLM,     _______, \
+    GD_WIN_LFT,   GD_WIN_FULL,  GD_WIN_HIDE,  GD_FIND,      GD_B_NEWT,  GD_B_CTAB,     /**/ GD_GO_SL,    GD_GO_LW,    KC_PGUP,   GD_I_EX_SEL, GD_TGE_SHT,    GD_SE_ALL, \
+    GD_WIN_CEN,   GD_RUNAPP,    GD_ALT_TAB,   GD_FNEXT,     GD_B_NTAB,  GD_B_URL,      /**/ KC_LEFT,     KC_DOWN,     KC_UP,     KC_RIGHT,    GD_COPY,       GD_CUT, \
+    GD_WIN_RGT,   GD_APP_SAVE,  GD_APP_NEXT,  GD_FPREV,     GD_B_PTAB,  GD_B_RLOAD,    /**/ GD_GO_ED,    KC_PGDN,     GD_GO_RW,  GD_GO_EL,    GD_PASTE ,     GD_PA_REC, \
+    \
+    _______, _______, _______,                                                         /**/ _______, _______, _______),
 
-	[_IDE_ACTIONS] = LAYOUT_split_4x6_3( \
-        KC_MUTE, KC_VOLD, KC_VOLU, KC_MPLY, KC_MNXT, KC_MPRV,   KC_CALC, KC_MAIL, KC_MSEL, KC_MYCM, DEBUG, KC_NO, \
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,               KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, RESET, \
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,               KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,               KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
-        KC_NO, KC_NO, KC_NO,                                    KC_NO, KC_NO, KC_NO),
+  [_SYMBOLS] = LAYOUT_split_4x6_3( \
+    /*            pinky     ring      middle    index                                                  index      middle    ring       pinky */
+    GD_RST,       KC_NO,    KC_CIRC,  GD_ARROW, GD_FARROW, KC_NO,                      /**/ KC_NO,     KC_LABK,   KC_RABK,  KC_QUES,   KC_NO,     _______, \
+    GD_HDIR,      KC_BSLASH,KC_7,     KC_8,     KC_9,      KC_PIPE,                    /**/ KC_QUOT,   KC_LCBR,   KC_RCBR,  KC_MINS,   KC_PLUS,   KC_DLR, \
+    KC_GRV,       GD_EQSP,  KC_4,     KC_5,     KC_6,      KC_0,                       /**/ KC_DQUO,   KC_LPRN,   KC_RPRN,  KC_UNDS,   KC_PEQL,   KC_AT, \
+    KC_TILD,      KC_PERC,  KC_1,     KC_2,     KC_3,      KC_COLN,                    /**/ KC_EXLM,   KC_LBRC,   KC_RBRC,  KC_ASTR,   KC_AMPR,   KC_HASH, \
+    \
+    GD_DEL_2LNE, GD_I_NEW_LINE, KC_APP,                                                /**/ GD_I_FIXES, GD_I_COMPLETE, GD_DEL_LWORD),
 
-	[_OS_ACTIONS] = LAYOUT_split_4x6_3( \
-        KC_MUTE, KC_VOLD, KC_VOLU, KC_MPLY, KC_MNXT, KC_MPRV,   KC_CALC, KC_MAIL, KC_MSEL, KC_MYCM, KC_WSCH, KC_WHOM, \
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,               KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,               KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,               KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
-        KC_NO, KC_NO, KC_NO,                                    KC_NO, KC_NO, KC_NO)
+  [_IDE_LEFT] = LAYOUT_split_4x6_3( \
+    /*            pinky      ring        middle       index                                                  index           middle         ring           pinky */
+    RESET,        KC_F1,     KC_F2,      KC_F3,       KC_F4,       KC_F5,              /**/ KC_F6,         KC_F7,          KC_F8,         KC_F9,         KC_NO,         GD_INFO, \
+    KC_NO,        KC_MYCM,   GD_B_REOPEN,GD_XPASTE,   GD_XCOPY,    KC_NO,              /**/ GD_I_REL_FILE, GD_I_QDOC,      GD_I_USAGES,   GD_I_RENAME,   GD_I_REFACTOR, KC_F10, \
+    GD_SCR_CSEL,  KC_CALC,   KC_WSCH,    GD_TMUX,     KC_F2,       GD_B_DTOOLS,        /**/ GD_I_REL_SYM,  GD_I_GO_DEF,    GD_I_NEXT_FN,  GD_I_REFORMAT, GD_I_RINF,     KC_F11, \
+    GD_SCR_CFULL, KC_MAIL,   GD_CUT,     GD_PASTE,    GD_COPY,     KC_NO,              /**/ GD_I_GO_FWD,   GD_I_GO_BACK,   GD_I_PREV_FN,  GD_I_COMMENT,  GD_I_TGL_CASE, KC_F12, \
+
+    _______, _______, _______,                                                         /**/ _______, _______, _______),
+
+  [_IDE_RIGHT] = LAYOUT_split_4x6_3( \
+    /*            pinky       ring           middle        index                                         index         middle       ring          pinky */
+    RESET,        KC_F1,      KC_F2,         KC_F3,        KC_F4,         KC_F5,       /**/ KC_MUTE,     KC_MPLY,      KC_MNXT,     KC_MPRV,      GD_M_MAC,    GD_INFO, \
+    KC_NO,        GD_I_FACT,  GD_I_WIN_GITH, GD_I_FINF,    GD_I_REC_LOC,  GD_I_GO_L_ED,/**/ GD_TGL_FSPC, GD_TGL_VIM,   GD_TGL_POL,  GD_T_EDIT,    GD_M_LINUX,  KC_F10, \
+    GD_I_WIN_STRU,GD_I_BUILD, GD_I_WIN_GITC, GD_I_GOTOL,   GD_I_REC_FILE, GD_I_WIN_RUN,/**/ KC_INS,      GD_FDOWN,     GD_FUP,      GD_T_NEXT,    GD_T_CREATE, KC_F11, \
+    KC_NO,        GD_I_RUNA,  GD_I_RUNL,     GD_I_WIN_SEA, GD_I_GO_FILE,  GD_I_RUNS,   /**/ KC_WHOM,     GD_COPY,      GD_PASTE,    GD_T_PREV,    KC_NO,       KC_F12, \
+    \
+    GD_DEL_LINE, _______, _______,                                                     /**/ _______, _______, _______),
 };
-
-// // custom tapping term lengths.
-// uint16_t get_tapping_term(uint16_t keycode) {
-//     switch (keycode) {
-//         case LT(_MOV, KC_TAB):
-//             return TAPPING_TERM ;
-//             break;
-//         default:
-//         return TAPPING_TERM;
-//     }
-// }

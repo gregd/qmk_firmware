@@ -26,7 +26,6 @@ To switch modes, run the switch_babble_mode() function, or a pre defined BABL_DO
     #define BABL_MAC
     #define BABL_LINUX
     #define BABL_EMACS
-    #define BABL_CHROMEOS
     
     //// These enable subsets of babble macros. Disable options to save space
     #define BABL_MOVE // Uncomment to add basic cursor movement
@@ -34,9 +33,9 @@ To switch modes, run the switch_babble_mode() function, or a pre defined BABL_DO
     #define BABL_BROWSER // Browser shortcuts
     
     //// What Browser shortcuts?
-    #define BABL_BROWSER_CHROME // Chrome browser, Google apps
-    //#define BABL_BROWSER_MS
-    //#define BABL_BROWSER_SAFARI // Safari, Apple defaults.
+    #define BABL_BR_CHROME // Chrome browser, Google apps
+    //#define BABL_BR_MS
+    //#define BABL_BR_SAFARI // Safari, Apple defaults.
     
     //// applications vary even more between OSes. We'll do our best.
     #define BABL_APP
@@ -71,7 +70,7 @@ Add the following to your keymap in process_record_user, before the main switch 
 
 Update your rules.mk to include the modes you want.
 
-    `SRC += babblePaste.c babl_windows.c babl_mac.c babl_vi.c babl_readmux.c  babl_chromeos.c babl_emacs.c babl_linux.c`
+    `SRC += babblePaste.c babl_windows.c babl_mac.c babl_vi.c babl_readmux.c babl_emacs.c babl_linux.c`
 
 
 #### Custom Keycodes
@@ -102,23 +101,23 @@ See the full list in babblePaste.h, or the list below
 
   #define B_L1C  BABL_GO_LEFT_1C
   #define B_R1C  BABL_GO_RIGHT_1C
-  #define B_L1W  BABL_GO_LEFT_WORD
-  #define B_R1W  BABL_GO_RIGHT_WORD
-  #define B_GSOL  BABL_GO_START_LINE
-  #define B_GEOL  BABL_GO_END_LINE
-  #define B_GTOP  BABL_GO_START_DOC
-  #define B_GEND  BABL_GO_END_DOC
-  #define B_DOWN  BABL_GO_NEXT_LINE
-  #define B_UP    BABL_GO_PREV_LINE
+  #define B_L1W  BABL_GO_LWORD
+  #define B_R1W  BABL_GO_RWORD
+  #define B_GSOL  BABL_GO_SLINE
+  #define B_GEOL  BABL_GO_ELINE
+  #define B_GTOP  BABL_GO_SDOC
+  #define B_GEND  BABL_GO_EDOC
+  #define B_DOWN  BABL_GO_NLINE
+  #define B_UP    BABL_GO_PLINE
   #define B_PTOP  BABL_GO_PARA_START
   #define B_PEND  BABL_GO_PARA_END
   #define B_PGDN  BABL_PGDN
   #define B_PGUP  BABL_PGUP
   #define B_DEL    BABL_DEL_RIGHT_1C
-  #define B_DLW    BABL_DEL_LEFT_WORD
-  #define B_DRW    BABL_DEL_RIGHT_WORD
-  #define B_DEOL  BABL_DEL_TO_LINE_END // delete from cursor to end of line
-  #define B_DSOL  BABL_DEL_TO_LINE_START // delete from cursor to begining line
+  #define B_DLW    BABL_DEL_LWORD
+  #define B_DRW    BABL_DEL_RWORD
+  #define B_DEOL  BABL_DEL_2LNE // delete from cursor to end of line
+  #define B_DSOL  BABL_DEL_2LNS // delete from cursor to begining line
   #define B_MODE   BABL_MODE //type out name of current mode.
 
   #define B_UNDO    BABL_UNDO
@@ -131,28 +130,28 @@ See the full list in babblePaste.h, or the list below
   #define B_FIND     BABL_FIND
   #define B_FINDN    BABL_FIND_NEXT
   #define B_FINDP    BABL_FIND_PREV
-  #define B_RPLACE    BABL_FIND_REPLACE
+  #define B_RPLACE    BABL_FREPLACE
   #define B_RUNAPP    BABL_RUNAPP
-  #define B_NAPP  BABL_SWITCH_APP_NEXT
-  #define B_PAPP  BABL_SWITCH_APP_LAST // previous
+  #define B_NAPP  BABL_APP_NEXT
+  #define B_PAPP  BABL_APP_LAST // previous
   #define B_CAPP  BABL_CLOSE_APP
   #define B_HELP  BABL_HELP
 
-  #define B_NTAB  BABL_BROWSER_NEW_TAB
-  #define B_CTAB  BABL_BROWSER_CLOSE_TAB
-  #define B_ROTB  BABL_BROWSER_REOPEN_LAST_TAB
-  #define B_NXTB  BABL_BROWSER_NEXT_TAB
-  #define B_PTAB  BABL_BROWSER_PREV_TAB
-  #define B_NURL  BABL_BROWSER_URL_BAR
-  #define B_BFWD  BABL_BROWSER_FORWARD
-  #define B_BBAK  BABL_BROWSER_BACK
-  #define B_BFND  BABL_BROWSER_FIND
-  #define B_BOOK  BABL_BROWSER_BOOKMARK
-  #define B_BDEV  BABL_BROWSER_DEV_TOOLS // hard one to remember
-  #define B_BRLD  BABL_BROWSER_RELOAD
-  #define B_BFULL BABL_BROWSER_FULLSCREEN
-  #define B_ZIN    BABL_BROWSER_ZOOM_IN
-  #define B_ZOUT  BABL_BROWSER_ZOOM_OUT
+  #define B_NTAB  BABL_BR_NEW_TAB
+  #define B_CTAB  BABL_BR_CLOSE_TAB
+  #define B_ROTB  BABL_BR_REOPEN_LAST_TAB
+  #define B_NXTB  BABL_BR_NEXT_TAB
+  #define B_PTAB  BABL_BR_PREV_TAB
+  #define B_NURL  BABL_BR_URL_BAR
+  #define B_BFWD  BABL_BR_FORWARD
+  #define B_BBAK  BABL_BR_BACK
+  #define B_BFND  BABL_BR_FIND
+  #define B_BOOK  BABL_BR_BOOKMARK
+  #define B_BDEV  BABL_BR_DEV_TOOLS // hard one to remember
+  #define B_BRLD  BABL_BR_RELOAD
+  #define B_BFULL BABL_BR_FULLSCREEN
+  #define B_ZIN    BABL_BR_ZOOM_IN
+  #define B_ZOUT  BABL_BR_ZOOM_OUT
 
   #define B_PASTV BABL_APP_PASTE_VALUES
   #define B_CALN  BABL_APP_CENTER_ALIGN

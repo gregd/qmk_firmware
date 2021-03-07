@@ -10,7 +10,7 @@ BOOTLOADER = atmel-dfu
 BOOTMAGIC_ENABLE = lite     # Virtual DIP switch configuration
 MOUSEKEY_ENABLE = no        # Mouse keys
 EXTRAKEY_ENABLE = yes       # Audio control and System control
-CONSOLE_ENABLE = yes        # Console for debug
+CONSOLE_ENABLE = no         # Console for debug
 COMMAND_ENABLE = no         # Commands for debug and configuration
 # Do not enable SLEEP_LED_ENABLE. it uses the same timer as BACKLIGHT_ENABLE
 SLEEP_LED_ENABLE = no       # Breathing sleep LED during USB suspend
@@ -20,6 +20,9 @@ BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 BLUETOOTH_ENABLE = no       # Enable Bluetooth
 AUDIO_ENABLE = no           # Audio output
+LEADER_ENABLE = no
+AUTO_SHIFT_ENABLE = yes
 SPLIT_KEYBOARD = yes
+LTO_ENABLE = yes
 
-SRC += babblePaste.c babl_windows.c babl_linux.c babl_mac.c babl_vi.c babl_readmux.c
+SRC += gdkMacro.c gdk_linux.c gdk_mac.c gdk_vi.c

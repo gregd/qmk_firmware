@@ -2,7 +2,7 @@
 #include "quantum.h"
 #include "version.h"
 #include "eeprom.h"
-#include "babblePaste.h"
+#include "gdkMacro.h"
 
 #define LAYOUT_split_4x6_3( \
 	k00, k01, k02, k03, k04, k05,			k55, k54, k53, k52, k51, k50, \
@@ -28,10 +28,11 @@
 enum userspace_layers {
     _QWERTY=0,
     _POLISH,
-    _MOVE,
+    _FAST_SPC,
+    _NAV,
     _SYMBOLS,
-    _IDE_ACTIONS,
-    _OS_ACTIONS
+    _IDE_LEFT,
+    _IDE_RIGHT
 };
 
 /*
@@ -43,14 +44,33 @@ define modifiers here, since MOD_* doesn't seem to work for these
 #define MODS_GUI_MASK  (MOD_BIT(KC_LGUI)|MOD_BIT(KC_RGUI))
 
 enum userspace_custom_keycodes {
-    GD_QWERTY = BABBLE_END_RANGE,
-    GD_POLISH,
-    GD_MOVE,
-    GD_SYMBOLS,
+    GD_RST = GDK_END_RANGE,
+    GD_M_MAC,
+    GD_M_LINUX,
+    GD_TGL_POL,
+    GD_TGL_FSPC,
+    GD_TGL_VIM,
+    GD_TGL_NAV,
+    GD_TGE_SHT,
     GD_ALT_TAB,
-    GD_PL_SZ,
-    GD_PL_CZ,
-    GD_PL_RZ,
-    GD_PL_DZ,
+    GD_CAPS,
+    GD_ARROW,
+    GD_FARROW,
+    GD_EQSP,
+    GD_HDIR,
+    GD_DCOLN,
+    GD_TMUX,
+    GD_XCOPY,
+    GD_XPASTE,
+    GD_FUP,
+    GD_FDOWN,
     GD_INFO
 };
+
+typedef union {
+    uint32_t raw;
+    struct {
+        bool mac_mode:1;
+    };
+} user_config_t;
+extern user_config_t user_config;

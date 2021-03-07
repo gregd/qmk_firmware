@@ -30,39 +30,40 @@
 #define MATRIX_COL_PINS { B4, E6, C6, B1, B3, B2 }
 
 #define DEBOUNCE 5
-#define MASTER_RIGHT
+//#define MASTER_RIGHT
 #define USE_I2C
+#define EE_HANDS
 
-#define ONESHOT_TAP_TOGGLE 3  /* Tapping this number of times holds the key until tapped once again. */
-#define ONESHOT_TIMEOUT 5000  /* Time (in ms) before the one shot key is released */
+#define TAPPING_TERM 190
+#define PERMISSIVE_HOLD
+#define RETRO_TAPPING_PER_KEY
 
-#define USE_BABBLEPASTE
-#define BABL_WINDOWS
-#define BABL_MAC
-#define BABL_LINUX
-#define BABL_READMUX
-#define BABL_VI
-//#define BABL_EMACS
+#define ONESHOT_TAP_TOGGLE 2  /* Tapping this number of times holds the key until tapped once again. */
+#define ONESHOT_TIMEOUT 3000  /* Time (in ms) before the one shot key is released */
 
-//// These enable subsets of babble macros. Disable options to save space
-#define BABL_MOVE // Uncomment to add basic cursor movement
-#define BABL_OSKEYS // This adds Cut, paste, window movement and common OS shortcuts
-#define BABL_BROWSER // Browser shortcuts
+#define LEADER_PER_KEY_TIMING
+#define LEADER_TIMEOUT 1000
+
+#define AUTO_SHIFT_TIMEOUT 190
+#define AUTO_SHIFT_REPEAT
+//#define NO_AUTO_SHIFT_SPECIAL
+//#define NO_AUTO_SHIFT_NUMERIC
+
+#define USE_GDK_MACRO
+//#define GD_WINDOWS
+#define GD_MAC
+#define GD_LINUX
+#define GD_VI
+//#define GD_READMUX
+//#define GD_EMACS
+
+//// These enable subsets of gdk macros. Disable options to save space
+#define GD_MOVE // Uncomment to add basic cursor movement
+#define GD_OSKEYS // This adds Cut, paste, window movement and common OS shortcuts
+#define GD_BROWSER // Browser shortcuts
+#define GD_IDE // IDE shortcuts
 
 //// What Browser shortcuts?
-#define BABL_BROWSER_CHROME // Chrome browser, Google apps
-//#define BABL_BROWSER_MS
-//#define BABL_BROWSER_SAFARI // Safari, Apple defaults.
-
-//// applications vary even more between OSes. We'll do our best.
-#define BABL_APP
-// To enable specific App options.
-//#define BABL_APP_CELLS // spreadsheets and tables
-#define BABL_APP_EDITOR // Fancy editor commands
-#define BABL_APP_WINDOWSPLITTING // splitting frames & windows
-
-//// What App keybinding is assumed?
-//#define BABL_APP_GOOGLE // Google office
-//#define BABL_APP_MSOFFICE // MS office
-//#define BABL_APP_APPLE // Apple office
-//#define BABL_APP_SUBLIME
+#define GD_B_CHROME // Chrome browser, Google apps
+//#define GD_B_MS
+//#define GD_B_SAFARI // Safari, Apple defaults.
