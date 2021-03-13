@@ -44,7 +44,7 @@ bool babblePaste_win(uint16_t keycode) {
 #        ifdef BABL_OSKEYS
     BABLM(BABL_UNDO, SS_LCTRL("z"));
     BABLM(BABL_REDO, SS_LCTRL("y"));
-    BABLM(BABL_CUT, SS_LCTRL("x"));
+    BABLM_CLR_OSM(BABL_CUT, SS_LCTRL("x"));
     BABLM_CLR_OSM(BABL_COPY, SS_LCTRL("c"));
     BABLM(BABL_PASTE, SS_LCTRL("v"));
     BABLM(BABL_SELECT_ALL, SS_LCTRL("a"));

@@ -118,6 +118,7 @@ enum babble_keycodes {
     BABL_DEL_RIGHT_WORD,
     BABL_DEL_TO_LINE_END,    // delete from cursor to end of line
     BABL_DEL_TO_LINE_START,  // delete from cursor to begining line
+    BABL_DEL_LINE,           // delete whole line
     BABL_MODE,               // print out string saying what mode we're in.
 #    endif
 #    ifdef BABL_OSKEYS

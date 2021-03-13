@@ -40,7 +40,7 @@ bool babblePaste_mac(uint16_t keycode) {
 #        ifdef BABL_OSKEYS
     BABLM(BABL_UNDO, SS_LGUI("z"));
     BABLM(BABL_REDO, SS_LGUI("y"));
-    BABLM(BABL_CUT, SS_LGUI("x"));
+    BABLM_CLR_OSM(BABL_CUT, SS_LGUI("x"));
     BABLM_CLR_OSM(BABL_COPY, SS_LGUI("c"));
     BABLM(BABL_PASTE, SS_LGUI("v"));
     BABLM(BABL_SELECT_ALL, SS_LGUI("a"));

@@ -28,7 +28,7 @@
 enum userspace_layers {
     _QWERTY=0,
     _POLISH,
-    _MOVE,
+    _NAV,
     _SYMBOLS,
     _IDE_ACTIONS,
     _OS_ACTIONS
@@ -45,12 +45,13 @@ define modifiers here, since MOD_* doesn't seem to work for these
 enum userspace_custom_keycodes {
     GD_QWERTY = BABBLE_END_RANGE,
     GD_POLISH,
-    GD_MOVE,
+    GD_NAV,
     GD_SYMBOLS,
     GD_ALT_TAB,
     GD_ARROW,
     GD_FARROW,
     GD_ABRACKET,
+    GD_LOCK_SHIFT,
     GD_PL_SZ,
     GD_PL_CZ,
     GD_PL_RZ,
