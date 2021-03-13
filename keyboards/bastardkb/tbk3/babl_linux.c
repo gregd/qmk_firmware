@@ -94,6 +94,9 @@ bool babblePaste_linux(uint16_t keycode) {
     // BABLM( BABL_NEXT_FRAME, ()	);
     // BABLM( BABL_PREV_FRAME, ()	);
 #        endif
+#        ifdef BABL_IDE
+    BABLM(BABL_IDE_EX_SEL, SS_LCTL("w"));
+#        endif
 
     // Todo, ring bell, flash light, show user this isn't supported
     return false;

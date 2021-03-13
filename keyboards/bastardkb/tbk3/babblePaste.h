@@ -18,6 +18,9 @@ void babble_led_user(void);
 
 // manually re-order these if you want to set the order or default.
 enum babble_modes {
+#    ifdef BABL_LINUX
+    BABL_LINUX_MODE,
+#    endif
 #    ifdef BABL_MAC
     BABL_MAC_MODE,
 #    endif
@@ -29,9 +32,6 @@ enum babble_modes {
 #    endif
 #    ifdef BABL_VI
     BABL_VI_MODE,
-#    endif
-#    ifdef BABL_LINUX
-    BABL_LINUX_MODE,
 #    endif
 #    ifdef BABL_EMACS
     BABL_EMACS_MODE,
@@ -197,6 +197,10 @@ enum babble_keycodes {
     BABL_PREV_FRAME,
 #        endif
 
+#    endif
+
+#    ifdef BABL_IDE
+    BABL_IDE_EX_SEL,
 #    endif
 
 // Macros for mode switching

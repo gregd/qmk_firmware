@@ -51,6 +51,7 @@
 #define BABL_MOVE // Uncomment to add basic cursor movement
 #define BABL_OSKEYS // This adds Cut, paste, window movement and common OS shortcuts
 #define BABL_BROWSER // Browser shortcuts
+#define BABL_IDE // IDE shortcuts
 
 //// What Browser shortcuts?
 #define BABL_BROWSER_CHROME // Chrome browser, Google apps
@@ -61,7 +62,7 @@
 #define BABL_APP
 // To enable specific App options.
 //#define BABL_APP_CELLS // spreadsheets and tables
-#define BABL_APP_EDITOR // Fancy editor commands
+//#define BABL_APP_EDITOR // Fancy editor commands
 #define BABL_APP_WINDOWSPLITTING // splitting frames & windows
 
 //// What App keybinding is assumed?
