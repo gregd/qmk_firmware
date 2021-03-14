@@ -127,6 +127,7 @@ enum babble_keycodes {
     BABL_CUT,
     BABL_COPY,
     BABL_PASTE,
+    BABL_PASTE_RECENT,
     BABL_SELECT_ALL,
     /* not yet implemented
     BABL_SWAP_LAST2C, // swap last characters before the cursor
@@ -185,7 +186,42 @@ enum babble_keycodes {
 #    endif
 
 #    ifdef BABL_IDE
-    BABL_IDE_EX_SEL,
+    BABL_IDE_WIN_FTREE,
+    BABL_IDE_WIN_SEARCH,
+    BABL_IDE_WIN_RUN,
+    BABL_IDE_WIN_STRUCT,
+    BABL_IDE_WIN_GHIS,
+    BABL_IDE_WIN_GCOM,
+    BABL_IDE_RECENT_FILE,
+    BABL_IDE_RECENT_LOC,
+    BABL_IDE_FILE_FIND,
+    BABL_IDE_REL_FILE,
+    BABL_IDE_REL_SYM,
+    BABL_IDE_EXTEND_SEL,
+    BABL_IDE_COMPLETION,
+    BABL_IDE_FIXES,
+    BABL_IDE_QUICK_DOC,
+    BABL_IDE_GO_LAST_ED,
+    BABL_IDE_GO_DEF,
+    BABL_IDE_GO_BACK,
+    BABL_IDE_GO_FWD,
+    BABL_IDE_GO_LINE,
+    BABL_IDE_NEXT_FN,
+    BABL_IDE_PREV_FN,
+    BABL_IDE_USAGES,
+    BABL_IDE_RENAME,
+    BABL_IDE_REFACTOR,
+    BABL_IDE_COMMENT,
+    BABL_IDE_REFORMAT,
+    BABL_IDE_COL_MODE,
+    BABL_IDE_NEW_LINE,
+    BABL_IDE_DUP_LINE,
+    BABL_IDE_TOOGLE_CASE,
+    BABL_IDE_BUILD,
+    BABL_IDE_RUN_LAST,
+    BABL_IDE_RUN_SELECT,
+    BABL_IDE_RUN_ANY,
+
 #    endif
 
 // Macros for mode switching

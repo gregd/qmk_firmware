@@ -45,6 +45,7 @@ bool babblePaste_linux(uint16_t keycode) {
     BABLM_CLR_OSM(BABL_CUT, SS_LCTL("x"));
     BABLM_CLR_OSM(BABL_COPY, SS_LCTL("c"));
     BABLM(BABL_PASTE, SS_LCTL("v"));
+    BABLM(BABL_PASTE_RECENT, OMSFT(IMCTL(X_V)));
     BABLM(BABL_SELECT_ALL, SS_LCTL("a"));
     BABLM(BABL_FIND, SS_LCTL("f"));
     BABLM(BABL_CLOSE_APP, IMALT(X_F4));
@@ -95,7 +96,9 @@ bool babblePaste_linux(uint16_t keycode) {
     // BABLM( BABL_PREV_FRAME, ()	);
 #        endif
 #        ifdef BABL_IDE
-    BABLM(BABL_IDE_EX_SEL, SS_LCTL("w"));
+    BABLM(BABL_IDE_EXTEND_SEL, SS_LCTL("w"));
+    BABLM(BABL_IDE_WIN_FTREE, IMALT(X_F1));
+    BABLM(BABL_IDE_RECENT_FILE, IMCTL(X_E));
 #        endif
 
     // Todo, ring bell, flash light, show user this isn't supported
