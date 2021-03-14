@@ -30,8 +30,7 @@ enum userspace_layers {
     _POLISH,
     _NAV,
     _SYMBOLS,
-    _IDE_ACTIONS,
-    _OS_ACTIONS
+    _IDE
 };
 
 /*

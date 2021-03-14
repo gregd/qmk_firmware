@@ -37,7 +37,7 @@
 #define ONESHOT_TIMEOUT 3000  /* Time (in ms) before the one shot key is released */
 
 #define LEADER_PER_KEY_TIMING
-#define LEADER_TIMEOUT 1000
+#define LEADER_TIMEOUT 2000
 
 #define USE_BABBLEPASTE
 #define BABL_WINDOWS
