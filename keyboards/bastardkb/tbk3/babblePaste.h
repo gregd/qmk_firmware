@@ -221,7 +221,6 @@ enum babble_keycodes {
     BABL_IDE_RUN_LAST,
     BABL_IDE_RUN_SELECT,
     BABL_IDE_RUN_ANY,
-
 #    endif
 
 // Macros for mode switching
