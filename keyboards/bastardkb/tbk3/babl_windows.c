@@ -94,46 +94,6 @@ bool babblePaste_win(uint16_t keycode) {
 
 #        ifdef BABL_APP
     BABLM(BABL_APP_SAVE, SS_LCTL("s"));
-#            ifdef BABL_APP_EDITOR
-#                ifdef BABL_APP_SUBLIME
-    // http://sweetme.at/2013/08/08/sublime-text-keyboard-shortcuts/
-    BABLM(BABL_APP_MULTI_SELECT, IMALT(X_F3));        // add all occurences of current word to select.
-    BABLM(BABL_APP_PASTE_VALUES, OMSFT(IMCTL(X_V)));  // paste with proper indenting.
-#                endif                                // sublime
-#            endif                                    // editor
-
-#            ifdef BABL_APP_CELLS
-#                ifdef BABL_APP_MSOFFICE
-#                    ifndef BABL_APP_SUBLIME
-    BABLM(BABL_APP_PASTE_VALUES, OMCTL(IMALT(X_V)) "v");
-#                    endif
-    BABLM(BABL_APP_CENTER_ALIGN, IMALT(X_H) "ac");
-    // BABLM( BABL_APP_CLEAR_FORMATTING, 	OMCTL(IMGUI(X_G)) ); // this isn't native. https://support.office.com/en-us/article/Clear-all-text-formatting-C094C4DA-7F09-4CEA-9A8D-C166949C9C80#OfficeVersion=macOS
-    BABLM(BABL_APP_SCROLL_ACTIVE_CELL, IMCTL(X_BSPACE));
-    BABLM(BABL_NEWLINE_IN_CELL, IMALT(X_ENTER));
-    BABLM(BABL_INSERT_COMMENT, IMSFT(X_F2));
-    BABLM(BABL_INSERT_COL_LEFT, OMCTL(IMSFT(X_KP_PLUS)));
-    BABLM(BABL_INSERT_ROW, OMCTL(IMSFT(X_KP_PLUS)));
-    BABLM(BABL_DELETE_ROW, IMCTL(X_KP_MINUS));
-    BABLM(BABL_SELECT_COL, IMCTL(X_SPACE));
-    BABLM(BABL_SELECT_ROW, IMSFT(X_SPACE));
-#                endif
-
-#                ifdef BABL_APP_GOOGLE
-    BABLM(BABL_APP_CENTER_ALIGN, OMSFT(IMCTL(X_E)));
-    BABLM(BABL_APP_SCROLL_ACTIVE_CELL, IMCTL(X_BSPACE));
-    BABLM(BABL_NEWLINE_IN_CELL, IMALT(X_ENTER));
-    BABLM(BABL_INSERT_COMMENT, IMSFT(X_F2));
-    BABLM(BABL_APP_CLEAR_FORMATTING, IMCTL(X_BSLASH));
-    BABLM(BABL_DELETE_ROW, IMALT(X_E) "d");
-    BABLM(BABL_INSERT_COL_LEFT, OMALT(IMCTL(X_I)) "c");  // o for to the right.
-    BABLM(BABL_INSERT_ROW, IMALT(IMCTL(X_I)) "w");       // r for above.
-    BABLM(BABL_SELECT_COL, IMCTL(X_SPACE));
-    BABLM(BABL_SELECT_ROW, IMSFT(X_SPACE));
-    BABLM(BABL_DELETE_ROW, OMALT(IMCTL(X_KP_MINUS)));  // once selected
-#                endif
-
-#            endif  // BABL_APP_CELLS
 
     // BABLM( BABL_SPLIT_FRAME_VERT,		()  );// no windows way?
     // BABLM( BABL_UNSPLIT_FRAME_VERT,		()  );

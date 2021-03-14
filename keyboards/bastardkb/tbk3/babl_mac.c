@@ -95,46 +95,6 @@ bool babblePaste_mac(uint16_t keycode) {
 
 #        ifdef BABL_APP
     BABLM(BABL_APP_SAVE, SS_LGUI("s"));
-#            ifdef BABL_APP_EDITOR
-#                ifdef BABL_APP_SUBLIME
-    BABLM(BABL_APP_MULTI_SELECT, OMCTL(IMGUI(X_G)));  // add all occurences of current word to select.
-    BABLM(BABL_APP_PASTE_VALUES, OMSFT(IMGUI(X_V)));  // paste with proper indenting.
-#                endif                                // sublime
-#            endif                                    // editor
-
-#            ifdef BABL_APP_CELLS
-#                ifdef BABL_APP_MSOFFICE
-    BABLM(BABL_APP_CENTER_ALIGN, IMGUI(X_E));
-    // BABLM( BABL_APP_CLEAR_FORMATTING, 	OMCTL(IMGUI(X_G)) ); // this isn't native. https://support.office.com/en-us/article/Clear-all-text-formatting-C094C4DA-7F09-4CEA-9A8D-C166949C9C80#OfficeVersion=macOS
-    BABLM(BABL_APP_SCROLL_ACTIVE_CELL, IMCTL(X_BSPACE));
-    BABLM(BABL_NEWLINE_IN_CELL, IMALT(X_ENTER));
-    BABLM(BABL_INSERT_COMMENT, IMSFT(X_F2));
-    BABLM(BABL_INSERT_COL_LEFT, IMCTL(X_I));
-    BABLM(BABL_INSERT_ROW, OMCTL(IMSFT(X_KP_PLUS)));
-    BABLM(BABL_DELETE_ROW, IMCTL(X_KP_MINUS));
-    BABLM(BABL_SELECT_COL, IMCTL(X_SPACE));
-    BABLM(BABL_SELECT_ROW, IMSFT(X_SPACE));
-#                endif  // BABL_APP_MSOFFICE
-
-#                ifdef BABL_APP_GOOGLE
-    BABLM(BABL_APP_CENTER_ALIGN, OMSFT(IMGUI(X_E)));
-    BABLM(BABL_APP_SCROLL_ACTIVE_CELL, IMCTL(X_BSPACE));
-    BABLM(BABL_NEWLINE_IN_CELL, IMALT(X_ENTER));
-    BABLM(BABL_INSERT_COMMENT, IMSFT(X_F2));
-    BABLM(BABL_APP_CLEAR_FORMATTING, IMGUI(X_BSLASH));
-    BABLM(BABL_DELETE_ROW, OMCTL(IMGUI(X_G)));
-    BABLM(BABL_INSERT_COL_LEFT, OMALT(IMCTL(X_I)) "c");  // o for to the right.
-    BABLM(BABL_INSERT_ROW, OMALT(IMCTL(X_I)) "b");       // r for above.
-    BABLM(BABL_SELECT_COL, IMCTL(X_SPACE));
-    BABLM(BABL_SELECT_ROW, IMSFT(X_SPACE));
-    BABLM(BABL_DELETE_ROW, OMALT(IMCTL(X_KP_MINUS)));  // once selected
-#                endif                                 // BABL_APP_GOOGLE
-/*
-#ifdef BABL_APP_APPLE
-    // you're on your own.
-#endif
-*/
-#            endif  // BABL_APP_CELLS
 
 #            ifdef BABL_APP_WINDOWSPLITTING
     // These are for os X terminal, and are pretty useless.

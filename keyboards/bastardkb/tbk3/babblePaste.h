@@ -172,21 +172,6 @@ enum babble_keycodes {
     BABL_APP_SAVE,                // save file blurs app & os. Move?
     BABL_APP_PASTE_VALUES,        // paste only values, or with some special formatting. ctrl shift v chrome, // Ctrl+Alt+V, excel
                                   // App hotkeys will be flawed, since you may use different spreadsheets across OSes.
-#        ifdef BABL_APP_CELLS     // spreadsheets and tables
-    BABL_APP_CENTER_ALIGN,        // Center align contents of a cell in table or spreadsheet.
-    BABL_APP_CLEAR_FORMATTING,    //
-    BABL_APP_SCROLL_ACTIVE_CELL,  // scroll to active cell.
-    BABL_NEWLINE_IN_CELL,         // newline inside cell of table,
-    BABL_INSERT_COMMENT,          // insert comment
-    BABL_INSERT_COL_LEFT,         // insert columns to the left
-    BABL_INSERT_ROW,              // insert row
-    BABL_DELETE_ROW,              // delete row // excel ctrl minus // chrome ctrl alt minus
-    BABL_SELECT_COL,              // select column - ctrl space //same in both
-    BABL_SELECT_ROW,              // select row shift spaced // same in both.
-#        endif                    // BABL_APP_CELLS
-#        ifdef BABL_APP_EDITOR
-    BABL_APP_MULTI_SELECT, /* www.sublimetext.com/docs/2/multiple_selection_with_the_keyboard.html */
-#        endif             // BABL_APP_EDITOR
 #        ifdef BABL_APP_WINDOWSPLITTING
     // These aren't useful on most oses.
     BABL_SPLIT_FRAME_VERT,
@@ -338,23 +323,6 @@ bool babblePaste_chromeos(uint16_t keycode);
 
 #    ifdef BABL_APP
 #        define B_SAVE BABL_APP_SAVE
-#        ifdef BABL_APP_CELLS  // spreadsheets and tables
-#            define B_PASTV BABL_APP_PASTE_VALUES
-#            define B_CALN BABL_APP_CENTER_ALIGN
-#            define B_CFMT BABL_APP_CLEAR_FORMATTING
-#            define B_SCLA BABL_APP_SCROLL_ACTIVE_CELL
-#            define B_NCEL BABL_NEWLINE_IN_CELL
-#            define B_IPRW BABL_INSERT_ROW_ABOVE
-#            define B_ICOL BABL_INSERT_COL_LEFT
-#            define B_IROW BABL_INSERT_ROW
-#            define B_DROW BABL_DELETE_ROW
-#            define B_SELC BABL_SELECT_COL
-#            define B_SELR BABL_SELECT_ROW
-#        endif  // BABL_APP_CELLS
-#        ifdef BABL_APP_EDITOR
-#            define B_MSEL BABL_APP_MULTI_SELECT
-/* www.sublimetext.com/docs/2/multiple_selection_with_the_keyboard.html */
-#        endif  // BABL_APP_EDITOR
 #        ifdef BABL_APP_WINDOWSPLITTING
 #            define B_VSPLIT BABL_SPLIT_FRAME_VERT
 #            define B_VUNSPT BABL_UNSPLIT_FRAME_VERT
