@@ -12,11 +12,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         LT(_IDE,KC_LGUI), LT(_NAV,KC_BSPC), LT(_SYMBOLS,KC_ESC), /**/ LT(_SYMBOLS,KC_ENT), LT(_NAV,KC_SPC), LT(_IDE,KC_TAB)),
 
 	[_POLISH] = LAYOUT_split_4x6_3( \
-        _______, RALT(KC_A), RALT(KC_S), RALT(KC_E), RALT(KC_Z), RALT(KC_C), /**/ GD_PL_DZ, RALT(KC_N), RALT(KC_L), RALT(KC_O), GD_PL_CZ, GD_PL_RZ, \
-        RALT(KC_X), _______, _______, _______, _______, _______, /**/ _______, _______, _______, _______, _______, GD_PL_SZ, \
+        GD_QWERTY, RALT(KC_A), RALT(KC_S), RALT(KC_E), RALT(KC_Z), RALT(KC_C), /**/ GD_PL_DZ, RALT(KC_N), RALT(KC_L), RALT(KC_O), GD_PL_CZ, GD_PL_RZ, \
+        _______, _______, _______, _______, _______, _______, /**/ _______, _______, _______, _______, _______, GD_PL_SZ, \
         _______, _______, _______, _______, _______, _______, /**/ _______, _______, _______, _______, _______, _______, \
         _______, _______, _______, _______, _______, _______, /**/ _______, _______, _______, _______, _______, _______, \
-        _______, _______, _______, /**/ _______, _______, _______),
+        KC_RALT, _______, _______, /**/ _______, _______, KC_RALT),
 
 	[_NAV] = LAYOUT_split_4x6_3( \
         GD_QWERTY, BABL_CLOSE_APP, BABL_BROWSER_ZOOM_OUT, BABL_BROWSER_ZOOM_IN, BABL_WINDOW_NEXT, BABL_REDO, /**/ BABL_DEL_TO_LINE_START, BABL_DEL_LEFT_WORD, BABL_DEL_RIGHT_WORD, BABL_DEL_TO_LINE_END, BABL_DEL_LINE, BABL_SELECT_ALL, \
