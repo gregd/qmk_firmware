@@ -3,8 +3,6 @@
 #include <print.h>
 #include "tbk3.h"
 
-// #define SSFT ACTION_MODS_ONESHOT(MOD_LSFT)
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_QWERTY] = LAYOUT_split_4x6_3( \
         KC_LEAD, KC_EXCLAIM, KC_AT, KC_HASH, KC_DOLLAR, KC_PERCENT, /**/ KC_CIRCUMFLEX, KC_AMPERSAND, KC_ASTERISK, KC_UNDERSCORE, KC_MINS, KC_PLUS, \
@@ -24,21 +22,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         GD_QWERTY, BABL_CLOSE_APP, BABL_BROWSER_ZOOM_OUT, BABL_BROWSER_ZOOM_IN, BABL_WINDOW_NEXT, BABL_REDO, /**/ BABL_DEL_TO_LINE_START, BABL_DEL_LEFT_WORD, BABL_DEL_RIGHT_WORD, BABL_DEL_TO_LINE_END, BABL_DEL_LINE, _______, \
         BABL_BROWSER_REOPEN_LAST_TAB, BABL_BROWSER_NEW_TAB, BABL_BROWSER_PREV_TAB, GD_ALT_TAB, BABL_FIND_NEXT, BABL_UNDO, /**/ BABL_GO_START_LINE, BABL_GO_LEFT_WORD, BABL_GO_RIGHT_WORD, BABL_GO_END_LINE, BABL_PASTE, BABL_SELECT_ALL, \
         BABL_BROWSER_CLOSE_TAB, BABL_BROWSER_URL_BAR, BABL_BROWSER_NEXT_TAB, BABL_SWITCH_APP_NEXT, BABL_FIND, BABL_FIND_PREV, /**/ KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, BABL_COPY, BABL_IDE_EX_SEL, \
-        BABL_BROWSER_RELOAD, _______, _______, _______, _______, _______, /**/ BABL_GO_START_DOC, BABL_PGDN,  BABL_PGUP, BABL_GO_END_DOC, BABL_CUT, _______, \
+        BABL_BROWSER_RELOAD, _______, _______, _______, _______, _______, /**/ BABL_GO_END_DOC, BABL_PGDN,  BABL_PGUP, BABL_GO_START_DOC, BABL_CUT, _______, \
         KC_APP, BABL_DEL_LEFT_WORD, KC_DEL, /**/ _______, _______, _______),
 
 	[_SYMBOLS] = LAYOUT_split_4x6_3( \
         GD_QWERTY, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, /**/ KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, \
-        _______, _______, _______, KC_LCBR, KC_RCBR, KC_BSLASH, /**/ KC_1, KC_2, KC_3, KC_4, KC_5, KC_F12, \
-        _______, _______, _______, KC_LPRN, KC_RPRN, KC_PIPE, /**/ KC_6, KC_7, KC_8, KC_9, KC_0, _______, \
+        _______, _______, KC_COLN, KC_LCBR, KC_RCBR, KC_BSLASH, /**/ KC_1, KC_2, KC_3, KC_4, KC_5, KC_F12, \
+        _______, _______, KC_DQUO, KC_LPRN, KC_RPRN, KC_PIPE, /**/ KC_6, KC_7, KC_8, KC_9, KC_0, _______, \
         _______, _______, _______, KC_LBRC, KC_RBRC, KC_GRV, /**/ KC_MINS, GD_ARROW, GD_FARROW, GD_ABRACKET, KC_TILDE, _______, \
         _______, _______, _______, /**/ _______, _______, _______),
 
 	[_IDE] = LAYOUT_split_4x6_3( \
         RESET, KC_VOLD, KC_VOLU, KC_MPLY, KC_MNXT, KC_MPRV, /**/ KC_CALC, KC_MAIL, KC_MSEL, KC_MYCM, KC_NO, GD_INFO, \
-        _______, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, /**/ GD_ARROW, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
-        _______, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, /**/ GD_FARROW, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
-        _______, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, /**/ GD_ABRACKET, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
+        _______, KC_ASUP, KC_NO, KC_NO, KC_NO, KC_NO, /**/ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
+        KC_ASTG, KC_ASDN, KC_NO, KC_NO, KC_NO, KC_NO, /**/ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
+        _______, KC_ASRP, KC_NO, KC_NO, KC_NO, KC_NO, /**/ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
         _______, _______, _______, /**/ _______, _______, _______),
 };
 

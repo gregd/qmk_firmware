@@ -21,6 +21,7 @@ RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 BLUETOOTH_ENABLE = no       # Enable Bluetooth
 AUDIO_ENABLE = no           # Audio output
 LEADER_ENABLE = yes
+AUTO_SHIFT_ENABLE = yes
 SPLIT_KEYBOARD = yes
 
 SRC += babblePaste.c babl_windows.c babl_linux.c babl_mac.c babl_vi.c babl_readmux.c

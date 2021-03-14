@@ -168,10 +168,6 @@ void matrix_scan_user(void) {
     leading = false;
     leader_end();
 
-    // SEQ_ONE_KEY(KC_F) {
-    //   SEND_STRING("QMK is awesome.");
-    // }
-
     SEQ_TWO_KEYS(KC_K, KC_Q) {
         set_single_persistent_default_layer(_QWERTY);
     }
@@ -190,17 +186,11 @@ void matrix_scan_user(void) {
     SEQ_TWO_KEYS(KC_K, KC_L) {
         babblePaste(BABL_DO_LINUX);
     }
-    SEQ_TWO_KEYS(KC_K, KC_W) {
-        babblePaste(BABL_DO_WINDOWS);
-    }
     SEQ_TWO_KEYS(KC_K, KC_V) {
         babblePaste(BABL_DO_VI);
     }
     SEQ_TWO_KEYS(KC_K, KC_T) {
         babblePaste(BABL_DO_READMUX);
     }
-
-    // BABL_SCREENCAPTURE
-
   }
 }
