@@ -168,6 +168,9 @@ void matrix_scan_user(void) {
     leading = false;
     leader_end();
 
+    SEQ_TWO_KEYS(KC_K, KC_K) {
+        SEND_STRING("QMK rulez!");
+    }
     SEQ_TWO_KEYS(KC_K, KC_Q) {
         set_single_persistent_default_layer(_QWERTY);
     }
