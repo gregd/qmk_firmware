@@ -152,22 +152,22 @@ enum babble_keycodes {
     BABL_SWITCH_KEYBOARD_LAYOUT,
 #    endif
 #    ifdef BABL_BROWSER
-    BABL_BROWSER_NEW_TAB,
-    BABL_BROWSER_CLOSE_TAB,
-    BABL_BROWSER_REOPEN_LAST_TAB,
-    BABL_BROWSER_NEXT_TAB,
-    BABL_BROWSER_PREV_TAB,
-    BABL_BROWSER_URL_BAR,
-    BABL_BROWSER_FORWARD,
-    BABL_BROWSER_BACK,
-    BABL_BROWSER_FIND,
-    BABL_BROWSER_BOOKMARK,
-    BABL_BROWSER_DEV_TOOLS,  // hard one to remember
-    BABL_BROWSER_RELOAD,
-    BABL_BROWSER_FULLSCREEN,
-    BABL_BROWSER_ZOOM_IN,
-    BABL_BROWSER_ZOOM_OUT,
-    BABL_BROWSER_VIEWSRC,
+    BABL_BR_NEW_TAB,
+    BABL_BR_CLOSE_TAB,
+    BABL_BR_REOPEN_LAST_TAB,
+    BABL_BR_NEXT_TAB,
+    BABL_BR_PREV_TAB,
+    BABL_BR_URL_BAR,
+    BABL_BR_FORWARD,
+    BABL_BR_BACK,
+    BABL_BR_FIND,
+    BABL_BR_BOOKMARK,
+    BABL_BR_DEV_TOOLS,  // hard one to remember
+    BABL_BR_RELOAD,
+    BABL_BR_FULLSCREEN,
+    BABL_BR_ZOOM_IN,
+    BABL_BR_ZOOM_OUT,
+    BABL_BR_VIEWSRC,
 #    endif
 #    ifdef BABL_APP
     BABL_APP_SAVE,                // save file blurs app & os. Move?
@@ -339,21 +339,21 @@ bool babblePaste_chromeos(uint16_t keycode);
 #    endif
 
 #    ifdef BABL_BROWSER
-#        define B_NTAB BABL_BROWSER_NEW_TAB
-#        define B_CTAB BABL_BROWSER_CLOSE_TAB
-#        define B_ROTB BABL_BROWSER_REOPEN_LAST_TAB
-#        define B_NXTB BABL_BROWSER_NEXT_TAB
-#        define B_PTAB BABL_BROWSER_PREV_TAB
-#        define B_NURL BABL_BROWSER_URL_BAR
-#        define B_BFWD BABL_BROWSER_FORWARD
-#        define B_BBAK BABL_BROWSER_BACK
-#        define B_BFND BABL_BROWSER_FIND
-#        define B_BOOK BABL_BROWSER_BOOKMARK
-#        define B_BDEV BABL_BROWSER_DEV_TOOLS  // hard one to remember
-#        define B_BRLD BABL_BROWSER_RELOAD
-#        define B_BFULL BABL_BROWSER_FULLSCREEN
-#        define B_ZIN BABL_BROWSER_ZOOM_IN
-#        define B_ZOUT BABL_BROWSER_ZOOM_OUT
+#        define B_NTAB BABL_BR_NEW_TAB
+#        define B_CTAB BABL_BR_CLOSE_TAB
+#        define B_ROTB BABL_BR_REOPEN_LAST_TAB
+#        define B_NXTB BABL_BR_NEXT_TAB
+#        define B_PTAB BABL_BR_PREV_TAB
+#        define B_NURL BABL_BR_URL_BAR
+#        define B_BFWD BABL_BR_FORWARD
+#        define B_BBAK BABL_BR_BACK
+#        define B_BFND BABL_BR_FIND
+#        define B_BOOK BABL_BR_BOOKMARK
+#        define B_BDEV BABL_BR_DEV_TOOLS  // hard one to remember
+#        define B_BRLD BABL_BR_RELOAD
+#        define B_BFULL BABL_BR_FULLSCREEN
+#        define B_ZIN BABL_BR_ZOOM_IN
+#        define B_ZOUT BABL_BR_ZOOM_OUT
 #    endif
 
 #    ifdef BABL_APP

@@ -69,27 +69,27 @@ bool babblePaste_mac(uint16_t keycode) {
     BABLM(BABL_SWITCH_KEYBOARD_LAYOUT, IMCTL(X_SPACE));
 #        endif
 #        ifdef BABL_BROWSER
-    BABLM(BABL_BROWSER_NEW_TAB, IMGUI(X_T));
-    BABLM(BABL_BROWSER_CLOSE_TAB, SS_LGUI("w"));
-    BABLM(BABL_BROWSER_REOPEN_LAST_TAB, OMSFT(SS_LGUI("t")));
-    BABLM(BABL_BROWSER_NEXT_TAB, OMGUI(IMALT(X_RIGHT)));
-    BABLM(BABL_BROWSER_PREV_TAB, OMGUI(IMALT(X_LEFT)));
-    BABLM(BABL_BROWSER_URL_BAR, SS_LGUI("l"));
-    BABLM(BABL_BROWSER_FORWARD, IMGUI(X_RIGHT));
-    BABLM(BABL_BROWSER_BACK, IMGUI(X_LEFT));
-    BABLM(BABL_BROWSER_FIND, SS_LGUI("f"));
-    BABLM(BABL_BROWSER_BOOKMARK, SS_LGUI("d"));
-    BABLM(BABL_BROWSER_RELOAD, OMGUI(SS_LSFT("r")));  // hard reload w/o cache
-    BABLM(BABL_BROWSER_FULLSCREEN, OMGUI(SS_LCTRL("p")));
-    BABLM(BABL_BROWSER_ZOOM_IN, IMGUI(X_KP_PLUS));  // ctr+ +
-    BABLM(BABL_BROWSER_ZOOM_OUT, IMGUI(X_KP_MINUS));
-#            ifdef BABL_BROWSER_CHROME
-    BABLM(BABL_BROWSER_VIEWSRC, SS_LGUI("u"));           // Chrome or firefox
-    BABLM(BABL_BROWSER_DEV_TOOLS, OMGUI(SS_LALT("i")));  // Chrome or Firefox
+    BABLM(BABL_BR_NEW_TAB, IMGUI(X_T));
+    BABLM(BABL_BR_CLOSE_TAB, SS_LGUI("w"));
+    BABLM(BABL_BR_REOPEN_LAST_TAB, OMSFT(SS_LGUI("t")));
+    BABLM(BABL_BR_NEXT_TAB, OMGUI(IMALT(X_RIGHT)));
+    BABLM(BABL_BR_PREV_TAB, OMGUI(IMALT(X_LEFT)));
+    BABLM(BABL_BR_URL_BAR, SS_LGUI("l"));
+    BABLM(BABL_BR_FORWARD, IMGUI(X_RIGHT));
+    BABLM(BABL_BR_BACK, IMGUI(X_LEFT));
+    BABLM(BABL_BR_FIND, SS_LGUI("f"));
+    BABLM(BABL_BR_BOOKMARK, SS_LGUI("d"));
+    BABLM(BABL_BR_RELOAD, OMGUI(SS_LSFT("r")));  // hard reload w/o cache
+    BABLM(BABL_BR_FULLSCREEN, OMGUI(SS_LCTRL("p")));
+    BABLM(BABL_BR_ZOOM_IN, IMGUI(X_KP_PLUS));  // ctr+ +
+    BABLM(BABL_BR_ZOOM_OUT, IMGUI(X_KP_MINUS));
+#            ifdef BABL_BR_CHROME
+    BABLM(BABL_BR_VIEWSRC, SS_LGUI("u"));           // Chrome or firefox
+    BABLM(BABL_BR_DEV_TOOLS, OMGUI(SS_LALT("i")));  // Chrome or Firefox
 #            endif
-#            ifdef BABL_BROWSER_SAFARI
-    BABLM(BABL_BROWSER_VIEWSRC, OMGUI(IMALT(X_U)));  // Safari
-                                                     // BABLM( BABL_BROWSER_DEV_TOOLS,	// No real equivalent for Safari
+#            ifdef BABL_BR_SAFARI
+    BABLM(BABL_BR_VIEWSRC, OMGUI(IMALT(X_U)));  // Safari
+                                                     // BABLM( BABL_BR_DEV_TOOLS,	// No real equivalent for Safari
 #            endif
 #        endif  //  BABL_BROWSER
 

@@ -58,9 +58,9 @@
 #define BABL_IDE // IDE shortcuts
 
 //// What Browser shortcuts?
-#define BABL_BROWSER_CHROME // Chrome browser, Google apps
-//#define BABL_BROWSER_MS
-//#define BABL_BROWSER_SAFARI // Safari, Apple defaults.
+#define BABL_BR_CHROME // Chrome browser, Google apps
+//#define BABL_BR_MS
+//#define BABL_BR_SAFARI // Safari, Apple defaults.
 
 //// applications vary even more between OSes. We'll do our best.
 #define BABL_APP
