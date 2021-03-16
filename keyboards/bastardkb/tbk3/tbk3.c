@@ -76,6 +76,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
+        case GD_HDIR:
+            if (record->event.pressed) {
+                SEND_STRING("~/");
+            }
+            return false;
+
+        case GD_UDIR:
+            if (record->event.pressed) {
+                SEND_STRING("../");
+            }
+            return false;
+
         case GD_LOCK_SHIFT:
             if (record->event.pressed) {
                 uint8_t mod = MOD_BIT(KC_LSHIFT);

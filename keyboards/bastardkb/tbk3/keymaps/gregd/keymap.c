@@ -26,17 +26,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_APP, BABL_DEL_LEFT_WORD, KC_DEL, /**/ _______, _______, _______),
 
 	[_SYMBOLS] = LAYOUT_split_4x6_3( \
-        GD_QWERTY, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,         /**/ KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, _______, \
+        GD_QWERTY, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,         /**/ KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_NO, \
         BABL_WINDOW_NEXT, BABL_CLOSE_APP,       BABL_IDE_FILE_FIND, BABL_BR_PREV_TAB, BABL_FIND_NEXT, BABL_IDE_QUICK_DOC, /**/ KC_1,  KC_2,  KC_3,  KC_4,  KC_5,   KC_F11, \
         BABL_BR_ZOOM_IN,  GD_ALT_TAB,           BABL_BR_URL_BAR,    BABL_BR_NEXT_TAB, BABL_FIND,      BABL_UNDO,          /**/ KC_6,  KC_7,  KC_8,  KC_9,  KC_0,   KC_F12, \
-        BABL_BR_ZOOM_OUT, BABL_SWITCH_APP_NEXT, BABL_BR_CLOSE_TAB,  BABL_BR_NEW_TAB,  BABL_FIND_PREV, BABL_REDO,          /**/ KC_MINS, GD_ARROW, GD_FARROW, GD_ABRACKET, KC_TILDE, _______, \
+        BABL_BR_ZOOM_OUT, BABL_SWITCH_APP_NEXT, BABL_BR_CLOSE_TAB,  BABL_BR_NEW_TAB,  BABL_FIND_PREV, BABL_REDO,          /**/ GD_FARROW, GD_ARROW, GD_ABRACKET, GD_HDIR, GD_UDIR, KC_NO, \
         _______, _______, KC_LEAD, /**/ _______, _______, _______),
 
 	[_IDE] = LAYOUT_split_4x6_3( \
-        RESET, KC_VOLD, KC_VOLU, KC_MPLY, KC_MNXT, KC_MPRV, /**/ KC_CALC, KC_MAIL, KC_MSEL, KC_MYCM, KC_NO, GD_INFO, \
-        _______, KC_ASUP, KC_NO, KC_NO, KC_NO, KC_NO, /**/ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
-        KC_ASTG, KC_ASDN, KC_NO, KC_NO, KC_NO, KC_NO, /**/ KC_NO, KC_A, KC_NO, KC_NO, KC_NO, KC_NO, \
-        _______, KC_ASRP, KC_NO, KC_NO, KC_NO, KC_NO, /**/ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
+        RESET,   KC_MUTE, KC_VOLD, KC_VOLU, KC_MPLY, KC_MNXT, /**/ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, GD_INFO, \
+        _______, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, /**/ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
+        _______, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, /**/ KC_NO, KC_A, KC_NO, KC_NO, KC_NO, KC_NO, \
+        _______, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, /**/ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
         _______, _______, _______, /**/ _______, _______, _______),
 };
 
