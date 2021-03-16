@@ -12,8 +12,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         LT(_IDE,KC_LGUI), LT(_NAV,KC_BSPC), LT(_SYMBOLS,KC_ESC), /**/ LT(_SYMBOLS,KC_ENT), LT(_NAV,KC_SPC), LT(_IDE,KC_TAB)),
 
 	[_POLISH] = LAYOUT_split_4x6_3( \
-        GD_QWERTY, RALT(KC_A), RALT(KC_S), RALT(KC_E), RALT(KC_Z), RALT(KC_C), /**/ GD_PL_DZ, RALT(KC_N), RALT(KC_L), RALT(KC_O), GD_PL_CZ, GD_PL_RZ, \
-        _______, _______, _______, _______, _______, _______, /**/ _______, _______, _______, _______, _______, GD_PL_SZ, \
+        GD_QWERTY, RALT(KC_A), RALT(KC_S), RALT(KC_E), RALT(KC_Z), RALT(KC_C), /**/ RALT(KC_X), RALT(KC_N), RALT(KC_L), RALT(KC_O), _______, _______, \
+        _______, _______, _______, _______, _______, _______, /**/ _______, _______, _______, _______, _______, _______, \
         _______, _______, _______, MT(MOD_RALT, KC_D), _______, _______, /**/ _______, _______, MT(MOD_RALT, KC_K), _______, _______, _______, \
         _______, _______, _______, _______, _______, _______, /**/ _______, _______, _______, _______, _______, _______, \
         KC_RALT, _______, KC_RALT, /**/ KC_RALT, _______, KC_RALT),

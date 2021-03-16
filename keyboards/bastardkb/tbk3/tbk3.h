@@ -51,9 +51,5 @@ enum userspace_custom_keycodes {
     GD_FARROW,
     GD_ABRACKET,
     GD_LOCK_SHIFT,
-    GD_PL_SZ,
-    GD_PL_CZ,
-    GD_PL_RZ,
-    GD_PL_DZ,
     GD_INFO
 };

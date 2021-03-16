@@ -97,30 +97,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-        case GD_PL_SZ:
-            if (record->event.pressed) {
-                SEND_STRING("sz");
-            }
-            return false;
-
-        case GD_PL_CZ:
-            if (record->event.pressed) {
-                SEND_STRING("cz");
-            }
-            return false;
-
-        case GD_PL_RZ:
-            if (record->event.pressed) {
-                SEND_STRING("rz");
-            }
-            return false;
-
-        case GD_PL_DZ:
-            if (record->event.pressed) {
-                SEND_STRING("dz");
-            }
-            return false;
-
         // default:
         //     return true;
     }
