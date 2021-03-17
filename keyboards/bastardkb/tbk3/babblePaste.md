@@ -102,23 +102,23 @@ See the full list in babblePaste.h, or the list below
 
   #define B_L1C  BABL_GO_LEFT_1C
   #define B_R1C  BABL_GO_RIGHT_1C
-  #define B_L1W  BABL_GO_LEFT_WORD
-  #define B_R1W  BABL_GO_RIGHT_WORD
-  #define B_GSOL  BABL_GO_START_LINE
-  #define B_GEOL  BABL_GO_END_LINE
-  #define B_GTOP  BABL_GO_START_DOC
-  #define B_GEND  BABL_GO_END_DOC
-  #define B_DOWN  BABL_GO_NEXT_LINE
-  #define B_UP    BABL_GO_PREV_LINE
+  #define B_L1W  BABL_GO_LWORD
+  #define B_R1W  BABL_GO_RWORD
+  #define B_GSOL  BABL_GO_SLINE
+  #define B_GEOL  BABL_GO_ELINE
+  #define B_GTOP  BABL_GO_SDOC
+  #define B_GEND  BABL_GO_EDOC
+  #define B_DOWN  BABL_GO_NLINE
+  #define B_UP    BABL_GO_PLINE
   #define B_PTOP  BABL_GO_PARA_START
   #define B_PEND  BABL_GO_PARA_END
   #define B_PGDN  BABL_PGDN
   #define B_PGUP  BABL_PGUP
   #define B_DEL    BABL_DEL_RIGHT_1C
-  #define B_DLW    BABL_DEL_LEFT_WORD
-  #define B_DRW    BABL_DEL_RIGHT_WORD
-  #define B_DEOL  BABL_DEL_TO_LINE_END // delete from cursor to end of line
-  #define B_DSOL  BABL_DEL_TO_LINE_START // delete from cursor to begining line
+  #define B_DLW    BABL_DEL_LWORD
+  #define B_DRW    BABL_DEL_RWORD
+  #define B_DEOL  BABL_DEL_2LNE // delete from cursor to end of line
+  #define B_DSOL  BABL_DEL_2LNS // delete from cursor to begining line
   #define B_MODE   BABL_MODE //type out name of current mode.
 
   #define B_UNDO    BABL_UNDO

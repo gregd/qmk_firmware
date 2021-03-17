@@ -35,6 +35,18 @@ void set_babble_mode(uint8_t id) { babble_mode = id; }
 //     }
 // }
 
+void babble_clear_mods(void) {
+    uint8_t mods = 0;
+    if ((mods = get_oneshot_mods()) && !has_oneshot_mods_timed_out()) {
+        clear_oneshot_mods();
+        unregister_mods(mods);
+    }
+    if ((mods = get_oneshot_locked_mods())) {
+        clear_oneshot_locked_mods();
+        unregister_mods(mods);
+    }
+}
+
 /* this function runs the appropriate babblepaste macro, given
 the global babble_mode and a keycode defined in the babble_keycodes enum.
 

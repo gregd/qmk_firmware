@@ -15,6 +15,7 @@ void set_babble_mode(uint8_t id);
 // void babble_mode_increment(void);
 // void babble_mode_decrement(void);
 void babble_led_user(void);
+void babble_clear_mods(void);
 
 // manually re-order these if you want to set the order or default.
 enum babble_modes {
@@ -65,19 +66,10 @@ enum babble_modes {
 
 #    define BABLM_CLR_OSM(ent, ...)   \
         if (ent == keycode) {         \
-            uint8_t mods = 0;         \
-            if ((mods = get_oneshot_mods()) && !has_oneshot_mods_timed_out()) { \
-                clear_oneshot_mods();                                           \
-                unregister_mods(mods);                                          \
-            }                                                                   \
-            if ((mods = get_oneshot_locked_mods())) {                           \
-                clear_oneshot_locked_mods();                                    \
-                unregister_mods(mods);                                          \
-            }                         \
+            babble_clear_mods();      \
             SEND_STRING(__VA_ARGS__); \
             return true;              \
         }
-
 
 // BabblePaste should be loaded first (header in userspace .h file, before all else)
 // if not,we'll do our best.
@@ -98,15 +90,15 @@ enum babble_keycodes {
     // left & right
     BABL_GO_LEFT_1C,
     BABL_GO_RIGHT_1C,
-    BABL_GO_LEFT_WORD,
-    BABL_GO_RIGHT_WORD,
-    BABL_GO_START_LINE,
-    BABL_GO_END_LINE,
+    BABL_GO_LWORD,
+    BABL_GO_RWORD,
+    BABL_GO_SLINE,
+    BABL_GO_ELINE,
     // now up & down
-    BABL_GO_START_DOC,
-    BABL_GO_END_DOC,
-    BABL_GO_NEXT_LINE,
-    BABL_GO_PREV_LINE,
+    BABL_GO_SDOC,
+    BABL_GO_EDOC,
+    BABL_GO_NLINE,
+    BABL_GO_PLINE,
     BABL_GO_PARA_START,
     BABL_GO_PARA_END,
     BABL_PGDN,
@@ -114,10 +106,10 @@ enum babble_keycodes {
     // And the delete options
     BABL_DEL_LEFT_1C,   // == backspace, so why bother?
     BABL_DEL_RIGHT_1C,  // usually = Del
-    BABL_DEL_LEFT_WORD,
-    BABL_DEL_RIGHT_WORD,
-    BABL_DEL_TO_LINE_END,    // delete from cursor to end of line
-    BABL_DEL_TO_LINE_START,  // delete from cursor to begining line
+    BABL_DEL_LWORD,
+    BABL_DEL_RWORD,
+    BABL_DEL_2LNE,    // delete from cursor to end of line
+    BABL_DEL_2LNS,  // delete from cursor to begining line
     BABL_DEL_LINE,           // delete whole line
     BABL_MODE,               // print out string saying what mode we're in.
 #    endif
@@ -293,24 +285,24 @@ bool babblePaste_chromeos(uint16_t keycode);
 #    ifdef BABL_MOVE
 #        define B_L1C BABL_GO_LEFT_1C
 #        define B_R1C BABL_GO_RIGHT_1C
-#        define B_L1W BABL_GO_LEFT_WORD
-#        define B_R1W BABL_GO_RIGHT_WORD
-#        define B_GSOL BABL_GO_START_LINE
-#        define B_GEOL BABL_GO_END_LINE
-#        define B_GTOP BABL_GO_START_DOC
-#        define B_GEND BABL_GO_END_DOC
-#        define B_DOWN BABL_GO_NEXT_LINE
-#        define B_UP BABL_GO_PREV_LINE
+#        define B_L1W BABL_GO_LWORD
+#        define B_R1W BABL_GO_RWORD
+#        define B_GSOL BABL_GO_SLINE
+#        define B_GEOL BABL_GO_ELINE
+#        define B_GTOP BABL_GO_SDOC
+#        define B_GEND BABL_GO_EDOC
+#        define B_DOWN BABL_GO_NLINE
+#        define B_UP BABL_GO_PLINE
 #        define B_PTOP BABL_GO_PARA_START
 #        define B_PEND BABL_GO_PARA_END
 #        define B_PGDN BABL_PGDN
 #        define B_PGUP BABL_PGUP
 //#define B_BKSP  BABL_DEL_LEFT_1C == backspace so why bother.
 #        define B_DEL BABL_DEL_RIGHT_1C  // usually = Del
-#        define B_DLW BABL_DEL_LEFT_WORD
-#        define B_DRW BABL_DEL_RIGHT_WORD
-#        define B_DEOL BABL_DEL_TO_LINE_END    // delete from cursor to end of line
-#        define B_DSOL BABL_DEL_TO_LINE_START  // delete from cursor to begining line
+#        define B_DLW BABL_DEL_LWORD
+#        define B_DRW BABL_DEL_RWORD
+#        define B_DEOL BABL_DEL_2LNE    // delete from cursor to end of line
+#        define B_DSOL BABL_DEL_2LNS  // delete from cursor to begining line
 #        define B_MODE BABL_MODE               // type out name of current mode.
 #    endif
 

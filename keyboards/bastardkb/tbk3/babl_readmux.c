@@ -17,24 +17,24 @@ bool babblePaste_readmux(uint16_t keycode) {
 #        ifdef BABL_MOVE
     BABLM(BABL_GO_LEFT_1C, SS_TAP(X_LEFT));
     BABLM(BABL_GO_RIGHT_1C, SS_TAP(X_RIGHT));
-    BABLM(BABL_GO_LEFT_WORD, SS_LALT("b"));
-    BABLM(BABL_GO_RIGHT_WORD, SS_LALT("f"));
-    BABLM(BABL_GO_START_LINE, SS_LCTL("a"));
-    BABLM(BABL_GO_END_LINE, SS_LCTL("e"));
-    // BABLM( BABL_GO_START_DOC		,END );// tmux?
-    // BABLM( BABL_GO_END_DOC		,END );  // tmux?
-    BABLM(BABL_GO_NEXT_LINE, SS_LCTL("n"));
-    BABLM(BABL_GO_PREV_LINE, SS_LCTL("p"));
+    BABLM(BABL_GO_LWORD, SS_LALT("b"));
+    BABLM(BABL_GO_RWORD, SS_LALT("f"));
+    BABLM(BABL_GO_SLINE, SS_LCTL("a"));
+    BABLM(BABL_GO_ELINE, SS_LCTL("e"));
+    // BABLM( BABL_GO_SDOC		,END );// tmux?
+    // BABLM( BABL_GO_EDOC		,END );  // tmux?
+    BABLM(BABL_GO_NLINE, SS_LCTL("n"));
+    BABLM(BABL_GO_PLINE, SS_LCTL("p"));
     // BABLM( BABL_GO_PARA_START,	// undefined
     // BABLM( BABL_GO_PARA_END,	 	// undefinedBABLM( BABL_PGDN ,
 
     BABLM(BABL_PGUP, SS_TAP(X_PGUP));
     BABLM(BABL_PGDN, SS_TAP(X_PGDOWN));
     BABLM(BABL_DEL_RIGHT_1C, SS_LCTL("d"));
-    BABLM(BABL_DEL_LEFT_WORD, SS_LCTL("w"));  // meta-DEL instead?
-    BABLM(BABL_DEL_RIGHT_WORD, SS_LALT("d"));
-    BABLM(BABL_DEL_TO_LINE_END, SS_LCTL("k"));
-    BABLM(BABL_DEL_TO_LINE_START, SS_LCTL("u"));
+    BABLM(BABL_DEL_LWORD, SS_LCTL("w"));  // meta-DEL instead?
+    BABLM(BABL_DEL_RWORD, SS_LALT("d"));
+    BABLM(BABL_DEL_2LNE, SS_LCTL("k"));
+    BABLM(BABL_DEL_2LNS, SS_LCTL("u"));
     BABLM(BABL_MODE, "Readline ");
 #        endif
 #        ifdef BABL_OSKEYS
