@@ -60,7 +60,7 @@ bool babblePaste_emacs(uint16_t keycode) {
     BABLM(BABL_CLOSE_APP, SS_LCTRL("x") "c");
     BABLM(BABL_HELP, SS_LCTRL("h") "a");  // start search in help
                                           // BABLM( BABL_LOCK,		()	); // lock buffer? Too many options.
-    // BABLM( BABL_SCREENCAPTURE,		()	); // requires plugin?
+    // BABLM( BABL_SCR_CAP_FULL,		()	); // requires plugin?
 
 #        endif
 #        ifdef BABL_BROWSER

@@ -54,7 +54,7 @@ bool babblePaste_readmux(uint16_t keycode) {
     BABLM(BABL_CLOSE_APP, TMUX "d");        // usually what I want
     BABLM(BABL_HELP, TMUX IMSFT(X_SLASH));
     BABLM(BABL_LOCK, TMUX "L");  // assuming you set up VLOCK yourself
-    BABLM(BABL_SCREENCAPTURE, TMUX ":capture-pane");
+    BABLM(BABL_SCR_CAP_FULL, TMUX ":capture-pane");
 #        endif
 #        ifdef BABL_BROWSER
 /* Add lynx shortcuts, brow.sh?

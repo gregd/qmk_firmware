@@ -108,16 +108,6 @@ bool babblePaste(uint16_t keycode) {
         babblePaste_emacs(keycode);
     }
 #    endif
-#    ifdef BABL_CHROME
-    if (keycode == BABL_DO_CHROMEOS) {
-        set_babble_mode(BABL_CHROMEOS_MODE);
-        babble_led_user();
-        return true;
-    }
-    if (babble_mode == BABL_CHROMEOS_MODE) {
-        babblePaste_readmux(keycode);
-    }
-#    endif
 #    ifdef BABL_READMUX
     if (keycode == BABL_DO_READMUX) {
         set_babble_mode(BABL_READMUX_MODE);

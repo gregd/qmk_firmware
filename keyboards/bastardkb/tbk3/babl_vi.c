@@ -50,7 +50,7 @@ bool babblePaste_vi(uint16_t keycode) {
     BABLM(BABL_CLOSE_APP, IMCTL(X_SCOLON) "q");
     BABLM(BABL_HELP, SS_LSFT(SS_TAP(X_SCOLON)) "h");  // start search in help
                                                       // BABLM( BABL_LOCK,		()	); Perhaps VI is not an OS?
-                                                      // BABLM( BABL_SCREENCAPTURE,		()	); // capture a buffer?
+                                                      // BABLM( BABL_SCR_CAP_FULL,		()	); // capture a buffer?
 #        endif
 
 #        ifdef BABL_BROWSER

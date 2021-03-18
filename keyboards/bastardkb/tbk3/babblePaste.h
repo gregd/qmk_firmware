@@ -37,9 +37,6 @@ enum babble_modes {
 #    ifdef BABL_EMACS
     BABL_EMACS_MODE,
 #    endif
-#    ifdef BABL_CHROMEOS
-    BABL_CHROMEOS_MODE,
-#    endif
     BABL_MODEMAX
 };
 
@@ -140,7 +137,8 @@ enum babble_keycodes {
     BABL_CLOSE_APP,
     BABL_HELP,
     BABL_LOCK,
-    BABL_SCREENCAPTURE,
+    BABL_SCR_CAP_FULL,
+    BABL_SCR_CAP_SEL,
     BABL_SWITCH_KEYBOARD_LAYOUT,
 #    endif
 #    ifdef BABL_BROWSER
@@ -235,9 +233,6 @@ enum babble_keycodes {
 #    ifdef BABL_READMUX
     BABL_DO_READMUX,
 #    endif
-#    ifdef BABL_CHROMEOS
-    BABL_DO_CHROMEOS,
-#    endif
     BABBLE_END_RANGE
 };
 
@@ -269,10 +264,6 @@ bool babblePaste_vi(uint16_t keycode);
 #    ifdef BABL_READMUX
 #        define B_READ BABL_DO_READMUX
 bool babblePaste_readmux(uint16_t keycode);
-#    endif
-#    ifdef BABL_CHROMEOS
-#        define B_CROM BABL_DO_CHROMEOS
-bool babblePaste_chromeos(uint16_t keycode);
 #    endif
 
 #    define BABL_INC babble_mode_increment();
@@ -327,7 +318,7 @@ bool babblePaste_chromeos(uint16_t keycode);
 #        define B_CAPP BABL_CLOSE_APP
 #        define B_HELP BABL_HELP
 #        define B_LOCK BABL_LOCK
-#        define B_SCAP BABL_SCREENCAPTURE
+#        define B_SCAP BABL_SCR_CAP_FULL
 #        define B_KEYB BABL_SWITCH_KEYBOARD_LAYOUT
 #    endif
 

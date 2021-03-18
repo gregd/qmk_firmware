@@ -65,7 +65,7 @@ bool babblePaste_mac(uint16_t keycode) {
     BABLM(BABL_HELP, OMSFT(IMGUI(X_SLASH)));
     // Locking screen from external keyboard requires automator https://apple.stackexchange.com/questions/73995
     BABLM(BABL_LOCK, OMCTL(IMALT(X_L)));
-    BABLM(BABL_SCREENCAPTURE, OMSFT(OMGUI(IMALT(X_4))) IMGUI(X_SPACE) "preview" SS_LGUI("d"));
+    BABLM(BABL_SCR_CAP_FULL, OMSFT(OMGUI(IMALT(X_4))) IMGUI(X_SPACE) "preview" SS_LGUI("d"));
     BABLM(BABL_SWITCH_KEYBOARD_LAYOUT, IMCTL(X_SPACE));
 #        endif
 #        ifdef BABL_BROWSER

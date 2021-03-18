@@ -26,7 +26,6 @@ To switch modes, run the switch_babble_mode() function, or a pre defined BABL_DO
     #define BABL_MAC
     #define BABL_LINUX
     #define BABL_EMACS
-    #define BABL_CHROMEOS
     
     //// These enable subsets of babble macros. Disable options to save space
     #define BABL_MOVE // Uncomment to add basic cursor movement
@@ -71,7 +70,7 @@ Add the following to your keymap in process_record_user, before the main switch 
 
 Update your rules.mk to include the modes you want.
 
-    `SRC += babblePaste.c babl_windows.c babl_mac.c babl_vi.c babl_readmux.c  babl_chromeos.c babl_emacs.c babl_linux.c`
+    `SRC += babblePaste.c babl_windows.c babl_mac.c babl_vi.c babl_readmux.c babl_emacs.c babl_linux.c`
 
 
 #### Custom Keycodes
