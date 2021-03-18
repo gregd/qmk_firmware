@@ -102,6 +102,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
+        case GD_RESET:
+            if (record->event.pressed) {
+                clear_mods();
+                clear_oneshot_mods();
+                clear_oneshot_locked_mods();
+            }
+            return false;
+
         case GD_INFO:
             if (record->event.pressed) {
                 print_default_layer();

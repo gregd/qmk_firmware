@@ -53,5 +53,6 @@ enum userspace_custom_keycodes {
     GD_HDIR,
     GD_UDIR,
     GD_LOCK_SHIFT,
+    GD_RESET,
     GD_INFO
 };
