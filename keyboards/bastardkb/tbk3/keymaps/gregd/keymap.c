@@ -33,10 +33,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, KC_LEAD,                                                                              /**/ BABL_IDE_NEW_LINE, BABL_IDE_COMPLETE, BABL_IDE_FIXES),
 
 	[_IDE] = LAYOUT_split_4x6_3( \
-        RESET,   KC_MUTE,         KC_VOLD,           KC_VOLU,           KC_MPLY,           KC_MNXT,            /**/ BABL_IDE_WIN_STR,   BABL_IDE_WIN_GCOM,  BABL_IDE_WIN_GHIS, BABL_IDE_GO_LINE,    KC_NO,             GD_INFO, \
-        _______, KC_NO,           KC_NO,             KC_NO,             BABL_IDE_FINF,     BABL_IDE_WIN_SEA,   /**/ BABL_IDE_REL_FILE,  BABL_IDE_QDOC,      BABL_IDE_PREV_FN,  BABL_IDE_REC_FILE,   BABL_IDE_REFACTOR, BABL_IDE_COL_MODE, \
-        _______, KC_NO,           KC_NO,             KC_NO,             BABL_IDE_FIND_ALL, BABL_IDE_WIN_FTREE, /**/ BABL_IDE_USAGES,    BABL_IDE_GO_DEF,    BABL_IDE_NEXT_FN,  BABL_IDE_GO_LAST_ED, BABL_IDE_RENAME,   BABL_IDE_REFORMAT, \
-        _______, BABL_IDE_BUILD,  BABL_IDE_RUN_ANY,  BABL_IDE_RUN_LAST, BABL_IDE_RUN_SEL,  BABL_IDE_WIN_RUN,   /**/ BABL_IDE_GO_FWD,    BABL_IDE_GO_BACK,   BABL_IDE_REL_SYM,  BABL_IDE_REC_LOC,    BABL_IDE_COMMENT,  BABL_IDE_TGL_CASE, \
+        RESET,   KC_NO,           KC_NO,             KC_MPRV,           KC_MPLY,           KC_MNXT,            /**/ BABL_IDE_WIN_STR,   BABL_IDE_WIN_GCOM,  BABL_IDE_WIN_GHIS, BABL_IDE_GO_LINE,    KC_NO,             GD_INFO, \
+        KC_VOLU, KC_NO,           KC_NO,             BABL_IDE_FACTION,  BABL_IDE_FINF,     BABL_IDE_WIN_SEA,   /**/ BABL_IDE_REL_FILE,  BABL_IDE_QDOC,      BABL_IDE_USAGES,   BABL_IDE_REC_LOC,    BABL_IDE_REFACTOR, BABL_IDE_COL_MODE, \
+        KC_VOLD, KC_NO,           KC_NO,             BABL_IDE_GO_FILE,  BABL_IDE_FIND_ALL, BABL_IDE_WIN_FTREE, /**/ BABL_IDE_REL_SYM,   BABL_IDE_GO_DEF,    BABL_IDE_NEXT_FN,  BABL_IDE_REC_FILE,   BABL_IDE_RENAME,   BABL_IDE_REFORMAT, \
+        KC_MUTE, BABL_IDE_BUILD,  BABL_IDE_RUN_ANY,  BABL_IDE_RUN_LAST, BABL_IDE_RUN_SEL,  BABL_IDE_WIN_RUN,   /**/ BABL_IDE_GO_FWD,    BABL_IDE_GO_BACK,   BABL_IDE_PREV_FN,  BABL_IDE_GO_LAST_ED, BABL_IDE_COMMENT,  BABL_IDE_TGL_CASE, \
         _______, _______, _______, /**/ _______, _______, _______),
 };
 
