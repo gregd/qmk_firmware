@@ -130,7 +130,7 @@ See the full list in babblePaste.h, or the list below
   #define B_FIND     BABL_FIND
   #define B_FINDN    BABL_FIND_NEXT
   #define B_FINDP    BABL_FIND_PREV
-  #define B_RPLACE    BABL_FIND_REPLACE
+  #define B_RPLACE    BABL_FREPLACE
   #define B_RUNAPP    BABL_RUNAPP
   #define B_NAPP  BABL_APP_NEXT
   #define B_PAPP  BABL_APP_LAST // previous

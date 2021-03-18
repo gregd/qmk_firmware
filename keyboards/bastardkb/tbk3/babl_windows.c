@@ -51,7 +51,7 @@ bool babblePaste_win(uint16_t keycode) {
     BABLM(BABL_FIND, SS_LCTRL("f"));
     BABLM(BABL_FIND_NEXT, SS_TAP(X_F3));
     // BABLM( BABL_FIND_PREV, 	SS_TAP(X_F3) ); // doesn't have a standard one?
-    BABLM(BABL_FIND_REPLACE, SS_LCTRL("h"));
+    BABLM(BABL_FREPLACE, SS_LCTRL("h"));
     BABLM(BABL_RUNAPP, SS_LGUI("r"));
     BABLM(BABL_APP_NEXT, IMALT(X_TAB));
     BABLM(BABL_APP_LAST, OMSFT(IMALT(X_TAB)));

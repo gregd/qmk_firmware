@@ -51,7 +51,7 @@ bool babblePaste_emacs(uint16_t keycode) {
     BABLM(BABL_FIND, SS_LCTRL("s"));
     BABLM(BABL_FIND_NEXT, SS_LCTRL("s"));
     BABLM(BABL_FIND_PREV, SS_LCTRL("r"));
-    BABLM(BABL_FIND_REPLACE, OMALT(IMSFT(X_5)));
+    BABLM(BABL_FREPLACE, OMALT(IMSFT(X_5)));
     // BABLM( BABL_RUNAPP , 			//(SS_LALT("x") "shell")	 );// arguably
     BABLM(BABL_RUNAPP, IMALT(X_X) "split-window" SS_TAP(X_ENTER));  // arguably
     BABLM(BABL_WINDOW_NEXT, SS_LCTRL("x") "o");

@@ -49,7 +49,7 @@ bool babblePaste_mac(uint16_t keycode) {
     // BABLM( BABL_FIND_NEXT, 	OMSFT(X_F4)) ); // Mac office
     BABLM(BABL_FIND_PREV, OMSFT(IMGUI(X_G)));  // Sublime, browser
     //BABLM(BABL_FIND_PREV, SS_LGUI("g"));
-    BABLM(BABL_FIND_REPLACE, SS_LGUI("f"));
+    BABLM(BABL_FREPLACE, SS_LGUI("f"));
     BABLM(BABL_RUNAPP, SS_LGUI(" "));
     BABLM(BABL_APP_NEXT, IMGUI(X_TAB));
     BABLM(BABL_APP_LAST, OMSFT(IMGUI(X_TAB)));
