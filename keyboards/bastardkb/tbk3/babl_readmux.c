@@ -49,8 +49,8 @@ bool babblePaste_readmux(uint16_t keycode) {
     BABLM(BABL_FIND_PREV, SS_LCTL("s"));
     // BABLM( BABL_FIND_REPLACE		,END ); // not offered in readline
     BABLM(BABL_RUNAPP, TMUX "c");           // tmux
-    BABLM(BABL_SWITCH_APP_NEXT, TMUX "n");  // tmux
-    BABLM(BABL_SWITCH_APP_LAST, TMUX "p");  // tmux
+    BABLM(BABL_APP_NEXT, TMUX "n");  // tmux
+    BABLM(BABL_APP_LAST, TMUX "p");  // tmux
     BABLM(BABL_CLOSE_APP, TMUX "d");        // usually what I want
     BABLM(BABL_HELP, TMUX IMSFT(X_SLASH));
     BABLM(BABL_LOCK, TMUX "L");  // assuming you set up VLOCK yourself

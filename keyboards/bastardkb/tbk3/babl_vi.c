@@ -45,8 +45,8 @@ bool babblePaste_vi(uint16_t keycode) {
     BABLM(BABL_FIND_PREV, IMSFT(X_N));
     BABLM(BABL_FIND_REPLACE, OMALT(IMSFT(X_5)));
     BABLM(BABL_RUNAPP, ":split");                // requires VIM, is vsplit better?
-    BABLM(BABL_SWITCH_APP_NEXT, IMCTL(X_DOWN));  // Or Right?
-    BABLM(BABL_SWITCH_APP_NEXT, IMCTL(X_UP));    // or Left?
+    BABLM(BABL_APP_NEXT, IMCTL(X_DOWN));  // Or Right?
+    BABLM(BABL_APP_NEXT, IMCTL(X_UP));    // or Left?
     BABLM(BABL_CLOSE_APP, IMCTL(X_SCOLON) "q");
     BABLM(BABL_HELP, SS_LSFT(SS_TAP(X_SCOLON)) "h");  // start search in help
                                                       // BABLM( BABL_LOCK,		()	); Perhaps VI is not an OS?

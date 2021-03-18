@@ -51,8 +51,8 @@ bool babblePaste_mac(uint16_t keycode) {
     //BABLM(BABL_FIND_PREV, SS_LGUI("g"));
     BABLM(BABL_FIND_REPLACE, SS_LGUI("f"));
     BABLM(BABL_RUNAPP, SS_LGUI(" "));
-    BABLM(BABL_SWITCH_APP_NEXT, IMGUI(X_TAB));
-    BABLM(BABL_SWITCH_APP_LAST, OMSFT(IMGUI(X_TAB)));
+    BABLM(BABL_APP_NEXT, IMGUI(X_TAB));
+    BABLM(BABL_APP_LAST, OMSFT(IMGUI(X_TAB)));
     // Apps vary, but this is  usually tab movement, same as B_NXTB
     /*
     BABLM( BABL_WINDOW_NEXT, OMSFT(IMGUI(X_RBRACKET)) ); // GUI Grav isn't everywhere

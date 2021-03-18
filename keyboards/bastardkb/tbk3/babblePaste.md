@@ -132,8 +132,8 @@ See the full list in babblePaste.h, or the list below
   #define B_FINDP    BABL_FIND_PREV
   #define B_RPLACE    BABL_FIND_REPLACE
   #define B_RUNAPP    BABL_RUNAPP
-  #define B_NAPP  BABL_SWITCH_APP_NEXT
-  #define B_PAPP  BABL_SWITCH_APP_LAST // previous
+  #define B_NAPP  BABL_APP_NEXT
+  #define B_PAPP  BABL_APP_LAST // previous
   #define B_CAPP  BABL_CLOSE_APP
   #define B_HELP  BABL_HELP
 
