@@ -44,20 +44,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-        case GD_ALT_TAB:
-            // https://beta.docs.qmk.fm/using-qmk/advanced-keycodes/feature_macros#advanced-example
-            if (record->event.pressed) {
-                if (!is_alt_tab_active) {
-                    is_alt_tab_active = true;
-                    register_code(KC_LALT);
-                }
-                alt_tab_timer = timer_read();
-                register_code(KC_TAB);
-            } else {
-                unregister_code(KC_TAB);
-            }
-            break;
-
         case GD_ARROW:
             if (record->event.pressed) {
                 SEND_STRING(" -> ");
@@ -88,25 +74,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-        case GD_LOCK_SHIFT:
-            if (record->event.pressed) {
-                uint8_t mod = MOD_BIT(KC_LSHIFT);
-                clear_oneshot_mods();
-                if (get_oneshot_locked_mods() & mod) {
-                    clear_oneshot_locked_mods();
-                    unregister_mods(mod);
-                } else {
-                    set_oneshot_locked_mods(mod);
-                    register_mods(mod);
-                }
-            }
-            return false;
-
         case GD_RESET:
             if (record->event.pressed) {
-                clear_mods();
-                clear_oneshot_mods();
                 clear_oneshot_locked_mods();
+                clear_oneshot_mods();
+                clear_keyboard();
+                set_single_persistent_default_layer(_QWERTY);
             }
             return false;
 
@@ -116,6 +89,34 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 babblePaste(BABL_MODE);
             }
             return false;
+
+        case GD_ALT_TAB:
+            // https://beta.docs.qmk.fm/using-qmk/advanced-keycodes/feature_macros#advanced-example
+            if (record->event.pressed) {
+                if (!is_alt_tab_active) {
+                    is_alt_tab_active = true;
+                    register_code(babble_was_mac() ? KC_LGUI : KC_LALT);
+                }
+                alt_tab_timer = timer_read();
+                register_code(KC_TAB);
+            } else {
+                unregister_code(KC_TAB);
+            }
+            break;
+
+//        case GD_LOCK_SHIFT:
+//            if (record->event.pressed) {
+//                uint8_t mod = MOD_BIT(KC_LSHIFT);
+//                clear_oneshot_mods();
+//                if (get_oneshot_locked_mods() & mod) {
+//                    clear_oneshot_locked_mods();
+//                    unregister_mods(mod);
+//                } else {
+//                    set_oneshot_locked_mods(mod);
+//                    register_mods(mod);
+//                }
+//            }
+//            return false;
 
         // default:
         //     return true;
@@ -155,7 +156,7 @@ void matrix_scan_user(void) {
   // The very important timer.
   if (is_alt_tab_active) {
     if (timer_elapsed(alt_tab_timer) > 1500) {
-      unregister_code(KC_LALT);
+      unregister_code(babble_was_mac() ? KC_LGUI : KC_LALT);
       is_alt_tab_active = false;
     }
   }

@@ -14,37 +14,41 @@ and https://github.com/qmk/qmk_firmware/blob/master/keyboards/planck/keymaps/jee
 
 // GLOBAL variable to determine mode.  Sets startup default if no eeppom
 uint8_t babble_mode = 0;
+bool babble_was_mac_mode = false;
 
 // function to tell the user that the mode has changed
 __attribute__((weak)) void babble_led_user(void) {}
 
-void set_babble_mode(uint8_t id) { babble_mode = id; }
-
-// void babble_mode_increment() {
-//     babble_mode += 1;
-//     if (babble_mode >= BABL_MODEMAX) {
-//         babble_mode = 0;
-//     }
-// }
-
-// void babble_mode_decrement() {
-//     if (babble_mode >= 1) {
-//         babble_mode -= 1;
-//     } else {
-//         babble_mode = BABL_MODEMAX - 1;
-//     }
-// }
+void set_babble_mode(uint8_t id) {
+    babble_mode = id;
+    switch (babble_mode) {
+        case BABL_MAC_MODE:
+            babble_was_mac_mode = true;
+            break;
+#    ifdef BABL_WINDOWS
+        case BABL_WINDOWS_MODE:
+#    endif
+        case BABL_LINUX_MODE:
+            babble_was_mac_mode = false;
+            break;
+        // intentionally ignore other modes here
+    }
+}
 
 void babble_clear_mods(void) {
-    uint8_t mods = 0;
-    if ((mods = get_oneshot_mods()) && !has_oneshot_mods_timed_out()) {
+    uint8_t mods = get_mods();
+    if (get_oneshot_mods() && !has_oneshot_mods_timed_out()) {
         clear_oneshot_mods();
-        unregister_mods(mods);
     }
-    if ((mods = get_oneshot_locked_mods())) {
+    if (get_oneshot_locked_mods()) {
         clear_oneshot_locked_mods();
-        unregister_mods(mods);
     }
+    clear_mods();
+    unregister_mods(mods);
+}
+
+bool babble_was_mac(void) {
+    return babble_was_mac_mode;
 }
 
 /* this function runs the appropriate babblepaste macro, given

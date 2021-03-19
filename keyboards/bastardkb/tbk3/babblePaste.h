@@ -12,10 +12,9 @@ and jeebak & algernon's keymap
 #include "quantum.h"
 
 void set_babble_mode(uint8_t id);
-// void babble_mode_increment(void);
-// void babble_mode_decrement(void);
 void babble_led_user(void);
 void babble_clear_mods(void);
+bool babble_was_mac(void);
 
 // manually re-order these if you want to set the order or default.
 enum babble_modes {
