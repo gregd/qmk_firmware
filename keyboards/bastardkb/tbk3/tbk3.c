@@ -3,6 +3,7 @@
 // bool move_is_on = false;  // track if we are in _MOV layer
 // bool sym_is_on  = false;  // track if we are in _SYM layer
 
+user_config_t user_config;
 bool is_alt_tab_active = false;
 uint16_t alt_tab_timer = 0;
 uint16_t prev_keycode = 0;
@@ -144,12 +145,6 @@ void print_default_layer(void) {
     }
 }
 
-void keyboard_post_init_user(void) {
-  //debug_enable=true;
-  //debug_keyboard=true;
-  //debug_mouse=true;
-}
-
 LEADER_EXTERNS();
 
 void matrix_scan_user(void) {
@@ -173,6 +168,7 @@ void matrix_scan_user(void) {
     }
     SEQ_TWO_KEYS(KC_K, KC_P) {
         set_single_persistent_default_layer(_POLISH);
+        SEND_STRING("~P");
     }
     SEQ_TWO_KEYS(KC_K, KC_N) {
         set_single_persistent_default_layer(_NAV);
@@ -182,15 +178,36 @@ void matrix_scan_user(void) {
     }
     SEQ_TWO_KEYS(KC_K, KC_M) {
         babblePaste(BABL_DO_MAC);
+        SEND_STRING("~M");
     }
     SEQ_TWO_KEYS(KC_K, KC_L) {
         babblePaste(BABL_DO_LINUX);
+        SEND_STRING("~L");
     }
     SEQ_TWO_KEYS(KC_K, KC_V) {
         babblePaste(BABL_DO_VI);
+        SEND_STRING("~V");
     }
     SEQ_TWO_KEYS(KC_K, KC_T) {
         babblePaste(BABL_DO_READMUX);
+        SEND_STRING("~T");
     }
   }
+}
+
+void eeconfig_init_user(void) {
+    user_config.raw = 0;
+    eeconfig_update_user(user_config.raw);
+}
+
+void keyboard_post_init_user(void) {
+    //debug_enable=true;
+    //debug_keyboard=true;
+    //debug_mouse=true;
+
+    user_config.raw = eeconfig_read_user();
+    // By default Linux mode is set so set the new mode only in case of Mac mode
+    if (user_config.mac_mode) {
+        set_babble_mode(BABL_MAC_MODE, false);
+    }
 }

@@ -11,7 +11,7 @@ and jeebak & algernon's keymap
 #pragma once
 #include "quantum.h"
 
-void set_babble_mode(uint8_t id);
+void set_babble_mode(uint8_t id, bool update_eeprom);
 void babble_led_user(void);
 void babble_clear_mods(void);
 bool babble_was_mac(void);

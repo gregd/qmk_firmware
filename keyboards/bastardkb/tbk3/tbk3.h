@@ -56,3 +56,11 @@ enum userspace_custom_keycodes {
     GD_RESET,
     GD_INFO
 };
+
+typedef union {
+    uint32_t raw;
+    struct {
+        bool mac_mode:1;
+    };
+} user_config_t;
+extern user_config_t user_config;
