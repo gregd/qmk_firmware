@@ -13,69 +13,69 @@ https://www.ast.cam.ac.uk/~vasily/idl/emacs_commands_list.html
 #ifdef USE_BABBLEPASTE
 #    include "babblePaste.h"
 
-#    ifdef BABL_EMACS
+#    ifdef GD_EMACS
 
 // probably should allow meta to not be ALT
 #        define DMETA IMALT
 
 bool babblePaste_emacs(uint16_t keycode) {
-#        ifdef BABL_MOVE
-    BABLM(BABL_GO_LEFT_1C, SS_TAP(X_LEFT));
-    BABLM(BABL_GO_RIGHT_1C, SS_TAP(X_RIGHT));
-    BABLM(BABL_GO_LWORD, IMALT(X_B));
-    BABLM(BABL_GO_RWORD, IMALT(X_F));
-    BABLM(BABL_GO_SLINE, SS_LCTRL("a"));
-    BABLM(BABL_GO_ELINE, SS_LCTRL("e"));
-    BABLM(BABL_GO_SDOC, OMALT(IMSFT(X_COMMA)));
-    BABLM(BABL_GO_EDOC, OMALT(IMSFT(X_DOT)));
-    BABLM(BABL_GO_NLINE, SS_LCTRL("n"));
-    BABLM(BABL_GO_PLINE, SS_LCTRL("p"));
-    BABLM(BABL_GO_PARA_START, OMALT(IMSFT(X_LBRACKET)));
-    BABLM(BABL_GO_PARA_END, OMALT(IMSFT(X_RBRACKET)));
-    BABLM(BABL_PGDN, SS_LCTRL("v"));
-    BABLM(BABL_PGUP, IMALT(X_V));
-    BABLM(BABL_DEL_RIGHT_1C, SS_LCTRL("d"));
-    BABLM(BABL_DEL_LWORD, IMCTL(X_BSPACE));
-    BABLM(BABL_DEL_RWORD, IMALT(X_D));
-    BABLM(BABL_DEL_2LNE, SS_LCTRL("k"));
-    BABLM(BABL_DEL_2LNS, SS_TAP(X_ESCAPE) "0" SS_LCTRL("k"));
-    BABLM(BABL_MODE, "Emacs ");
+#        ifdef GD_MOVE
+    GDM(GD_GO_LEFT_1C, SS_TAP(X_LEFT));
+    GDM(GD_GO_RIGHT_1C, SS_TAP(X_RIGHT));
+    GDM(GD_GO_LWORD, IMALT(X_B));
+    GDM(GD_GO_RWORD, IMALT(X_F));
+    GDM(GD_GO_SLINE, SS_LCTRL("a"));
+    GDM(GD_GO_ELINE, SS_LCTRL("e"));
+    GDM(GD_GO_SDOC, OMALT(IMSFT(X_COMMA)));
+    GDM(GD_GO_EDOC, OMALT(IMSFT(X_DOT)));
+    GDM(GD_GO_NLINE, SS_LCTRL("n"));
+    GDM(GD_GO_PLINE, SS_LCTRL("p"));
+    GDM(GD_GO_PARA_START, OMALT(IMSFT(X_LBRACKET)));
+    GDM(GD_GO_PARA_END, OMALT(IMSFT(X_RBRACKET)));
+    GDM(GD_PGDN, SS_LCTRL("v"));
+    GDM(GD_PGUP, IMALT(X_V));
+    GDM(GD_DEL_RIGHT_1C, SS_LCTRL("d"));
+    GDM(GD_DEL_LWORD, IMCTL(X_BSPACE));
+    GDM(GD_DEL_RWORD, IMALT(X_D));
+    GDM(GD_DEL_2LNE, SS_LCTRL("k"));
+    GDM(GD_DEL_2LNS, SS_TAP(X_ESCAPE) "0" SS_LCTRL("k"));
+    GDM(GD_MODE, "Emacs ");
 #        endif
-#        ifdef BABL_OSKEYS
-    BABLM(BABL_UNDO, SS_LCTRL("x") "c");
-    BABLM(BABL_REDO, SS_LCTRL("x") "c");  // arguably
-    BABLM(BABL_CUT, SS_LCTRL("w"));
-    BABLM(BABL_COPY, SS_LALT("w"));  // really?
-    BABLM(BABL_PASTE, SS_LCTRL("y"));
-    BABLM(BABL_SELECT_ALL, SS_LCTRL("x") "h");
-    BABLM(BABL_FIND, SS_LCTRL("s"));
-    BABLM(BABL_FIND_NEXT, SS_LCTRL("s"));
-    BABLM(BABL_FIND_PREV, SS_LCTRL("r"));
-    BABLM(BABL_REPLACE, OMALT(IMSFT(X_5)));
-    // BABLM( BABL_RUNAPP , 			//(SS_LALT("x") "shell")	 );// arguably
-    BABLM(BABL_RUNAPP, IMALT(X_X) "split-window" SS_TAP(X_ENTER));  // arguably
-    BABLM(BABL_WIN_NEXT, SS_LCTRL("x") "o");
-    BABLM(BABL_WIN_PREV, SS_LCTRL("x") "o");  // arguably
-    //	BABLM( BABL_WIN_NEW,		IMCTL(X_X)"n" ); //
-    BABLM(BABL_CLOSE_APP, SS_LCTRL("x") "c");
-    BABLM(BABL_HELP, SS_LCTRL("h") "a");  // start search in help
-                                          // BABLM( BABL_LOCK,		()	); // lock buffer? Too many options.
-    // BABLM( BABL_SCR_CAP_FULL,		()	); // requires plugin?
+#        ifdef GD_OSKEYS
+    GDM(GD_UNDO, SS_LCTRL("x") "c");
+    GDM(GD_REDO, SS_LCTRL("x") "c");  // arguably
+    GDM(GD_CUT, SS_LCTRL("w"));
+    GDM(GD_COPY, SS_LALT("w"));  // really?
+    GDM(GD_PASTE, SS_LCTRL("y"));
+    GDM(GD_SELECT_ALL, SS_LCTRL("x") "h");
+    GDM(GD_FIND, SS_LCTRL("s"));
+    GDM(GD_FIND_NEXT, SS_LCTRL("s"));
+    GDM(GD_FIND_PREV, SS_LCTRL("r"));
+    GDM(GD_REPLACE, OMALT(IMSFT(X_5)));
+    // GDM( GD_RUNAPP , 			//(SS_LALT("x") "shell")	 );// arguably
+    GDM(GD_RUNAPP, IMALT(X_X) "split-window" SS_TAP(X_ENTER));  // arguably
+    GDM(GD_WIN_NEXT, SS_LCTRL("x") "o");
+    GDM(GD_WIN_PREV, SS_LCTRL("x") "o");  // arguably
+    //	GDM( GD_WIN_NEW,		IMCTL(X_X)"n" ); //
+    GDM(GD_CLOSE_APP, SS_LCTRL("x") "c");
+    GDM(GD_HELP, SS_LCTRL("h") "a");  // start search in help
+                                          // GDM( GD_LOCK,		()	); // lock buffer? Too many options.
+    // GDM( GD_SCR_CAP_FULL,		()	); // requires plugin?
 
 #        endif
-#        ifdef BABL_BROWSER
+#        ifdef GD_BROWSER
 /* you get to figure w3 out */
 #        endif
 
-#        ifdef BABL_APP
-    BABLM(BABL_APP_SAVE, SS_LCTL("x") SS_LCTL("s"));
-    /// BABLM( BABL_APP_MULTI_SELECT, 	SS_LCTRL("x") "rt" ); // arguably
-    BABLM(BABL_SPLIT_FRAME_VERT, SS_LCTRL("x") "3");
-    BABLM(BABL_UNSPLIT_FRAME_VERT, SS_LCTRL("u") SS_LCTRL("x") "0");
-    BABLM(BABL_SPLIT_FRAME_HORIZONTAL, SS_LCTRL("x") "2");
-    BABLM(BABL_UNSPLIT_FRAME_HORIZONTAL, SS_LCTRL("u") SS_LCTRL("x") "0");
-    BABLM(BABL_NEXT_FRAME, SS_LCTRL("x") "o");
-    BABLM(BABL_PREV_FRAME, SS_LCTRL("u") "-1" SS_LCTRL("x") "o");
+#        ifdef GD_APP
+    GDM(GD_APP_SAVE, SS_LCTL("x") SS_LCTL("s"));
+    /// GDM( GD_APP_MULTI_SELECT, 	SS_LCTRL("x") "rt" ); // arguably
+    GDM(GD_SPLIT_FRAME_VERT, SS_LCTRL("x") "3");
+    GDM(GD_UNSPLIT_FRAME_VERT, SS_LCTRL("u") SS_LCTRL("x") "0");
+    GDM(GD_SPLIT_FRAME_HORIZONTAL, SS_LCTRL("x") "2");
+    GDM(GD_UNSPLIT_FRAME_HORIZONTAL, SS_LCTRL("u") SS_LCTRL("x") "0");
+    GDM(GD_NEXT_FRAME, SS_LCTRL("x") "o");
+    GDM(GD_PREV_FRAME, SS_LCTRL("u") "-1" SS_LCTRL("x") "o");
 #        endif
 
     // Todo, ring bell, flash light, show user this isn't supported

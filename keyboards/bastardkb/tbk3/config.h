@@ -47,25 +47,25 @@
 #define NO_AUTO_SHIFT_NUMERIC
 
 #define USE_BABBLEPASTE
-//#define BABL_WINDOWS
-#define BABL_MAC
-#define BABL_LINUX
-#define BABL_READMUX
-#define BABL_VI
-//#define BABL_EMACS
+//#define GD_WINDOWS
+#define GD_MAC
+#define GD_LINUX
+#define GD_READMUX
+#define GD_VI
+//#define GD_EMACS
 
 //// These enable subsets of babble macros. Disable options to save space
-#define BABL_MOVE // Uncomment to add basic cursor movement
-#define BABL_OSKEYS // This adds Cut, paste, window movement and common OS shortcuts
-#define BABL_BROWSER // Browser shortcuts
-#define BABL_IDE // IDE shortcuts
+#define GD_MOVE // Uncomment to add basic cursor movement
+#define GD_OSKEYS // This adds Cut, paste, window movement and common OS shortcuts
+#define GD_BROWSER // Browser shortcuts
+#define GD_IDE // IDE shortcuts
 
 //// What Browser shortcuts?
-#define BABL_BR_CHROME // Chrome browser, Google apps
-//#define BABL_BR_MS
-//#define BABL_BR_SAFARI // Safari, Apple defaults.
+#define GD_BR_CHROME // Chrome browser, Google apps
+//#define GD_BR_MS
+//#define GD_BR_SAFARI // Safari, Apple defaults.
 
 //// applications vary even more between OSes. We'll do our best.
-#define BABL_APP
+#define GD_APP
 // To enable specific App options.
-#define BABL_APP_WINDOWSPLITTING // splitting frames & windows
+#define GD_APP_WINDOWSPLITTING // splitting frames & windows

@@ -87,7 +87,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case GD_INFO:
             if (record->event.pressed) {
                 print_default_layer();
-                babblePaste(BABL_MODE);
+                babblePaste(GD_MODE);
             }
             return false;
 
@@ -177,19 +177,19 @@ void matrix_scan_user(void) {
         set_single_persistent_default_layer(_SYMBOLS);
     }
     SEQ_TWO_KEYS(KC_K, KC_M) {
-        babblePaste(BABL_DO_MAC);
+        babblePaste(GD_DO_MAC);
         SEND_STRING("~M");
     }
     SEQ_TWO_KEYS(KC_K, KC_L) {
-        babblePaste(BABL_DO_LINUX);
+        babblePaste(GD_DO_LINUX);
         SEND_STRING("~L");
     }
     SEQ_TWO_KEYS(KC_K, KC_V) {
-        babblePaste(BABL_DO_VI);
+        babblePaste(GD_DO_VI);
         SEND_STRING("~V");
     }
     SEQ_TWO_KEYS(KC_K, KC_T) {
-        babblePaste(BABL_DO_READMUX);
+        babblePaste(GD_DO_READMUX);
         SEND_STRING("~T");
     }
   }
@@ -208,6 +208,6 @@ void keyboard_post_init_user(void) {
     user_config.raw = eeconfig_read_user();
     // By default Linux mode is set so set the new mode only in case of Mac mode
     if (user_config.mac_mode) {
-        set_babble_mode(BABL_MAC_MODE, false);
+        set_babble_mode(GD_MAC_MODE, false);
     }
 }

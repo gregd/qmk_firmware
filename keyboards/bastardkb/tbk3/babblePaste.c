@@ -24,17 +24,17 @@ void set_babble_mode(uint8_t id, bool update_eeprom) {
     babble_mode = id;
 
     switch (babble_mode) {
-        case BABL_MAC_MODE:
+        case GD_MAC_MODE:
             babble_was_mac_mode = true;
             if (update_eeprom) {
                 user_config.mac_mode = true;
                 eeconfig_update_user(user_config.raw);
             }
             break;
-#    ifdef BABL_WINDOWS
-        case BABL_WINDOWS_MODE:
+#    ifdef GD_WINDOWS
+        case GD_WINDOWS_MODE:
 #    endif
-        case BABL_LINUX_MODE:
+        case GD_LINUX_MODE:
             babble_was_mac_mode = false;
             if (update_eeprom) {
                 user_config.mac_mode = false;
@@ -70,65 +70,65 @@ But that makes for a *lot* of ifdefs.
 bool babblePaste(uint16_t keycode) {
     // handle the OS/mode  switching first
 
-#    ifdef BABL_MAC
-    if (keycode == BABL_DO_MAC) {
-        set_babble_mode(BABL_MAC_MODE, true);
+#    ifdef GD_MAC
+    if (keycode == GD_DO_MAC) {
+        set_babble_mode(GD_MAC_MODE, true);
         babble_led_user();
         return true;
     }
 
-    if (babble_mode == BABL_MAC_MODE) {
+    if (babble_mode == GD_MAC_MODE) {
         babblePaste_mac(keycode);
     }
 #    endif
 
-#    ifdef BABL_VI
-    if (keycode == BABL_DO_VI) {
-        set_babble_mode(BABL_VI_MODE, true);
+#    ifdef GD_VI
+    if (keycode == GD_DO_VI) {
+        set_babble_mode(GD_VI_MODE, true);
         babble_led_user();
         return true;
     }
-    if (babble_mode == BABL_VI_MODE) {
+    if (babble_mode == GD_VI_MODE) {
         babblePaste_vi(keycode);
     }
 #    endif
-#    ifdef BABL_WINDOWS
-    if (keycode == BABL_DO_WINDOWS) {
-        set_babble_mode(BABL_WINDOWS_MODE, true);
+#    ifdef GD_WINDOWS
+    if (keycode == GD_DO_WINDOWS) {
+        set_babble_mode(GD_WINDOWS_MODE, true);
         babble_led_user();
         return true;
     }
-    if (babble_mode == BABL_WINDOWS_MODE) {
+    if (babble_mode == GD_WINDOWS_MODE) {
         babblePaste_win(keycode);
     }
 #    endif
-#    ifdef BABL_LINUX
-    if (keycode == BABL_DO_LINUX) {
-        set_babble_mode(BABL_LINUX_MODE, true);
+#    ifdef GD_LINUX
+    if (keycode == GD_DO_LINUX) {
+        set_babble_mode(GD_LINUX_MODE, true);
         babble_led_user();
         return true;
     }
-    if (babble_mode == BABL_LINUX_MODE) {
+    if (babble_mode == GD_LINUX_MODE) {
         babblePaste_linux(keycode);
     }
 #    endif
-#    ifdef BABL_EMACS
-    if (keycode == BABL_DO_EMACS) {
-        set_babble_mode(BABL_EMACS_MODE, true);
+#    ifdef GD_EMACS
+    if (keycode == GD_DO_EMACS) {
+        set_babble_mode(GD_EMACS_MODE, true);
         babble_led_user();
         return true;
     }
-    if (babble_mode == BABL_EMACS_MODE) {
+    if (babble_mode == GD_EMACS_MODE) {
         babblePaste_emacs(keycode);
     }
 #    endif
-#    ifdef BABL_READMUX
-    if (keycode == BABL_DO_READMUX) {
-        set_babble_mode(BABL_READMUX_MODE, true);
+#    ifdef GD_READMUX
+    if (keycode == GD_DO_READMUX) {
+        set_babble_mode(GD_READMUX_MODE, true);
         babble_led_user();
         return true;
     }
-    if (babble_mode == BABL_READMUX_MODE) {
+    if (babble_mode == GD_READMUX_MODE) {
         babblePaste_readmux(keycode);
     }
 #    endif

@@ -8,75 +8,75 @@
 #ifdef USE_BABBLEPASTE
 #    include "babblePaste.h"
 
-#    ifdef BABL_READMUX
+#    ifdef GD_READMUX
 
 // Redefine if you use something other than CTRL-B to activate tmux.
 #        define TMUX SS_LCTL("b")
 
 bool babblePaste_readmux(uint16_t keycode) {
-#        ifdef BABL_MOVE
-    BABLM(BABL_GO_LEFT_1C, SS_TAP(X_LEFT));
-    BABLM(BABL_GO_RIGHT_1C, SS_TAP(X_RIGHT));
-    BABLM(BABL_GO_LWORD, SS_LALT("b"));
-    BABLM(BABL_GO_RWORD, SS_LALT("f"));
-    BABLM(BABL_GO_SLINE, SS_LCTL("a"));
-    BABLM(BABL_GO_ELINE, SS_LCTL("e"));
-    // BABLM( BABL_GO_SDOC		,END );// tmux?
-    // BABLM( BABL_GO_EDOC		,END );  // tmux?
-    BABLM(BABL_GO_NLINE, SS_LCTL("n"));
-    BABLM(BABL_GO_PLINE, SS_LCTL("p"));
-    // BABLM( BABL_GO_PARA_START,	// undefined
-    // BABLM( BABL_GO_PARA_END,	 	// undefinedBABLM( BABL_PGDN ,
+#        ifdef GD_MOVE
+    GDM(GD_GO_LEFT_1C, SS_TAP(X_LEFT));
+    GDM(GD_GO_RIGHT_1C, SS_TAP(X_RIGHT));
+    GDM(GD_GO_LWORD, SS_LALT("b"));
+    GDM(GD_GO_RWORD, SS_LALT("f"));
+    GDM(GD_GO_SLINE, SS_LCTL("a"));
+    GDM(GD_GO_ELINE, SS_LCTL("e"));
+    // GDM( GD_GO_SDOC		,END );// tmux?
+    // GDM( GD_GO_EDOC		,END );  // tmux?
+    GDM(GD_GO_NLINE, SS_LCTL("n"));
+    GDM(GD_GO_PLINE, SS_LCTL("p"));
+    // GDM( GD_GO_PARA_START,	// undefined
+    // GDM( GD_GO_PARA_END,	 	// undefinedGDM( GD_PGDN ,
 
-    BABLM(BABL_PGUP, SS_TAP(X_PGUP));
-    BABLM(BABL_PGDN, SS_TAP(X_PGDOWN));
-    BABLM(BABL_DEL_RIGHT_1C, SS_LCTL("d"));
-    BABLM(BABL_DEL_LWORD, SS_LCTL("w"));  // meta-DEL instead?
-    BABLM(BABL_DEL_RWORD, SS_LALT("d"));
-    BABLM(BABL_DEL_2LNE, SS_LCTL("k"));
-    BABLM(BABL_DEL_2LNS, SS_LCTL("u"));
-    BABLM(BABL_MODE, "Readline ");
+    GDM(GD_PGUP, SS_TAP(X_PGUP));
+    GDM(GD_PGDN, SS_TAP(X_PGDOWN));
+    GDM(GD_DEL_RIGHT_1C, SS_LCTL("d"));
+    GDM(GD_DEL_LWORD, SS_LCTL("w"));  // meta-DEL instead?
+    GDM(GD_DEL_RWORD, SS_LALT("d"));
+    GDM(GD_DEL_2LNE, SS_LCTL("k"));
+    GDM(GD_DEL_2LNS, SS_LCTL("u"));
+    GDM(GD_MODE, "Readline ");
 #        endif
-#        ifdef BABL_OSKEYS
-    BABLM(BABL_UNDO, SS_LALT("r"));
-    BABLM(BABL_REDO, SS_LCTL("x") "c");  // arguably
-    BABLM(BABL_CUT, SS_LCTL("k"));       // wrong half the time
-    // BABLM( BABL_COPY		,END );
-    BABLM(BABL_PASTE, SS_LCTL("y"));
-    BABLM(BABL_SELECT_ALL, SS_LCTL("aky"));
-    BABLM(BABL_FIND, SS_LCTL("r"));  // search history
-    BABLM(BABL_FIND_NEXT, SS_LCTL("r"));
-    BABLM(BABL_FIND_PREV, SS_LCTL("s"));
-    // BABLM( BABL_REPLACE		,END ); // not offered in readline
-    BABLM(BABL_RUNAPP, TMUX "c");           // tmux
-    BABLM(BABL_APP_NEXT, TMUX "n");  // tmux
-    BABLM(BABL_APP_LAST, TMUX "p");  // tmux
-    BABLM(BABL_CLOSE_APP, TMUX "d");        // usually what I want
-    BABLM(BABL_HELP, TMUX IMSFT(X_SLASH));
-    BABLM(BABL_LOCK, TMUX "L");  // assuming you set up VLOCK yourself
-    BABLM(BABL_SCR_CAP_FULL, TMUX ":capture-pane");
+#        ifdef GD_OSKEYS
+    GDM(GD_UNDO, SS_LALT("r"));
+    GDM(GD_REDO, SS_LCTL("x") "c");  // arguably
+    GDM(GD_CUT, SS_LCTL("k"));       // wrong half the time
+    // GDM( GD_COPY		,END );
+    GDM(GD_PASTE, SS_LCTL("y"));
+    GDM(GD_SELECT_ALL, SS_LCTL("aky"));
+    GDM(GD_FIND, SS_LCTL("r"));  // search history
+    GDM(GD_FIND_NEXT, SS_LCTL("r"));
+    GDM(GD_FIND_PREV, SS_LCTL("s"));
+    // GDM( GD_REPLACE		,END ); // not offered in readline
+    GDM(GD_RUNAPP, TMUX "c");           // tmux
+    GDM(GD_APP_NEXT, TMUX "n");  // tmux
+    GDM(GD_APP_LAST, TMUX "p");  // tmux
+    GDM(GD_CLOSE_APP, TMUX "d");        // usually what I want
+    GDM(GD_HELP, TMUX IMSFT(X_SLASH));
+    GDM(GD_LOCK, TMUX "L");  // assuming you set up VLOCK yourself
+    GDM(GD_SCR_CAP_FULL, TMUX ":capture-pane");
 #        endif
-#        ifdef BABL_BROWSER
+#        ifdef GD_BROWSER
 /* Add lynx shortcuts, brow.sh?
  */
-#            ifdef BABL_MAC
+#            ifdef GD_MAC
     // this is stock OS X Terminal, alter for windows &etc.
-    BABLM(BABL_BR_NEW_TAB, IMGUI(X_T));
-    BABLM(BABL_BR_CL_TAB, SS_LGUI("w"));
-    BABLM(BABL_BR_NEXT_TAB, IMCTL(X_TAB));
-    BABLM(BABL_BR_PREV_TAB, OMSFT(IMCTL(X_TAB)));
+    GDM(GD_BR_NEW_TAB, IMGUI(X_T));
+    GDM(GD_BR_CL_TAB, SS_LGUI("w"));
+    GDM(GD_BR_NEXT_TAB, IMCTL(X_TAB));
+    GDM(GD_BR_PREV_TAB, OMSFT(IMCTL(X_TAB)));
 #            endif
 #        endif
-#        ifdef BABL_APP
+#        ifdef GD_APP
     // Save makes no sense here
-    BABLM(BABL_SPLIT_FRAME_VERT, TMUX IMSFT(X_5));
+    GDM(GD_SPLIT_FRAME_VERT, TMUX IMSFT(X_5));
     // BUG - misleading. This is currently set to convert frame to a window.
-    BABLM(BABL_UNSPLIT_FRAME_VERT, TMUX IMSFT(X_1));
-    BABLM(BABL_SPLIT_FRAME_HORIZONTAL, TMUX IMSFT(X_QUOTE));
+    GDM(GD_UNSPLIT_FRAME_VERT, TMUX IMSFT(X_1));
+    GDM(GD_SPLIT_FRAME_HORIZONTAL, TMUX IMSFT(X_QUOTE));
     // This one closes the current pane.
-    BABLM(BABL_UNSPLIT_FRAME_HORIZONTAL, SS_LCTL("b") "x");
-    BABLM(BABL_NEXT_FRAME, SS_LCTL("b") "o");
-    BABLM(BABL_PREV_FRAME, SS_LCTL("w") SS_TAP(X_SCOLON));
+    GDM(GD_UNSPLIT_FRAME_HORIZONTAL, SS_LCTL("b") "x");
+    GDM(GD_NEXT_FRAME, SS_LCTL("b") "o");
+    GDM(GD_PREV_FRAME, SS_LCTL("w") SS_TAP(X_SCOLON));
 #        endif
 
     // Todo, ring bell, flash light, show user this isn't supported

@@ -15,97 +15,97 @@ Remember to check  https://github.com/qmk/qmk_firmware/blob/master/quantum/send_
 #ifdef USE_BABBLEPASTE
 #    include "babblePaste.h"
 
-#    ifdef BABL_WINDOWS
+#    ifdef GD_WINDOWS
 
 bool babblePaste_win(uint16_t keycode) {
-#        ifdef BABL_MOVE
-    BABLM(BABL_GO_LEFT_1C, SS_TAP(X_LEFT));
-    BABLM(BABL_GO_RIGHT_1C, SS_TAP(X_RIGHT));
-    BABLM(BABL_GO_LWORD, IMCTL(X_LEFT));
-    BABLM(BABL_GO_RWORD, IMCTL(X_RIGHT));
-    BABLM(BABL_GO_SLINE, IMGUI(X_LEFT));
-    BABLM(BABL_GO_ELINE, IMGUI(X_RIGHT));
-    BABLM(BABL_GO_SDOC, OMGUI(IMCTL(X_LEFT)));
-    BABLM(BABL_GO_EDOC, OMGUI(IMCTL(X_RIGHT)));
-    BABLM(BABL_GO_NLINE, SS_TAP(X_DOWN));
-    BABLM(BABL_GO_PLINE, SS_TAP(X_UP));
-    BABLM(BABL_GO_PARA_START, IMCTL(X_UP));
-    BABLM(BABL_GO_PARA_END, IMCTL(X_DOWN));
-    BABLM(BABL_PGDN, SS_TAP(X_PGDOWN));
-    BABLM(BABL_PGUP, SS_TAP(X_PGUP));
-    BABLM(BABL_DEL_RIGHT_1C, SS_TAP(X_DELETE));
-    BABLM(BABL_DEL_LWORD, IMCTL(X_BSPACE));
-    BABLM(BABL_DEL_RWORD, IMCTL(X_DELETE));
-    BABLM(BABL_DEL_2LNE, IMSFT(X_END) SS_TAP(X_DELETE));
-    BABLM(BABL_DEL_2LNS, IMSFT(X_HOME) SS_TAP(X_DELETE));
-    BABLM(BABL_MODE, "Windows ");
+#        ifdef GD_MOVE
+    GDM(GD_GO_LEFT_1C, SS_TAP(X_LEFT));
+    GDM(GD_GO_RIGHT_1C, SS_TAP(X_RIGHT));
+    GDM(GD_GO_LWORD, IMCTL(X_LEFT));
+    GDM(GD_GO_RWORD, IMCTL(X_RIGHT));
+    GDM(GD_GO_SLINE, IMGUI(X_LEFT));
+    GDM(GD_GO_ELINE, IMGUI(X_RIGHT));
+    GDM(GD_GO_SDOC, OMGUI(IMCTL(X_LEFT)));
+    GDM(GD_GO_EDOC, OMGUI(IMCTL(X_RIGHT)));
+    GDM(GD_GO_NLINE, SS_TAP(X_DOWN));
+    GDM(GD_GO_PLINE, SS_TAP(X_UP));
+    GDM(GD_GO_PARA_START, IMCTL(X_UP));
+    GDM(GD_GO_PARA_END, IMCTL(X_DOWN));
+    GDM(GD_PGDN, SS_TAP(X_PGDOWN));
+    GDM(GD_PGUP, SS_TAP(X_PGUP));
+    GDM(GD_DEL_RIGHT_1C, SS_TAP(X_DELETE));
+    GDM(GD_DEL_LWORD, IMCTL(X_BSPACE));
+    GDM(GD_DEL_RWORD, IMCTL(X_DELETE));
+    GDM(GD_DEL_2LNE, IMSFT(X_END) SS_TAP(X_DELETE));
+    GDM(GD_DEL_2LNS, IMSFT(X_HOME) SS_TAP(X_DELETE));
+    GDM(GD_MODE, "Windows ");
 #        endif
 
-#        ifdef BABL_OSKEYS
-    BABLM(BABL_UNDO, SS_LCTRL("z"));
-    BABLM(BABL_REDO, SS_LCTRL("y"));
-    BABLM_CLR_OSM(BABL_CUT, SS_LCTRL("x"));
-    BABLM_CLR_OSM(BABL_COPY, SS_LCTRL("c"));
-    BABLM(BABL_PASTE, SS_LCTRL("v"));
-    BABLM(BABL_SELECT_ALL, SS_LCTRL("a"));
-    BABLM(BABL_FIND, SS_LCTRL("f"));
-    BABLM(BABL_FIND_NEXT, SS_TAP(X_F3));
-    // BABLM( BABL_FIND_PREV, 	SS_TAP(X_F3) ); // doesn't have a standard one?
-    BABLM(BABL_REPLACE, SS_LCTRL("h"));
-    BABLM(BABL_RUNAPP, SS_LGUI("r"));
-    BABLM(BABL_APP_NEXT, IMALT(X_TAB));
-    BABLM(BABL_APP_LAST, OMSFT(IMALT(X_TAB)));
-    BABLM(BABL_WIN_NEXT, IMCTL(X_TAB));
-    BABLM(BABL_WIN_PREV, OMSFT(IMCTL(X_TAB)));
-    BABLM(BABL_WIN_NEW, IMCTL(X_N));
-    BABLM(BABL_CLOSE_APP, IMALT(X_F4));
-    BABLM(BABL_HELP, SS_TAP(X_F1));
-    BABLM(BABL_LOCK, SS_LGUI("l"));
-    BABLM(BABL_SCR_CAP_FULL, OMSFT(SS_LGUI("s")));
-    BABLM(BABL_SWITCH_KEYBOARD_LAYOUT, IMGUI(X_SPACE));
+#        ifdef GD_OSKEYS
+    GDM(GD_UNDO, SS_LCTRL("z"));
+    GDM(GD_REDO, SS_LCTRL("y"));
+    GDM_CLR_OSM(GD_CUT, SS_LCTRL("x"));
+    GDM_CLR_OSM(GD_COPY, SS_LCTRL("c"));
+    GDM(GD_PASTE, SS_LCTRL("v"));
+    GDM(GD_SELECT_ALL, SS_LCTRL("a"));
+    GDM(GD_FIND, SS_LCTRL("f"));
+    GDM(GD_FIND_NEXT, SS_TAP(X_F3));
+    // GDM( GD_FIND_PREV, 	SS_TAP(X_F3) ); // doesn't have a standard one?
+    GDM(GD_REPLACE, SS_LCTRL("h"));
+    GDM(GD_RUNAPP, SS_LGUI("r"));
+    GDM(GD_APP_NEXT, IMALT(X_TAB));
+    GDM(GD_APP_LAST, OMSFT(IMALT(X_TAB)));
+    GDM(GD_WIN_NEXT, IMCTL(X_TAB));
+    GDM(GD_WIN_PREV, OMSFT(IMCTL(X_TAB)));
+    GDM(GD_WIN_NEW, IMCTL(X_N));
+    GDM(GD_CLOSE_APP, IMALT(X_F4));
+    GDM(GD_HELP, SS_TAP(X_F1));
+    GDM(GD_LOCK, SS_LGUI("l"));
+    GDM(GD_SCR_CAP_FULL, OMSFT(SS_LGUI("s")));
+    GDM(GD_SWITCH_KEYBOARD_LAYOUT, IMGUI(X_SPACE));
 
 #        endif
 
-#        ifdef BABL_BROWSER
-    BABLM(BABL_BR_NEW_TAB, SS_LCTRL("t"));
-    BABLM(BABL_BR_CL_TAB, SS_LCTRL("w"));
-    BABLM(BABL_BR_REOPEN_LAST_TAB, OMSFT(IMCTL(X_T)));
-    BABLM(BABL_BR_NEXT_TAB, IMCTL(X_TAB));
-    BABLM(BABL_BR_PREV_TAB, OMSFT(IMCTL(X_TAB)));
-    BABLM(BABL_BR_URL_BAR, SS_LCTRL("l"));
-    BABLM(BABL_BR_FORWARD, IMALT(X_RIGHT));
-    BABLM(BABL_BR_BACK, OMSFT(IMALT(X_LEFT)));
+#        ifdef GD_BROWSER
+    GDM(GD_BR_NEW_TAB, SS_LCTRL("t"));
+    GDM(GD_BR_CL_TAB, SS_LCTRL("w"));
+    GDM(GD_BR_REOPEN_LAST_TAB, OMSFT(IMCTL(X_T)));
+    GDM(GD_BR_NEXT_TAB, IMCTL(X_TAB));
+    GDM(GD_BR_PREV_TAB, OMSFT(IMCTL(X_TAB)));
+    GDM(GD_BR_URL_BAR, SS_LCTRL("l"));
+    GDM(GD_BR_FORWARD, IMALT(X_RIGHT));
+    GDM(GD_BR_BACK, OMSFT(IMALT(X_LEFT)));
     ;
-    BABLM(BABL_BR_FIND, SS_LCTRL("f"));
-    BABLM(BABL_BR_BOOKMARK, SS_LCTRL("d"));
-#            ifdef BABL_BR_MS
-    BABLM(BABL_BR_DEV_TOOLS, IMCTL(X_F12));  // EDGE
+    GDM(GD_BR_FIND, SS_LCTRL("f"));
+    GDM(GD_BR_BOOKMARK, SS_LCTRL("d"));
+#            ifdef GD_BR_MS
+    GDM(GD_BR_DEV_TOOLS, IMCTL(X_F12));  // EDGE
 #            else
-    BABLM(BABL_BR_DEV_TOOLS, SS_LCTRL("t"));  // Chrome
-    BABLM(BABL_BR_VIEWSRC, SS_LCTRL("u"));    // Chrome or firefox
+    GDM(GD_BR_DEV_TOOLS, SS_LCTRL("t"));  // Chrome
+    GDM(GD_BR_VIEWSRC, SS_LCTRL("u"));    // Chrome or firefox
 #            endif
     // chrome
-    BABLM(BABL_BR_RELOAD, IMCTL(X_F5));             // hard reload w/o cache
-    BABLM(BABL_BR_FULLSCREEN, SS_TAP(X_F11));       // command shift F
-    BABLM(BABL_BR_ZOOM_IN, OMSFT(IMCTL(X_EQUAL)));  // ctr+ +
-    BABLM(BABL_BR_ZOOM_OUT, IMCTL(X_MINUS));
+    GDM(GD_BR_RELOAD, IMCTL(X_F5));             // hard reload w/o cache
+    GDM(GD_BR_FULLSCREEN, SS_TAP(X_F11));       // command shift F
+    GDM(GD_BR_ZOOM_IN, OMSFT(IMCTL(X_EQUAL)));  // ctr+ +
+    GDM(GD_BR_ZOOM_OUT, IMCTL(X_MINUS));
 
 #        endif
 
-#        ifdef BABL_APP
-    BABLM(BABL_APP_SAVE, SS_LCTL("s"));
+#        ifdef GD_APP
+    GDM(GD_APP_SAVE, SS_LCTL("s"));
 
-    // BABLM( BABL_SPLIT_FRAME_VERT,		()  );// no windows way?
-    // BABLM( BABL_UNSPLIT_FRAME_VERT,		()  );
-    BABLM(BABL_SPLIT_FRAME_HORIZONTAL, OMALT(IMCTL(X_S)));    // word only
-    BABLM(BABL_UNSPLIT_FRAME_HORIZONTAL, OMSFT(IMALT(X_C)));  // word
-    // BABLM( BABL_NEXT_FRAME, () );//no windows way?
-    // BABLM( BABL_PREV_FRAME, () );// no windows way?
+    // GDM( GD_SPLIT_FRAME_VERT,		()  );// no windows way?
+    // GDM( GD_UNSPLIT_FRAME_VERT,		()  );
+    GDM(GD_SPLIT_FRAME_HORIZONTAL, OMALT(IMCTL(X_S)));    // word only
+    GDM(GD_UNSPLIT_FRAME_HORIZONTAL, OMSFT(IMALT(X_C)));  // word
+    // GDM( GD_NEXT_FRAME, () );//no windows way?
+    // GDM( GD_PREV_FRAME, () );// no windows way?
 #        endif
 
     // Todo, ring bell, flash light, show user this isn't supported
     return false;
 }
 
-#    endif /* BABL_WINDOWS*/
+#    endif /* GD_WINDOWS*/
 #endif     /* babblepaste */
