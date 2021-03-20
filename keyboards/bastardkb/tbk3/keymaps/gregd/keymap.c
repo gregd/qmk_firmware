@@ -5,10 +5,10 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_QWERTY] = LAYOUT_split_4x6_3( \
-  KC_LEAD,       KC_EXCLAIM, KC_AT, KC_HASH, KC_DOLLAR, KC_PERCENT,         /**/ KC_UNDERSCORE, KC_AMPERSAND, KC_ASTERISK, KC_MINS, KC_PLUS,  KC_CIRCUMFLEX, \
-  OSM(MOD_LALT), KC_Q,       KC_W,  KC_E,    KC_R,      KC_T,               /**/ KC_Y,          KC_U,         KC_I,        KC_O,    KC_P,     KC_EQL, \
-  OSM(MOD_LSFT), KC_A,       KC_S,  KC_D,    KC_F,      KC_G,               /**/ KC_H,          KC_J,         KC_K,        KC_L,    KC_SCLN,  KC_QUOT, \
-  OSM(MOD_LCTL), KC_Z,       KC_X,  KC_C,    KC_V,      KC_B,               /**/ KC_N,          KC_M,         KC_COMM,     KC_DOT,  KC_SLSH,  OSM(MOD_RCTL), \
+  KC_LEAD,       KC_EXCLAIM, KC_AT,   KC_HASH, KC_DOLLAR, KC_PERCENT,       /**/ KC_UNDERSCORE, KC_AMPERSAND, KC_ASTERISK, KC_MINS, KC_PLUS,  KC_CIRCUMFLEX, \
+  OSM(MOD_LALT), KC_Q,       KC_W,    KC_E,    KC_R,      KC_T,             /**/ KC_Y,          KC_U,         KC_I,        KC_O,    KC_P,     KC_EQL, \
+  OSM(MOD_LSFT), KC_A,       KC_S,    KC_D,    KC_F,      KC_G,             /**/ KC_H,          KC_J,         KC_K,        KC_L,    KC_SCLN,  KC_QUOT, \
+  OSM(MOD_LCTL), KC_Z,       KC_X,    KC_C,    KC_V,      KC_B,             /**/ KC_N,          KC_M,         KC_COMM,     KC_DOT,  KC_SLSH,  OSM(MOD_RCTL), \
   LT(_IDE, KC_LGUI), LT(_NAV, KC_BSPC), LT(_SYMBOLS, KC_ESC),               /**/ LT(_SYMBOLS, KC_ENT), LT(_NAV, KC_SPC), LT(_IDE, KC_TAB)),
 
 [_POLISH] = LAYOUT_split_4x6_3( \
@@ -19,7 +19,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______, _______, MT(MOD_RALT, KC_ESC),                                   /**/ MT(MOD_RALT, KC_ENT), _______, _______),
 
 [_NAV] = LAYOUT_split_4x6_3( \
-  GD_QWERTY, KC_TILD,  KC_CIRC,  KC_PERC, GD_ARROW, GD_FARROW,              /**/ BABL_DEL_LINE, BABL_DEL_2LNS, BABL_DEL_2LNE, BABL_I_DUP_LINE, KC_WWW_HOME,    KC_MY_COMPUTER, \
+  GD_QWERTY, KC_TILD,  KC_CIRC,  KC_PERC, GD_ARROW, GD_FARROW,              /**/ BABL_DEL_LINE, BABL_DEL_2LNS, BABL_DEL_2LNE, BABL_I_DUP_LINE,   KC_WWW_HOME,    KC_MY_COMPUTER, \
   KC_AT,     KC_EXLM,  KC_MINS,  KC_LCBR, KC_RCBR,  KC_GRV,                 /**/ BABL_GO_SLINE, BABL_GO_LWORD, BABL_GO_RWORD, BABL_GO_ELINE,     BABL_PASTE,     BABL_PASTE_RECENT, \
   KC_DLR,    KC_ASTR,  KC_UNDS,  KC_LPRN, KC_RPRN,  KC_BSLASH,              /**/ KC_LEFT,       KC_DOWN,       KC_UP,         KC_RIGHT,          BABL_COPY,      BABL_I_EX_SEL, \
   KC_HASH,   KC_AMPR,  KC_PLUS,  KC_LBRC, KC_RBRC,  KC_PIPE,                /**/ BABL_GO_EDOC,  KC_PGDN,       KC_PGUP,       BABL_GO_SDOC,      BABL_CUT,       BABL_SELECT_ALL, \
