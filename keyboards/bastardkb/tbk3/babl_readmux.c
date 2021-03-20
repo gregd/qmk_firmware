@@ -62,7 +62,7 @@ bool babblePaste_readmux(uint16_t keycode) {
 #            ifdef BABL_MAC
     // this is stock OS X Terminal, alter for windows &etc.
     BABLM(BABL_BR_NEW_TAB, IMGUI(X_T));
-    BABLM(BABL_BR_CLOSE_TAB, SS_LGUI("w"));
+    BABLM(BABL_BR_CL_TAB, SS_LGUI("w"));
     BABLM(BABL_BR_NEXT_TAB, IMCTL(X_TAB));
     BABLM(BABL_BR_PREV_TAB, OMSFT(IMCTL(X_TAB)));
 #            endif

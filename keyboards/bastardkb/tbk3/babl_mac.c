@@ -70,7 +70,7 @@ bool babblePaste_mac(uint16_t keycode) {
 #        endif
 #        ifdef BABL_BROWSER
     BABLM(BABL_BR_NEW_TAB, IMGUI(X_T));
-    BABLM(BABL_BR_CLOSE_TAB, SS_LGUI("w"));
+    BABLM(BABL_BR_CL_TAB, SS_LGUI("w"));
     BABLM(BABL_BR_REOPEN_LAST_TAB, OMSFT(SS_LGUI("t")));
     BABLM(BABL_BR_NEXT_TAB, OMGUI(IMALT(X_RIGHT)));
     BABLM(BABL_BR_PREV_TAB, OMGUI(IMALT(X_LEFT)));
