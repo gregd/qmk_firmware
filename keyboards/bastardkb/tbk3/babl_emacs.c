@@ -49,8 +49,8 @@ bool babblePaste_emacs(uint16_t keycode) {
     GDM(GD_PASTE, SS_LCTRL("y"));
     GDM(GD_SELECT_ALL, SS_LCTRL("x") "h");
     GDM(GD_FIND, SS_LCTRL("s"));
-    GDM(GD_FIND_NEXT, SS_LCTRL("s"));
-    GDM(GD_FIND_PREV, SS_LCTRL("r"));
+    GDM(GD_FNEXT, SS_LCTRL("s"));
+    GDM(GD_FPREV, SS_LCTRL("r"));
     GDM(GD_REPLACE, OMALT(IMSFT(X_5)));
     // GDM( GD_RUNAPP , 			//(SS_LALT("x") "shell")	 );// arguably
     GDM(GD_RUNAPP, IMALT(X_X) "split-window" SS_TAP(X_ENTER));  // arguably

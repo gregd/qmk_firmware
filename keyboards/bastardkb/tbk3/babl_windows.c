@@ -49,8 +49,8 @@ bool babblePaste_win(uint16_t keycode) {
     GDM(GD_PASTE, SS_LCTRL("v"));
     GDM(GD_SELECT_ALL, SS_LCTRL("a"));
     GDM(GD_FIND, SS_LCTRL("f"));
-    GDM(GD_FIND_NEXT, SS_TAP(X_F3));
-    // GDM( GD_FIND_PREV, 	SS_TAP(X_F3) ); // doesn't have a standard one?
+    GDM(GD_FNEXT, SS_TAP(X_F3));
+    // GDM( GD_FPREV, 	SS_TAP(X_F3) ); // doesn't have a standard one?
     GDM(GD_REPLACE, SS_LCTRL("h"));
     GDM(GD_RUNAPP, SS_LGUI("r"));
     GDM(GD_APP_NEXT, IMALT(X_TAB));

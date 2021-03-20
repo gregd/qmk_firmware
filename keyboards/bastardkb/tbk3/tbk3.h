@@ -42,10 +42,10 @@ define modifiers here, since MOD_* doesn't seem to work for these
 #define MODS_GUI_MASK  (MOD_BIT(KC_LGUI)|MOD_BIT(KC_RGUI))
 
 enum userspace_custom_keycodes {
-    GD_QWERTY = BABBLE_END_RANGE,
-    GD_POLISH,
+    GD_QWE = BABBLE_END_RANGE,
+    GD_POL,
     GD_NAV,
-    GD_SYMBOLS,
+    GD_SYM,
     GD_ALT_TAB,
     GD_ARROW,
     GD_FARROW,

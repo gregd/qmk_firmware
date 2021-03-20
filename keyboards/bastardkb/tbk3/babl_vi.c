@@ -41,8 +41,8 @@ bool babblePaste_vi(uint16_t keycode) {
     GDM(GD_PASTE, "p");
     GDM(GD_SELECT_ALL, IMSFT(X_SCOLON) SS_TAP(X_5) "y");  // wrong but helpful?
     GDM(GD_FIND, SS_TAP(X_SLASH));
-    GDM(GD_FIND_NEXT, "n");
-    GDM(GD_FIND_PREV, IMSFT(X_N));
+    GDM(GD_FNEXT, "n");
+    GDM(GD_FPREV, IMSFT(X_N));
     GDM(GD_REPLACE, OMALT(IMSFT(X_5)));
     GDM(GD_RUNAPP, ":split");                // requires VIM, is vsplit better?
     GDM(GD_APP_NEXT, IMCTL(X_DOWN));  // Or Right?

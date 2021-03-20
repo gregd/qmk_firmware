@@ -45,10 +45,10 @@ bool babblePaste_mac(uint16_t keycode) {
     GDM(GD_PASTE, SS_LGUI("v"));
     GDM(GD_SELECT_ALL, SS_LGUI("a"));
     GDM(GD_FIND, SS_LGUI("f"));
-    GDM(GD_FIND_NEXT, SS_LGUI("g"));
-    // GDM( GD_FIND_NEXT, 	OMSFT(X_F4)) ); // Mac office
-    GDM(GD_FIND_PREV, OMSFT(IMGUI(X_G)));  // Sublime, browser
-    //GDM(GD_FIND_PREV, SS_LGUI("g"));
+    GDM(GD_FNEXT, SS_LGUI("g"));
+    // GDM( GD_FNEXT, 	OMSFT(X_F4)) ); // Mac office
+    GDM(GD_FPREV, OMSFT(IMGUI(X_G)));  // Sublime, browser
+    //GDM(GD_FPREV, SS_LGUI("g"));
     GDM(GD_REPLACE, SS_LGUI("f"));
     GDM(GD_RUNAPP, SS_LGUI(" "));
     GDM(GD_APP_NEXT, IMGUI(X_TAB));

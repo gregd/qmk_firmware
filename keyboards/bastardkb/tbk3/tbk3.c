@@ -21,13 +21,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
 
     switch (keycode) {
-        case GD_QWERTY:
+        case GD_QWE:
             if (record->event.pressed) {
                 set_single_persistent_default_layer(_QWERTY);
             }
             return false;
 
-        case GD_POLISH:
+        case GD_POL:
             if (record->event.pressed) {
                 set_single_persistent_default_layer(_POLISH);
             }
@@ -39,7 +39,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-        case GD_SYMBOLS:
+        case GD_SYM:
             if (record->event.pressed) {
                 set_single_persistent_default_layer(_SYMBOLS);
             }

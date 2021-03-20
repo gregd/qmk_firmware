@@ -123,8 +123,8 @@ enum babble_keycodes {
     */
     // find & replace
     GD_FIND,
-    GD_FIND_NEXT,
-    GD_FIND_PREV,
+    GD_FNEXT,
+    GD_FPREV,
     GD_REPLACE,
     // GUI or app
     GD_RUNAPP,

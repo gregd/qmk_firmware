@@ -45,8 +45,8 @@ bool babblePaste_readmux(uint16_t keycode) {
     GDM(GD_PASTE, SS_LCTL("y"));
     GDM(GD_SELECT_ALL, SS_LCTL("aky"));
     GDM(GD_FIND, SS_LCTL("r"));  // search history
-    GDM(GD_FIND_NEXT, SS_LCTL("r"));
-    GDM(GD_FIND_PREV, SS_LCTL("s"));
+    GDM(GD_FNEXT, SS_LCTL("r"));
+    GDM(GD_FPREV, SS_LCTL("s"));
     // GDM( GD_REPLACE		,END ); // not offered in readline
     GDM(GD_RUNAPP, TMUX "c");           // tmux
     GDM(GD_APP_NEXT, TMUX "n");  // tmux

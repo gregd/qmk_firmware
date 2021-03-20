@@ -50,9 +50,9 @@ bool babblePaste_linux(uint16_t keycode) {
     GDM(GD_FIND, SS_LCTL("f"));
     GDM(GD_CLOSE_APP, IMALT(X_F4));
     GDM(GD_HELP, SS_TAP(X_F1));
-    // GDM(GD_FIND_NEXT  (SS_LALT(X_F3))	); //KDE */
-    GDM(GD_FIND_NEXT, SS_LCTL("g"));       // Gnome*/
-    GDM(GD_FIND_PREV, OMSFT(IMCTL(X_G)));  // Gnome*/
+    // GDM(GD_FNEXT  (SS_LALT(X_F3))	); //KDE */
+    GDM(GD_FNEXT, SS_LCTL("g"));       // Gnome*/
+    GDM(GD_FPREV, OMSFT(IMCTL(X_G)));  // Gnome*/
     /* GDM( GD_REPLACE , (SS_LCTL("r"))	); // KDE */
     GDM(GD_REPLACE, SS_LCTL("h"));  // Gnome*/
     GDM(GD_RUNAPP, IMALT(X_F2));         // Gnome
