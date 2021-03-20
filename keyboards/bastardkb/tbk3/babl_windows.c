@@ -67,28 +67,28 @@ bool babblePaste_win(uint16_t keycode) {
 #        endif
 
 #        ifdef GD_BROWSER
-    GDM(GD_BR_NEW_TAB, SS_LCTRL("t"));
-    GDM(GD_BR_CL_TAB, SS_LCTRL("w"));
-    GDM(GD_BR_REOPEN_LAST_TAB, OMSFT(IMCTL(X_T)));
-    GDM(GD_BR_NEXT_TAB, IMCTL(X_TAB));
-    GDM(GD_BR_PREV_TAB, OMSFT(IMCTL(X_TAB)));
-    GDM(GD_BR_URL_BAR, SS_LCTRL("l"));
-    GDM(GD_BR_FORWARD, IMALT(X_RIGHT));
-    GDM(GD_BR_BACK, OMSFT(IMALT(X_LEFT)));
+    GDM(GD_B_NEW_TAB, SS_LCTRL("t"));
+    GDM(GD_B_CL_TAB, SS_LCTRL("w"));
+    GDM(GD_B_REOPEN_LAST_TAB, OMSFT(IMCTL(X_T)));
+    GDM(GD_B_NEXT_TAB, IMCTL(X_TAB));
+    GDM(GD_B_PREV_TAB, OMSFT(IMCTL(X_TAB)));
+    GDM(GD_B_URL_BAR, SS_LCTRL("l"));
+    GDM(GD_B_FORWARD, IMALT(X_RIGHT));
+    GDM(GD_B_BACK, OMSFT(IMALT(X_LEFT)));
     ;
-    GDM(GD_BR_FIND, SS_LCTRL("f"));
-    GDM(GD_BR_BOOKMARK, SS_LCTRL("d"));
-#            ifdef GD_BR_MS
-    GDM(GD_BR_DEV_TOOLS, IMCTL(X_F12));  // EDGE
+    GDM(GD_B_FIND, SS_LCTRL("f"));
+    GDM(GD_B_BOOKMARK, SS_LCTRL("d"));
+#            ifdef GD_B_MS
+    GDM(GD_B_DEV_TOOLS, IMCTL(X_F12));  // EDGE
 #            else
-    GDM(GD_BR_DEV_TOOLS, SS_LCTRL("t"));  // Chrome
-    GDM(GD_BR_VIEWSRC, SS_LCTRL("u"));    // Chrome or firefox
+    GDM(GD_B_DEV_TOOLS, SS_LCTRL("t"));  // Chrome
+    GDM(GD_B_VIEWSRC, SS_LCTRL("u"));    // Chrome or firefox
 #            endif
     // chrome
-    GDM(GD_BR_RELOAD, IMCTL(X_F5));             // hard reload w/o cache
-    GDM(GD_BR_FULLSCREEN, SS_TAP(X_F11));       // command shift F
-    GDM(GD_BR_ZOOM_IN, OMSFT(IMCTL(X_EQUAL)));  // ctr+ +
-    GDM(GD_BR_ZOOM_OUT, IMCTL(X_MINUS));
+    GDM(GD_B_RELOAD, IMCTL(X_F5));             // hard reload w/o cache
+    GDM(GD_B_FULLSCREEN, SS_TAP(X_F11));       // command shift F
+    GDM(GD_B_ZOOM_IN, OMSFT(IMCTL(X_EQUAL)));  // ctr+ +
+    GDM(GD_B_ZOOM_OUT, IMCTL(X_MINUS));
 
 #        endif
 

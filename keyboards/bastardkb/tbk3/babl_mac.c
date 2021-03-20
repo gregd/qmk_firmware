@@ -69,27 +69,27 @@ bool babblePaste_mac(uint16_t keycode) {
     GDM(GD_SWITCH_KEYBOARD_LAYOUT, IMCTL(X_SPACE));
 #        endif
 #        ifdef GD_BROWSER
-    GDM(GD_BR_NEW_TAB, IMGUI(X_T));
-    GDM(GD_BR_CL_TAB, SS_LGUI("w"));
-    GDM(GD_BR_REOPEN_LAST_TAB, OMSFT(SS_LGUI("t")));
-    GDM(GD_BR_NEXT_TAB, OMGUI(IMALT(X_RIGHT)));
-    GDM(GD_BR_PREV_TAB, OMGUI(IMALT(X_LEFT)));
-    GDM(GD_BR_URL_BAR, SS_LGUI("l"));
-    GDM(GD_BR_FORWARD, IMGUI(X_RIGHT));
-    GDM(GD_BR_BACK, IMGUI(X_LEFT));
-    GDM(GD_BR_FIND, SS_LGUI("f"));
-    GDM(GD_BR_BOOKMARK, SS_LGUI("d"));
-    GDM(GD_BR_RELOAD, OMGUI(SS_LSFT("r")));  // hard reload w/o cache
-    GDM(GD_BR_FULLSCREEN, OMGUI(SS_LCTRL("p")));
-    GDM(GD_BR_ZOOM_IN, IMGUI(X_KP_PLUS));  // ctr+ +
-    GDM(GD_BR_ZOOM_OUT, IMGUI(X_KP_MINUS));
-#            ifdef GD_BR_CHROME
-    GDM(GD_BR_VIEWSRC, SS_LGUI("u"));           // Chrome or firefox
-    GDM(GD_BR_DEV_TOOLS, OMGUI(SS_LALT("i")));  // Chrome or Firefox
+    GDM(GD_B_NEW_TAB, IMGUI(X_T));
+    GDM(GD_B_CL_TAB, SS_LGUI("w"));
+    GDM(GD_B_REOPEN_LAST_TAB, OMSFT(SS_LGUI("t")));
+    GDM(GD_B_NEXT_TAB, OMGUI(IMALT(X_RIGHT)));
+    GDM(GD_B_PREV_TAB, OMGUI(IMALT(X_LEFT)));
+    GDM(GD_B_URL_BAR, SS_LGUI("l"));
+    GDM(GD_B_FORWARD, IMGUI(X_RIGHT));
+    GDM(GD_B_BACK, IMGUI(X_LEFT));
+    GDM(GD_B_FIND, SS_LGUI("f"));
+    GDM(GD_B_BOOKMARK, SS_LGUI("d"));
+    GDM(GD_B_RELOAD, OMGUI(SS_LSFT("r")));  // hard reload w/o cache
+    GDM(GD_B_FULLSCREEN, OMGUI(SS_LCTRL("p")));
+    GDM(GD_B_ZOOM_IN, IMGUI(X_KP_PLUS));  // ctr+ +
+    GDM(GD_B_ZOOM_OUT, IMGUI(X_KP_MINUS));
+#            ifdef GD_B_CHROME
+    GDM(GD_B_VIEWSRC, SS_LGUI("u"));           // Chrome or firefox
+    GDM(GD_B_DEV_TOOLS, OMGUI(SS_LALT("i")));  // Chrome or Firefox
 #            endif
-#            ifdef GD_BR_SAFARI
-    GDM(GD_BR_VIEWSRC, OMGUI(IMALT(X_U)));  // Safari
-                                                     // GDM( GD_BR_DEV_TOOLS,	// No real equivalent for Safari
+#            ifdef GD_B_SAFARI
+    GDM(GD_B_VIEWSRC, OMGUI(IMALT(X_U)));  // Safari
+                                                     // GDM( GD_B_DEV_TOOLS,	// No real equivalent for Safari
 #            endif
 #        endif  //  GD_BROWSER
 

@@ -61,29 +61,31 @@ bool babblePaste_linux(uint16_t keycode) {
     GDM(GD_WIN_NEXT, OMCTL(IMALT(X_PGUP)));  // Gnome, sometimes
     GDM(GD_WIN_PREV, OMCTL(IMALT(X_PGDOWN)));
     GDM(GD_WIN_NEW, IMCTL(X_N));
+    GDM(GD_WIN_HIDE, OMALT(IMCTL(X_KP_0)));
+    GDM(GD_WIN_CEN, IMGUI(X_3));
     // GDM( GD_HELP,		(SS_TAP(X_F1))	); // NA?
     GDM(GD_LOCK, OMCTL(IMALT(X_L)));
     GDM(GD_SCR_CAP_FULL, SS_TAP(X_PSCREEN));
     GDM(GD_SCR_CAP_SEL, IMSFT(X_PSCREEN));
 #        endif
 #        ifdef GD_BROWSER
-    GDM(GD_BR_NEW_TAB, SS_LCTL("t"));
-    GDM(GD_BR_CL_TAB, IMCTL(X_F4));
-    GDM(GD_BR_REOPEN_LAST_TAB, OMSFT(IMCTL(X_T)));
-    GDM(GD_BR_NEXT_TAB, IMCTL(X_PGDOWN));
-    GDM(GD_BR_PREV_TAB, IMCTL(X_PGUP));
-    GDM(GD_BR_URL_BAR, SS_LCTL("l"));
-    GDM(GD_BR_FORWARD, IMALT(X_RIGHT));
-    GDM(GD_BR_BACK, IMALT(X_LEFT));
-    GDM(GD_BR_FIND, SS_LCTL("f"));
-    GDM(GD_BR_BOOKMARK, SS_LCTL("d"));
-    GDM(GD_BR_DEV_TOOLS, SS_LCTL("t"));  // Chrome
+    GDM(GD_B_NEW_TAB, SS_LCTL("t"));
+    GDM(GD_B_CL_TAB, IMCTL(X_F4));
+    GDM(GD_B_REOPEN_LAST_TAB, OMSFT(IMCTL(X_T)));
+    GDM(GD_B_NEXT_TAB, IMCTL(X_PGDOWN));
+    GDM(GD_B_PREV_TAB, IMCTL(X_PGUP));
+    GDM(GD_B_URL_BAR, SS_LCTL("l"));
+    GDM(GD_B_FORWARD, IMALT(X_RIGHT));
+    GDM(GD_B_BACK, IMALT(X_LEFT));
+    GDM(GD_B_FIND, SS_LCTL("f"));
+    GDM(GD_B_BOOKMARK, SS_LCTL("d"));
+    GDM(GD_B_DEV_TOOLS, SS_LCTL("t"));  // Chrome
     // chrome
-    GDM(GD_BR_RELOAD, IMCTL(X_F5));             // hard reload w/o cache
-    GDM(GD_BR_FULLSCREEN, SS_TAP(X_F11));       // command shift F
-    GDM(GD_BR_ZOOM_IN, OMSFT(IMCTL(X_EQUAL)));  // ctr+ +
-    GDM(GD_BR_ZOOM_OUT, IMCTL(X_MINUS));
-    GDM(GD_BR_VIEWSRC, SS_LCTL("u"));  // Chrome or firefox
+    GDM(GD_B_RELOAD, IMCTL(X_F5));             // hard reload w/o cache
+    GDM(GD_B_FULLSCREEN, SS_TAP(X_F11));       // command shift F
+    GDM(GD_B_ZOOM_IN, OMSFT(IMCTL(X_EQUAL)));  // ctr+ +
+    GDM(GD_B_ZOOM_OUT, IMCTL(X_MINUS));
+    GDM(GD_B_VIEWSRC, SS_LCTL("u"));  // Chrome or firefox
 #        endif
 #        ifdef GD_APP
     GDM(GD_APP_SAVE, SS_LCTL("s"));
@@ -100,9 +102,9 @@ bool babblePaste_linux(uint16_t keycode) {
     GDM(GD_I_WIN_FTREE, IMALT(X_1));
     GDM(GD_I_WIN_SEA, IMALT(X_3));
     GDM(GD_I_WIN_RUN, IMALT(X_4));
-    GDM(GD_I_WIN_STR, IMALT(X_7));
-    GDM(GD_I_WIN_GHIS, IMALT(X_9));
-    GDM(GD_I_WIN_GCOM, IMALT(X_0));
+    GDM(GD_I_WIN_STRU, IMALT(X_7));
+    GDM(GD_I_WIN_GITH, IMALT(X_9));
+    GDM(GD_I_WIN_GITC, IMALT(X_0));
     GDM(GD_I_REC_FILE, IMCTL(X_E));
     GDM(GD_I_REC_LOC, OMSFT(IMCTL(X_E)));
     GDM(GD_I_FINDA, SS_LCTL("l"));

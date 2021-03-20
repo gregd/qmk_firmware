@@ -61,10 +61,10 @@ bool babblePaste_readmux(uint16_t keycode) {
  */
 #            ifdef GD_MAC
     // this is stock OS X Terminal, alter for windows &etc.
-    GDM(GD_BR_NEW_TAB, IMGUI(X_T));
-    GDM(GD_BR_CL_TAB, SS_LGUI("w"));
-    GDM(GD_BR_NEXT_TAB, IMCTL(X_TAB));
-    GDM(GD_BR_PREV_TAB, OMSFT(IMCTL(X_TAB)));
+    GDM(GD_B_NEW_TAB, IMGUI(X_T));
+    GDM(GD_B_CL_TAB, SS_LGUI("w"));
+    GDM(GD_B_NEXT_TAB, IMCTL(X_TAB));
+    GDM(GD_B_PREV_TAB, OMSFT(IMCTL(X_TAB)));
 #            endif
 #        endif
 #        ifdef GD_APP

@@ -61,9 +61,9 @@
 #define GD_IDE // IDE shortcuts
 
 //// What Browser shortcuts?
-#define GD_BR_CHROME // Chrome browser, Google apps
-//#define GD_BR_MS
-//#define GD_BR_SAFARI // Safari, Apple defaults.
+#define GD_B_CHROME // Chrome browser, Google apps
+//#define GD_B_MS
+//#define GD_B_SAFARI // Safari, Apple defaults.
 
 //// applications vary even more between OSes. We'll do our best.
 #define GD_APP
