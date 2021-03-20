@@ -125,14 +125,14 @@ enum babble_keycodes {
     BABL_FIND,
     BABL_FIND_NEXT,
     BABL_FIND_PREV,
-    BABL_FREPLACE,
+    BABL_REPLACE,
     // GUI or app
     BABL_RUNAPP,
     BABL_APP_NEXT,
     BABL_APP_LAST,  // previous
-    BABL_WINDOW_NEXT,
-    BABL_WINDOW_PREV,
-    BABL_WINDOW_NEW,
+    BABL_WIN_NEXT,
+    BABL_WIN_PREV,
+    BABL_WIN_NEW,
     BABL_CLOSE_APP,
     BABL_HELP,
     BABL_LOCK,
@@ -309,13 +309,13 @@ bool babblePaste_readmux(uint16_t keycode);
 #        define B_FIND BABL_FIND
 #        define B_FINDN BABL_FIND_NEXT
 #        define B_FINDP BABL_FIND_PREV
-#        define B_RPLACE BABL_FREPLACE
+#        define B_RPLACE BABL_REPLACE
 #        define B_RUNAPP BABL_RUNAPP
 #        define B_NAPP BABL_APP_NEXT
 #        define B_PAPP BABL_APP_LAST  // previous
-#        define B_NWIN BABL_WINDOW_NEXT
-#        define B_PWIN BABL_WINDOW_PREV
-#        define B_WINN BABL_WINDOW_NEW
+#        define B_NWIN BABL_WIN_NEXT
+#        define B_PWIN BABL_WIN_PREV
+#        define B_WINN BABL_WIN_NEW
 #        define B_CAPP BABL_CLOSE_APP
 #        define B_HELP BABL_HELP
 #        define B_LOCK BABL_LOCK

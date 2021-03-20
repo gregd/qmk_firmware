@@ -43,7 +43,7 @@ bool babblePaste_vi(uint16_t keycode) {
     BABLM(BABL_FIND, SS_TAP(X_SLASH));
     BABLM(BABL_FIND_NEXT, "n");
     BABLM(BABL_FIND_PREV, IMSFT(X_N));
-    BABLM(BABL_FREPLACE, OMALT(IMSFT(X_5)));
+    BABLM(BABL_REPLACE, OMALT(IMSFT(X_5)));
     BABLM(BABL_RUNAPP, ":split");                // requires VIM, is vsplit better?
     BABLM(BABL_APP_NEXT, IMCTL(X_DOWN));  // Or Right?
     BABLM(BABL_APP_NEXT, IMCTL(X_UP));    // or Left?

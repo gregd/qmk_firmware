@@ -47,7 +47,7 @@ bool babblePaste_readmux(uint16_t keycode) {
     BABLM(BABL_FIND, SS_LCTL("r"));  // search history
     BABLM(BABL_FIND_NEXT, SS_LCTL("r"));
     BABLM(BABL_FIND_PREV, SS_LCTL("s"));
-    // BABLM( BABL_FREPLACE		,END ); // not offered in readline
+    // BABLM( BABL_REPLACE		,END ); // not offered in readline
     BABLM(BABL_RUNAPP, TMUX "c");           // tmux
     BABLM(BABL_APP_NEXT, TMUX "n");  // tmux
     BABLM(BABL_APP_LAST, TMUX "p");  // tmux

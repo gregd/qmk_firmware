@@ -51,12 +51,12 @@ bool babblePaste_emacs(uint16_t keycode) {
     BABLM(BABL_FIND, SS_LCTRL("s"));
     BABLM(BABL_FIND_NEXT, SS_LCTRL("s"));
     BABLM(BABL_FIND_PREV, SS_LCTRL("r"));
-    BABLM(BABL_FREPLACE, OMALT(IMSFT(X_5)));
+    BABLM(BABL_REPLACE, OMALT(IMSFT(X_5)));
     // BABLM( BABL_RUNAPP , 			//(SS_LALT("x") "shell")	 );// arguably
     BABLM(BABL_RUNAPP, IMALT(X_X) "split-window" SS_TAP(X_ENTER));  // arguably
-    BABLM(BABL_WINDOW_NEXT, SS_LCTRL("x") "o");
-    BABLM(BABL_WINDOW_PREV, SS_LCTRL("x") "o");  // arguably
-    //	BABLM( BABL_WINDOW_NEW,		IMCTL(X_X)"n" ); //
+    BABLM(BABL_WIN_NEXT, SS_LCTRL("x") "o");
+    BABLM(BABL_WIN_PREV, SS_LCTRL("x") "o");  // arguably
+    //	BABLM( BABL_WIN_NEW,		IMCTL(X_X)"n" ); //
     BABLM(BABL_CLOSE_APP, SS_LCTRL("x") "c");
     BABLM(BABL_HELP, SS_LCTRL("h") "a");  // start search in help
                                           // BABLM( BABL_LOCK,		()	); // lock buffer? Too many options.

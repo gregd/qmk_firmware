@@ -49,18 +49,18 @@ bool babblePaste_mac(uint16_t keycode) {
     // BABLM( BABL_FIND_NEXT, 	OMSFT(X_F4)) ); // Mac office
     BABLM(BABL_FIND_PREV, OMSFT(IMGUI(X_G)));  // Sublime, browser
     //BABLM(BABL_FIND_PREV, SS_LGUI("g"));
-    BABLM(BABL_FREPLACE, SS_LGUI("f"));
+    BABLM(BABL_REPLACE, SS_LGUI("f"));
     BABLM(BABL_RUNAPP, SS_LGUI(" "));
     BABLM(BABL_APP_NEXT, IMGUI(X_TAB));
     BABLM(BABL_APP_LAST, OMSFT(IMGUI(X_TAB)));
     // Apps vary, but this is  usually tab movement, same as B_NXTB
     /*
-    BABLM( BABL_WINDOW_NEXT, OMSFT(IMGUI(X_RBRACKET)) ); // GUI Grav isn't everywhere
-    BABLM( BABL_WINDOW_PREV, OMSFT(IMGUI(X_LBRACKET)) );
+    BABLM( BABL_WIN_NEXT, OMSFT(IMGUI(X_RBRACKET)) ); // GUI Grav isn't everywhere
+    BABLM( BABL_WIN_PREV, OMSFT(IMGUI(X_LBRACKET)) );
     */
-    BABLM(BABL_WINDOW_NEXT, IMGUI(X_GRAVE));
-    BABLM(BABL_WINDOW_PREV, OMSFT(IMGUI(X_GRAVE)));
-    BABLM(BABL_WINDOW_NEW, IMGUI(X_N));
+    BABLM(BABL_WIN_NEXT, IMGUI(X_GRAVE));
+    BABLM(BABL_WIN_PREV, OMSFT(IMGUI(X_GRAVE)));
+    BABLM(BABL_WIN_NEW, IMGUI(X_N));
     BABLM(BABL_CLOSE_APP, SS_LGUI("q"));
     BABLM(BABL_HELP, OMSFT(IMGUI(X_SLASH)));
     // Locking screen from external keyboard requires automator https://apple.stackexchange.com/questions/73995
