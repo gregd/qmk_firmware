@@ -30,8 +30,9 @@
 #define MATRIX_COL_PINS { B4, E6, C6, B1, B3, B2 }
 
 #define DEBOUNCE 5
-#define MASTER_RIGHT
+//#define MASTER_RIGHT
 #define USE_I2C
+#define EE_HANDS
 
 #define TAPPING_TERM 180
 #define PERMISSIVE_HOLD
