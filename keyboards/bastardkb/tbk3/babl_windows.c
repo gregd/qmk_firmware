@@ -58,7 +58,7 @@ bool babblePaste_win(uint16_t keycode) {
     GDM(GD_WIN_NEXT, IMCTL(X_TAB));
     GDM(GD_WIN_PREV, OMSFT(IMCTL(X_TAB)));
     GDM(GD_WIN_NEW, IMCTL(X_N));
-    GDM(GD_CLOSE_APP, IMALT(X_F4));
+    GDM(GD_APP_CLOSE, IMALT(X_F4));
     GDM(GD_HELP, SS_TAP(X_F1));
     GDM(GD_LOCK, SS_LGUI("l"));
     GDM(GD_SCR_CAP_FULL, OMSFT(SS_LGUI("s")));

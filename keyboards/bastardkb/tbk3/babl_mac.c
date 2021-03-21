@@ -61,7 +61,7 @@ bool babblePaste_mac(uint16_t keycode) {
     GDM(GD_WIN_NEXT, IMGUI(X_GRAVE));
     GDM(GD_WIN_PREV, OMSFT(IMGUI(X_GRAVE)));
     GDM(GD_WIN_NEW, IMGUI(X_N));
-    GDM(GD_CLOSE_APP, SS_LGUI("q"));
+    GDM(GD_APP_CLOSE, SS_LGUI("q"));
     GDM(GD_HELP, OMSFT(IMGUI(X_SLASH)));
     // Locking screen from external keyboard requires automator https://apple.stackexchange.com/questions/73995
     GDM(GD_LOCK, OMCTL(IMALT(X_L)));

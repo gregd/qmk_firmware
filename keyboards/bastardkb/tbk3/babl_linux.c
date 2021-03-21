@@ -48,7 +48,7 @@ bool babblePaste_linux(uint16_t keycode) {
     GDM(GD_PASTE_RECENT, OMSFT(IMCTL(X_V)));
     GDM(GD_SELECT_ALL, SS_LCTL("a"));
     GDM(GD_FIND, SS_LCTL("f"));
-    GDM(GD_CLOSE_APP, IMALT(X_F4));
+    GDM(GD_APP_CLOSE, IMALT(X_F4));
     GDM(GD_HELP, SS_TAP(X_F1));
     // GDM(GD_FNEXT  (SS_LALT(X_F3))	); //KDE */
     GDM(GD_FNEXT, SS_LCTL("g"));       // Gnome*/
@@ -107,7 +107,7 @@ bool babblePaste_linux(uint16_t keycode) {
     GDM(GD_I_WIN_GITC, IMALT(X_0));
     GDM(GD_I_REC_FILE, IMCTL(X_E));
     GDM(GD_I_REC_LOC, OMSFT(IMCTL(X_E)));
-    GDM(GD_I_FINDA, SS_LCTL("l"));
+    GDM(GD_I_SE_EV, SS_LCTL("l"));
     GDM(GD_I_FINF, OMSFT(IMCTL(X_F)));
     GDM(GD_I_FACTION, OMSFT(IMCTL(X_A)));
     GDM(GD_I_REL_FILE, SS_LCTL("t"));             // RubyMine goto-view / controller

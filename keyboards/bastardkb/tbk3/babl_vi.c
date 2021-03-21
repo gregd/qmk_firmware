@@ -47,7 +47,7 @@ bool babblePaste_vi(uint16_t keycode) {
     GDM(GD_RUNAPP, ":split");                // requires VIM, is vsplit better?
     GDM(GD_APP_NEXT, IMCTL(X_DOWN));  // Or Right?
     GDM(GD_APP_NEXT, IMCTL(X_UP));    // or Left?
-    GDM(GD_CLOSE_APP, IMCTL(X_SCOLON) "q");
+    GDM(GD_APP_CLOSE, IMCTL(X_SCOLON) "q");
     GDM(GD_HELP, SS_LSFT(SS_TAP(X_SCOLON)) "h");  // start search in help
                                                       // GDM( GD_LOCK,		()	); Perhaps VI is not an OS?
                                                       // GDM( GD_SCR_CAP_FULL,		()	); // capture a buffer?

@@ -51,7 +51,7 @@ bool babblePaste_readmux(uint16_t keycode) {
     GDM(GD_RUNAPP, TMUX "c");           // tmux
     GDM(GD_APP_NEXT, TMUX "n");  // tmux
     GDM(GD_APP_LAST, TMUX "p");  // tmux
-    GDM(GD_CLOSE_APP, TMUX "d");        // usually what I want
+    GDM(GD_APP_CLOSE, TMUX "d");        // usually what I want
     GDM(GD_HELP, TMUX IMSFT(X_SLASH));
     GDM(GD_LOCK, TMUX "L");  // assuming you set up VLOCK yourself
     GDM(GD_SCR_CAP_FULL, TMUX ":capture-pane");

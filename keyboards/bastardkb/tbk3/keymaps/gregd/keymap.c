@@ -34,9 +34,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_SYMBOLS] = LAYOUT_split_4x6_3( \
     /*            pinky         ring           middle         index                                      index      middle      ring      pinky */
     GD_QWE,       KC_F1,        KC_F2,         KC_F3,         KC_F4,     KC_F5,         /**/ KC_F6,      KC_F7,     KC_F8,      KC_F9,    GD_SCR_CAP_SEL, GD_SCR_CAP_FULL, \
-    GD_APP_SAVE,  GD_WIN_NEXT,  GD_B_URL_BAR,  GD_B_NEW_TAB,  GD_FIND,   GD_REPLACE,    /**/ GD_FARROW,  KC_7,      KC_8,       KC_9,     GD_HDIR,        KC_F10, \
+    GD_WIN_NEXT,  GD_APP_SAVE,  GD_B_URL_BAR,  GD_B_PREV_TAB, GD_FPREV,  GD_REPLACE,    /**/ GD_FARROW,  KC_7,      KC_8,       KC_9,     GD_HDIR,        KC_F10, \
     GD_WIN_CEN,   GD_APP_NEXT,  GD_ALT_TAB,    GD_B_NEXT_TAB, GD_FNEXT,  GD_UNDO,       /**/ GD_ARROW,   KC_4,      KC_5,       KC_6,     GD_ABRACKET,    KC_F11, \
-    GD_WIN_HIDE,  GD_CLOSE_APP, GD_B_CL_TAB,   GD_B_PREV_TAB, GD_FPREV,  GD_REDO,       /**/ KC_0,       KC_1,      KC_2,       KC_3,     GD_UDIR,        KC_F12, \
+    GD_WIN_HIDE,  GD_APP_CLOSE, GD_B_CL_TAB,   GD_B_NEW_TAB,  GD_FIND,   GD_REDO,       /**/ KC_0,       KC_1,      KC_2,       KC_3,     GD_UDIR,        KC_F12, \
     \
     _______, _______, KC_LEAD,                                                          /**/ GD_I_NEW_LINE, GD_I_COMPLETE, GD_I_FIXES),
 
@@ -44,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*       pinky           ring        middle         index                                               index           middle         ring           pinky */
     RESET,   GD_RESET,       KC_NO,      KC_MPRV,       KC_MPLY,    KC_MNXT,            /**/ GD_I_WIN_STRU, GD_I_WIN_GITC,  GD_I_WIN_GITH, GD_I_GO_LINE,  KC_NO,         GD_INFO, \
     KC_VOLU, GD_B_ZOOM_IN,   KC_NO,      GD_I_FACTION,  GD_I_FINF,  GD_I_WIN_SEA,       /**/ GD_I_REL_FILE, GD_I_QDOC,      GD_I_USAGES,   GD_I_REC_LOC,  GD_I_REFACTOR, GD_I_COL_MODE, \
-    KC_VOLD, GD_B_ZOOM_OUT,  GD_I_RUNA,  GD_I_GO_FILE,  GD_I_FINDA, GD_I_WIN_FTREE,     /**/ GD_I_REL_SYM,  GD_I_GO_DEF,    GD_I_NEXT_FN,  GD_I_REC_FILE, GD_I_RENAME,   GD_I_REFORMAT, \
+    KC_VOLD, GD_B_ZOOM_OUT,  GD_I_RUNA,  GD_I_GO_FILE,  GD_I_SE_EV, GD_I_WIN_FTREE,     /**/ GD_I_REL_SYM,  GD_I_GO_DEF,    GD_I_NEXT_FN,  GD_I_REC_FILE, GD_I_RENAME,   GD_I_REFORMAT, \
     KC_MUTE, KC_NO,          GD_I_BUILD, GD_I_RUNL,     GD_I_RUNS,  GD_I_WIN_RUN,       /**/ GD_I_GO_FWD,   GD_I_GO_BACK,   GD_I_PREV_FN,  GD_I_GO_L_ED,  GD_I_COMMENT,  GD_I_TGL_CASE, \
     \
     _______, _______, _______,                                                          /**/ _______, _______, _______),

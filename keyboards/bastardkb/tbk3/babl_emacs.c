@@ -57,7 +57,7 @@ bool babblePaste_emacs(uint16_t keycode) {
     GDM(GD_WIN_NEXT, SS_LCTRL("x") "o");
     GDM(GD_WIN_PREV, SS_LCTRL("x") "o");  // arguably
     //	GDM( GD_WIN_NEW,		IMCTL(X_X)"n" ); //
-    GDM(GD_CLOSE_APP, SS_LCTRL("x") "c");
+    GDM(GD_APP_CLOSE, SS_LCTRL("x") "c");
     GDM(GD_HELP, SS_LCTRL("h") "a");  // start search in help
                                           // GDM( GD_LOCK,		()	); // lock buffer? Too many options.
     // GDM( GD_SCR_CAP_FULL,		()	); // requires plugin?

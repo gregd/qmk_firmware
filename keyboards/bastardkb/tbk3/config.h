@@ -35,12 +35,13 @@
 
 #define TAPPING_TERM 180
 #define PERMISSIVE_HOLD
+//#define IGNORE_MOD_TAP_INTERRUPT
 
 #define ONESHOT_TAP_TOGGLE 2  /* Tapping this number of times holds the key until tapped once again. */
 #define ONESHOT_TIMEOUT 3000  /* Time (in ms) before the one shot key is released */
 
 #define LEADER_PER_KEY_TIMING
-#define LEADER_TIMEOUT 1250
+#define LEADER_TIMEOUT 1000
 
 #define AUTO_SHIFT_TIMEOUT 200
 //#define NO_AUTO_SHIFT_SPECIAL
