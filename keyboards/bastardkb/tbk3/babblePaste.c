@@ -46,15 +46,17 @@ void set_babble_mode(uint8_t id, bool update_eeprom) {
 }
 
 void babble_clear_mods(void) {
-    uint8_t mods = get_mods();
-    if (get_oneshot_mods() && !has_oneshot_mods_timed_out()) {
-        clear_oneshot_mods();
-    }
-    if (get_oneshot_locked_mods()) {
+    uint8_t mods;
+    //uint8_t mods = get_mods();
+    //if (get_oneshot_mods() && !has_oneshot_mods_timed_out()) {
+    //    clear_oneshot_mods();
+    //}
+    if ((mods = get_oneshot_locked_mods())) {
         clear_oneshot_locked_mods();
+        unregister_mods(mods);
     }
-    clear_mods();
-    unregister_mods(mods);
+    //clear_mods();
+    //unregister_mods(mods);
 }
 
 bool babble_was_mac(void) {
