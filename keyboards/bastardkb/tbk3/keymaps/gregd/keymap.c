@@ -24,10 +24,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_NAV] = LAYOUT_split_4x6_3( \
     /*         pinky     ring      middle   index                                                         index        middle       ring           pinky */
-    GD_QWE,    KC_TILD,  KC_CIRC,  KC_PERC, GD_ARROW, GD_FARROW,                        /**/ GD_DEL_LINE, GD_DEL_2LNS, GD_DEL_2LNE, GD_I_DUP_LINE, KC_WWW_HOME, KC_MAIL, \
+    GD_QWE,    KC_TILD,  KC_CIRC,  KC_PERC, GD_ARROW, GD_FARROW,                        /**/ GD_GO_SDOC,  GD_DEL_2LNS, GD_DEL_2LNE, GD_DEL_LINE, KC_WWW_HOME, KC_MAIL, \
     KC_DLR,    KC_EXLM,  KC_MINS,  KC_LCBR, KC_RCBR,  KC_GRV,                           /**/ GD_GO_SLINE, GD_GO_LWORD, GD_GO_RWORD, GD_GO_ELINE,   GD_PASTE,    GD_PASTE_RECENT, \
     KC_AT,     KC_ASTR,  KC_UNDS,  KC_LPRN, KC_RPRN,  KC_BSLASH,                        /**/ KC_LEFT,     KC_DOWN,     KC_UP,       KC_RIGHT,      GD_COPY,     GD_I_EX_SEL, \
-    KC_HASH,   KC_AMPR,  KC_PLUS,  KC_LBRC, KC_RBRC,  KC_PIPE,                          /**/ GD_GO_SDOC,  KC_PGDN,     KC_PGUP,     GD_GO_EDOC,    GD_CUT,      GD_SELECT_ALL, \
+    KC_HASH,   KC_AMPR,  KC_PLUS,  KC_LBRC, KC_RBRC,  KC_PIPE,                          /**/ GD_GO_EDOC,  KC_PGDN,     KC_PGUP,     GD_I_DUP_LINE, GD_CUT,      GD_SELECT_ALL, \
     \
     KC_APP, GD_DEL_LWORD, GD_DEL_RWORD,                                                 /**/ _______, _______, _______),
 
