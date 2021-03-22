@@ -220,3 +220,14 @@ void keyboard_post_init_user(void) {
         set_babble_mode(GD_MAC_MODE, false);
     }
 }
+
+// // custom tapping term lengths.
+// uint16_t get_tapping_term(uint16_t keycode) {
+//     switch (keycode) {
+//         case LT(_MOV, KC_TAB):
+//             return TAPPING_TERM ;
+//             break;
+//         default:
+//         return TAPPING_TERM;
+//     }
+// }

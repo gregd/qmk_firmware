@@ -49,14 +49,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     \
     _______, _______, _______,                                                          /**/ _______, _______, _______),
 };
-
-// // custom tapping term lengths.
-// uint16_t get_tapping_term(uint16_t keycode) {
-//     switch (keycode) {
-//         case LT(_MOV, KC_TAB):
-//             return TAPPING_TERM ;
-//             break;
-//         default:
-//         return TAPPING_TERM;
-//     }
-// }
