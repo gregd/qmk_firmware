@@ -135,6 +135,7 @@ enum babble_keycodes {
     GD_WIN_NEW,
     GD_WIN_HIDE,
     GD_WIN_CEN,
+    GD_WIN_MH,
     GD_APP_CLOSE,
     GD_HELP,
     GD_LOCK,
