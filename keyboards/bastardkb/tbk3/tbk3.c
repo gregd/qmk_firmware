@@ -93,19 +93,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             break;
 
-//        case GD_LOCK_SHIFT:
-//            if (record->event.pressed) {
-//                uint8_t mod = MOD_BIT(KC_LSHIFT);
-//                clear_oneshot_mods();
-//                if (get_oneshot_locked_mods() & mod) {
-//                    clear_oneshot_locked_mods();
-//                    unregister_mods(mod);
-//                } else {
-//                    set_oneshot_locked_mods(mod);
-//                    register_mods(mod);
-//                }
-//            }
-//            return false;
+        case GD_SHT_TGE:
+            if (record->event.pressed) {
+                uint8_t mods = MOD_BIT(KC_LSHIFT);
+                if (mods & get_mods()) {
+                    clear_oneshot_locked_mods();
+                    clear_oneshot_mods();
+                    unregister_mods(mods);
+                } else {
+                    clear_oneshot_mods();
+                    set_oneshot_locked_mods(mods);
+                    register_mods(mods);
+                }
+            }
+            return false;
 
         // default:
         //     return true;

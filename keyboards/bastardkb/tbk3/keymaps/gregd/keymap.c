@@ -3,12 +3,13 @@
 #include <print.h>
 #include "tbk3.h"
 
+// OSM(MOD_LSFT)
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_split_4x6_3( \
     /*             pinky       ring     middle   index                                                      index         middle       ring     pinky */
     KC_LGUI,       KC_1,       KC_2,    KC_3,    KC_4,      KC_5,                       /**/ KC_6,          KC_7,         KC_8,        KC_9,    KC_0,     KC_CAPSLOCK, \
-    OSM(MOD_RALT), KC_Q,       KC_W,    KC_E,    KC_R,      KC_T,                       /**/ KC_Y,          KC_U,         KC_I,        KC_O,    KC_P,     KC_EQL, \
-    OSM(MOD_LSFT), KC_A,       KC_S,    KC_D,    KC_F,      KC_G,                       /**/ KC_H,          KC_J,         KC_K,        KC_L,    KC_SCLN,  KC_QUOT, \
+    OSM(MOD_LALT), KC_Q,       KC_W,    KC_E,    KC_R,      KC_T,                       /**/ KC_Y,          KC_U,         KC_I,        KC_O,    KC_P,     KC_EQL, \
+    GD_SHT_TGE,    KC_A,       KC_S,    KC_D,    KC_F,      KC_G,                       /**/ KC_H,          KC_J,         KC_K,        KC_L,    KC_SCLN,  KC_QUOT, \
     OSM(MOD_LCTL), KC_Z,       KC_X,    KC_C,    KC_V,      KC_B,                       /**/ KC_N,          KC_M,         KC_COMM,     KC_DOT,  KC_SLSH,  OSM(MOD_RCTL), \
     \
     LT(_IDE, KC_ESC), LT(_NAV, KC_BSPC), LT(_SYMBOLS, KC_DEL),                          /**/ LT(_SYMBOLS, KC_ENT), LT(_NAV, KC_SPC), LT(_IDE, KC_TAB)),
@@ -42,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_IDE] = LAYOUT_split_4x6_3( \
     /*       pinky           ring        middle         index                                               index           middle         ring           pinky */
-    RESET,   GD_RESET,       KC_NO,      KC_MPRV,       KC_MPLY,    KC_MNXT,            /**/ GD_I_WIN_STRU, GD_I_WIN_GITC,  GD_I_WIN_GITH, GD_I_GO_LINE,  KC_NO,         GD_INFO, \
+    RESET,   KC_NO,          KC_NO,      KC_MPRV,       KC_MPLY,    KC_MNXT,            /**/ GD_I_WIN_STRU, GD_I_WIN_GITC,  GD_I_WIN_GITH, GD_I_GO_LINE,  GD_RESET,      GD_INFO, \
     KC_VOLU, GD_B_ZOOM_IN,   KC_NO,      GD_I_FACTION,  GD_I_FINF,  GD_I_WIN_SEA,       /**/ GD_I_REL_FILE, GD_I_QDOC,      GD_I_USAGES,   GD_I_REC_LOC,  GD_I_REFACTOR, GD_I_COL_MODE, \
     KC_VOLD, GD_B_ZOOM_OUT,  GD_I_RUNA,  GD_I_GO_FILE,  GD_I_SE_EV, GD_I_WIN_FTREE,     /**/ GD_I_REL_SYM,  GD_I_GO_DEF,    GD_I_NEXT_FN,  GD_I_REC_FILE, GD_I_RENAME,   GD_I_REFORMAT, \
     KC_MUTE, GD_WIN_NEXT,    GD_I_BUILD, GD_I_RUNL,     GD_I_RUNS,  GD_I_WIN_RUN,       /**/ GD_I_GO_FWD,   GD_I_GO_BACK,   GD_I_PREV_FN,  GD_I_GO_L_ED,  GD_I_COMMENT,  GD_I_TGL_CASE, \

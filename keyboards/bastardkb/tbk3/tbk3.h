@@ -50,7 +50,7 @@ enum userspace_custom_keycodes {
     GD_ARROW,
     GD_FARROW,
     GD_HDIR,
-    GD_LOCK_SHIFT,
+    GD_SHT_TGE,
     GD_RESET,
     GD_INFO
 };
