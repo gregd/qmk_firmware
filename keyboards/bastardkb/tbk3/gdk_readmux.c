@@ -5,15 +5,15 @@
 
 #include QMK_KEYBOARD_H
 
-#ifdef USE_BABBLEPASTE
-#    include "babblePaste.h"
+#ifdef USE_GDK_MACRO
+#    include "gdkMacro.h"
 
 #    ifdef GD_READMUX
 
 // Redefine if you use something other than CTRL-B to activate tmux.
 #        define TMUX SS_LCTL("b")
 
-bool babblePaste_readmux(uint16_t keycode) {
+bool gdkMacro_readmux(uint16_t keycode) {
 #        ifdef GD_MOVE
     GDM(GD_GO_LEFT_1C, SS_TAP(X_LEFT));
     GDM(GD_GO_RIGHT_1C, SS_TAP(X_RIGHT));

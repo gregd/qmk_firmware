@@ -25,4 +25,4 @@ AUTO_SHIFT_ENABLE = yes
 SPLIT_KEYBOARD = yes
 LTO_ENABLE = yes
 
-SRC += babblePaste.c babl_windows.c babl_linux.c babl_mac.c babl_vi.c babl_readmux.c
+SRC += gdkMacro.c gdk_windows.c gdk_linux.c gdk_mac.c gdk_vi.c gdk_readmux.c

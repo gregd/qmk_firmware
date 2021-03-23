@@ -5,12 +5,12 @@ Vi is stateful, so you have to track the modes yourself. Otherwise motion is awf
 
 #include QMK_KEYBOARD_H
 
-#ifdef USE_BABBLEPASTE
-#    include "babblePaste.h"
+#ifdef USE_GDK_MACRO
+#    include "gdkMacro.h"
 
 #    ifdef GD_VI
 
-bool babblePaste_vi(uint16_t keycode) {
+bool gdkMacro_vi(uint16_t keycode) {
 #        ifdef GD_MOVE
     GDM(GD_GO_LEFT_1C, "h");
     GDM(GD_GO_RIGHT_1C, "l");
@@ -73,4 +73,4 @@ bool babblePaste_vi(uint16_t keycode) {
 }
 
 #    endif  // VI
-#endif      // Babblepaste
+#endif

@@ -1,5 +1,5 @@
 /*  A library to output the right key shortcut in any common app.
-Given a global variable babble_mode to show the environment and a
+Given a global variable gdk_mode to show the environment and a
 key that calls the paste macro, do the right type of paste.
 Setting the context is done by another macro, or TBD interaction with the host.
 
@@ -10,15 +10,15 @@ https://www.ast.cam.ac.uk/~vasily/idl/emacs_commands_list.html
 
 #include QMK_KEYBOARD_H
 
-#ifdef USE_BABBLEPASTE
-#    include "babblePaste.h"
+#ifdef USE_GDK_MACRO
+#    include "gdkMacro.h"
 
 #    ifdef GD_EMACS
 
 // probably should allow meta to not be ALT
 #        define DMETA IMALT
 
-bool babblePaste_emacs(uint16_t keycode) {
+bool gdkMacro_emacs(uint16_t keycode) {
 #        ifdef GD_MOVE
     GDM(GD_GO_LEFT_1C, SS_TAP(X_LEFT));
     GDM(GD_GO_RIGHT_1C, SS_TAP(X_RIGHT));

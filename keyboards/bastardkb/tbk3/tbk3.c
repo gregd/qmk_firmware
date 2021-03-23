@@ -11,9 +11,9 @@ uint16_t prev_keycode = 0;
 void print_default_layer(void);
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    if (keycode > BABBLE_START && keycode < BABBLE_END_RANGE) {
+    if (keycode > GDK_START && keycode < GDK_END_RANGE) {
         if (record->event.pressed) {
-            babblePaste(keycode);
+            gdkMacro(keycode);
             return true;
         } else {
             return true;
@@ -87,7 +87,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case GD_INFO:
             if (record->event.pressed) {
                 print_default_layer();
-                babblePaste(GD_MODE);
+                gdkMacro(GD_MODE);
             }
             return false;
 
@@ -96,7 +96,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 if (!is_alt_tab_active) {
                     is_alt_tab_active = true;
-                    register_code(babble_was_mac() ? KC_LGUI : KC_LALT);
+                    register_code(gdk_was_mac() ? KC_LGUI : KC_LALT);
                 }
                 alt_tab_timer = timer_read();
                 register_code(KC_TAB);
@@ -160,7 +160,7 @@ void matrix_scan_user(void) {
   // The very important timer.
   if (is_alt_tab_active) {
     if (timer_elapsed(alt_tab_timer) > 1500) {
-      unregister_code(babble_was_mac() ? KC_LGUI : KC_LALT);
+      unregister_code(gdk_was_mac() ? KC_LGUI : KC_LALT);
       is_alt_tab_active = false;
     }
   }
@@ -186,19 +186,19 @@ void matrix_scan_user(void) {
         set_single_persistent_default_layer(_SYMBOLS);
     }
     SEQ_TWO_KEYS(KC_K, KC_M) {
-        babblePaste(GD_DO_MAC);
+        gdkMacro(GD_DO_MAC);
         SEND_STRING("~M");
     }
     SEQ_TWO_KEYS(KC_K, KC_L) {
-        babblePaste(GD_DO_LINUX);
+        gdkMacro(GD_DO_LINUX);
         SEND_STRING("~L");
     }
     SEQ_TWO_KEYS(KC_K, KC_V) {
-        babblePaste(GD_DO_VI);
+        gdkMacro(GD_DO_VI);
         SEND_STRING("~V");
     }
     SEQ_TWO_KEYS(KC_K, KC_T) {
-        babblePaste(GD_DO_READMUX);
+        gdkMacro(GD_DO_READMUX);
         SEND_STRING("~T");
     }
   }
@@ -217,7 +217,7 @@ void keyboard_post_init_user(void) {
     user_config.raw = eeconfig_read_user();
     // By default Linux mode is set so set the new mode only in case of Mac mode
     if (user_config.mac_mode) {
-        set_babble_mode(GD_MAC_MODE, false);
+        gdk_set_mode(GD_MAC_MODE, false);
     }
 }
 

@@ -1,5 +1,5 @@
 /*  A library to output the right key shortcut in any common app.
-Given a global variable babble_mode to show the environment and a
+Given a global variable gdk_mode to show the environment and a
 key that calls the paste macro, do the right type of paste.
 Setting the context is done by another macro, or TBD interaction with the host.
 
@@ -12,12 +12,12 @@ Remember to check  https://github.com/qmk/qmk_firmware/blob/master/quantum/send_
 
 #include QMK_KEYBOARD_H
 
-#ifdef USE_BABBLEPASTE
-#    include "babblePaste.h"
+#ifdef USE_GDK_MACRO
+#    include "gdkMacro.h"
 
 #    ifdef GD_WINDOWS
 
-bool babblePaste_win(uint16_t keycode) {
+bool gdkMacro_win(uint16_t keycode) {
 #        ifdef GD_MOVE
     GDM(GD_GO_LEFT_1C, SS_TAP(X_LEFT));
     GDM(GD_GO_RIGHT_1C, SS_TAP(X_RIGHT));
@@ -108,4 +108,4 @@ bool babblePaste_win(uint16_t keycode) {
 }
 
 #    endif /* GD_WINDOWS*/
-#endif     /* babblepaste */
+#endif

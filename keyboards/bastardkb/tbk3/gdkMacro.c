@@ -1,5 +1,5 @@
 /*  A library to output the right key shortcut in any common app.
-Given a global variable babble_mode to show the environment and a
+Given a global variable gdk_mode to show the environment and a
 key that calls the paste macro, do the right type of paste.
 Setting the context is done by another macro, or TBD interaction with the host.
 
@@ -8,24 +8,24 @@ and https://github.com/qmk/qmk_firmware/blob/master/keyboards/planck/keymaps/jee
 */
 
 #include QMK_KEYBOARD_H
-#include "babblePaste.h"
+#include "gdkMacro.h"
 #include "tbk3.h"
 
 // small function that we might also want to call from a keymap.
 
 // GLOBAL variable to determine mode.  Sets startup default if no eeppom
-uint8_t babble_mode = 0;
-bool babble_was_mac_mode = false;
+uint8_t gdk_mode = 0;
+bool gdk_was_mac_mode = false;
 
 // function to tell the user that the mode has changed
-__attribute__((weak)) void babble_led_user(void) {}
+__attribute__((weak)) void gdk_led_user(void) {}
 
-void set_babble_mode(uint8_t id, bool update_eeprom) {
-    babble_mode = id;
+void gdk_set_mode(uint8_t id, bool update_eeprom) {
+    gdk_mode = id;
 
-    switch (babble_mode) {
+    switch (gdk_mode) {
         case GD_MAC_MODE:
-            babble_was_mac_mode = true;
+            gdk_was_mac_mode = true;
             if (update_eeprom) {
                 user_config.mac_mode = true;
                 eeconfig_update_user(user_config.raw);
@@ -35,7 +35,7 @@ void set_babble_mode(uint8_t id, bool update_eeprom) {
         case GD_WINDOWS_MODE:
 #    endif
         case GD_LINUX_MODE:
-            babble_was_mac_mode = false;
+            gdk_was_mac_mode = false;
             if (update_eeprom) {
                 user_config.mac_mode = false;
                 eeconfig_update_user(user_config.raw);
@@ -45,7 +45,7 @@ void set_babble_mode(uint8_t id, bool update_eeprom) {
     }
 }
 
-void babble_clear_mods(void) {
+void gdk_clear_mods(void) {
     uint8_t mods;
     //uint8_t mods = get_mods();
     //if (get_oneshot_mods() && !has_oneshot_mods_timed_out()) {
@@ -59,79 +59,79 @@ void babble_clear_mods(void) {
     //unregister_mods(mods);
 }
 
-bool babble_was_mac(void) {
-    return babble_was_mac_mode;
+bool gdk_was_mac(void) {
+    return gdk_was_mac_mode;
 }
 
-/* this function runs the appropriate babblepaste macro, given
-the global babble_mode and a keycode defined in the babble_keycodes enum.
+/* this function runs the appropriate gdkMacro, given
+the global gdk_mode and a keycode defined in the gdk_keycodes enum.
 
 This could be made faster by splitting into two functions sorted by keycode range
 But that makes for a *lot* of ifdefs.
 */
-bool babblePaste(uint16_t keycode) {
+bool gdkMacro(uint16_t keycode) {
     // handle the OS/mode  switching first
 
 #    ifdef GD_MAC
     if (keycode == GD_DO_MAC) {
-        set_babble_mode(GD_MAC_MODE, true);
-        babble_led_user();
+        gdk_set_mode(GD_MAC_MODE, true);
+        gdk_led_user();
         return true;
     }
 
-    if (babble_mode == GD_MAC_MODE) {
-        babblePaste_mac(keycode);
+    if (gdk_mode == GD_MAC_MODE) {
+        gdkMacro_mac(keycode);
     }
 #    endif
 
 #    ifdef GD_VI
     if (keycode == GD_DO_VI) {
-        set_babble_mode(GD_VI_MODE, true);
-        babble_led_user();
+        gdk_set_mode(GD_VI_MODE, true);
+        gdk_led_user();
         return true;
     }
-    if (babble_mode == GD_VI_MODE) {
-        babblePaste_vi(keycode);
+    if (gdk_mode == GD_VI_MODE) {
+        gdkMacro_vi(keycode);
     }
 #    endif
 #    ifdef GD_WINDOWS
     if (keycode == GD_DO_WINDOWS) {
-        set_babble_mode(GD_WINDOWS_MODE, true);
-        babble_led_user();
+        gdk_set_mode(GD_WINDOWS_MODE, true);
+        gdk_led_user();
         return true;
     }
-    if (babble_mode == GD_WINDOWS_MODE) {
-        babblePaste_win(keycode);
+    if (gdk_mode == GD_WINDOWS_MODE) {
+        gdkMacro_win(keycode);
     }
 #    endif
 #    ifdef GD_LINUX
     if (keycode == GD_DO_LINUX) {
-        set_babble_mode(GD_LINUX_MODE, true);
-        babble_led_user();
+        gdk_set_mode(GD_LINUX_MODE, true);
+        gdk_led_user();
         return true;
     }
-    if (babble_mode == GD_LINUX_MODE) {
-        babblePaste_linux(keycode);
+    if (gdk_mode == GD_LINUX_MODE) {
+        gdkMacro_linux(keycode);
     }
 #    endif
 #    ifdef GD_EMACS
     if (keycode == GD_DO_EMACS) {
-        set_babble_mode(GD_EMACS_MODE, true);
-        babble_led_user();
+        gdk_set_mode(GD_EMACS_MODE, true);
+        gdk_led_user();
         return true;
     }
-    if (babble_mode == GD_EMACS_MODE) {
-        babblePaste_emacs(keycode);
+    if (gdk_mode == GD_EMACS_MODE) {
+        gdkMacro_emacs(keycode);
     }
 #    endif
 #    ifdef GD_READMUX
     if (keycode == GD_DO_READMUX) {
-        set_babble_mode(GD_READMUX_MODE, true);
-        babble_led_user();
+        gdk_set_mode(GD_READMUX_MODE, true);
+        gdk_led_user();
         return true;
     }
-    if (babble_mode == GD_READMUX_MODE) {
-        babblePaste_readmux(keycode);
+    if (gdk_mode == GD_READMUX_MODE) {
+        gdkMacro_readmux(keycode);
     }
 #    endif
 

@@ -49,7 +49,7 @@
 //#define NO_AUTO_SHIFT_SPECIAL
 #define NO_AUTO_SHIFT_NUMERIC
 
-#define USE_BABBLEPASTE
+#define USE_GDK_MACRO
 //#define GD_WINDOWS
 #define GD_MAC
 #define GD_LINUX
@@ -57,7 +57,7 @@
 #define GD_VI
 //#define GD_EMACS
 
-//// These enable subsets of babble macros. Disable options to save space
+//// These enable subsets of gdk macros. Disable options to save space
 #define GD_MOVE // Uncomment to add basic cursor movement
 #define GD_OSKEYS // This adds Cut, paste, window movement and common OS shortcuts
 #define GD_BROWSER // Browser shortcuts

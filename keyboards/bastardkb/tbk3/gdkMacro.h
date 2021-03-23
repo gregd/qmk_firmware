@@ -1,5 +1,5 @@
 /*  A library to output the right key shortcut in any common app.
-Given a global variable babble_mode to show the environment and a
+Given a global variable gdk_mode to show the environment and a
 key that calls the paste macro, do the right type of paste.
 
 Setting the bable_mode is done by another macro, or TBD interaction with the host.
@@ -11,13 +11,13 @@ and jeebak & algernon's keymap
 #pragma once
 #include "quantum.h"
 
-void set_babble_mode(uint8_t id, bool update_eeprom);
-void babble_led_user(void);
-void babble_clear_mods(void);
-bool babble_was_mac(void);
+void gdk_set_mode(uint8_t id, bool update_eeprom);
+void gdk_led_user(void);
+void gdk_clear_mods(void);
+bool gdk_was_mac(void);
 
 // manually re-order these if you want to set the order or default.
-enum babble_modes {
+enum gdk_modes {
 #    ifdef GD_LINUX
     GD_LINUX_MODE,
 #    endif
@@ -39,7 +39,7 @@ enum babble_modes {
     GD_MODEMAX
 };
 
-// void babble_led_user( uint8_t id)
+// void gdk_led_user( uint8_t id)
 
 /// Hacks to make it easier to create sendstring macros
 
@@ -62,25 +62,25 @@ enum babble_modes {
 
 #    define GDM_CLR_OSM(ent, ...)     \
         if (ent == keycode) {         \
-            babble_clear_mods();      \
+            gdk_clear_mods();      \
             SEND_STRING(__VA_ARGS__); \
             return true;              \
         }
 
-// BabblePaste should be loaded first (header in userspace .h file, before all else)
+// gdkMacro should be loaded first (header in userspace .h file, before all else)
 // if not,we'll do our best.
 #    if defined(NEW_SAFE_RANGE)
-#        define BABBLE_START NEW_SAFE_RANGE
+#        define GDK_START NEW_SAFE_RANGE
 #    else
 #        if defined(KEYMAP_SAFE_RANGE)
-#            define BABBLE_START KEYMAP_SAFE_RANGE
+#            define GDK_START KEYMAP_SAFE_RANGE
 #        else
-#            define BABBLE_START SAFE_RANGE
+#            define GDK_START SAFE_RANGE
 #        endif
 #    endif
 
-enum babble_keycodes {
-    FIRST = BABBLE_START,
+enum gdk_keycodes {
+    FIRST = GDK_START,
 #    ifdef GD_MOVE
     // Movement macros
     // left & right
@@ -237,29 +237,29 @@ enum babble_keycodes {
 #    ifdef GD_READMUX
     GD_DO_READMUX,
 #    endif
-    BABBLE_END_RANGE
+    GDK_END_RANGE
 };
 
 // primary function.
-bool babblePaste(uint16_t keycode);
+bool gdkMacro(uint16_t keycode);
 
 /****************************************************/
 /* All per-os includes and short mode switch macros*/
 #    ifdef GD_WINDOWS
-bool babblePaste_win(uint16_t keycode);
+bool gdkMacro_win(uint16_t keycode);
 #    endif
 #    ifdef GD_MAC
-bool babblePaste_mac(uint16_t keycode);
+bool gdkMacro_mac(uint16_t keycode);
 #    endif
 #    ifdef GD_LINUX
-bool babblePaste_linux(uint16_t keycode);
+bool gdkMacro_linux(uint16_t keycode);
 #    endif
 #    ifdef GD_EMACS
-bool babblePaste_emacs(uint16_t keycode);
+bool gdkMacro_emacs(uint16_t keycode);
 #    endif
 #    ifdef GD_VI
-bool babblePaste_vi(uint16_t keycode);
+bool gdkMacro_vi(uint16_t keycode);
 #    endif
 #    ifdef GD_READMUX
-bool babblePaste_readmux(uint16_t keycode);
+bool gdkMacro_readmux(uint16_t keycode);
 #    endif

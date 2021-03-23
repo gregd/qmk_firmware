@@ -2,7 +2,7 @@
 #include "quantum.h"
 #include "version.h"
 #include "eeprom.h"
-#include "babblePaste.h"
+#include "gdkMacro.h"
 
 #define LAYOUT_split_4x6_3( \
 	k00, k01, k02, k03, k04, k05,			k55, k54, k53, k52, k51, k50, \
@@ -42,7 +42,7 @@ define modifiers here, since MOD_* doesn't seem to work for these
 #define MODS_GUI_MASK  (MOD_BIT(KC_LGUI)|MOD_BIT(KC_RGUI))
 
 enum userspace_custom_keycodes {
-    GD_QWE = BABBLE_END_RANGE,
+    GD_QWE = GDK_END_RANGE,
     GD_POL,
     GD_NAV,
     GD_SYM,
