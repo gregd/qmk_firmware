@@ -49,9 +49,7 @@ enum userspace_custom_keycodes {
     GD_ALT_TAB,
     GD_ARROW,
     GD_FARROW,
-    GD_ABRACKET,
     GD_HDIR,
-    GD_UDIR,
     GD_LOCK_SHIFT,
     GD_RESET,
     GD_INFO

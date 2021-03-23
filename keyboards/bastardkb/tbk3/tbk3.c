@@ -57,21 +57,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-        case GD_ABRACKET:
-            if (record->event.pressed) {
-                SEND_STRING(IMCTL(X_LEFT) SS_TAP(X_BSPACE) "<" IMCTL(X_RIGHT) ">");
-            }
-            return false;
-
         case GD_HDIR:
             if (record->event.pressed) {
                 SEND_STRING("~/");
-            }
-            return false;
-
-        case GD_UDIR:
-            if (record->event.pressed) {
-                SEND_STRING("../");
             }
             return false;
 
