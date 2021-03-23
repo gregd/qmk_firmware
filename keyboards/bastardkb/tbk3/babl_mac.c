@@ -103,6 +103,46 @@ bool babblePaste_mac(uint16_t keycode) {
 #            endif  // GD_APP_WINDOWSPLITTING
 
 #        endif  // GD_APP
+#        ifdef GD_IDE
+    GDM(GD_I_WIN_FTREE, IMALT(X_1));
+    GDM(GD_I_WIN_SEA, IMALT(X_3));
+    GDM(GD_I_WIN_RUN, IMALT(X_4));
+    GDM(GD_I_WIN_STRU, IMALT(X_7));
+    GDM(GD_I_WIN_GITH, IMALT(X_9));
+    GDM(GD_I_WIN_GITC, IMALT(X_0));
+    GDM(GD_I_REC_FILE, IMCTL(X_E));
+    GDM(GD_I_REC_LOC, OMSFT(IMCTL(X_E)));
+    GDM(GD_I_SE_EV, SS_LCTL("l"));
+    GDM(GD_I_FINF, OMSFT(IMCTL(X_F)));
+    GDM(GD_I_FACTION, OMSFT(IMCTL(X_A)));
+    GDM(GD_I_REL_FILE, SS_LCTL("t"));             // RubyMine goto-view / controller
+    GDM(GD_I_REL_SYM, OMALT(IMCTL(X_HOME)));
+    GDM(GD_I_EX_SEL, SS_LCTL("w"));
+    GDM(GD_I_COMPLETE, OMSFT(IMCTL(X_SPACE)));
+    GDM(GD_I_FIXES, IMALT(X_ENTER));
+    GDM(GD_I_QDOC, SS_LCTL("q"));
+    GDM(GD_I_GO_L_ED, OMSFT(IMCTL(X_BSPACE)));
+    GDM(GD_I_GO_DEF, SS_LCTL("b"));
+    GDM(GD_I_GO_BACK, OMALT(IMCTL(X_LEFT)));
+    GDM(GD_I_GO_FWD, OMALT(IMCTL(X_RIGHT)));
+    GDM(GD_I_GO_LINE, OMSFT(OMALT(IMCTL(X_G))));
+    GDM(GD_I_GO_FILE, OMSFT(IMCTL(X_N)));
+    GDM(GD_I_NEXT_FN, IMALT(X_DOWN));
+    GDM(GD_I_PREV_FN, IMALT(X_UP));
+    GDM(GD_I_USAGES, IMALT(X_F7));
+    GDM(GD_I_RENAME, IMSFT(X_F6));
+    GDM(GD_I_REFACTOR, OMSFT(OMALT(IMCTL(X_T))));
+    GDM(GD_I_COMMENT, IMCTL(X_SLASH));
+    GDM(GD_I_REFORMAT, OMALT(IMCTL(X_L)));
+    GDM(GD_I_COL_MODE, OMALT(IMSFT(X_INSERT)));
+    GDM(GD_I_NEW_LINE, IMSFT(X_ENTER));
+    GDM(GD_I_DUP_LINE, IMCTL(X_D));
+    GDM(GD_I_TGL_CASE, OMSFT(IMCTL(X_U)));
+    GDM(GD_I_BUILD, IMCTL(X_F9));
+    GDM(GD_I_RUNL, IMSFT(X_F10));
+    GDM(GD_I_RUNS, OMSFT(IMALT(X_F10)));
+    GDM(GD_I_RUNA,  OMSFT(OMALT(IMCTL(X_A))));
+#        endif
 
     // Todo, ring bell, flash light, show user this isn't supported
     return false;
