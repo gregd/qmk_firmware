@@ -42,7 +42,7 @@ define modifiers here, since MOD_* doesn't seem to work for these
 #define MODS_GUI_MASK  (MOD_BIT(KC_LGUI)|MOD_BIT(KC_RGUI))
 
 enum userspace_custom_keycodes {
-    GD_QWE = GDK_END_RANGE,
+    GD_RST = GDK_END_RANGE,
     GD_POL,
     GD_NAV,
     GD_SYM,
@@ -51,7 +51,6 @@ enum userspace_custom_keycodes {
     GD_FARROW,
     GD_HDIR,
     GD_SHT_TGE,
-    GD_RESET,
     GD_INFO
 };
 

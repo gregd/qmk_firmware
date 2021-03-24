@@ -81,8 +81,8 @@ bool gdkMacro_mac(uint16_t keycode) {
     GDM(GD_B_BOOKMARK, SS_LGUI("d"));
     GDM(GD_B_RELOAD, OMGUI(SS_LSFT("r")));  // hard reload w/o cache
     GDM(GD_B_FULLSCREEN, OMGUI(SS_LCTRL("p")));
-    GDM(GD_B_ZOOM_IN, IMGUI(X_KP_PLUS));  // ctr+ +
-    GDM(GD_B_ZOOM_OUT, IMGUI(X_KP_MINUS));
+    GDM(GD_B_ZOOMI, IMGUI(X_KP_PLUS));  // ctr+ +
+    GDM(GD_B_ZOOMO, IMGUI(X_KP_MINUS));
 #            ifdef GD_B_CHROME
     GDM(GD_B_VIEWSRC, SS_LGUI("u"));           // Chrome or firefox
     GDM(GD_B_DEV_TOOLS, OMGUI(SS_LALT("i")));  // Chrome or Firefox

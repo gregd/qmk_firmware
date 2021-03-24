@@ -6,27 +6,19 @@
 user_config_t user_config;
 bool is_alt_tab_active = false;
 uint16_t alt_tab_timer = 0;
-uint16_t prev_keycode = 0;
 
 void print_default_layer(void);
+void toggle_locked_shift(void);
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (keycode > GDK_START && keycode < GDK_END_RANGE) {
         if (record->event.pressed) {
             gdkMacro(keycode);
-            return true;
-        } else {
-            return true;
         }
+        return true;
     }
 
     switch (keycode) {
-        case GD_QWE:
-            if (record->event.pressed) {
-                set_single_persistent_default_layer(_QWERTY);
-            }
-            return false;
-
         case GD_POL:
             if (record->event.pressed) {
                 set_single_persistent_default_layer(_POLISH);
@@ -63,7 +55,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-        case GD_RESET:
+        case GD_RST:
             if (record->event.pressed) {
                 clear_oneshot_locked_mods();
                 clear_oneshot_mods();
@@ -95,25 +87,39 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         case GD_SHT_TGE:
             if (record->event.pressed) {
-                uint8_t mods = MOD_BIT(KC_LSHIFT);
-                if (mods & get_mods()) {
-                    clear_oneshot_locked_mods();
-                    clear_oneshot_mods();
-                    unregister_mods(mods);
-                } else {
-                    clear_oneshot_mods();
-                    set_oneshot_locked_mods(mods);
-                    register_mods(mods);
-                }
+                toggle_locked_shift();
             }
             return false;
+
+        case LT(_IDE, KC_ESC):
+            if (record->event.pressed) {
+                if (MOD_BIT(KC_LSHIFT) & get_oneshot_locked_mods()) {
+                    toggle_locked_shift();
+                }
+            }
+            return true;
 
         // default:
         //     return true;
     }
 
-    prev_keycode = keycode;
     return true;
+}
+
+void toggle_locked_shift(void) {
+    uint8_t sft = MOD_BIT(KC_LSHIFT);
+    clear_oneshot_mods();
+    if (sft & get_oneshot_locked_mods()) {
+        clear_oneshot_locked_mods();
+        if (sft & get_mods()) {
+            unregister_mods(sft);
+        }
+    } else {
+        set_oneshot_locked_mods(sft);
+        if (!(sft & get_mods())) {
+            register_mods(sft);
+        }
+    }
 }
 
 bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
@@ -158,12 +164,6 @@ void matrix_scan_user(void) {
     leading = false;
     leader_end();
 
-    SEQ_TWO_KEYS(KC_K, KC_K) {
-        SEND_STRING("QMK rulez!");
-    }
-    SEQ_TWO_KEYS(KC_K, KC_Q) {
-        set_single_persistent_default_layer(_QWERTY);
-    }
     SEQ_TWO_KEYS(KC_K, KC_P) {
         set_single_persistent_default_layer(_POLISH);
         SEND_STRING("~P");
@@ -184,11 +184,9 @@ void matrix_scan_user(void) {
     }
     SEQ_TWO_KEYS(KC_K, KC_V) {
         gdkMacro(GD_DO_VI);
-        SEND_STRING("~V");
     }
     SEQ_TWO_KEYS(KC_K, KC_T) {
         gdkMacro(GD_DO_READMUX);
-        SEND_STRING("~T");
     }
   }
 }
@@ -199,10 +197,6 @@ void eeconfig_init_user(void) {
 }
 
 void keyboard_post_init_user(void) {
-    //debug_enable=true;
-    //debug_keyboard=true;
-    //debug_mouse=true;
-
     user_config.raw = eeconfig_read_user();
     // By default Linux mode is set so set the new mode only in case of Mac mode
     if (user_config.mac_mode) {

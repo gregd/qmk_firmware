@@ -87,8 +87,8 @@ bool gdkMacro_win(uint16_t keycode) {
     // chrome
     GDM(GD_B_RELOAD, IMCTL(X_F5));             // hard reload w/o cache
     GDM(GD_B_FULLSCREEN, SS_TAP(X_F11));       // command shift F
-    GDM(GD_B_ZOOM_IN, OMSFT(IMCTL(X_EQUAL)));  // ctr+ +
-    GDM(GD_B_ZOOM_OUT, IMCTL(X_MINUS));
+    GDM(GD_B_ZOOMI, OMSFT(IMCTL(X_EQUAL)));  // ctr+ +
+    GDM(GD_B_ZOOMO, IMCTL(X_MINUS));
 
 #        endif
 

@@ -157,8 +157,8 @@ enum gdk_keycodes {
     GD_B_DEV_TOOLS,  // hard one to remember
     GD_B_RELOAD,
     GD_B_FULLSCREEN,
-    GD_B_ZOOM_IN,
-    GD_B_ZOOM_OUT,
+    GD_B_ZOOMI,
+    GD_B_ZOOMO,
     GD_B_VIEWSRC,
 #    endif
 #    ifdef GD_APP
