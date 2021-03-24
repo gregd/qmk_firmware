@@ -24,10 +24,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_NAV] = LAYOUT_split_4x6_3( \
     /*            pinky         ring          middle        index                                         index        middle     ring          pinky */
-    GD_RST,       KC_NO,        GD_WIN_NEXT,  GD_REPLACE,   GD_B_ZOOMO, GD_B_ZOOMI,     /**/ GD_GO_SDOC,  GD_UNDO,     GD_REDO,   GD_SE_ALL,    GD_I_COL_MODE, KC_NO, \
-    GD_WIN_MH,    KC_NO,        KC_NO,        GD_FPREV,     GD_B_PTAB,  GD_B_URL,       /**/ KC_PGUP ,    KC_LEFT,     KC_UP ,    KC_RIGHT,     GD_PASTE,      GD_SHT_TGE, \
-    GD_WIN_CEN,   GD_APP_SAVE,  GD_ALT_TAB,   GD_FNEXT,     GD_B_NTAB,  GD_B_CTAB,      /**/ KC_PGDN,     GD_GO_LWORD, KC_DOWN,   GD_GO_RWORD,  GD_COPY,       GD_I_EX_SEL, \
-    GD_WIN_HIDE,  GD_APP_CLOSE, GD_APP_NEXT,  GD_FIND,      GD_B_NEWT,  KC_NO,          /**/ GD_GO_EDOC,  GD_GO_SLINE, KC_APP,    GD_GO_ELINE,  GD_CUT,        GD_PA_REC, \
+    GD_RST,       KC_NO,        GD_WIN_NEXT,  GD_REPLACE,   GD_B_ZOOMI, GD_B_ZOOMO,     /**/ GD_GO_SDOC,  GD_UNDO,     GD_REDO,   GD_SE_ALL,    GD_I_COL_MODE, KC_NO, \
+    KC_NO,        KC_NO,        GD_APP_NEXT,  GD_FPREV,     GD_B_PTAB,  GD_B_CTAB,      /**/ KC_PGUP ,    KC_LEFT,     KC_UP ,    KC_RIGHT,     GD_PASTE,      GD_SHT_TGE, \
+    GD_WIN_CEN,   GD_APP_SAVE,  GD_ALT_TAB,   GD_FNEXT,     GD_B_NTAB,  GD_B_URL,       /**/ KC_PGDN,     GD_GO_LWORD, KC_DOWN,   GD_GO_RWORD,  GD_COPY,       GD_I_EX_SEL, \
+    KC_NO,        GD_APP_CLOSE, GD_WIN_HIDE,  GD_FIND,      GD_B_NEWT,  KC_NO,          /**/ GD_GO_EDOC,  GD_GO_SLINE, KC_APP,    GD_GO_ELINE,  GD_CUT,        GD_PA_REC, \
     \
     _______, _______, _______,                                                          /**/ _______, _______, _______),
 

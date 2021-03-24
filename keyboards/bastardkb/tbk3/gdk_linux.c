@@ -63,7 +63,6 @@ bool gdkMacro_linux(uint16_t keycode) {
     GDM(GD_WIN_NEW, IMCTL(X_N));
     GDM(GD_WIN_HIDE, OMALT(IMCTL(X_KP_0)));
     GDM(GD_WIN_CEN, IMGUI(X_3));
-    GDM(GD_WIN_MH, OMALT(IMCTL(X_P8)));
     // GDM( GD_HELP,		(SS_TAP(X_F1))	); // NA?
     GDM(GD_LOCK, OMCTL(IMALT(X_L)));
     GDM(GD_SCR_CAP_FULL, SS_TAP(X_PSCREEN));
