@@ -21,7 +21,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______,                               /**/ _______, _______, _______, _______, _______, _______, \
     _______, _______, _______, _______, _______, _______,                               /**/ _______, _______, _______, _______, _______, _______, \
     \
-    _______, _______, MT(MOD_RALT, KC_ESC),                                             /**/ MT(MOD_RALT, KC_ENT), _______, _______),
+    _______, _______, MT(MOD_RALT, KC_DEL),                                             /**/ MT(MOD_RALT, KC_ENT), _______, _______),
 
   [_NAV] = LAYOUT_split_4x6_3( \
     /*         pinky     ring      middle   index                                                         index        middle       ring          pinky */
@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     GD_WIN_CEN,   GD_APP_NEXT,  GD_ALT_TAB,    GD_B_NEXT_TAB, GD_FNEXT,  GD_UNDO,       /**/ GD_ARROW,   KC_4,      KC_5,       KC_6,     KC_NO,          KC_F11, \
     GD_WIN_HIDE,  GD_APP_CLOSE, GD_B_CL_TAB,   GD_B_NEW_TAB,  GD_FIND,   GD_REDO,       /**/ KC_0,       KC_1,      KC_2,       KC_3,     GD_HDIR,        KC_F12, \
     \
-    _______, GD_DEL_2LNS, GD_DEL_2LNE,                                                          /**/ GD_I_NEW_LINE, GD_I_COMPLETE, GD_I_FIXES),
+    _______, GD_DEL_2LNS, GD_DEL_2LNE,                                                  /**/ GD_I_NEW_LINE, GD_I_COMPLETE, GD_I_FIXES),
 
   [_IDE] = LAYOUT_split_4x6_3( \
     /*       pinky           ring        middle         index                                               index           middle         ring           pinky */
