@@ -69,12 +69,12 @@ bool gdkMacro_mac(uint16_t keycode) {
     GDM(GD_SWITCH_KEYBOARD_LAYOUT, IMCTL(X_SPACE));
 #        endif
 #        ifdef GD_BROWSER
-    GDM(GD_B_NEW_TAB, IMGUI(X_T));
-    GDM(GD_B_CL_TAB, SS_LGUI("w"));
+    GDM(GD_B_NEWT, IMGUI(X_T));
+    GDM(GD_B_CTAB, SS_LGUI("w"));
     GDM(GD_B_REOPEN_LAST_TAB, OMSFT(SS_LGUI("t")));
-    GDM(GD_B_NEXT_TAB, OMGUI(IMALT(X_RIGHT)));
-    GDM(GD_B_PREV_TAB, OMGUI(IMALT(X_LEFT)));
-    GDM(GD_B_URL_BAR, SS_LGUI("l"));
+    GDM(GD_B_NTAB, OMGUI(IMALT(X_RIGHT)));
+    GDM(GD_B_PTAB, OMGUI(IMALT(X_LEFT)));
+    GDM(GD_B_URL, SS_LGUI("l"));
     GDM(GD_B_FORWARD, IMGUI(X_RIGHT));
     GDM(GD_B_BACK, IMGUI(X_LEFT));
     GDM(GD_B_FIND, SS_LGUI("f"));

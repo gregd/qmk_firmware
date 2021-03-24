@@ -67,12 +67,12 @@ bool gdkMacro_win(uint16_t keycode) {
 #        endif
 
 #        ifdef GD_BROWSER
-    GDM(GD_B_NEW_TAB, SS_LCTRL("t"));
-    GDM(GD_B_CL_TAB, SS_LCTRL("w"));
+    GDM(GD_B_NEWT, SS_LCTRL("t"));
+    GDM(GD_B_CTAB, SS_LCTRL("w"));
     GDM(GD_B_REOPEN_LAST_TAB, OMSFT(IMCTL(X_T)));
-    GDM(GD_B_NEXT_TAB, IMCTL(X_TAB));
-    GDM(GD_B_PREV_TAB, OMSFT(IMCTL(X_TAB)));
-    GDM(GD_B_URL_BAR, SS_LCTRL("l"));
+    GDM(GD_B_NTAB, IMCTL(X_TAB));
+    GDM(GD_B_PTAB, OMSFT(IMCTL(X_TAB)));
+    GDM(GD_B_URL, SS_LCTRL("l"));
     GDM(GD_B_FORWARD, IMALT(X_RIGHT));
     GDM(GD_B_BACK, OMSFT(IMALT(X_LEFT)));
     ;

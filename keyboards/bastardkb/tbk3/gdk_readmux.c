@@ -61,10 +61,10 @@ bool gdkMacro_readmux(uint16_t keycode) {
  */
 #            ifdef GD_MAC
     // this is stock OS X Terminal, alter for windows &etc.
-    GDM(GD_B_NEW_TAB, IMGUI(X_T));
-    GDM(GD_B_CL_TAB, SS_LGUI("w"));
-    GDM(GD_B_NEXT_TAB, IMCTL(X_TAB));
-    GDM(GD_B_PREV_TAB, OMSFT(IMCTL(X_TAB)));
+    GDM(GD_B_NEWT, IMGUI(X_T));
+    GDM(GD_B_CTAB, SS_LGUI("w"));
+    GDM(GD_B_NTAB, IMCTL(X_TAB));
+    GDM(GD_B_PTAB, OMSFT(IMCTL(X_TAB)));
 #            endif
 #        endif
 #        ifdef GD_APP

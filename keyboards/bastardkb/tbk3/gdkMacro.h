@@ -99,8 +99,6 @@ enum gdk_keycodes {
     GD_GO_PARA_END,
     GD_PGDN,
     GD_PGUP,
-    GD_NLINE_N,
-    GD_PLINE_N,
     // And the delete options
     GD_DEL_LEFT_1C,   // == backspace, so why bother?
     GD_DEL_RIGHT_1C,  // usually = Del
@@ -146,12 +144,12 @@ enum gdk_keycodes {
     GD_SWITCH_KEYBOARD_LAYOUT,
 #    endif
 #    ifdef GD_BROWSER
-    GD_B_NEW_TAB,
-    GD_B_CL_TAB,
+    GD_B_NEWT,
+    GD_B_CTAB,
     GD_B_REOPEN_LAST_TAB,
-    GD_B_NEXT_TAB,
-    GD_B_PREV_TAB,
-    GD_B_URL_BAR,
+    GD_B_NTAB,
+    GD_B_PTAB,
+    GD_B_URL,
     GD_B_FORWARD,
     GD_B_BACK,
     GD_B_FIND,
