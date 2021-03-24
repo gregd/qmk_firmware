@@ -47,7 +47,7 @@ bool gdkMacro_win(uint16_t keycode) {
     GDM_CLR_OSM(GD_CUT, SS_LCTRL("x"));
     GDM_CLR_OSM(GD_COPY, SS_LCTRL("c"));
     GDM(GD_PASTE, SS_LCTRL("v"));
-    GDM(GD_SELECT_ALL, SS_LCTRL("a"));
+    GDM(GD_SE_ALL, SS_LCTRL("a"));
     GDM(GD_FIND, SS_LCTRL("f"));
     GDM(GD_FNEXT, SS_TAP(X_F3));
     // GDM( GD_FPREV, 	SS_TAP(X_F3) ); // doesn't have a standard one?

@@ -99,6 +99,8 @@ enum gdk_keycodes {
     GD_GO_PARA_END,
     GD_PGDN,
     GD_PGUP,
+    GD_NLINE_N,
+    GD_PLINE_N,
     // And the delete options
     GD_DEL_LEFT_1C,   // == backspace, so why bother?
     GD_DEL_RIGHT_1C,  // usually = Del
@@ -115,8 +117,8 @@ enum gdk_keycodes {
     GD_CUT,
     GD_COPY,
     GD_PASTE,
-    GD_PASTE_RECENT,
-    GD_SELECT_ALL,
+    GD_PA_REC,
+    GD_SE_ALL,
     /* not yet implemented
     GD_SWAP_LAST2C, // swap last characters before the cursor
     GD_SWAP_LAST2W, // Swap the last two words before the cursor

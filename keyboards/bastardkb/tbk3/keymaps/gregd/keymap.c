@@ -3,13 +3,13 @@
 #include <print.h>
 #include "tbk3.h"
 
-// OSM(MOD_LSFT)
+// KC_GRV
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_split_4x6_3( \
     /*             pinky       ring     middle   index                                                      index         middle       ring     pinky */
     KC_LGUI,       KC_1,       KC_2,    KC_3,    KC_4,      KC_5,                       /**/ KC_6,          KC_7,         KC_8,        KC_9,    KC_0,     KC_CAPSLOCK, \
-    OSM(MOD_LALT), KC_Q,       KC_W,    KC_E,    KC_R,      KC_T,                       /**/ KC_Y,          KC_U,         KC_I,        KC_O,    KC_P,     KC_EQL, \
-    GD_SHT_TGE,    KC_A,       KC_S,    KC_D,    KC_F,      KC_G,                       /**/ KC_H,          KC_J,         KC_K,        KC_L,    KC_SCLN,  KC_QUOT, \
+    OSM(MOD_LALT), KC_Q,       KC_W,    KC_E,    KC_R,      KC_T,                       /**/ KC_Y,          KC_U,         KC_I,        KC_O,    KC_P,     KC_LEAD, \
+    OSM(MOD_LSFT), KC_A,       KC_S,    KC_D,    KC_F,      KC_G,                       /**/ KC_H,          KC_J,         KC_K,        KC_L,    KC_SCLN,  KC_QUOT, \
     OSM(MOD_LCTL), KC_Z,       KC_X,    KC_C,    KC_V,      KC_B,                       /**/ KC_N,          KC_M,         KC_COMM,     KC_DOT,  KC_SLSH,  OSM(MOD_RCTL), \
     \
     LT(_IDE, KC_ESC), LT(_NAV, KC_BSPC), LT(_SYMBOLS, KC_DEL),                          /**/ LT(_SYMBOLS, KC_ENT), LT(_NAV, KC_SPC), LT(_IDE, KC_TAB)),
@@ -24,11 +24,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, MT(MOD_RALT, KC_ESC),                                             /**/ MT(MOD_RALT, KC_ENT), _______, _______),
 
   [_NAV] = LAYOUT_split_4x6_3( \
-    /*         pinky     ring      middle   index                                                         index        middle       ring           pinky */
-    GD_QWE,    KC_TILD,  KC_CIRC,  KC_PERC, GD_ARROW, GD_FARROW,                        /**/ GD_GO_SDOC,  GD_DEL_2LNS, GD_DEL_2LNE, GD_DEL_LINE, KC_WWW_HOME, KC_MAIL, \
-    KC_DLR,    KC_EXLM,  KC_MINS,  KC_LCBR, KC_RCBR,  KC_GRV,                           /**/ GD_GO_SLINE, GD_GO_LWORD, GD_GO_RWORD, GD_GO_ELINE,   GD_PASTE,    GD_PASTE_RECENT, \
-    KC_AT,     KC_ASTR,  KC_UNDS,  KC_LPRN, KC_RPRN,  KC_BSLASH,                        /**/ KC_LEFT,     KC_DOWN,     KC_UP,       KC_RIGHT,      GD_COPY,     GD_I_EX_SEL, \
-    KC_HASH,   KC_AMPR,  KC_PLUS,  KC_LBRC, KC_RBRC,  KC_PIPE,                          /**/ GD_GO_EDOC,  KC_PGDN,     KC_PGUP,     GD_I_DUP_LINE, GD_CUT,      GD_SELECT_ALL, \
+    /*         pinky     ring      middle   index                                                         index        middle       ring          pinky */
+    GD_QWE,    KC_TILD,  KC_CIRC,  KC_PERC, GD_ARROW, GD_FARROW,                        /**/ GD_GO_SDOC,  KC_NO,       GD_PLINE_N,  GD_SE_ALL,    KC_WWW_HOME, KC_MAIL, \
+    KC_DLR,    KC_PLUS,  KC_MINS,  KC_LCBR, KC_RCBR,  KC_BSLASH,                        /**/ KC_PGUP ,    KC_LEFT,     KC_UP ,      KC_RIGHT,     GD_PASTE,    GD_SHT_TGE, \
+    KC_AT,     KC_ASTR,  KC_UNDS,  KC_LPRN, KC_RPRN,  KC_EXLM,                          /**/ KC_PGDN,     GD_GO_LWORD, KC_DOWN,     GD_GO_RWORD,  GD_COPY,     GD_I_EX_SEL, \
+    KC_HASH,   KC_AMPR,  KC_PEQL,  KC_LBRC, KC_RBRC,  KC_PIPE,                          /**/ GD_GO_EDOC,  GD_GO_SLINE, GD_NLINE_N,  GD_GO_ELINE,  GD_CUT,      GD_PA_REC, \
     \
     KC_APP, GD_DEL_LWORD, GD_DEL_RWORD,                                                 /**/ _______, _______, _______),
 
@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     GD_WIN_CEN,   GD_APP_NEXT,  GD_ALT_TAB,    GD_B_NEXT_TAB, GD_FNEXT,  GD_UNDO,       /**/ GD_ARROW,   KC_4,      KC_5,       KC_6,     KC_NO,          KC_F11, \
     GD_WIN_HIDE,  GD_APP_CLOSE, GD_B_CL_TAB,   GD_B_NEW_TAB,  GD_FIND,   GD_REDO,       /**/ KC_0,       KC_1,      KC_2,       KC_3,     GD_HDIR,        KC_F12, \
     \
-    _______, _______, KC_LEAD,                                                          /**/ GD_I_NEW_LINE, GD_I_COMPLETE, GD_I_FIXES),
+    _______, GD_DEL_2LNS, GD_DEL_2LNE,                                                          /**/ GD_I_NEW_LINE, GD_I_COMPLETE, GD_I_FIXES),
 
   [_IDE] = LAYOUT_split_4x6_3( \
     /*       pinky           ring        middle         index                                               index           middle         ring           pinky */

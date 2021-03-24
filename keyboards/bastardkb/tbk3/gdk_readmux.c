@@ -43,7 +43,7 @@ bool gdkMacro_readmux(uint16_t keycode) {
     GDM(GD_CUT, SS_LCTL("k"));       // wrong half the time
     // GDM( GD_COPY		,END );
     GDM(GD_PASTE, SS_LCTL("y"));
-    GDM(GD_SELECT_ALL, SS_LCTL("aky"));
+    GDM(GD_SE_ALL, SS_LCTL("aky"));
     GDM(GD_FIND, SS_LCTL("r"));  // search history
     GDM(GD_FNEXT, SS_LCTL("r"));
     GDM(GD_FPREV, SS_LCTL("s"));

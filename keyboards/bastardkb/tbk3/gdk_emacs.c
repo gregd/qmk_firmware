@@ -47,7 +47,7 @@ bool gdkMacro_emacs(uint16_t keycode) {
     GDM(GD_CUT, SS_LCTRL("w"));
     GDM(GD_COPY, SS_LALT("w"));  // really?
     GDM(GD_PASTE, SS_LCTRL("y"));
-    GDM(GD_SELECT_ALL, SS_LCTRL("x") "h");
+    GDM(GD_SE_ALL, SS_LCTRL("x") "h");
     GDM(GD_FIND, SS_LCTRL("s"));
     GDM(GD_FNEXT, SS_LCTRL("s"));
     GDM(GD_FPREV, SS_LCTRL("r"));

@@ -39,7 +39,7 @@ bool gdkMacro_vi(uint16_t keycode) {
     GDM(GD_CUT, "x");
     GDM(GD_COPY, "y");
     GDM(GD_PASTE, "p");
-    GDM(GD_SELECT_ALL, IMSFT(X_SCOLON) SS_TAP(X_5) "y");  // wrong but helpful?
+    GDM(GD_SE_ALL, IMSFT(X_SCOLON) SS_TAP(X_5) "y");  // wrong but helpful?
     GDM(GD_FIND, SS_TAP(X_SLASH));
     GDM(GD_FNEXT, "n");
     GDM(GD_FPREV, IMSFT(X_N));

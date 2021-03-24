@@ -43,7 +43,7 @@ bool gdkMacro_mac(uint16_t keycode) {
     GDM_CLR_OSM(GD_CUT, SS_LGUI("x"));
     GDM_CLR_OSM(GD_COPY, SS_LGUI("c"));
     GDM(GD_PASTE, SS_LGUI("v"));
-    GDM(GD_SELECT_ALL, SS_LGUI("a"));
+    GDM(GD_SE_ALL, SS_LGUI("a"));
     GDM(GD_FIND, SS_LGUI("f"));
     GDM(GD_FNEXT, SS_LGUI("g"));
     // GDM( GD_FNEXT, 	OMSFT(X_F4)) ); // Mac office
