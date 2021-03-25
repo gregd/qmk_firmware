@@ -189,6 +189,9 @@ void matrix_scan_user(void) {
     SEQ_TWO_KEYS(KC_K, KC_T) {
         gdkMacro(GD_DO_READMUX);
     }
+    SEQ_TWO_KEYS(KC_S, KC_G) {
+        SEND_STRING("Grzegorz Daniluk");
+    }
   }
 }
 
