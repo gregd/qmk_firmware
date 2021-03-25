@@ -55,14 +55,17 @@ bool gdkMacro_linux(uint16_t keycode) {
     GDM(GD_FPREV, OMSFT(IMCTL(X_G)));  // Gnome*/
     /* GDM( GD_REPLACE , (SS_LCTL("r"))	); // KDE */
     GDM(GD_REPLACE, SS_LCTL("h"));  // Gnome*/
-    GDM(GD_RUNAPP, IMALT(X_F2));         // Gnome
+    GDM(GD_RUNAPP, SS_TAP(X_LGUI));
     GDM(GD_APP_NEXT, IMALT(X_TAB));
     GDM(GD_APP_LAST, OMSFT(IMALT(X_TAB)));
     GDM(GD_WIN_NEXT, OMCTL(IMALT(X_PGUP)));  // Gnome, sometimes
     GDM(GD_WIN_PREV, OMCTL(IMALT(X_PGDOWN)));
     GDM(GD_WIN_NEW, IMCTL(X_N));
     GDM(GD_WIN_HIDE, OMALT(IMCTL(X_KP_0)));
-    GDM(GD_WIN_CEN, IMGUI(X_3));
+    GDM(GD_WIN_FULL, OMALT(IMCTL(X_KP_5)));
+    GDM(GD_WIN_CEN, OMALT(IMCTL(X_KP_8)));
+    GDM(GD_WIN_LFT, OMALT(IMCTL(X_KP_4)));
+    GDM(GD_WIN_RGT, OMALT(IMCTL(X_KP_6)));
     // GDM( GD_HELP,		(SS_TAP(X_F1))	); // NA?
     GDM(GD_LOCK, OMCTL(IMALT(X_L)));
     GDM(GD_SCR_CAP_FULL, SS_TAP(X_PSCREEN));
@@ -81,7 +84,7 @@ bool gdkMacro_linux(uint16_t keycode) {
     GDM(GD_B_BOOKMARK, SS_LCTL("d"));
     GDM(GD_B_DEV_TOOLS, SS_LCTL("t"));  // Chrome
     // chrome
-    GDM(GD_B_RELOAD, IMCTL(X_F5));             // hard reload w/o cache
+    GDM(GD_B_RLOAD, IMCTL(X_F5));             // hard reload w/o cache
     GDM(GD_B_FULLSCREEN, SS_TAP(X_F11));       // command shift F
     GDM(GD_B_ZOOMI, OMSFT(IMCTL(X_EQUAL)));  // ctr+ +
     GDM(GD_B_ZOOMO, IMCTL(X_MINUS));

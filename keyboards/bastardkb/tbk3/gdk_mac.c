@@ -79,7 +79,7 @@ bool gdkMacro_mac(uint16_t keycode) {
     GDM(GD_B_BACK, IMGUI(X_LEFT));
     GDM(GD_B_FIND, SS_LGUI("f"));
     GDM(GD_B_BOOKMARK, SS_LGUI("d"));
-    GDM(GD_B_RELOAD, OMGUI(SS_LSFT("r")));  // hard reload w/o cache
+    GDM(GD_B_RLOAD, OMGUI(SS_LSFT("r")));  // hard reload w/o cache
     GDM(GD_B_FULLSCREEN, OMGUI(SS_LCTRL("p")));
     GDM(GD_B_ZOOMI, IMGUI(X_KP_PLUS));  // ctr+ +
     GDM(GD_B_ZOOMO, IMGUI(X_KP_MINUS));

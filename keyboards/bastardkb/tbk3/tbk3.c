@@ -108,11 +108,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 void toggle_locked_shift(void) {
     uint8_t sft = MOD_BIT(KC_LSHIFT);
+    uint8_t mods = get_oneshot_locked_mods();
     clear_oneshot_mods();
-    if (sft & get_oneshot_locked_mods()) {
+    if (sft & mods) {
         clear_oneshot_locked_mods();
-        if (sft & get_mods()) {
-            unregister_mods(sft);
+        if (mods & get_mods()) {
+            unregister_mods(mods);
         }
     } else {
         set_oneshot_locked_mods(sft);

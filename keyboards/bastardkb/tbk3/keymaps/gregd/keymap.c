@@ -24,10 +24,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_NAV] = LAYOUT_split_4x6_3( \
     /*            pinky         ring          middle        index                                         index        middle     ring          pinky */
-    GD_RST,       KC_NO,        GD_WIN_NEXT,  GD_REPLACE,   GD_B_ZOOMI, GD_B_ZOOMO,     /**/ GD_GO_SDOC,  GD_UNDO,     GD_REDO,   GD_SE_ALL,    GD_I_COL_MODE, KC_NO, \
-    KC_NO,        KC_NO,        GD_APP_NEXT,  GD_FPREV,     GD_B_PTAB,  GD_B_CTAB,      /**/ KC_PGUP ,    KC_LEFT,     KC_UP ,    KC_RIGHT,     GD_PASTE,      GD_SHT_TGE, \
-    GD_WIN_CEN,   GD_APP_SAVE,  GD_ALT_TAB,   GD_FNEXT,     GD_B_NTAB,  GD_B_URL,       /**/ KC_PGDN,     GD_GO_LWORD, KC_DOWN,   GD_GO_RWORD,  GD_COPY,       GD_I_EX_SEL, \
-    KC_NO,        GD_APP_CLOSE, GD_WIN_HIDE,  GD_FIND,      GD_B_NEWT,  KC_NO,          /**/ GD_GO_EDOC,  GD_GO_SLINE, KC_APP,    GD_GO_ELINE,  GD_CUT,        GD_PA_REC, \
+    GD_RST,       GD_APP_CLOSE, GD_WIN_NEXT,  GD_REPLACE,   GD_B_ZOOMI, GD_B_ZOOMO,     /**/ GD_GO_SDOC,  GD_UNDO,     GD_REDO,   GD_SE_ALL,    GD_I_COL_MODE, KC_NO, \
+    GD_WIN_LFT,   GD_WIN_FULL,  GD_APP_NEXT,  GD_FPREV,     GD_B_PTAB,  GD_B_CTAB,      /**/ KC_PGUP ,    KC_LEFT,     KC_UP ,    KC_RIGHT,     GD_PASTE,      GD_SHT_TGE, \
+    GD_WIN_CEN,   GD_RUNAPP,    GD_ALT_TAB,   GD_FNEXT,     GD_B_NTAB,  GD_B_URL,       /**/ KC_PGDN,     GD_GO_LWORD, KC_DOWN,   GD_GO_RWORD,  GD_COPY,       GD_I_EX_SEL, \
+    GD_WIN_RGT,   GD_APP_SAVE,  GD_WIN_HIDE,  GD_FIND,      GD_B_NEWT,  GD_B_RLOAD,     /**/ GD_GO_EDOC,  GD_GO_SLINE, KC_APP,    GD_GO_ELINE,  GD_CUT,        GD_PA_REC, \
     \
     _______, _______, _______,                                                          /**/ _______, _______, _______),
 
@@ -35,8 +35,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*         pinky     ring      middle   index                                                        index      middle      ring      pinky */
     GD_RST,    KC_TILD,  KC_CIRC,  KC_PERC, GD_ARROW, GD_FARROW,                        /**/ KC_MUTE,    KC_VOLD,   KC_VOLU,    KC_MPLY,  KC_MNXT,  KC_MAIL, \
     KC_DLR,    KC_PLUS,  KC_MINS,  KC_LCBR, KC_RCBR,  KC_BSLASH,                        /**/ KC_GRV,     KC_7,      KC_8,       KC_9,     KC_NO,    KC_WWW_HOME, \
-    KC_AT,     KC_ASTR,  KC_UNDS,  KC_LPRN, KC_RPRN,  KC_EXLM,                          /**/ KC_PERC,    KC_4,      KC_5,       KC_6,     KC_NO,    KC_NO, \
-    KC_HASH,   KC_AMPR,  KC_PEQL,  KC_LBRC, KC_RBRC,  KC_PIPE,                          /**/ KC_0,       KC_1,      KC_2,       KC_3,     GD_HDIR,  KC_NO, \
+    KC_AT,     KC_ASTR,  KC_UNDS,  KC_LPRN, KC_RPRN,  KC_EXLM,                          /**/ KC_PERC,    KC_4,      KC_5,       KC_6,     KC_NO,    GD_SCR_CAP_SEL, \
+    KC_HASH,   KC_AMPR,  KC_PEQL,  KC_LBRC, KC_RBRC,  KC_PIPE,                          /**/ KC_0,       KC_1,      KC_2,       KC_3,     GD_HDIR,  GD_SCR_CAP_FULL, \
     \
     GD_DEL_LINE, GD_DEL_LWORD, GD_DEL_RWORD,                                            /**/ GD_I_NEW_LINE, GD_I_COMPLETE, GD_I_FIXES),
 
