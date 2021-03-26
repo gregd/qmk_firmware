@@ -20,7 +20,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______,                               /**/ _______, _______, _______, _______, _______, _______, \
     _______, _______, _______, _______, _______, _______,                               /**/ _______, _______, _______, _______, _______, _______, \
     \
-    _______, _______, MT(MOD_RALT, KC_DEL),                                             /**/ MT(MOD_RALT, KC_ENT), _______, _______),
+    _______, MT(MOD_RALT, KC_BSPC), _______,                                             /**/ _______, MT(MOD_RALT, KC_SPC), _______),
 
   [_NAV] = LAYOUT_split_4x6_3( \
     /*            pinky         ring          middle        index                                         index        middle     ring          pinky */
