@@ -32,11 +32,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______,                                                          /**/ _______, _______, _______),
 
   [_SYMBOLS] = LAYOUT_split_4x6_3( \
-    /*         pinky     ring      middle   index                                                        index      middle      ring      pinky */
-    GD_RST,    KC_TILD,  KC_CIRC,  KC_PERC, GD_ARROW, GD_FARROW,                        /**/ KC_MUTE,    KC_VOLD,   KC_VOLU,    KC_MPLY,  KC_MNXT,  KC_MAIL, \
-    KC_DLR,    KC_PLUS,  KC_MINS,  KC_LCBR, KC_RCBR,  KC_BSLASH,                        /**/ KC_GRV,     KC_7,      KC_8,       KC_9,     KC_NO,    KC_WWW_HOME, \
-    KC_AT,     KC_ASTR,  KC_UNDS,  KC_LPRN, KC_RPRN,  KC_EXLM,                          /**/ KC_PERC,    KC_4,      KC_5,       KC_6,     KC_NO,    GD_SCR_CAP_SEL, \
-    KC_HASH,   KC_AMPR,  KC_PEQL,  KC_LBRC, KC_RBRC,  KC_PIPE,                          /**/ KC_0,       KC_1,      KC_2,       KC_3,     GD_HDIR,  GD_SCR_CAP_FULL, \
+    /*              pinky     ring      middle    index                                                 index      middle    ring      pinky */
+    GD_RST,         KC_MUTE,  KC_VOLD,  KC_VOLU,  KC_MPLY,  KC_MNXT,                    /**/ GD_FARROW, GD_ARROW,  KC_PERC,  KC_CIRC,  KC_TILD,   KC_NO, \
+    KC_WWW_HOME,    KC_NO,    KC_7,     KC_8,     KC_9,     KC_GRV,                     /**/ KC_BSLASH, KC_LCBR,   KC_RCBR,  KC_MINS,  KC_PLUS,   KC_DLR, \
+    KC_MAIL,        KC_NO,    KC_4,     KC_5,     KC_6,     KC_PERC,                    /**/ KC_EXLM,   KC_LPRN,   KC_RPRN,  KC_UNDS,  KC_ASTR,   KC_AT, \
+    GD_SCR_CAP_SEL, GD_HDIR,  KC_1,     KC_2,     KC_3,     KC_0,                       /**/ KC_PIPE,   KC_LBRC,   KC_RBRC,  KC_PEQL,  KC_AMPR,   KC_HASH, \
     \
     GD_DEL_LINE, GD_DEL_LWORD, GD_DEL_RWORD,                                            /**/ GD_I_NEW_LINE, GD_I_COMPLETE, GD_I_FIXES),
 
