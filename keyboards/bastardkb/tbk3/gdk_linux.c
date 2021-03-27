@@ -110,7 +110,8 @@ bool gdkMacro_linux(uint16_t keycode) {
     GDM(GD_I_REC_FILE, IMCTL(X_E));
     GDM(GD_I_REC_LOC, OMSFT(IMCTL(X_E)));
     GDM(GD_I_FINF, OMSFT(IMCTL(X_F)));
-    GDM(GD_I_FACTION, OMSFT(IMCTL(X_A)));
+    GDM(GD_I_RINF, OMSFT(IMCTL(X_R)));
+    GDM(GD_I_FACT, OMSFT(IMCTL(X_A)));
     GDM(GD_I_REL_FILE, SS_LCTL("t"));             // RubyMine goto-view / controller
     GDM(GD_I_REL_SYM, OMALT(IMCTL(X_HOME)));
     GDM(GD_I_EX_SEL, SS_LCTL("w"));
@@ -121,7 +122,7 @@ bool gdkMacro_linux(uint16_t keycode) {
     GDM(GD_I_GO_DEF, SS_LCTL("b"));
     GDM(GD_I_GO_BACK, OMALT(IMCTL(X_LEFT)));
     GDM(GD_I_GO_FWD, OMALT(IMCTL(X_RIGHT)));
-    GDM(GD_I_GO_LINE, OMSFT(OMALT(IMCTL(X_G))));
+    GDM(GD_I_GOTOL, OMSFT(OMALT(IMCTL(X_G))));
     GDM(GD_I_GO_FILE, OMSFT(IMCTL(X_N)));
     GDM(GD_I_NEXT_FN, IMALT(X_DOWN));
     GDM(GD_I_PREV_FN, IMALT(X_UP));
@@ -132,7 +133,7 @@ bool gdkMacro_linux(uint16_t keycode) {
     GDM(GD_I_REFORMAT, OMALT(IMCTL(X_L)));
     GDM(GD_I_COL_MODE, OMALT(IMSFT(X_INSERT)));
     GDM(GD_I_NEW_LINE, IMSFT(X_ENTER));
-    GDM(GD_I_DUP_LINE, IMCTL(X_D));
+    GDM(GD_I_DUP_SEL, IMCTL(X_D));
     GDM(GD_I_TGL_CASE, OMSFT(IMCTL(X_U)));
     GDM(GD_I_BUILD, IMCTL(X_F9));
     GDM(GD_I_RUNL, IMSFT(X_F10));
