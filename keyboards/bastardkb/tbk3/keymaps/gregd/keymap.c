@@ -20,7 +20,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______,                               /**/ _______, _______, _______, _______, _______, _______, \
     _______, _______, _______, _______, _______, _______,                               /**/ _______, _______, _______, _______, _______, _______, \
     \
-    _______, MT(MOD_RALT, KC_BSPC), _______,                                             /**/ _______, MT(MOD_RALT, KC_SPC), _______),
+    _______, MT(MOD_RALT, KC_BSPC), _______,                                            /**/ _______, MT(MOD_RALT, KC_SPC), _______),
 
   [_NAV] = LAYOUT_split_4x6_3( \
     /*            pinky         ring          middle        index                                         index        middle     ring          pinky */
@@ -47,5 +47,5 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     GD_I_BUILD, GD_I_WIN_GITC, GD_I_RUNA,  GD_I_WIN_SEA, GD_I_REC_LOC,  GD_I_WIN_RUN,   /**/ GD_I_REL_SYM,  GD_I_GO_DEF,    GD_I_NEXT_FN,  GD_I_REFORMAT, GD_I_RENAME,   KC_F11, \
     KC_NO,      GD_I_WIN_STRU, GD_I_RUNL,  GD_I_FINF,    GD_I_GO_FILE,  GD_I_RUNS,      /**/ GD_I_GO_FWD,   GD_I_GO_BACK,   GD_I_PREV_FN,  GD_I_TGL_CASE, GD_I_COMMENT,  KC_F12, \
     \
-    GD_DEL_LINE, GD_DEL_2LNS, GD_DEL_2LNE,                                                     /**/ _______, _______, _______),
+    GD_DEL_LINE, GD_DEL_2LNS, GD_DEL_2LNE,                                              /**/ _______, _______, _______),
 };
