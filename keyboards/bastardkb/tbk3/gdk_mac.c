@@ -104,7 +104,6 @@ bool gdkMacro_mac(uint16_t keycode) {
 
 #        endif  // GD_APP
 #        ifdef GD_IDE
-    GDM(GD_I_WIN_FTREE, IMALT(X_1));
     GDM(GD_I_WIN_SEA, IMALT(X_3));
     GDM(GD_I_WIN_RUN, IMALT(X_4));
     GDM(GD_I_WIN_STRU, IMALT(X_7));
@@ -112,7 +111,6 @@ bool gdkMacro_mac(uint16_t keycode) {
     GDM(GD_I_WIN_GITC, IMALT(X_0));
     GDM(GD_I_REC_FILE, IMCTL(X_E));
     GDM(GD_I_REC_LOC, OMSFT(IMCTL(X_E)));
-    GDM(GD_I_SE_EV, SS_LCTL("l"));
     GDM(GD_I_FINF, OMSFT(IMCTL(X_F)));
     GDM(GD_I_FACTION, OMSFT(IMCTL(X_A)));
     GDM(GD_I_REL_FILE, SS_LCTL("t"));             // RubyMine goto-view / controller

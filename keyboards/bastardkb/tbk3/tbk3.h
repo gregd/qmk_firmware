@@ -49,6 +49,7 @@ enum userspace_custom_keycodes {
     GD_ALT_TAB,
     GD_ARROW,
     GD_FARROW,
+    GD_EQSP,
     GD_HDIR,
     GD_SHT_TGE,
     GD_INFO
