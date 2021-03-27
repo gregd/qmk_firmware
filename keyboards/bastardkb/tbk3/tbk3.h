@@ -51,6 +51,7 @@ enum userspace_custom_keycodes {
     GD_FARROW,
     GD_EQSP,
     GD_HDIR,
+    GD_DCOLN,
     GD_SHT_TGE,
     GD_INFO
 };
