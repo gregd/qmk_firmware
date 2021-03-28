@@ -19,23 +19,23 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
 
     switch (keycode) {
-        case GD_POL:
-            if (record->event.pressed) {
-                set_single_persistent_default_layer(_POLISH);
-            }
-            return false;
-
-        case GD_NAV:
-            if (record->event.pressed) {
-                set_single_persistent_default_layer(_NAV);
-            }
-            return false;
-
-        case GD_SYM:
-            if (record->event.pressed) {
-                set_single_persistent_default_layer(_SYMBOLS);
-            }
-            return false;
+//        case GD_POL:
+//            if (record->event.pressed) {
+//                set_single_persistent_default_layer(_POLISH);
+//            }
+//            return false;
+//
+//        case GD_NAV:
+//            if (record->event.pressed) {
+//                set_single_persistent_default_layer(_NAV);
+//            }
+//            return false;
+//
+//        case GD_SYM:
+//            if (record->event.pressed) {
+//                set_single_persistent_default_layer(_SYMBOLS);
+//            }
+//            return false;
 
         case GD_ARROW:
             if (record->event.pressed) {
@@ -103,7 +103,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-        case LT(_IDE, KC_ESC):
+        case LT(_SYMBOLS, KC_ESC):
             if (record->event.pressed) {
                 if (MOD_BIT(KC_LSHIFT) & get_oneshot_locked_mods()) {
                     toggle_locked_shift();
@@ -137,7 +137,7 @@ void toggle_locked_shift(void) {
 
 bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case LT(_NAV, KC_SPC):
+        case LT(_SYMBOLS, KC_SPC):
             return true;
         default:
             return false;
@@ -148,16 +148,16 @@ unsigned char get_default_layer(void)  {
     if (layer_state_cmp(default_layer_state, _QWERTY)) return _QWERTY;
     if (layer_state_cmp(default_layer_state, _POLISH)) return _POLISH;
     if (layer_state_cmp(default_layer_state, _NAV)) return _NAV;
-    if (layer_state_cmp(default_layer_state, _SYMBOLS)) return _SYMBOLS;
-    return 99;
+//    if (layer_state_cmp(default_layer_state, _SYMBOLS)) return _SYMBOLS;
+    return 255;
 }
 
 void print_default_layer(void) {
     switch (get_default_layer()) {
-        case _QWERTY: SEND_STRING("Qwerty "); break;
-        case _POLISH: SEND_STRING("Polish "); break;
+        case _QWERTY: SEND_STRING("Qwe "); break;
+        case _POLISH: SEND_STRING("Pol "); break;
         case _NAV: SEND_STRING("Nav "); break;
-        case _SYMBOLS: SEND_STRING("Symbols "); break;
+        // case _SYMBOLS: SEND_STRING("Symbols "); break;
         default: SEND_STRING("??? "); break;
     }
 }
@@ -165,9 +165,8 @@ void print_default_layer(void) {
 LEADER_EXTERNS();
 
 void matrix_scan_user(void) {
-  // The very important timer.
   if (is_alt_tab_active) {
-    if (timer_elapsed(alt_tab_timer) > 1500) {
+    if (timer_elapsed(alt_tab_timer) > 1300) {
       unregister_code(gdk_was_mac() ? KC_LGUI : KC_LALT);
       is_alt_tab_active = false;
     }
