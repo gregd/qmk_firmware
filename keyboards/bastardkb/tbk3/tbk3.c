@@ -177,15 +177,11 @@ void matrix_scan_user(void) {
     leading = false;
     leader_end();
 
-    SEQ_TWO_KEYS(KC_K, KC_P) {
+    SEQ_ONE_KEY(KC_P) {
         set_single_persistent_default_layer(_POLISH);
-        SEND_STRING("~P");
     }
-    SEQ_TWO_KEYS(KC_K, KC_N) {
+    SEQ_ONE_KEY(KC_N) {
         set_single_persistent_default_layer(_NAV);
-    }
-    SEQ_TWO_KEYS(KC_K, KC_S) {
-        set_single_persistent_default_layer(_SYMBOLS);
     }
     SEQ_TWO_KEYS(KC_K, KC_M) {
         gdkMacro(GD_DO_MAC);
