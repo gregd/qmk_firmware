@@ -67,8 +67,3 @@
 #define GD_B_CHROME // Chrome browser, Google apps
 //#define GD_B_MS
 //#define GD_B_SAFARI // Safari, Apple defaults.
-
-//// applications vary even more between OSes. We'll do our best.
-#define GD_APP
-// To enable specific App options.
-#define GD_APP_WINDOWSPLITTING // splitting frames & windows

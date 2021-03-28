@@ -130,6 +130,7 @@ enum gdk_keycodes {
     GD_RUNAPP,
     GD_APP_NEXT,
     GD_APP_LAST,  // previous
+    GD_APP_SAVE,
     GD_WIN_NEXT,
     GD_WIN_PREV,
     GD_WIN_NEW,
@@ -161,24 +162,7 @@ enum gdk_keycodes {
     GD_B_FULLSCREEN,
     GD_B_ZOOMI,
     GD_B_ZOOMO,
-    GD_B_VIEWSRC,
 #    endif
-#    ifdef GD_APP
-    GD_APP_SAVE,                // save file blurs app & os. Move?
-    GD_APP_PASTE_VALUES,        // paste only values, or with some special formatting. ctrl shift v chrome, // Ctrl+Alt+V, excel
-                                  // App hotkeys will be flawed, since you may use different spreadsheets across OSes.
-#        ifdef GD_APP_WINDOWSPLITTING
-    // These aren't useful on most oses.
-    GD_SPLIT_FRAME_VERT,
-    GD_UNSPLIT_FRAME_VERT,
-    GD_SPLIT_FRAME_HORIZONTAL,
-    GD_UNSPLIT_FRAME_HORIZONTAL,
-    GD_NEXT_FRAME,
-    GD_PREV_FRAME,
-#        endif
-
-#    endif
-
 #    ifdef GD_IDE
     GD_I_WIN_FTREE,
     GD_I_WIN_SEA,

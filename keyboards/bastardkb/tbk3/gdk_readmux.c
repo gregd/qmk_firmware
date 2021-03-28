@@ -67,17 +67,6 @@ bool gdkMacro_readmux(uint16_t keycode) {
     GDM(GD_B_PTAB, OMSFT(IMCTL(X_TAB)));
 #            endif
 #        endif
-#        ifdef GD_APP
-    // Save makes no sense here
-    GDM(GD_SPLIT_FRAME_VERT, TMUX IMSFT(X_5));
-    // BUG - misleading. This is currently set to convert frame to a window.
-    GDM(GD_UNSPLIT_FRAME_VERT, TMUX IMSFT(X_1));
-    GDM(GD_SPLIT_FRAME_HORIZONTAL, TMUX IMSFT(X_QUOTE));
-    // This one closes the current pane.
-    GDM(GD_UNSPLIT_FRAME_HORIZONTAL, SS_LCTL("b") "x");
-    GDM(GD_NEXT_FRAME, SS_LCTL("b") "o");
-    GDM(GD_PREV_FRAME, SS_LCTL("w") SS_TAP(X_SCOLON));
-#        endif
 
     // Todo, ring bell, flash light, show user this isn't supported
     return false;

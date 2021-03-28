@@ -55,6 +55,7 @@ bool gdkMacro_mac(uint16_t keycode) {
     GDM(GD_RUNAPP, SS_LGUI(" "));
     GDM(GD_APP_NEXT, IMGUI(X_TAB));
     GDM(GD_APP_LAST, OMSFT(IMGUI(X_TAB)));
+    GDM(GD_APP_SAVE, SS_LGUI("s"));
     GDM(GD_WIN_NEXT, IMGUI(X_GRAVE));
     GDM(GD_WIN_PREV, OMSFT(IMGUI(X_GRAVE)));
     GDM(GD_WIN_NEW, IMGUI(X_N));
@@ -85,25 +86,13 @@ bool gdkMacro_mac(uint16_t keycode) {
     GDM(GD_B_ZOOMI, IMGUI(X_KP_PLUS));  // ctr+ +
     GDM(GD_B_ZOOMO, IMGUI(X_KP_MINUS));
 #            ifdef GD_B_CHROME
-    GDM(GD_B_VIEWSRC, SS_LGUI("u"));           // Chrome or firefox
     GDM(GD_B_DEV_TOOLS, OMGUI(SS_LALT("i")));  // Chrome or Firefox
 #            endif
 #            ifdef GD_B_SAFARI
-    GDM(GD_B_VIEWSRC, OMGUI(IMALT(X_U)));  // Safari
                                                      // GDM( GD_B_DEV_TOOLS,	// No real equivalent for Safari
 #            endif
 #        endif  //  GD_BROWSER
 
-#        ifdef GD_APP
-    GDM(GD_APP_SAVE, SS_LGUI("s"));
-
-#            ifdef GD_APP_WINDOWSPLITTING
-    // These are for os X terminal, and are pretty useless.
-    GDM(GD_SPLIT_FRAME_HORIZONTAL, SS_LGUI("d"));
-    GDM(GD_UNSPLIT_FRAME_HORIZONTAL, OMSFT(IMGUI(X_D)));
-#            endif  // GD_APP_WINDOWSPLITTING
-
-#        endif  // GD_APP
 #        ifdef GD_IDE
     GDM(GD_I_WIN_SEA, IMGUI(X_3));
     GDM(GD_I_WIN_RUN, IMGUI(X_4));

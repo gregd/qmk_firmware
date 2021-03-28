@@ -55,6 +55,7 @@ bool gdkMacro_linux(uint16_t keycode) {
     GDM(GD_RUNAPP, SS_TAP(X_LGUI));
     GDM(GD_APP_NEXT, IMALT(X_TAB));
     GDM(GD_APP_LAST, OMSFT(IMALT(X_TAB)));
+    GDM(GD_APP_SAVE, SS_LCTL("s"));
     GDM(GD_WIN_NEXT, OMCTL(IMALT(X_PGUP)));  // Gnome, sometimes
     GDM(GD_WIN_PREV, OMCTL(IMALT(X_PGDOWN)));
     GDM(GD_WIN_NEW, IMCTL(X_N));
@@ -86,18 +87,6 @@ bool gdkMacro_linux(uint16_t keycode) {
     GDM(GD_B_FULLSCREEN, SS_TAP(X_F11));       // command shift F
     GDM(GD_B_ZOOMI, OMSFT(IMCTL(X_EQUAL)));  // ctr+ +
     GDM(GD_B_ZOOMO, IMCTL(X_MINUS));
-    GDM(GD_B_VIEWSRC, SS_LCTL("u"));  // Chrome or firefox
-#        endif
-#        ifdef GD_APP
-    GDM(GD_APP_SAVE, SS_LCTL("s"));
-    // on linux we'd probably use tmux or screen. Some terminal software also
-    // allows this.
-    // GDM( GD_SPLIT_FRAME_VERT,		()  );
-    // GDM( GD_UNSPLIT_FRAME_VERT,		()  );
-    // GDM( GD_SPLIT_FRAME_HORIZONTAL, ()	);
-    // GDM( GD_UNSPLIT_FRAME_HORIZONTAL, () );
-    // GDM( GD_NEXT_FRAME, ()	);
-    // GDM( GD_PREV_FRAME, ()	);
 #        endif
 #        ifdef GD_IDE
     GDM(GD_I_WIN_SEA, IMALT(X_3));

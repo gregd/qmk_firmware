@@ -47,6 +47,7 @@ bool gdkMacro_vi(uint16_t keycode) {
     GDM(GD_RUNAPP, ":split");                // requires VIM, is vsplit better?
     GDM(GD_APP_NEXT, IMCTL(X_DOWN));  // Or Right?
     GDM(GD_APP_NEXT, IMCTL(X_UP));    // or Left?
+    GDM(GD_APP_SAVE, SS_TAP(X_ESCAPE) ":w");
     GDM(GD_APP_CLOSE, IMCTL(X_SCOLON) "q");
     GDM(GD_HELP, SS_LSFT(SS_TAP(X_SCOLON)) "h");  // start search in help
                                                       // GDM( GD_LOCK,		()	); Perhaps VI is not an OS?
@@ -57,17 +58,6 @@ bool gdkMacro_vi(uint16_t keycode) {
 /* what _is_ the VI browser now that vimpirator is dead?*/
 #        endif
 
-#        ifdef GD_APP
-    GDM(GD_APP_SAVE, SS_TAP(X_ESCAPE) ":w");
-#            ifdef GD_APP_WINDOWSPLITTING
-    GDM(GD_SPLIT_FRAME_VERT, SS_TAP(X_ESCAPE) ":vsplit");
-    GDM(GD_UNSPLIT_FRAME_VERT, SS_TAP(X_ESCAPE) ":hide");  // debatable.
-    GDM(GD_SPLIT_FRAME_HORIZONTAL, SS_TAP(X_ESCAPE) ":vsplit");
-    GDM(GD_UNSPLIT_FRAME_HORIZONTAL, SS_TAP(X_ESCAPE) ":hide");
-    GDM(GD_NEXT_FRAME, SS_LCTRL("w") "w");
-    GDM(GD_PREV_FRAME, SS_LCTRL("w") SS_LSFT("w"));
-#            endif
-#        endif  // app
     // Todo, ring bell, flash light, show user this isn't supported
     return false;
 }

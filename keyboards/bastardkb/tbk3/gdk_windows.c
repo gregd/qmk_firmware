@@ -55,6 +55,7 @@ bool gdkMacro_win(uint16_t keycode) {
     GDM(GD_RUNAPP, SS_LGUI("r"));
     GDM(GD_APP_NEXT, IMALT(X_TAB));
     GDM(GD_APP_LAST, OMSFT(IMALT(X_TAB)));
+    GDM(GD_APP_SAVE, SS_LCTL("s"));
     GDM(GD_WIN_NEXT, IMCTL(X_TAB));
     GDM(GD_WIN_PREV, OMSFT(IMCTL(X_TAB)));
     GDM(GD_WIN_NEW, IMCTL(X_N));
@@ -82,7 +83,6 @@ bool gdkMacro_win(uint16_t keycode) {
     GDM(GD_B_DEV_TOOLS, IMCTL(X_F12));  // EDGE
 #            else
     GDM(GD_B_DEV_TOOLS, SS_LCTRL("t"));  // Chrome
-    GDM(GD_B_VIEWSRC, SS_LCTRL("u"));    // Chrome or firefox
 #            endif
     // chrome
     GDM(GD_B_RLOAD, IMCTL(X_F5));             // hard reload w/o cache
@@ -90,17 +90,6 @@ bool gdkMacro_win(uint16_t keycode) {
     GDM(GD_B_ZOOMI, OMSFT(IMCTL(X_EQUAL)));  // ctr+ +
     GDM(GD_B_ZOOMO, IMCTL(X_MINUS));
 
-#        endif
-
-#        ifdef GD_APP
-    GDM(GD_APP_SAVE, SS_LCTL("s"));
-
-    // GDM( GD_SPLIT_FRAME_VERT,		()  );// no windows way?
-    // GDM( GD_UNSPLIT_FRAME_VERT,		()  );
-    GDM(GD_SPLIT_FRAME_HORIZONTAL, OMALT(IMCTL(X_S)));    // word only
-    GDM(GD_UNSPLIT_FRAME_HORIZONTAL, OMSFT(IMALT(X_C)));  // word
-    // GDM( GD_NEXT_FRAME, () );//no windows way?
-    // GDM( GD_PREV_FRAME, () );// no windows way?
 #        endif
 
     // Todo, ring bell, flash light, show user this isn't supported
