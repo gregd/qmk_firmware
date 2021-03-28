@@ -4,8 +4,7 @@ key that calls the paste macro, do the right type of paste.
 Setting the context is done by another macro, or TBD interaction with the host.
 
 Huge thanks to https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts
-and
-https://github.com/qmk/qmk_firmware/blob/master/keyboards/planck/keymaps/jeebak/keymap.c
+and https://github.com/qmk/qmk_firmware/blob/master/keyboards/planck/keymaps/jeebak/keymap.c
 */
 
 #include QMK_KEYBOARD_H
@@ -48,13 +47,11 @@ bool gdkMacro_linux(uint16_t keycode) {
     GDM(GD_PA_REC, OMSFT(IMCTL(X_V)));
     GDM(GD_SE_ALL, SS_LCTL("a"));
     GDM(GD_FIND, SS_LCTL("f"));
-    GDM(GD_APP_CLOSE, IMALT(X_F4));
-    GDM(GD_HELP, SS_TAP(X_F1));
-    // GDM(GD_FNEXT  (SS_LALT(X_F3))	); //KDE */
     GDM(GD_FNEXT, SS_LCTL("g"));       // Gnome*/
     GDM(GD_FPREV, OMSFT(IMCTL(X_G)));  // Gnome*/
     /* GDM( GD_REPLACE , (SS_LCTL("r"))	); // KDE */
     GDM(GD_REPLACE, SS_LCTL("h"));  // Gnome*/
+    GDM(GD_APP_CLOSE, IMALT(X_F4));
     GDM(GD_RUNAPP, SS_TAP(X_LGUI));
     GDM(GD_APP_NEXT, IMALT(X_TAB));
     GDM(GD_APP_LAST, OMSFT(IMALT(X_TAB)));
@@ -67,6 +64,7 @@ bool gdkMacro_linux(uint16_t keycode) {
     GDM(GD_WIN_LFT, OMALT(IMCTL(X_KP_4)));
     GDM(GD_WIN_RGT, OMALT(IMCTL(X_KP_6)));
     // GDM( GD_HELP,		(SS_TAP(X_F1))	); // NA?
+
     GDM(GD_LOCK, OMCTL(IMALT(X_L)));
     GDM(GD_SCR_CAP_FULL, SS_TAP(X_PSCREEN));
     GDM(GD_SCR_CAP_SEL, IMSFT(X_PSCREEN));
@@ -115,7 +113,7 @@ bool gdkMacro_linux(uint16_t keycode) {
     GDM(GD_I_REL_FILE, SS_LCTL("t"));             // RubyMine goto-view / controller
     GDM(GD_I_REL_SYM, OMALT(IMCTL(X_HOME)));
     GDM(GD_I_EX_SEL, SS_LCTL("w"));
-    GDM(GD_I_COMPLETE, OMSFT(IMCTL(X_SPACE)));
+    GDM(GD_I_COMPLETE, IMCTL(X_SPACE));
     GDM(GD_I_FIXES, IMALT(X_ENTER));
     GDM(GD_I_QDOC, SS_LCTL("q"));
     GDM(GD_I_GO_L_ED, OMSFT(IMCTL(X_BSPACE)));

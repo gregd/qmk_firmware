@@ -27,14 +27,15 @@ bool gdkMacro_mac(uint16_t keycode) {
     GDM(GD_GO_NLINE, SS_TAP(X_DOWN));
     GDM(GD_GO_PLINE, SS_TAP(X_UP));
     GDM(GD_GO_PARA_START, IMALT(X_UP));
-    GDM(GD_DEL_RIGHT_1C, SS_TAP(X_DELETE));
     GDM(GD_GO_PARA_END, IMALT(X_DOWN));
     GDM(GD_PGDN, SS_TAP(X_PGDOWN));
     GDM(GD_PGUP, SS_TAP(X_PGUP));
+    GDM(GD_DEL_RIGHT_1C, SS_TAP(X_DELETE));
     GDM(GD_DEL_LWORD, IMALT(X_BSPACE));
     GDM(GD_DEL_RWORD, IMALT(X_DELETE));
-    GDM(GD_DEL_2LNE, OMSFT(IMGUI(X_RIGHT)) SS_TAP(X_BSPACE));  // this is more app agnostic than ctrl-k
-    GDM(GD_DEL_2LNS, OMSFT(IMGUI(X_LEFT)) SS_TAP(X_BSPACE));
+    GDM(GD_DEL_2LNE, OMSFT(IMGUI(X_RIGHT)) SS_TAP(X_DELETE));  // this is more app agnostic than ctrl-k
+    GDM(GD_DEL_2LNS, OMSFT(IMGUI(X_LEFT)) SS_TAP(X_DELETE));
+    GDM(GD_DEL_LINE, IMGUI(X_BSPACE));
     GDM(GD_MODE, "Mac ");
 #        endif
 #        ifdef GD_OSKEYS
@@ -43,30 +44,30 @@ bool gdkMacro_mac(uint16_t keycode) {
     GDM_CLR_OSM(GD_CUT, SS_LGUI("x"));
     GDM_CLR_OSM(GD_COPY, SS_LGUI("c"));
     GDM(GD_PASTE, SS_LGUI("v"));
+    GDM(GD_PA_REC, OMSFT(IMGUI(X_V)));
     GDM(GD_SE_ALL, SS_LGUI("a"));
     GDM(GD_FIND, SS_LGUI("f"));
     GDM(GD_FNEXT, SS_LGUI("g"));
-    // GDM( GD_FNEXT, 	OMSFT(X_F4)) ); // Mac office
     GDM(GD_FPREV, OMSFT(IMGUI(X_G)));  // Sublime, browser
     //GDM(GD_FPREV, SS_LGUI("g"));
     GDM(GD_REPLACE, SS_LGUI("f"));
+    GDM(GD_APP_CLOSE, SS_LGUI("q"));
     GDM(GD_RUNAPP, SS_LGUI(" "));
     GDM(GD_APP_NEXT, IMGUI(X_TAB));
     GDM(GD_APP_LAST, OMSFT(IMGUI(X_TAB)));
-    // Apps vary, but this is  usually tab movement, same as B_NXTB
-    /*
-    GDM( GD_WIN_NEXT, OMSFT(IMGUI(X_RBRACKET)) ); // GUI Grav isn't everywhere
-    GDM( GD_WIN_PREV, OMSFT(IMGUI(X_LBRACKET)) );
-    */
     GDM(GD_WIN_NEXT, IMGUI(X_GRAVE));
     GDM(GD_WIN_PREV, OMSFT(IMGUI(X_GRAVE)));
     GDM(GD_WIN_NEW, IMGUI(X_N));
-    GDM(GD_APP_CLOSE, SS_LGUI("q"));
-    GDM(GD_HELP, OMSFT(IMGUI(X_SLASH)));
+    GDM(GD_WIN_HIDE, IMGUI(X_H));
+    GDM(GD_WIN_FULL, OMALT(IMCTL(X_KP_5)));
+    GDM(GD_WIN_CEN, OMALT(IMCTL(X_KP_8)));
+    GDM(GD_WIN_LFT, OMALT(IMCTL(X_KP_4)));
+    GDM(GD_WIN_RGT, OMALT(IMCTL(X_KP_6)));
+    // GDM(GD_HELP, OMSFT(IMGUI(X_SLASH)));
     // Locking screen from external keyboard requires automator https://apple.stackexchange.com/questions/73995
     GDM(GD_LOCK, OMCTL(IMALT(X_L)));
-    GDM(GD_SCR_CAP_FULL, OMSFT(OMGUI(IMALT(X_4))) IMGUI(X_SPACE) "preview" SS_LGUI("d"));
-    GDM(GD_SWITCH_KEYBOARD_LAYOUT, IMCTL(X_SPACE));
+    GDM(GD_SCR_CAP_FULL, OMSFT(OMGUI(IMALT(X_3))));
+    GDM(GD_SCR_CAP_SEL, OMSFT(OMGUI(IMALT(X_4))));
 #        endif
 #        ifdef GD_BROWSER
     GDM(GD_B_NEWT, IMGUI(X_T));
@@ -104,42 +105,43 @@ bool gdkMacro_mac(uint16_t keycode) {
 
 #        endif  // GD_APP
 #        ifdef GD_IDE
-    GDM(GD_I_WIN_SEA, IMALT(X_3));
-    GDM(GD_I_WIN_RUN, IMALT(X_4));
-    GDM(GD_I_WIN_STRU, IMALT(X_7));
-    GDM(GD_I_WIN_GITH, IMALT(X_9));
-    GDM(GD_I_WIN_GITC, IMALT(X_0));
-    GDM(GD_I_REC_FILE, IMCTL(X_E));
-    GDM(GD_I_REC_LOC, OMSFT(IMCTL(X_E)));
-    GDM(GD_I_FINF, OMSFT(IMCTL(X_F)));
-    GDM(GD_I_FACT, OMSFT(IMCTL(X_A)));
-    GDM(GD_I_REL_FILE, SS_LCTL("t"));             // RubyMine goto-view / controller
-    GDM(GD_I_REL_SYM, OMALT(IMCTL(X_HOME)));
-    GDM(GD_I_EX_SEL, SS_LCTL("w"));
-    GDM(GD_I_COMPLETE, OMSFT(IMCTL(X_SPACE)));
+    GDM(GD_I_WIN_SEA, IMGUI(X_3));
+    GDM(GD_I_WIN_RUN, IMGUI(X_4));
+    GDM(GD_I_WIN_STRU, IMGUI(X_7));
+    GDM(GD_I_WIN_GITH, IMGUI(X_9));
+    GDM(GD_I_WIN_GITC, IMGUI(X_0));
+    GDM(GD_I_REC_FILE, IMGUI(X_E));
+    GDM(GD_I_REC_LOC, OMSFT(IMGUI(X_E)));
+    GDM(GD_I_FINF, OMSFT(IMGUI(X_F)));
+    GDM(GD_I_RINF, OMSFT(IMGUI(X_R)));
+    GDM(GD_I_FACT, OMSFT(IMGUI(X_A)));
+    GDM(GD_I_REL_FILE, SS_LGUI("t"));             // RubyMine goto-view / controller
+    GDM(GD_I_REL_SYM, OMCTL(IMGUI(X_UP)));
+    GDM(GD_I_EX_SEL, IMALT(X_UP));
+    GDM(GD_I_COMPLETE, IMCTL(X_SPACE));
     GDM(GD_I_FIXES, IMALT(X_ENTER));
-    GDM(GD_I_QDOC, SS_LCTL("q"));
-    GDM(GD_I_GO_L_ED, OMSFT(IMCTL(X_BSPACE)));
-    GDM(GD_I_GO_DEF, SS_LCTL("b"));
-    GDM(GD_I_GO_BACK, OMALT(IMCTL(X_LEFT)));
-    GDM(GD_I_GO_FWD, OMALT(IMCTL(X_RIGHT)));
+    GDM(GD_I_QDOC, SS_LCTL("j"));
+    GDM(GD_I_GO_L_ED, OMSFT(IMGUI(X_BSPACE)));
+    GDM(GD_I_GO_DEF, SS_LGUI("b"));
+    GDM(GD_I_GO_BACK, OMALT(IMGUI(X_LEFT)));
+    GDM(GD_I_GO_FWD, OMALT(IMGUI(X_RIGHT)));
     GDM(GD_I_GOTOL, OMSFT(OMALT(IMCTL(X_G))));
-    GDM(GD_I_GO_FILE, OMSFT(IMCTL(X_N)));
-    GDM(GD_I_NEXT_FN, IMALT(X_DOWN));
-    GDM(GD_I_PREV_FN, IMALT(X_UP));
+    GDM(GD_I_GO_FILE, OMSFT(IMGUI(X_O)));
+    GDM(GD_I_NEXT_FN, IMCTL(X_DOWN));
+    GDM(GD_I_PREV_FN, IMCTL(X_UP));
     GDM(GD_I_USAGES, IMALT(X_F7));
     GDM(GD_I_RENAME, IMSFT(X_F6));
-    GDM(GD_I_REFACTOR, OMSFT(OMALT(IMCTL(X_T))));
-    GDM(GD_I_COMMENT, IMCTL(X_SLASH));
-    GDM(GD_I_REFORMAT, OMALT(IMCTL(X_L)));
-    GDM(GD_I_COL_MODE, OMALT(IMSFT(X_INSERT)));
+    GDM(GD_I_REFACTOR, IMCTL(X_T));
+    GDM(GD_I_COMMENT, IMGUI(X_SLASH));
+    GDM(GD_I_REFORMAT, OMALT(IMGUI(X_L)));
+    GDM(GD_I_COL_MODE, OMGUI(IMSFT(X_8)));
     GDM(GD_I_NEW_LINE, IMSFT(X_ENTER));
-    GDM(GD_I_DUP_SEL, IMCTL(X_D));
-    GDM(GD_I_TGL_CASE, OMSFT(IMCTL(X_U)));
-    GDM(GD_I_BUILD, IMCTL(X_F9));
-    GDM(GD_I_RUNL, IMSFT(X_F10));
-    GDM(GD_I_RUNS, OMSFT(IMALT(X_F10)));
-    GDM(GD_I_RUNA,  OMSFT(OMALT(IMCTL(X_A))));
+    GDM(GD_I_DUP_SEL, IMGUI(X_D));
+    GDM(GD_I_TGL_CASE, OMSFT(IMGUI(X_U)));
+    GDM(GD_I_BUILD, IMGUI(X_F9));
+    GDM(GD_I_RUNL, IMCTL(X_R));
+    GDM(GD_I_RUNS, OMALT(IMCTL(X_R)));
+    GDM(GD_I_RUNA, OMSFT(OMALT(IMGUI(X_A))));
 #        endif
 
     // Todo, ring bell, flash light, show user this isn't supported
