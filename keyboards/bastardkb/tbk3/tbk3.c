@@ -173,7 +173,7 @@ void matrix_scan_user(void) {
     SEQ_ONE_KEY(KC_P) {
         default_layer_set(1UL << _POLISH);
     }
-    SEQ_ONE_KEY(KC_N) {
+    SEQ_ONE_KEY(KC_QUOT) {
         default_layer_set(1UL << _NAV);
     }
     SEQ_TWO_KEYS(KC_K, KC_M) {
