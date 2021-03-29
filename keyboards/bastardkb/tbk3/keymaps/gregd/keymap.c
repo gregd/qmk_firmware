@@ -11,7 +11,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     OSM(MOD_LSFT), KC_A,       KC_S,    KC_D,    KC_F,      KC_G,                       /**/ KC_H,          KC_J,         KC_K,        KC_L,    KC_SCLN,  KC_QUOT, \
     OSM(MOD_LCTL), KC_Z,       KC_X,    KC_C,    KC_V,      KC_B,                       /**/ KC_N,          KC_M,         KC_COMM,     KC_DOT,  KC_SLSH,  OSM(MOD_RCTL), \
     \
-    LT(_IDE, KC_BSPC), LT(_SYMBOLS, KC_ESC), LT(_NAV, KC_DEL),                          /**/ LT(_NAV, KC_TAB), LT(_SYMBOLS, KC_SPC), LT(_IDE, KC_ENT)),
+    LT(_IDE, KC_DEL), LT(_SYMBOLS, KC_BSPC), LT(_NAV, KC_ESC),                          /**/ LT(_NAV, KC_TAB), LT(_SYMBOLS, KC_SPC), LT(_IDE, KC_ENT)),
 
   [_POLISH] = LAYOUT_split_4x6_3( \
     /*       pinky    ring     middle   index                                                         index    middle   ring     pinky */
@@ -20,7 +20,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______,                               /**/ _______, _______, _______, _______, _______, _______, \
     _______, _______, _______, _______, _______, _______,                               /**/ _______, _______, _______, _______, _______, _______, \
     \
-    _______, MT(MOD_RALT, KC_ESC), _______,                                             /**/ _______, MT(MOD_RALT, KC_SPC), _______),
+    _______, MT(MOD_RALT, KC_BSPC), _______,                                            /**/ _______, MT(MOD_RALT, KC_SPC), _______),
 
   [_NAV] = LAYOUT_split_4x6_3( \
     /*            pinky         ring          middle        index                                         index        middle     ring          pinky */
@@ -38,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_MAIL,        GD_EQSP,  KC_4,     KC_5,     KC_6,     KC_0,                       /**/ KC_EXLM,   KC_LPRN,   KC_RPRN,  KC_UNDS,   KC_ASTR,   KC_AT, \
     GD_SCR_CAP_SEL, GD_HDIR,  KC_1,     KC_2,     KC_3,     KC_PERC,                    /**/ KC_PIPE,   KC_LBRC,   KC_RBRC,  KC_PEQL,   KC_AMPR,   KC_HASH, \
     \
-    GD_DEL_LINE, GD_DEL_LWORD, GD_DEL_2LNE,                                             /**/ GD_I_FIXES, GD_I_COMPLETE, GD_I_NEW_LINE),
+    GD_DEL_2LNE, GD_DEL_LWORD, GD_DEL_LINE,                                             /**/ GD_I_FIXES, GD_I_COMPLETE, GD_I_NEW_LINE),
 
   [_IDE] = LAYOUT_split_4x6_3( \
     /*          pinky          ring        middle        index                                               index           middle         ring           pinky */

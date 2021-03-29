@@ -30,12 +30,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 //                set_single_persistent_default_layer(_NAV);
 //            }
 //            return false;
-//
-//        case GD_SYM:
-//            if (record->event.pressed) {
-//                set_single_persistent_default_layer(_SYMBOLS);
-//            }
-//            return false;
 
         case GD_ARROW:
             if (record->event.pressed) {
@@ -103,7 +97,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-        case LT(_SYMBOLS, KC_ESC):
+        case KC_ESC:
             if (record->event.pressed) {
                 if (MOD_BIT(KC_LSHIFT) & get_oneshot_locked_mods()) {
                     toggle_locked_shift();
@@ -177,10 +171,10 @@ void matrix_scan_user(void) {
     leader_end();
 
     SEQ_ONE_KEY(KC_P) {
-        set_single_persistent_default_layer(_POLISH);
+        default_layer_set(1UL << _POLISH);
     }
     SEQ_ONE_KEY(KC_N) {
-        set_single_persistent_default_layer(_NAV);
+        default_layer_set(1UL << _NAV);
     }
     SEQ_TWO_KEYS(KC_K, KC_M) {
         gdkMacro(GD_DO_MAC);
@@ -195,6 +189,9 @@ void matrix_scan_user(void) {
     }
     SEQ_TWO_KEYS(KC_K, KC_T) {
         gdkMacro(GD_DO_READMUX);
+    }
+    SEQ_TWO_KEYS(KC_B, KC_D) {
+        gdkMacro(GD_B_DEV_TOOLS);
     }
     SEQ_TWO_KEYS(KC_S, KC_G) {
         SEND_STRING("Grzegorz Daniluk");
