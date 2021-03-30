@@ -14,12 +14,12 @@ bool gdkMacro_vi(uint16_t keycode) {
 #        ifdef GD_MOVE
     GDM(GD_GO_LEFT_1C, "h");
     GDM(GD_GO_RIGHT_1C, "l");
-    GDM(GD_GO_LWORD, "b");
-    GDM(GD_GO_RWORD, "w");
-    GDM(GD_GO_SLINE, IMSFT(X_6));
-    GDM(GD_GO_ELINE, IMSFT(X_4));
-    GDM(GD_GO_SDOC, "gg");
-    GDM(GD_GO_EDOC, IMSFT(X_G));
+    GDM(GD_GO_LW, "b");
+    GDM(GD_GO_RW, "w");
+    GDM(GD_GO_SL, IMSFT(X_6));
+    GDM(GD_GO_EL, IMSFT(X_4));
+    GDM(GD_GO_SD, "gg");
+    GDM(GD_GO_ED, IMSFT(X_G));
     GDM(GD_GO_NLINE, "j");
     GDM(GD_GO_PLINE, "k");
     GDM(GD_GO_PARA_START, IMSFT(X_LBRACKET));

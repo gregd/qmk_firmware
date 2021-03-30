@@ -17,12 +17,12 @@ bool gdkMacro_readmux(uint16_t keycode) {
 #        ifdef GD_MOVE
     GDM(GD_GO_LEFT_1C, SS_TAP(X_LEFT));
     GDM(GD_GO_RIGHT_1C, SS_TAP(X_RIGHT));
-    GDM(GD_GO_LWORD, SS_LALT("b"));
-    GDM(GD_GO_RWORD, SS_LALT("f"));
-    GDM(GD_GO_SLINE, SS_LCTL("a"));
-    GDM(GD_GO_ELINE, SS_LCTL("e"));
-    // GDM( GD_GO_SDOC		,END );// tmux?
-    // GDM( GD_GO_EDOC		,END );  // tmux?
+    GDM(GD_GO_LW, SS_LALT("b"));
+    GDM(GD_GO_RW, SS_LALT("f"));
+    GDM(GD_GO_SL, SS_LCTL("a"));
+    GDM(GD_GO_EL, SS_LCTL("e"));
+    // GDM( GD_GO_SD		,END );// tmux?
+    // GDM( GD_GO_ED		,END );  // tmux?
     GDM(GD_GO_NLINE, SS_LCTL("n"));
     GDM(GD_GO_PLINE, SS_LCTL("p"));
     // GDM( GD_GO_PARA_START,	// undefined

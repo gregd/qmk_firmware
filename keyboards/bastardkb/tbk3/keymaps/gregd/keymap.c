@@ -23,11 +23,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, MT(MOD_RALT, KC_BSPC), _______,                                            /**/ _______, MT(MOD_RALT, KC_SPC), _______),
 
   [_NAV] = LAYOUT_split_4x6_3( \
-    /*            pinky         ring          middle        index                                         index        middle     ring          pinky */
-    GD_RST,       GD_APP_CLOSE, GD_WIN_NEXT,  GD_REPLACE,   GD_B_ZOOMI, GD_B_ZOOMO,     /**/ GD_REDO,     GD_UNDO,     KC_PGUP,   GD_SE_ALL,    GD_I_DUP_SEL,  GD_I_COL_MODE, \
-    GD_WIN_LFT,   GD_WIN_FULL,  GD_APP_NEXT,  GD_FPREV,     GD_B_PTAB,  GD_B_CTAB,      /**/ GD_GO_SDOC,  GD_GO_SLINE, KC_UP ,    GD_GO_ELINE,  GD_COPY,       GD_CUT, \
-    GD_WIN_CEN,   GD_RUNAPP,    GD_ALT_TAB,   GD_FNEXT,     GD_B_NTAB,  GD_B_URL,       /**/ KC_APP,      KC_LEFT,     KC_DOWN,   KC_RIGHT,     GD_PASTE,      GD_I_EX_SEL, \
-    GD_WIN_RGT,   GD_APP_SAVE,  GD_WIN_HIDE,  GD_FIND,      GD_B_NEWT,  GD_B_RLOAD,     /**/ GD_GO_EDOC,  GD_GO_LWORD, KC_PGDN,   GD_GO_RWORD,  GD_SHT_TGE,    GD_PA_REC, \
+    /*            pinky         ring          middle        index                                         index        middle     ring         pinky */
+    GD_RST,       GD_APP_CLOSE, GD_WIN_NEXT,  GD_REPLACE,   GD_B_ZOOMI, GD_B_ZOOMO,     /**/ GD_GO_SD,    KC_APP,      GD_I_COLM, GD_REDO,     GD_I_SE_DUP,   GD_SE_ALL, \
+    GD_WIN_LFT,   GD_WIN_FULL,  GD_APP_NEXT,  GD_FPREV,     GD_B_PTAB,  GD_B_CTAB,      /**/ GD_GO_SL,    GD_GO_LW,    KC_PGUP,   GD_UNDO,     GD_COPY,       GD_CUT, \
+    GD_WIN_CEN,   GD_RUNAPP,    GD_ALT_TAB,   GD_FNEXT,     GD_B_NTAB,  GD_B_URL,       /**/ KC_LEFT,     KC_DOWN,     KC_UP,     KC_RIGHT,    GD_I_EX_SEL,   GD_SHT_TGE, \
+    GD_WIN_RGT,   GD_APP_SAVE,  GD_WIN_HIDE,  GD_FIND,      GD_B_NEWT,  GD_B_RLOAD,     /**/ GD_GO_ED,    KC_PGDN,     GD_GO_RW,  GD_GO_EL,    GD_PASTE ,     GD_PA_REC, \
     \
     _______, _______, _______,                                                          /**/ _______, _______, _______),
 
