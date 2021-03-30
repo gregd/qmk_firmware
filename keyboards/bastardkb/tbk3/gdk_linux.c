@@ -67,8 +67,8 @@ bool gdkMacro_linux(uint16_t keycode) {
     // GDM( GD_HELP,		(SS_TAP(X_F1))	); // NA?
 
     GDM(GD_LOCK, OMCTL(IMALT(X_L)));
-    GDM(GD_SCR_CAP_FULL, SS_TAP(X_PSCREEN));
-    GDM(GD_SCR_CAP_SEL, IMSFT(X_PSCREEN));
+    GDM(GD_SCR_CFULL, SS_TAP(X_PSCREEN));
+    GDM(GD_SCR_CSEL, IMSFT(X_PSCREEN));
 #        endif
 #        ifdef GD_BROWSER
     GDM(GD_B_NEWT, SS_LCTL("t"));

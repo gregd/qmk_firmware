@@ -60,7 +60,7 @@ bool gdkMacro_emacs(uint16_t keycode) {
     GDM(GD_APP_CLOSE, SS_LCTRL("x") "c");
     GDM(GD_HELP, SS_LCTRL("h") "a");  // start search in help
                                           // GDM( GD_LOCK,		()	); // lock buffer? Too many options.
-    // GDM( GD_SCR_CAP_FULL,		()	); // requires plugin?
+    // GDM( GD_SCR_CFULL,		()	); // requires plugin?
 
 #        endif
 #        ifdef GD_BROWSER

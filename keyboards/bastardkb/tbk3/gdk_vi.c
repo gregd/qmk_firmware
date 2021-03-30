@@ -51,7 +51,7 @@ bool gdkMacro_vi(uint16_t keycode) {
     GDM(GD_APP_CLOSE, IMCTL(X_SCOLON) "q");
     GDM(GD_HELP, SS_LSFT(SS_TAP(X_SCOLON)) "h");  // start search in help
                                                       // GDM( GD_LOCK,		()	); Perhaps VI is not an OS?
-                                                      // GDM( GD_SCR_CAP_FULL,		()	); // capture a buffer?
+                                                      // GDM( GD_SCR_CFULL,		()	); // capture a buffer?
 #        endif
 
 #        ifdef GD_BROWSER

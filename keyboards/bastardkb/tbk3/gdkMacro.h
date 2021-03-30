@@ -142,8 +142,8 @@ enum gdk_keycodes {
     GD_APP_CLOSE,
     GD_HELP,
     GD_LOCK,
-    GD_SCR_CAP_FULL,
-    GD_SCR_CAP_SEL,
+    GD_SCR_CFULL,
+    GD_SCR_CSEL,
     GD_SWITCH_KEYBOARD_LAYOUT,
 #    endif
 #    ifdef GD_BROWSER

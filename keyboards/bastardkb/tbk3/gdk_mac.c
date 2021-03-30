@@ -67,8 +67,8 @@ bool gdkMacro_mac(uint16_t keycode) {
     // GDM(GD_HELP, OMSFT(IMGUI(X_SLASH)));
     // Locking screen from external keyboard requires automator https://apple.stackexchange.com/questions/73995
     GDM(GD_LOCK, OMCTL(IMALT(X_L)));
-    GDM(GD_SCR_CAP_FULL, OMSFT(OMGUI(IMALT(X_3))));
-    GDM(GD_SCR_CAP_SEL, OMSFT(OMGUI(IMALT(X_4))));
+    GDM(GD_SCR_CFULL, OMSFT(OMGUI(IMALT(X_3))));
+    GDM(GD_SCR_CSEL, OMSFT(OMGUI(IMALT(X_4))));
 #        endif
 #        ifdef GD_BROWSER
     GDM(GD_B_NEWT, IMGUI(X_T));

@@ -54,7 +54,7 @@ bool gdkMacro_readmux(uint16_t keycode) {
     GDM(GD_APP_CLOSE, TMUX "d");        // usually what I want
     GDM(GD_HELP, TMUX IMSFT(X_SLASH));
     GDM(GD_LOCK, TMUX "L");  // assuming you set up VLOCK yourself
-    GDM(GD_SCR_CAP_FULL, TMUX ":capture-pane");
+    GDM(GD_SCR_CFULL, TMUX ":capture-pane");
 #        endif
 #        ifdef GD_BROWSER
 /* Add lynx shortcuts, brow.sh?

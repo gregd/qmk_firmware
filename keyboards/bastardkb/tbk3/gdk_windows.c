@@ -62,7 +62,7 @@ bool gdkMacro_win(uint16_t keycode) {
     GDM(GD_APP_CLOSE, IMALT(X_F4));
     GDM(GD_HELP, SS_TAP(X_F1));
     GDM(GD_LOCK, SS_LGUI("l"));
-    GDM(GD_SCR_CAP_FULL, OMSFT(SS_LGUI("s")));
+    GDM(GD_SCR_CFULL, OMSFT(SS_LGUI("s")));
     GDM(GD_SWITCH_KEYBOARD_LAYOUT, IMGUI(X_SPACE));
 
 #        endif
