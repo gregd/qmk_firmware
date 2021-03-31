@@ -6,9 +6,9 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_split_4x6_3( \
     /*                     pinky  ring   middle index                                                      index         middle       ring     pinky */
-    OSM(MOD_LALT),         KC_1,  KC_2,  KC_3,  KC_4,  KC_5,                           /**/ KC_6,          KC_7,         KC_8,        KC_9,    KC_0,     KC_CAPS, \
-    OSM(MOD_LGUI),         KC_Q,  KC_W,  KC_E,  KC_R,  KC_T,                           /**/ KC_Y,          KC_U,         KC_I,        KC_O,    KC_P,     KC_LEAD, \
-    OSM(MOD_LSFT),         KC_A,  KC_S,  KC_D,  KC_F,  KC_G,                           /**/ KC_H,          KC_J,         KC_K,        KC_L,    KC_SCLN,  KC_QUOT, \
+    OSM(MOD_LALT),         KC_1,  KC_2,  KC_3,  KC_4,  KC_5,                           /**/ KC_6,          KC_7,         KC_8,        KC_9,    KC_0,     KC_NO, \
+    OSM(MOD_LGUI),         KC_Q,  KC_W,  KC_E,  KC_R,  KC_T,                           /**/ KC_Y,          KC_U,         KC_I,        KC_O,    KC_P,     KC_CAPS, \
+    OSM(MOD_LSFT),         KC_A,  KC_S,  KC_D,  KC_F,  KC_G,                           /**/ KC_H,          KC_J,         KC_K,        KC_L,    KC_SCLN,  OSM(MOD_LSFT), \
     OSM(MOD_LCTL),         KC_Z,  KC_X,  KC_C,  KC_V,  KC_B,                           /**/ KC_N,          KC_M,         KC_COMM,     KC_DOT,  KC_SLSH,  OSM(MOD_RCTL), \
     \
     LT(_IDE_LEFT, KC_DEL), LT(_SYMBOLS, KC_ENT), LT(_NAV, KC_ESC),                     /**/ LT(_NAV, KC_TAB), LT(_SYMBOLS, KC_SPC), LT(_IDE_RIGHT, KC_BSPC)),
@@ -43,16 +43,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_IDE_LEFT] = LAYOUT_split_4x6_3( \
     /*            pinky       ring       middle      index                                                 index           middle         ring           pinky */
     RESET,        KC_F1,      KC_F2,     KC_F3,      KC_F4,     KC_F5,                 /**/ KC_F6,         KC_F7,          KC_F8,         KC_F9,         KC_NO,         GD_INFO, \
-    KC_NO,        KC_MUTE,    KC_VOLD,   KC_VOLU,    KC_MPLY,   KC_MNXT,               /**/ GD_I_REL_FILE, GD_I_QDOC,      GD_I_USAGES,   KC_NO,         GD_I_REFACTOR, KC_F10, \
-    GD_SCR_CSEL,  KC_MYCM,    KC_WSCH,   KC_WBAK,    KC_WFAV,   GD_B_DEV_TOOLS,        /**/ GD_I_REL_SYM,  GD_I_GO_DEF,    GD_I_NEXT_FN,  GD_I_REFORMAT, GD_I_RENAME,   KC_F11, \
-    GD_SCR_CFULL, KC_CALC,    KC_MAIL,   KC_WHOM,    KC_WREF,   KC_NO,                 /**/ GD_I_GO_FWD,   GD_I_GO_BACK,   GD_I_PREV_FN,  GD_I_TGL_CASE, GD_I_COMMENT,  KC_F12, \
+    KC_MUTE,      KC_VOLD,    KC_VOLU,   KC_MPLY,    KC_MNXT,   KC_MPRV,               /**/ GD_I_REL_FILE, GD_I_QDOC,      GD_I_USAGES,   KC_NO,         GD_I_REFACTOR, KC_F10, \
+    GD_SCR_CSEL,  KC_MYCM,    KC_WSCH,   KC_WBAK,    KC_WFAV,   GD_B_DTOOLS,           /**/ GD_I_REL_SYM,  GD_I_GO_DEF,    GD_I_NEXT_FN,  GD_I_REFORMAT, GD_I_RENAME,   KC_F11, \
+    GD_SCR_CFULL, KC_CALC,    KC_MAIL,   KC_WHOM,    KC_WREF,   GD_B_BOOKM,            /**/ GD_I_GO_FWD,   GD_I_GO_BACK,   GD_I_PREV_FN,  GD_I_TGL_CASE, GD_I_COMMENT,  KC_F12, \
     \
     _______, _______, _______,                                                         /**/ _______, _______, _______),
 
   [_IDE_RIGHT] = LAYOUT_split_4x6_3( \
     /*          pinky          ring        middle        index                                           index         middle       ring          pinky */
-    RESET,      KC_F1,         KC_F2,      KC_F3,        KC_F4,         KC_F5,         /**/ KC_F6,       KC_F7,        KC_F8,       KC_F9,        KC_NO,       GD_INFO, \
-    GD_I_GOTOL, GD_I_WIN_GITH, GD_I_FACT,  GD_I_RINF,    GD_I_REC_FILE, GD_I_GO_L_ED,  /**/ KC_NO,       KC_NO,        KC_NO,       KC_NO,        KC_NO,       KC_F10, \
+    RESET,      KC_F1,         KC_F2,      KC_F3,        KC_F4,         KC_F5,         /**/ KC_F6,       KC_F7,        KC_F8,       KC_F9,        GD_L_MAC,    GD_INFO, \
+    GD_I_GOTOL, GD_I_WIN_GITH, GD_I_FACT,  GD_I_RINF,    GD_I_REC_FILE, GD_I_GO_L_ED,  /**/ KC_NO,       KC_NO,        GD_L_NAV,    GD_L_POL,     GD_L_LINUX,  KC_F10, \
     GD_I_BUILD, GD_I_WIN_GITC, GD_I_RUNA,  GD_I_WIN_SEA, GD_I_REC_LOC,  GD_I_WIN_RUN,  /**/ KC_NO,       KC_NO,        KC_NO,       KC_NO,        KC_NO,       KC_F11, \
     KC_NO,      GD_I_WIN_STRU, GD_I_RUNL,  GD_I_FINF,    GD_I_GO_FILE,  GD_I_RUNS,     /**/ KC_NO,       KC_NO,        KC_NO,       KC_NO,        KC_NO,       KC_F12, \
     \

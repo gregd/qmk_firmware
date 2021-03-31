@@ -70,7 +70,7 @@ bool gdkMacro_win(uint16_t keycode) {
 #        ifdef GD_BROWSER
     GDM(GD_B_NEWT, SS_LCTRL("t"));
     GDM(GD_B_CTAB, SS_LCTRL("w"));
-    GDM(GD_B_REOPEN_LAST_TAB, OMSFT(IMCTL(X_T)));
+    GDM(GD_B_REOPEN, OMSFT(IMCTL(X_T)));
     GDM(GD_B_NTAB, IMCTL(X_TAB));
     GDM(GD_B_PTAB, OMSFT(IMCTL(X_TAB)));
     GDM(GD_B_URL, SS_LCTRL("l"));
@@ -78,15 +78,15 @@ bool gdkMacro_win(uint16_t keycode) {
     GDM(GD_B_BACK, OMSFT(IMALT(X_LEFT)));
     ;
     GDM(GD_B_FIND, SS_LCTRL("f"));
-    GDM(GD_B_BOOKMARK, SS_LCTRL("d"));
+    GDM(GD_B_BOOKM, SS_LCTRL("d"));
 #            ifdef GD_B_MS
-    GDM(GD_B_DEV_TOOLS, IMCTL(X_F12));  // EDGE
+    GDM(GD_B_DTOOLS, IMCTL(X_F12));  // EDGE
 #            else
-    GDM(GD_B_DEV_TOOLS, SS_LCTRL("t"));  // Chrome
+    GDM(GD_B_DTOOLS, SS_LCTRL("t"));  // Chrome
 #            endif
     // chrome
     GDM(GD_B_RLOAD, IMCTL(X_F5));             // hard reload w/o cache
-    GDM(GD_B_FULLSCREEN, SS_TAP(X_F11));       // command shift F
+    GDM(GD_B_FULLS, SS_TAP(X_F11));       // command shift F
     GDM(GD_B_ZOOMI, OMSFT(IMCTL(X_EQUAL)));  // ctr+ +
     GDM(GD_B_ZOOMO, IMCTL(X_MINUS));
 

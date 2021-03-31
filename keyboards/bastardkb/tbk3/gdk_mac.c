@@ -73,23 +73,23 @@ bool gdkMacro_mac(uint16_t keycode) {
 #        ifdef GD_BROWSER
     GDM(GD_B_NEWT, IMGUI(X_T));
     GDM(GD_B_CTAB, SS_LGUI("w"));
-    GDM(GD_B_REOPEN_LAST_TAB, OMSFT(SS_LGUI("t")));
+    GDM(GD_B_REOPEN, OMSFT(SS_LGUI("t")));
     GDM(GD_B_NTAB, OMGUI(IMALT(X_RIGHT)));
     GDM(GD_B_PTAB, OMGUI(IMALT(X_LEFT)));
     GDM(GD_B_URL, SS_LGUI("l"));
     GDM(GD_B_FORWARD, IMGUI(X_RIGHT));
     GDM(GD_B_BACK, IMGUI(X_LEFT));
     GDM(GD_B_FIND, SS_LGUI("f"));
-    GDM(GD_B_BOOKMARK, SS_LGUI("d"));
+    GDM(GD_B_BOOKM, SS_LGUI("d"));
     GDM(GD_B_RLOAD, OMGUI(SS_LSFT("r")));  // hard reload w/o cache
-    GDM(GD_B_FULLSCREEN, OMGUI(SS_LCTRL("p")));
+    GDM(GD_B_FULLS, OMGUI(SS_LCTRL("p")));
     GDM(GD_B_ZOOMI, IMGUI(X_KP_PLUS));  // ctr+ +
     GDM(GD_B_ZOOMO, IMGUI(X_KP_MINUS));
 #            ifdef GD_B_CHROME
-    GDM(GD_B_DEV_TOOLS, OMGUI(SS_LALT("i")));  // Chrome or Firefox
+    GDM(GD_B_DTOOLS, OMGUI(SS_LALT("i")));  // Chrome or Firefox
 #            endif
 #            ifdef GD_B_SAFARI
-                                                     // GDM( GD_B_DEV_TOOLS,	// No real equivalent for Safari
+                                                     // GDM( GD_B_DTOOLS,	// No real equivalent for Safari
 #            endif
 #        endif  //  GD_BROWSER
 

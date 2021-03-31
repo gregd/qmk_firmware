@@ -149,17 +149,17 @@ enum gdk_keycodes {
 #    ifdef GD_BROWSER
     GD_B_NEWT,
     GD_B_CTAB,
-    GD_B_REOPEN_LAST_TAB,
+    GD_B_REOPEN,
     GD_B_NTAB,
     GD_B_PTAB,
     GD_B_URL,
     GD_B_FORWARD,
     GD_B_BACK,
     GD_B_FIND,
-    GD_B_BOOKMARK,
-    GD_B_DEV_TOOLS,  // hard one to remember
+    GD_B_BOOKM,
+    GD_B_DTOOLS,  // hard one to remember
     GD_B_RLOAD,
-    GD_B_FULLSCREEN,
+    GD_B_FULLS,
     GD_B_ZOOMI,
     GD_B_ZOOMO,
 #    endif

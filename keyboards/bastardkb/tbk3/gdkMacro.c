@@ -83,7 +83,7 @@ bool gdkMacro(uint16_t keycode) {
 
 #    ifdef GD_VI
     if (keycode == GD_DO_VI) {
-        gdk_set_mode(GD_VI_MODE, true);
+        gdk_set_mode(GD_VI_MODE, false);
         gdk_led_user();
         return true;
     }
@@ -113,7 +113,7 @@ bool gdkMacro(uint16_t keycode) {
 #    endif
 #    ifdef GD_EMACS
     if (keycode == GD_DO_EMACS) {
-        gdk_set_mode(GD_EMACS_MODE, true);
+        gdk_set_mode(GD_EMACS_MODE, false);
         gdk_led_user();
         return true;
     }
@@ -123,7 +123,7 @@ bool gdkMacro(uint16_t keycode) {
 #    endif
 #    ifdef GD_READMUX
     if (keycode == GD_DO_READMUX) {
-        gdk_set_mode(GD_READMUX_MODE, true);
+        gdk_set_mode(GD_READMUX_MODE, false);
         gdk_led_user();
         return true;
     }

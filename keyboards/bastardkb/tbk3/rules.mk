@@ -20,9 +20,9 @@ BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 BLUETOOTH_ENABLE = no       # Enable Bluetooth
 AUDIO_ENABLE = no           # Audio output
-LEADER_ENABLE = yes
+LEADER_ENABLE = no
 AUTO_SHIFT_ENABLE = yes
 SPLIT_KEYBOARD = yes
 LTO_ENABLE = yes
 
-SRC += gdkMacro.c gdk_windows.c gdk_linux.c gdk_mac.c gdk_vi.c gdk_readmux.c
+SRC += gdkMacro.c gdk_linux.c gdk_mac.c gdk_vi.c

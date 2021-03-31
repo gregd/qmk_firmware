@@ -73,18 +73,18 @@ bool gdkMacro_linux(uint16_t keycode) {
 #        ifdef GD_BROWSER
     GDM(GD_B_NEWT, SS_LCTL("t"));
     GDM(GD_B_CTAB, IMCTL(X_F4));
-    GDM(GD_B_REOPEN_LAST_TAB, OMSFT(IMCTL(X_T)));
+    GDM(GD_B_REOPEN, OMSFT(IMCTL(X_T)));
     GDM(GD_B_NTAB, IMCTL(X_PGDOWN));
     GDM(GD_B_PTAB, IMCTL(X_PGUP));
     GDM(GD_B_URL, SS_LCTL("l"));
     GDM(GD_B_FORWARD, IMALT(X_RIGHT));
     GDM(GD_B_BACK, IMALT(X_LEFT));
     GDM(GD_B_FIND, SS_LCTL("f"));
-    GDM(GD_B_BOOKMARK, SS_LCTL("d"));
-    GDM(GD_B_DEV_TOOLS, SS_LCTL("t"));  // Chrome
+    GDM(GD_B_BOOKM, SS_LCTL("d"));
+    GDM(GD_B_DTOOLS, SS_LCTL("t"));  // Chrome
     // chrome
     GDM(GD_B_RLOAD, IMCTL(X_F5));             // hard reload w/o cache
-    GDM(GD_B_FULLSCREEN, SS_TAP(X_F11));       // command shift F
+    GDM(GD_B_FULLS, SS_TAP(X_F11));       // command shift F
     GDM(GD_B_ZOOMI, OMSFT(IMCTL(X_EQUAL)));  // ctr+ +
     GDM(GD_B_ZOOMO, IMCTL(X_MINUS));
 #        endif

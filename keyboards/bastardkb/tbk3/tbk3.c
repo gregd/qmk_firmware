@@ -19,17 +19,37 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
 
     switch (keycode) {
-//        case GD_POL:
-//            if (record->event.pressed) {
-//                set_single_persistent_default_layer(_POLISH);
-//            }
-//            return false;
-//
-//        case GD_NAV:
-//            if (record->event.pressed) {
-//                set_single_persistent_default_layer(_NAV);
-//            }
-//            return false;
+        case GD_L_POL:
+            if (record->event.pressed) {
+                default_layer_set(1UL << _POLISH);
+            }
+            return false;
+
+        case GD_L_NAV:
+            if (record->event.pressed) {
+                default_layer_set(1UL << _NAV);
+            }
+            return false;
+
+        case GD_L_VIM:
+            if (record->event.pressed) {
+                gdkMacro(GD_DO_VI);
+            }
+            return false;
+
+        case GD_L_MAC:
+            if (record->event.pressed) {
+                gdkMacro(GD_DO_MAC);
+                SEND_STRING("~Mac");
+            }
+            return false;
+
+        case GD_L_LINUX:
+            if (record->event.pressed) {
+                gdkMacro(GD_DO_LINUX);
+                SEND_STRING("~Linux");
+            }
+            return false;
 
         case GD_ARROW:
             if (record->event.pressed) {
@@ -66,7 +86,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 clear_oneshot_locked_mods();
                 clear_oneshot_mods();
                 clear_keyboard();
-                set_single_persistent_default_layer(_QWERTY);
+                default_layer_set(1UL << _QWERTY);
+                if (gdk_was_mac()) {
+                } else {
+                }
             }
             return false;
 
@@ -142,21 +165,19 @@ unsigned char get_default_layer(void)  {
     if (layer_state_cmp(default_layer_state, _QWERTY)) return _QWERTY;
     if (layer_state_cmp(default_layer_state, _POLISH)) return _POLISH;
     if (layer_state_cmp(default_layer_state, _NAV)) return _NAV;
-//    if (layer_state_cmp(default_layer_state, _SYMBOLS)) return _SYMBOLS;
     return 255;
 }
 
 void print_default_layer(void) {
     switch (get_default_layer()) {
-        case _QWERTY: SEND_STRING("Qwe "); break;
+        case _QWERTY: SEND_STRING("Qwerty "); break;
         case _POLISH: SEND_STRING("Pol "); break;
         case _NAV: SEND_STRING("Nav "); break;
-        // case _SYMBOLS: SEND_STRING("Symbols "); break;
         default: SEND_STRING("??? "); break;
     }
 }
 
-LEADER_EXTERNS();
+//LEADER_EXTERNS();
 
 void matrix_scan_user(void) {
   if (is_alt_tab_active) {
@@ -166,34 +187,14 @@ void matrix_scan_user(void) {
     }
   }
 
-  LEADER_DICTIONARY() {
-    leading = false;
-    leader_end();
-
-    SEQ_ONE_KEY(KC_P) {
-        default_layer_set(1UL << _POLISH);
-    }
-    SEQ_ONE_KEY(KC_QUOT) {
-        default_layer_set(1UL << _NAV);
-    }
-    SEQ_TWO_KEYS(KC_K, KC_M) {
-        gdkMacro(GD_DO_MAC);
-        SEND_STRING("~M");
-    }
-    SEQ_TWO_KEYS(KC_K, KC_L) {
-        gdkMacro(GD_DO_LINUX);
-        SEND_STRING("~L");
-    }
-    SEQ_TWO_KEYS(KC_K, KC_V) {
-        gdkMacro(GD_DO_VI);
-    }
-    SEQ_TWO_KEYS(KC_K, KC_T) {
-        gdkMacro(GD_DO_READMUX);
-    }
-    SEQ_TWO_KEYS(KC_S, KC_G) {
-        SEND_STRING("Grzegorz Daniluk");
-    }
-  }
+//  LEADER_DICTIONARY() {
+//    leading = false;
+//    leader_end();
+//
+//    SEQ_TWO_KEYS(KC_S, KC_G) {
+//        SEND_STRING("Grzegorz Daniluk");
+//    }
+//  }
 }
 
 void eeconfig_init_user(void) {
