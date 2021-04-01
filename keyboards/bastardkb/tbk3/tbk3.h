@@ -49,6 +49,7 @@ enum userspace_custom_keycodes {
     GD_L_VIM,
     GD_L_MAC,
     GD_L_LINUX,
+    GD_NAV_TGL,
     GD_ALT_TAB,
     GD_ARROW,
     GD_FARROW,

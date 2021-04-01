@@ -9,6 +9,7 @@ uint16_t alt_tab_timer = 0;
 
 void print_default_layer(void);
 void toggle_locked_shift(void);
+unsigned char get_default_layer(void);
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (keycode > GDK_START && keycode < GDK_END_RANGE) {
@@ -48,6 +49,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 gdkMacro(GD_DO_LINUX);
                 SEND_STRING("~Linux");
+            }
+            return false;
+
+        case GD_NAV_TGL:
+            if (record->event.pressed) {
+                if (get_default_layer() == _NAV) {
+                    default_layer_set(1UL << _QWERTY);
+                    //layer_off(_NAV);
+                } else {
+                    default_layer_set(1UL << _NAV);
+                }
             }
             return false;
 
