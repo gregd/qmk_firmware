@@ -1,22 +1,29 @@
 #include "tbk3.h"
 
-// bool move_is_on = false;  // track if we are in _MOV layer
-// bool sym_is_on  = false;  // track if we are in _SYM layer
-
 user_config_t user_config;
+
 bool is_alt_tab_active = false;
 uint16_t alt_tab_timer = 0;
+
+bool is_caps_on = false;
 
 void print_default_layer(void);
 void toggle_locked_shift(void);
 unsigned char get_default_layer(void);
+bool process_auto_caps(uint16_t keycode, keyrecord_t *record);
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    //uprintf("process kc: 0x%04X, pressed: %b, count: %u, time: %u, interrupt: %b\n", keycode, record->event.pressed, record->tap.count, record->event.time, record->tap.interrupted);
+
     if (keycode > GDK_START && keycode < GDK_END_RANGE) {
         if (record->event.pressed) {
             gdkMacro(keycode);
         }
         return true;
+    }
+
+    if (!process_auto_caps(keycode, record)) {
+        return false;
     }
 
     switch (keycode) {
@@ -56,7 +63,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 if (get_default_layer() == _NAV) {
                     default_layer_set(1UL << _QWERTY);
-                    //layer_off(_NAV);
                 } else {
                     default_layer_set(1UL << _NAV);
                 }
@@ -132,18 +138,59 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-        case KC_ESC:
-            if (record->event.pressed) {
+        case LT(_NAV, KC_ESC):
+            if (record->event.pressed && record->tap.count == 1) {
                 if (MOD_BIT(KC_LSHIFT) & get_oneshot_locked_mods()) {
                     toggle_locked_shift();
                 }
             }
-            return true;
+            break;
 
-        // default:
-        //     return true;
+        default:
+            break;
     }
 
+    // return true means process the keycodes normally
+    return true;
+}
+
+bool process_auto_caps(uint16_t keycode, keyrecord_t *record) {
+    if (keycode == GD_CAPS) {
+        if (record->event.pressed) {
+            is_caps_on = !is_caps_on;
+            if ((is_caps_on && !host_keyboard_led_state().caps_lock) || (
+                !is_caps_on && host_keyboard_led_state().caps_lock)) {
+                tap_code(KC_CAPS);
+            }
+        }
+        return false;
+    }
+    if (is_caps_on && record->event.pressed) {
+        // Get the base keycode of a mod or layer tap key
+        switch (keycode) {
+            case QK_MOD_TAP ... QK_MOD_TAP_MAX:
+            case QK_LAYER_TAP ... QK_LAYER_TAP_MAX:
+                // Earlier return if this has not been considered tapped yet
+                if (record->tap.count == 0) return true;
+                keycode = keycode & 0xFF;
+                break;
+            default:
+                break;
+        }
+        switch (keycode) {
+            case KC_A ... KC_Z:
+            case KC_MINS:
+            case KC_BSPC:
+            case KC_UNDS:
+                break;
+            default:
+                is_caps_on = false;
+                if (host_keyboard_led_state().caps_lock) {
+                    tap_code(KC_CAPS);
+                }
+                break;
+        }
+    }
     return true;
 }
 
@@ -161,15 +208,6 @@ void toggle_locked_shift(void) {
         if (!(sft & get_mods())) {
             register_mods(sft);
         }
-    }
-}
-
-bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case LT(_SYMBOLS, KC_SPC):
-            return true;
-        default:
-            return false;
     }
 }
 
@@ -192,12 +230,12 @@ void print_default_layer(void) {
 //LEADER_EXTERNS();
 
 void matrix_scan_user(void) {
-  if (is_alt_tab_active) {
-    if (timer_elapsed(alt_tab_timer) > 1300) {
-      unregister_code(gdk_was_mac() ? KC_LGUI : KC_LALT);
-      is_alt_tab_active = false;
+    if (is_alt_tab_active) {
+        if (timer_elapsed(alt_tab_timer) > 1300) {
+            unregister_code(gdk_was_mac() ? KC_LGUI : KC_LALT);
+            is_alt_tab_active = false;
+        }
     }
-  }
 
 //  LEADER_DICTIONARY() {
 //    leading = false;
@@ -215,12 +253,26 @@ void eeconfig_init_user(void) {
 }
 
 void keyboard_post_init_user(void) {
+    debug_enable = true;
     user_config.raw = eeconfig_read_user();
     // By default Linux mode is set so set the new mode only in case of Mac mode
     if (user_config.mac_mode) {
         gdk_set_mode(GD_MAC_MODE, false);
     }
 }
+
+bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LT(_SYMBOLS, KC_SPC):
+            return true;
+        default:
+            return false;
+    }
+}
+
+//void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
+//    uprintf("post    kc: 0x%04X, pressed: %b, time: %u, interrupt: %b, count: %u\n", keycode, record->event.pressed, record->event.time, record->tap.interrupted, record->tap.count);
+//}
 
 // // custom tapping term lengths.
 // uint16_t get_tapping_term(uint16_t keycode) {

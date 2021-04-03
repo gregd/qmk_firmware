@@ -51,6 +51,7 @@ enum userspace_custom_keycodes {
     GD_L_LINUX,
     GD_NAV_TGL,
     GD_ALT_TAB,
+    GD_CAPS,
     GD_ARROW,
     GD_FARROW,
     GD_EQSP,
