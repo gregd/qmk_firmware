@@ -12,6 +12,7 @@ and jeebak & algernon's keymap
 #include "quantum.h"
 
 void gdk_set_mode(uint8_t id, bool update_eeprom);
+uint8_t gdk_get_mode(void);
 void gdk_led_user(void);
 void gdk_clear_mods(void);
 bool gdk_was_mac(void);

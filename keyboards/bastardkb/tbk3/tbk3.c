@@ -4,7 +4,7 @@ user_config_t user_config;
 
 bool is_alt_tab_active = false;
 uint16_t alt_tab_timer = 0;
-
+bool was_pol_layer = false;
 bool is_caps_on = false;
 
 void print_default_layer(void);
@@ -30,6 +30,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case GD_L_POL:
             if (record->event.pressed) {
                 default_layer_set(1UL << _POLISH);
+                was_pol_layer = true;
             }
             return false;
 
@@ -39,33 +40,39 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-        case GD_L_VIM:
-            if (record->event.pressed) {
-                gdkMacro(GD_DO_VI);
-            }
-            return false;
-
-        case GD_L_MAC:
-            if (record->event.pressed) {
-                gdkMacro(GD_DO_MAC);
-                SEND_STRING("~Mac");
-            }
-            return false;
-
-        case GD_L_LINUX:
-            if (record->event.pressed) {
-                gdkMacro(GD_DO_LINUX);
-                SEND_STRING("~Linux");
-            }
-            return false;
-
-        case GD_NAV_TGL:
+        case GD_TGL_NAV:
             if (record->event.pressed) {
                 if (get_default_layer() == _NAV) {
-                    default_layer_set(1UL << _QWERTY);
+                    default_layer_set(1UL << (was_pol_layer ? _POLISH : _QWERTY));
                 } else {
                     default_layer_set(1UL << _NAV);
                 }
+            }
+            return false;
+
+        case GD_TGL_VIM:
+            if (record->event.pressed) {
+                if (gdk_get_mode() == GD_VI_MODE) {
+                    if (gdk_was_mac()) {
+                        gdk_set_mode(GD_MAC_MODE, false);
+                    } else {
+                        gdk_set_mode(GD_LINUX_MODE, false);
+                    }
+                } else {
+                    gdk_set_mode(GD_VI_MODE, false);
+                }
+            }
+            return false;
+
+        case GD_M_MAC:
+            if (record->event.pressed) {
+                gdkMacro(GD_DO_MAC);
+            }
+            return false;
+
+        case GD_M_LINUX:
+            if (record->event.pressed) {
+                gdkMacro(GD_DO_LINUX);
             }
             return false;
 
@@ -105,9 +112,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 clear_oneshot_mods();
                 clear_keyboard();
                 default_layer_set(1UL << _QWERTY);
-                if (gdk_was_mac()) {
-                } else {
-                }
+                was_pol_layer = false;
             }
             return false;
 

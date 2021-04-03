@@ -20,6 +20,10 @@ bool gdk_was_mac_mode = false;
 // function to tell the user that the mode has changed
 __attribute__((weak)) void gdk_led_user(void) {}
 
+uint8_t gdk_get_mode(void) {
+    return gdk_mode;
+}
+
 void gdk_set_mode(uint8_t id, bool update_eeprom) {
     gdk_mode = id;
 
