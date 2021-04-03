@@ -258,7 +258,7 @@ void eeconfig_init_user(void) {
 }
 
 void keyboard_post_init_user(void) {
-    debug_enable = true;
+    //debug_enable = true;
     user_config.raw = eeconfig_read_user();
     // By default Linux mode is set so set the new mode only in case of Mac mode
     if (user_config.mac_mode) {
