@@ -44,12 +44,12 @@ define modifiers here, since MOD_* doesn't seem to work for these
 
 enum userspace_custom_keycodes {
     GD_RST = GDK_END_RANGE,
-    GD_L_POL,
-    GD_L_NAV,
     GD_M_MAC,
     GD_M_LINUX,
+    GD_TGL_POL,
     GD_TGL_VIM,
     GD_TGL_NAV,
+    GD_TGE_SHT,
     GD_ALT_TAB,
     GD_CAPS,
     GD_ARROW,
@@ -57,7 +57,6 @@ enum userspace_custom_keycodes {
     GD_EQSP,
     GD_HDIR,
     GD_DCOLN,
-    GD_SHT_TGE,
     GD_INFO
 };
 

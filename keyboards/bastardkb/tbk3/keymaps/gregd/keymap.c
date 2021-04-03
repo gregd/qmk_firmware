@@ -26,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*            pinky         ring          middle        index                                        index        middle     ring         pinky */
     GD_RST,       GD_APP_CLOSE, GD_WIN_NEXT,  GD_REPLACE,   GD_B_ZOOMI, GD_B_ZOOMO,    /**/ GD_GO_SD,    GD_I_COLM,   GD_UNDO,   GD_I_SE_DUP, GD_REDO,       GD_SE_ALL, \
     GD_WIN_LFT,   GD_WIN_FULL,  GD_APP_NEXT,  GD_FPREV,     GD_B_PTAB,  GD_B_CTAB,     /**/ GD_GO_SL,    GD_GO_LW,    KC_PGUP,   GD_I_EX_SEL, GD_COPY,       _______, \
-    GD_WIN_CEN,   GD_RUNAPP,    GD_ALT_TAB,   GD_FNEXT,     GD_B_NTAB,  GD_B_URL,      /**/ KC_LEFT,     KC_DOWN,     KC_UP,     KC_RIGHT,    GD_SHT_TGE,    GD_CUT, \
+    GD_WIN_CEN,   GD_RUNAPP,    GD_ALT_TAB,   GD_FNEXT,     GD_B_NTAB,  GD_B_URL,      /**/ KC_LEFT,     KC_DOWN,     KC_UP,     KC_RIGHT,    GD_TGE_SHT,    GD_CUT, \
     GD_WIN_RGT,   GD_APP_SAVE,  GD_WIN_HIDE,  GD_FIND,      GD_B_NEWT,  GD_B_RLOAD,    /**/ GD_GO_ED,    KC_PGDN,     GD_GO_RW,  GD_GO_EL,    GD_PASTE ,     GD_PA_REC, \
     \
     _______, _______, _______,                                                         /**/ _______, _______, _______),
@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     GD_RST,       KC_NO,    KC_CIRC,  GD_ARROW, GD_FARROW, KC_NO,                      /**/ KC_QUOT,   KC_LABK,   KC_RABK,  KC_PERC,   KC_QUES,   KC_TILD, \
     KC_NO,        KC_GRV,   KC_7,     KC_8,     KC_9,      KC_BSLASH,                  /**/ KC_DQUO,   KC_LCBR,   KC_RCBR,  KC_MINS,   KC_PLUS,   KC_DLR, \
     GD_HDIR,      GD_EQSP,  KC_4,     KC_5,     KC_6,      KC_0,                       /**/ KC_EXLM,   KC_LPRN,   KC_RPRN,  KC_UNDS,   KC_ASTR,   KC_AT, \
-    KC_NO,        KC_COLN,  KC_1,     KC_2,     KC_3,      KC_PERC,                    /**/ KC_PIPE,   KC_LBRC,   KC_RBRC,  KC_PEQL,   KC_AMPR,   KC_HASH, \
+    GD_DCOLN,     KC_COLN,  KC_1,     KC_2,     KC_3,      KC_PERC,                    /**/ KC_PIPE,   KC_LBRC,   KC_RBRC,  KC_PEQL,   KC_AMPR,   KC_HASH, \
     \
     GD_DEL_2LNE, GD_I_NEW_LINE, KC_APP,                                                /**/ GD_I_FIXES, GD_I_COMPLETE, GD_DEL_LWORD),
 
@@ -52,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_IDE_RIGHT] = LAYOUT_split_4x6_3( \
     /*          pinky          ring        middle        index                                           index         middle       ring          pinky */
     RESET,      KC_F1,         KC_F2,      KC_F3,        KC_F4,         KC_F5,         /**/ KC_F6,       KC_F7,        KC_F8,       KC_F9,        GD_M_MAC,    GD_INFO, \
-    GD_I_GOTOL, GD_I_WIN_GITH, GD_I_FACT,  GD_I_RINF,    GD_I_REC_FILE, GD_I_GO_L_ED,  /**/ KC_NO,       KC_NO,        GD_L_POL,    GD_TGL_VIM,   GD_M_LINUX,  KC_F10, \
+    GD_I_GOTOL, GD_I_WIN_GITH, GD_I_FACT,  GD_I_RINF,    GD_I_REC_FILE, GD_I_GO_L_ED,  /**/ KC_NO,       KC_NO,        GD_TGL_POL,    GD_TGL_VIM,   GD_M_LINUX,  KC_F10, \
     GD_I_BUILD, GD_I_WIN_GITC, GD_I_RUNA,  GD_I_WIN_SEA, GD_I_REC_LOC,  GD_I_WIN_RUN,  /**/ KC_NO,       KC_NO,        KC_NO,       KC_NO,        KC_NO,       KC_F11, \
     KC_NO,      GD_I_WIN_STRU, GD_I_RUNL,  GD_I_FINF,    GD_I_GO_FILE,  GD_I_RUNS,     /**/ KC_NO,       KC_NO,        KC_NO,       KC_NO,        KC_NO,       KC_F12, \
     \

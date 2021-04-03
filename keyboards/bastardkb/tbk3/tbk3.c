@@ -27,16 +27,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
 
     switch (keycode) {
-        case GD_L_POL:
+        case GD_TGL_POL:
             if (record->event.pressed) {
-                default_layer_set(1UL << _POLISH);
-                was_pol_layer = true;
-            }
-            return false;
-
-        case GD_L_NAV:
-            if (record->event.pressed) {
-                default_layer_set(1UL << _NAV);
+                if (get_default_layer() == _POLISH) {
+                    default_layer_set(1UL << _QWERTY);
+                    was_pol_layer = false;
+                } else {
+                    default_layer_set(1UL << _POLISH);
+                    was_pol_layer = true;
+                }
             }
             return false;
 
@@ -106,22 +105,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-        case GD_RST:
+        case GD_TGE_SHT:
             if (record->event.pressed) {
-                clear_oneshot_locked_mods();
-                clear_oneshot_mods();
-                clear_keyboard();
-                default_layer_set(1UL << _QWERTY);
-                was_pol_layer = false;
+                toggle_locked_shift();
             }
             return false;
 
-        case GD_INFO:
-            if (record->event.pressed) {
-                print_default_layer();
-                gdkMacro(GD_MODE);
+        case LT(_NAV, KC_ESC):
+            if (record->event.pressed && record->tap.count == 1) {
+                if (MOD_BIT(KC_LSHIFT) & get_oneshot_locked_mods()) {
+                    toggle_locked_shift();
+                }
             }
-            return false;
+            break;
 
         case GD_ALT_TAB:
             // https://beta.docs.qmk.fm/using-qmk/advanced-keycodes/feature_macros#advanced-example
@@ -137,19 +133,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             break;
 
-        case GD_SHT_TGE:
+        case GD_INFO:
             if (record->event.pressed) {
-                toggle_locked_shift();
+                print_default_layer();
+                gdkMacro(GD_MODE);
             }
             return false;
 
-        case LT(_NAV, KC_ESC):
-            if (record->event.pressed && record->tap.count == 1) {
-                if (MOD_BIT(KC_LSHIFT) & get_oneshot_locked_mods()) {
-                    toggle_locked_shift();
-                }
+        case GD_RST:
+            if (record->event.pressed) {
+                clear_oneshot_locked_mods();
+                clear_oneshot_mods();
+                clear_keyboard();
+                default_layer_set(1UL << _QWERTY);
+                was_pol_layer = false;
             }
-            break;
+            return false;
 
         default:
             break;
