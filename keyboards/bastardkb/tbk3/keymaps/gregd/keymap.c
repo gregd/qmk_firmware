@@ -20,9 +20,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______,                              /**/ _______, _______, _______, _______, _______, _______, \
     _______, _______, _______, _______, _______, _______,                              /**/ _______, _______, _______, _______, _______, _______, \
     \
-    _______, MT(MOD_RALT, KC_BSPC), _______,                                           /**/ _______, MT(MOD_RALT, KC_SPC), _______),
+    _______, MT(MOD_RALT, KC_ENT), _______,                                           /**/ _______, MT(MOD_RALT, KC_SPC), _______),
 
-  [_NAV] = LAYOUT_split_4x6_3( \
+    [_FAST_SPC] = LAYOUT_split_4x6_3( \
+    /*       pinky    ring     middle   index                                                        index    middle   ring     pinky */
+    GD_RST,  _______, _______, _______, _______, _______,                              /**/ _______, _______, _______, _______, _______, _______, \
+    _______, _______, _______, _______, _______, _______,                              /**/ _______, _______, _______, _______, _______, _______, \
+    _______, _______, _______, _______, _______, _______,                              /**/ _______, _______, _______, _______, _______, _______, \
+    _______, _______, _______, _______, _______, _______,                              /**/ _______, _______, _______, _______, _______, _______, \
+    \
+    _______, LT(_SYMBOLS, KC_ENT), _______,                                            /**/ _______, KC_SPC, _______),
+
+    [_NAV] = LAYOUT_split_4x6_3( \
     /*            pinky         ring          middle        index                                        index        middle     ring         pinky */
     GD_RST,       GD_APP_CLOSE, GD_WIN_NEXT,  GD_REPLACE,   GD_B_ZOOMI, GD_B_ZOOMO,    /**/ GD_GO_SD,    GD_I_COLM,   GD_UNDO,   GD_I_SE_DUP, GD_REDO,       GD_SE_ALL, \
     GD_WIN_LFT,   GD_WIN_FULL,  GD_APP_NEXT,  GD_FPREV,     GD_B_PTAB,  GD_B_CTAB,     /**/ GD_GO_SL,    GD_GO_LW,    KC_PGUP,   GD_I_EX_SEL, GD_COPY,       _______, \
@@ -52,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_IDE_RIGHT] = LAYOUT_split_4x6_3( \
     /*          pinky          ring        middle        index                                           index         middle       ring          pinky */
     RESET,      KC_F1,         KC_F2,      KC_F3,        KC_F4,         KC_F5,         /**/ KC_F6,       KC_F7,        KC_F8,       KC_F9,        GD_M_MAC,    GD_INFO, \
-    GD_I_GOTOL, GD_I_WIN_GITH, GD_I_FACT,  GD_I_RINF,    GD_I_REC_FILE, GD_I_GO_L_ED,  /**/ KC_NO,       KC_NO,        GD_TGL_POL,    GD_TGL_VIM,   GD_M_LINUX,  KC_F10, \
+    GD_I_GOTOL, GD_I_WIN_GITH, GD_I_FACT,  GD_I_RINF,    GD_I_REC_FILE, GD_I_GO_L_ED,  /**/ KC_NO,       GD_TGL_FSPC,  GD_TGL_POL,    GD_TGL_VIM,   GD_M_LINUX,  KC_F10, \
     GD_I_BUILD, GD_I_WIN_GITC, GD_I_RUNA,  GD_I_WIN_SEA, GD_I_REC_LOC,  GD_I_WIN_RUN,  /**/ KC_NO,       KC_NO,        KC_NO,       KC_NO,        KC_NO,       KC_F11, \
     KC_NO,      GD_I_WIN_STRU, GD_I_RUNL,  GD_I_FINF,    GD_I_GO_FILE,  GD_I_RUNS,     /**/ KC_NO,       KC_NO,        KC_NO,       KC_NO,        KC_NO,       KC_F12, \
     \

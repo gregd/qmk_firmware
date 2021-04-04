@@ -39,6 +39,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
+        case GD_TGL_FSPC:
+            if (record->event.pressed) {
+                if (get_default_layer() == _FAST_SPC) {
+                    default_layer_set(1UL << _QWERTY);
+                } else {
+                    default_layer_set(1UL << _FAST_SPC);
+                }
+            }
+            return false;
+
         case GD_TGL_NAV:
             if (record->event.pressed) {
                 if (get_default_layer() == _NAV) {
@@ -218,6 +228,7 @@ void toggle_locked_shift(void) {
 unsigned char get_default_layer(void)  {
     if (layer_state_cmp(default_layer_state, _QWERTY)) return _QWERTY;
     if (layer_state_cmp(default_layer_state, _POLISH)) return _POLISH;
+    if (layer_state_cmp(default_layer_state, _FAST_SPC)) return _FAST_SPC;
     if (layer_state_cmp(default_layer_state, _NAV)) return _NAV;
     return 255;
 }
@@ -226,6 +237,7 @@ void print_default_layer(void) {
     switch (get_default_layer()) {
         case _QWERTY: SEND_STRING("Qwerty "); break;
         case _POLISH: SEND_STRING("Pol "); break;
+        case _FAST_SPC: SEND_STRING("FSpc "); break;
         case _NAV: SEND_STRING("Nav "); break;
         default: SEND_STRING("??? "); break;
     }

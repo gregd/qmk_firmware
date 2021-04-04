@@ -28,6 +28,7 @@
 enum userspace_layers {
     _QWERTY=0,
     _POLISH,
+    _FAST_SPC,
     _NAV,
     _SYMBOLS,
     _IDE_LEFT,
@@ -47,6 +48,7 @@ enum userspace_custom_keycodes {
     GD_M_MAC,
     GD_M_LINUX,
     GD_TGL_POL,
+    GD_TGL_FSPC,
     GD_TGL_VIM,
     GD_TGL_NAV,
     GD_TGE_SHT,
