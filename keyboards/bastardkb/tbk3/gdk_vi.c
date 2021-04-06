@@ -31,10 +31,10 @@ bool gdkMacro_vi(uint16_t keycode) {
     GDM(GD_DEL_RWORD, "dw");
     GDM(GD_DEL_2LNE, "d" IMSFT(X_4));
     GDM(GD_DEL_2LNS, "d" IMSFT(X_6));
-    GDM(GD_MODE, "Vi ");
+    GDM(GD_MODE, "Vim ");
 #        endif
 #        ifdef GD_OSKEYS
-    GDM(GD_UNDO, "h");
+    GDM(GD_UNDO, "u");
     GDM(GD_REDO, SS_LCTRL("r"));
     GDM(GD_CUT, "x");
     GDM(GD_COPY, "y");
@@ -43,22 +43,24 @@ bool gdkMacro_vi(uint16_t keycode) {
     GDM(GD_FIND, SS_TAP(X_SLASH));
     GDM(GD_FNEXT, "n");
     GDM(GD_FPREV, IMSFT(X_N));
-    GDM(GD_REPLACE, OMALT(IMSFT(X_5)));
-    GDM(GD_RUNAPP, ":split");                // requires VIM, is vsplit better?
-    GDM(GD_APP_NEXT, IMCTL(X_DOWN));  // Or Right?
-    GDM(GD_APP_NEXT, IMCTL(X_UP));    // or Left?
-    GDM(GD_APP_SAVE, SS_TAP(X_ESCAPE) ":w");
-    GDM(GD_APP_CLOSE, IMCTL(X_SCOLON) "q");
-    GDM(GD_HELP, SS_LSFT(SS_TAP(X_SCOLON)) "h");  // start search in help
-                                                      // GDM( GD_LOCK,		()	); Perhaps VI is not an OS?
-                                                      // GDM( GD_SCR_CFULL,		()	); // capture a buffer?
+    GDM(GD_REPLACE, ":noh" SS_TAP(X_ENTER));
+    //GDM(GD_RUNAPP, ":split");
+    //GDM(GD_APP_NEXT, IMCTL(X_DOWN));  // Or Right?
+    //GDM(GD_APP_NEXT, IMCTL(X_UP));    // or Left?
+    GDM(GD_APP_SAVE, SS_TAP(X_ESCAPE) ":wa" SS_TAP(X_ENTER));
+    GDM(GD_APP_CLOSE, IMCTL(X_SCOLON) ":qa" SS_TAP(X_ENTER));
 #        endif
-
 #        ifdef GD_BROWSER
-/* what _is_ the VI browser now that vimpirator is dead?*/
+    GDM(GD_B_NEWT, IMCTL(X_A) "c" IMCTL(X_A) ",");
+    GDM(GD_B_CTAB, IMCTL(X_A) "x");
+    GDM(GD_B_NTAB, IMCTL(X_A) "n");
+    GDM(GD_B_PTAB, IMCTL(X_A) "p");
+    GDM(GD_B_URL, IMCTL(X_A) IMCTL(X_A));
+    GDM(GD_B_RLOAD, IMCTL(X_A) "[");
+    GDM(GD_B_ZOOMI, IMGUI(X_KP_PLUS));
+    GDM(GD_B_ZOOMO, IMGUI(X_KP_MINUS));
 #        endif
 
-    // Todo, ring bell, flash light, show user this isn't supported
     return false;
 }
 
