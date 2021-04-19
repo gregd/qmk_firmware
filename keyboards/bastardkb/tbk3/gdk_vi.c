@@ -36,19 +36,19 @@ bool gdkMacro_vi(uint16_t keycode) {
 #        ifdef GD_OSKEYS
     GDM(GD_UNDO, "u");
     GDM(GD_REDO, SS_LCTRL("r"));
-    GDM(GD_CUT, "x");
+    GDM(GD_CUT, "d");
     GDM(GD_COPY, "y");
     GDM(GD_PASTE, "p");
-    GDM(GD_SE_ALL, IMSFT(X_SCOLON) SS_TAP(X_5) "y");  // wrong but helpful?
-    GDM(GD_FIND, SS_TAP(X_SLASH));
-    GDM(GD_FNEXT, "n");
-    GDM(GD_FPREV, IMSFT(X_N));
-    GDM(GD_REPLACE, ":noh" SS_TAP(X_ENTER));
+    GDM(GD_SE_ALL, "ggVG");
+    //GDM(GD_FIND, SS_TAP(X_SLASH));
+    //GDM(GD_FNEXT, "n");
+    //GDM(GD_FPREV, IMSFT(X_N));
+    //GDM(GD_REPLACE, ":noh" SS_TAP(X_ENTER));
     //GDM(GD_RUNAPP, ":split");
     //GDM(GD_APP_NEXT, IMCTL(X_DOWN));  // Or Right?
     //GDM(GD_APP_NEXT, IMCTL(X_UP));    // or Left?
-    GDM(GD_APP_SAVE, SS_TAP(X_ESCAPE) ":wa" SS_TAP(X_ENTER));
-    GDM(GD_APP_CLOSE, IMCTL(X_SCOLON) ":qa" SS_TAP(X_ENTER));
+    //GDM(GD_APP_SAVE, SS_TAP(X_ESCAPE) ":wa" SS_TAP(X_ENTER));
+    //GDM(GD_APP_CLOSE, IMCTL(X_SCOLON) ":qa" SS_TAP(X_ENTER));
 #        endif
 #        ifdef GD_BROWSER
     GDM(GD_B_NEWT, IMCTL(X_A) "c" IMCTL(X_A) ",");

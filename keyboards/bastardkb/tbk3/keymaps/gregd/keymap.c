@@ -6,9 +6,9 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_split_4x6_3( \
     /*                     pinky  ring   middle index                                                      index         middle       ring     pinky */
-    OSM(MOD_LSFT),         KC_1,  KC_2,  KC_3,  KC_4,  KC_5,                           /**/ KC_6,          KC_7,         KC_8,        KC_9,    KC_0,     GD_CAPS, \
-    OSM(MOD_LALT),         KC_Q,  KC_W,  KC_E,  KC_R,  KC_T,                           /**/ KC_Y,          KC_U,         KC_I,        KC_O,    KC_P,     GD_TGL_NAV, \
-    OSM(MOD_LGUI),         KC_A,  KC_S,  KC_D,  KC_F,  KC_G,                           /**/ KC_H,          KC_J,         KC_K,        KC_L,    KC_SCLN,  KC_QUOT, \
+    OSM(MOD_LALT),         KC_1,  KC_2,  KC_3,  KC_4,  KC_5,                           /**/ KC_6,          KC_7,         KC_8,        KC_9,    KC_0,     GD_CAPS, \
+    OSM(MOD_LGUI),         KC_Q,  KC_W,  KC_E,  KC_R,  KC_T,                           /**/ KC_Y,          KC_U,         KC_I,        KC_O,    KC_P,     GD_TGL_NAV, \
+    OSM(MOD_LSFT),         KC_A,  KC_S,  KC_D,  KC_F,  KC_G,                           /**/ KC_H,          KC_J,         KC_K,        KC_L,    KC_SCLN,  OSM(MOD_RSFT), \
     OSM(MOD_LCTL),         KC_Z,  KC_X,  KC_C,  KC_V,  KC_B,                           /**/ KC_N,          KC_M,         KC_COMM,     KC_DOT,  KC_SLSH,  OSM(MOD_RCTL), \
     \
     LT(_IDE_LEFT, KC_DEL), LT(_SYMBOLS, KC_ENT), LT(_NAV, KC_ESC),                     /**/ LT(_NAV, KC_TAB), LT(_SYMBOLS, KC_SPC), LT(_IDE_RIGHT, KC_BSPC)),
@@ -22,7 +22,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     \
     _______, MT(MOD_RALT, KC_ENT), _______,                                           /**/ _______, MT(MOD_RALT, KC_SPC), _______),
 
-    [_FAST_SPC] = LAYOUT_split_4x6_3( \
+  [_FAST_SPC] = LAYOUT_split_4x6_3( \
     /*       pinky    ring     middle   index                                                        index    middle   ring     pinky */
     GD_RST,  _______, _______, _______, _______, _______,                              /**/ _______, _______, _______, _______, _______, _______, \
     _______, _______, _______, _______, _______, _______,                              /**/ _______, _______, _______, _______, _______, _______, \
@@ -31,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     \
     _______, LT(_SYMBOLS, KC_ENT), _______,                                            /**/ _______, KC_SPC, _______),
 
-    [_NAV] = LAYOUT_split_4x6_3( \
+  [_NAV] = LAYOUT_split_4x6_3( \
     /*            pinky         ring          middle        index                                        index        middle     ring         pinky */
     GD_RST,       GD_APP_CLOSE, GD_WIN_NEXT,  GD_REPLACE,   GD_B_ZOOMI, GD_B_ZOOMO,    /**/ GD_GO_SD,    GD_I_COLM,   GD_UNDO,   GD_I_SE_DUP, GD_REDO,       GD_SE_ALL, \
     GD_WIN_LFT,   GD_WIN_FULL,  GD_APP_NEXT,  GD_FPREV,     GD_B_PTAB,  GD_B_CTAB,     /**/ GD_GO_SL,    GD_GO_LW,    KC_PGUP,   GD_I_EX_SEL, GD_COPY,       _______, \
