@@ -129,6 +129,7 @@ enum gdk_keycodes {
     GD_REPLACE,
     // GUI or app
     GD_RUNAPP,
+    GD_ALT_TAB,
     GD_APP_NEXT,
     GD_APP_LAST,  // previous
     GD_APP_SAVE,

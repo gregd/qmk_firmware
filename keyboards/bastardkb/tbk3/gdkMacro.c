@@ -81,7 +81,9 @@ bool gdkMacro(uint16_t keycode) {
     }
 
     if (gdk_mode == GD_MAC_MODE) {
-        gdkMacro_mac(keycode);
+        if (gdkMacro_mac(keycode)) {
+            return true;
+        }
     }
 #    endif
 
@@ -92,7 +94,9 @@ bool gdkMacro(uint16_t keycode) {
         return true;
     }
     if (gdk_mode == GD_VI_MODE) {
-        gdkMacro_vi(keycode);
+        if (gdkMacro_vi(keycode)) {
+            return true;
+        }
     }
 #    endif
 #    ifdef GD_WINDOWS
@@ -102,7 +106,9 @@ bool gdkMacro(uint16_t keycode) {
         return true;
     }
     if (gdk_mode == GD_WINDOWS_MODE) {
-        gdkMacro_win(keycode);
+        if (gdkMacro_win(keycode)) {
+            return true;
+        }
     }
 #    endif
 #    ifdef GD_LINUX
@@ -112,7 +118,9 @@ bool gdkMacro(uint16_t keycode) {
         return true;
     }
     if (gdk_mode == GD_LINUX_MODE) {
-        gdkMacro_linux(keycode);
+        if (gdkMacro_linux(keycode)) {
+            return true;
+        }
     }
 #    endif
 #    ifdef GD_EMACS
@@ -122,7 +130,9 @@ bool gdkMacro(uint16_t keycode) {
         return true;
     }
     if (gdk_mode == GD_EMACS_MODE) {
-        gdkMacro_emacs(keycode);
+        if (gdkMacro_emacs(keycode)) {
+            return true;
+        }
     }
 #    endif
 #    ifdef GD_READMUX
@@ -132,7 +142,9 @@ bool gdkMacro(uint16_t keycode) {
         return true;
     }
     if (gdk_mode == GD_READMUX_MODE) {
-        gdkMacro_readmux(keycode);
+        if (gdkMacro_readmux(keycode)) {
+            return true;
+        }
     }
 #    endif
 
