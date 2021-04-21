@@ -15,17 +15,14 @@ bool process_auto_caps(uint16_t keycode, keyrecord_t *record);
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     //uprintf("process kc: 0x%04X, pressed: %b, count: %u, time: %u, interrupt: %b\n", keycode, record->event.pressed, record->tap.count, record->event.time, record->tap.interrupted);
 
-    bool wasGdk = false;
     if (keycode > GDK_START && keycode < GDK_END_RANGE) {
-        wasGdk = true;
         if (record->event.pressed) {
-            if (gdkMacro(keycode)) {
-                return true;
-            }
+            gdkMacro(keycode);
         }
+        return true;
     }
 
-    if (!wasGdk && !process_auto_caps(keycode, record)) {
+    if (!process_auto_caps(keycode, record)) {
         return false;
     }
 

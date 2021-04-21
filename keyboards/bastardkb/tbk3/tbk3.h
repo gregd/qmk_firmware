@@ -52,7 +52,7 @@ enum userspace_custom_keycodes {
     GD_TGL_VIM,
     GD_TGL_NAV,
     GD_TGE_SHT,
-//    GD_ALT_TAB,
+    GD_ALT_TAB,
     GD_CAPS,
     GD_ARROW,
     GD_FARROW,

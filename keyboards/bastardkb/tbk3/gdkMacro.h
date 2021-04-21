@@ -129,7 +129,6 @@ enum gdk_keycodes {
     GD_REPLACE,
     // GUI or app
     GD_RUNAPP,
-    GD_ALT_TAB,
     GD_APP_NEXT,
     GD_APP_LAST,  // previous
     GD_APP_SAVE,
@@ -205,6 +204,10 @@ enum gdk_keycodes {
     GD_I_RUNL,
     GD_I_RUNS,
     GD_I_RUNA,
+    GD_T_CREATE,
+    GD_T_NEXT,
+    GD_T_PREV,
+    GD_T_EDIT,
 #    endif
 
 // Macros for mode switching

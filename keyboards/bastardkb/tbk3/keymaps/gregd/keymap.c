@@ -62,8 +62,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*          pinky          ring        middle        index                                           index         middle       ring          pinky */
     RESET,      KC_F1,         KC_F2,      KC_F3,        KC_F4,         KC_F5,         /**/ KC_F6,       KC_F7,        KC_F8,       KC_F9,        GD_M_MAC,    GD_INFO, \
     GD_I_GOTOL, GD_I_WIN_GITH, GD_I_FACT,  GD_I_RINF,    GD_I_REC_FILE, GD_I_GO_L_ED,  /**/ GD_TGL_FSPC, GD_TGL_VIM,   GD_TGL_POL,  KC_NO,        GD_M_LINUX,  KC_F10, \
-    GD_I_BUILD, GD_I_WIN_GITC, GD_I_RUNA,  GD_I_WIN_SEA, GD_I_REC_LOC,  GD_I_WIN_RUN,  /**/ KC_NO,       KC_NO,        KC_NO,       KC_NO,        KC_NO,       KC_F11, \
-    KC_NO,      GD_I_WIN_STRU, GD_I_RUNL,  GD_I_FINF,    GD_I_GO_FILE,  GD_I_RUNS,     /**/ KC_NO,       KC_NO,        KC_NO,       KC_NO,        KC_NO,       KC_F12, \
+    GD_I_BUILD, GD_I_WIN_GITC, GD_I_RUNA,  GD_I_WIN_SEA, GD_I_REC_LOC,  GD_I_WIN_RUN,  /**/ KC_NO,       GD_T_EDIT,    GD_T_NEXT,   KC_NO,        KC_NO,       KC_F11, \
+    KC_NO,      GD_I_WIN_STRU, GD_I_RUNL,  GD_I_FINF,    GD_I_GO_FILE,  GD_I_RUNS,     /**/ KC_NO,       GD_T_CREATE,  GD_T_PREV,   KC_NO,        KC_NO,       KC_F12, \
     \
     GD_DEL_LINE, _______, _______,                                                     /**/ _______, _______, _______),
 };
