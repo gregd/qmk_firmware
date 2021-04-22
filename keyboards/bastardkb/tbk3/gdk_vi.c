@@ -32,8 +32,8 @@ bool gdkMacro_vi(uint16_t keycode) {
 //    GDM(GD_I_REL_FILE, "");             // RubyMine goto-view / controller
 //    GDM(GD_I_REL_SYM, OMALT(IMCTL(X_HOME)));
     GDM(GD_I_EX_SEL, " ss");
-//    GDM(GD_I_COMPLETE, IMCTL(X_SPACE));
-//    GDM(GD_I_FIXES, IMALT(X_ENTER));
+    GDM(GD_I_COMPLETE, IMCTL(X_SPACE));
+    GDM(GD_I_FIXES, " la");
     GDM(GD_I_QDOC, " lh");
     GDM(GD_I_GO_L_ED, "`.");
     GDM(GD_I_GO_DEF, " fd");
@@ -47,11 +47,11 @@ bool gdkMacro_vi(uint16_t keycode) {
     GDM(GD_I_RENAME, " lr");
     GDM(GD_I_REFACTOR, " la");
     GDM(GD_I_COMMENT, " cc");
-//    GDM(GD_I_REFORMAT, OMALT(IMCTL(X_L)));
+    GDM(GD_I_REFORMAT, " lf");
     GDM(GD_I_COLM, IMCTL(X_V));
-//    GDM(GD_I_NEW_LINE, IMSFT(X_ENTER));
-//    GDM(GD_I_SE_DUP, IMCTL(X_D));
-//    GDM(GD_I_TGL_CASE, OMSFT(IMCTL(X_U)));
+    GDM(GD_I_NEW_LINE, SS_TAP(X_ESCAPE) "o");
+    GDM(GD_I_SE_DUP, "y'>p");
+    GDM(GD_I_TGL_CASE, "g~w");
 //    GDM(GD_I_BUILD, IMCTL(X_F9));
 //    GDM(GD_I_RUNL, IMSFT(X_F10));
 //    GDM(GD_I_RUNS, OMSFT(IMALT(X_F10)));
