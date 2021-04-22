@@ -73,14 +73,14 @@ But that makes for a *lot* of ifdefs.
 bool gdkMacro(uint16_t keycode) {
     // handle the OS/mode  switching first
 
-#    ifdef GD_READMUX
-    if (keycode == GD_DO_READMUX) {
-        gdk_set_mode(GD_READMUX_MODE, false);
+#    ifdef GD_VI
+    if (keycode == GD_DO_VI) {
+        gdk_set_mode(GD_VI_MODE, false);
         gdk_led_user();
         return true;
     }
-    if (gdk_mode == GD_READMUX_MODE) {
-        if (gdkMacro_readmux(keycode)) {
+    if (gdk_mode == GD_VI_MODE) {
+        if (gdkMacro_vi(keycode)) {
             return true;
         }
         if (gdk_was_mac()) {
@@ -153,6 +153,18 @@ bool gdkMacro(uint16_t keycode) {
     }
     if (gdk_mode == GD_EMACS_MODE) {
         if (gdkMacro_emacs(keycode)) {
+            return true;
+        }
+    }
+#    endif
+#    ifdef GD_READMUX
+    if (keycode == GD_DO_READMUX) {
+        gdk_set_mode(GD_READMUX_MODE, false);
+        gdk_led_user();
+        return true;
+    }
+    if (gdk_mode == GD_READMUX_MODE) {
+        if (gdkMacro_readmux(keycode)) {
             return true;
         }
     }
