@@ -27,7 +27,7 @@ bool gdkMacro_vi(uint16_t keycode) {
     GDM(GD_I_REC_FILE, " fo");
     GDM(GD_I_REC_LOC, " fb");
     GDM(GD_I_FINF, " fg");
-//    GDM(GD_I_RINF, OMSFT(IMCTL(X_R)));
+    GDM(GD_I_RINF, " sr");
     GDM(GD_I_FACT, " fc");
 //    GDM(GD_I_REL_FILE, "");             // RubyMine goto-view / controller
 //    GDM(GD_I_REL_SYM, OMALT(IMCTL(X_HOME)));
