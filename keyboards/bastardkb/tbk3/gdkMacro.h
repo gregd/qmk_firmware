@@ -208,6 +208,7 @@ enum gdk_keycodes {
     GD_T_NEXT,
     GD_T_PREV,
     GD_T_EDIT,
+    GD_T_NORM,
 #    endif
 
 // Macros for mode switching
