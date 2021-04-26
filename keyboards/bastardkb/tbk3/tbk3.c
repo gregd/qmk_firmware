@@ -157,6 +157,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 clear_keyboard();
                 default_layer_set(1UL << _QWERTY);
                 was_pol_layer = false;
+                if (gdk_was_mac()) {
+                    gdk_set_mode(GD_MAC_MODE, false);
+                } else {
+                    gdk_set_mode(GD_LINUX_MODE, false);
+                }
             }
             return false;
 
