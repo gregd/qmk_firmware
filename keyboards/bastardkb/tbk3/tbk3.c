@@ -115,6 +115,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
+        case GD_FUP:
+            if (record->event.pressed) {
+                for (uint8_t i = 0; i < 8; i++) {
+                    tap_code(KC_UP);
+                }
+            }
+            return false;
+
+        case GD_FDOWN:
+            if (record->event.pressed) {
+                for (uint8_t i = 0; i < 8; i++) {
+                    tap_code(KC_DOWN);
+                }
+            }
+            return false;
+
         case GD_TGE_SHT:
             if (record->event.pressed) {
                 toggle_locked_shift();

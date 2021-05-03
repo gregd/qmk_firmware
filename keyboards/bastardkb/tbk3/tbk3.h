@@ -59,6 +59,8 @@ enum userspace_custom_keycodes {
     GD_EQSP,
     GD_HDIR,
     GD_DCOLN,
+    GD_FUP,
+    GD_FDOWN,
     GD_INFO
 };
 
