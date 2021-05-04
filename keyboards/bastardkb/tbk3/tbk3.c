@@ -117,7 +117,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         case GD_FUP:
             if (record->event.pressed) {
-                for (uint8_t i = 0; i < 8; i++) {
+                for (uint8_t i = 0; i < 10; i++) {
                     tap_code(KC_UP);
                 }
             }
@@ -125,7 +125,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         case GD_FDOWN:
             if (record->event.pressed) {
-                for (uint8_t i = 0; i < 8; i++) {
+                for (uint8_t i = 0; i < 10; i++) {
                     tap_code(KC_DOWN);
                 }
             }
