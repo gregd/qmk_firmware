@@ -21,7 +21,7 @@ bool gdkMacro_vi(uint16_t keycode) {
 #        ifdef GD_IDE
     GDM(GD_I_WIN_SEA, " fq");
 //    GDM(GD_I_WIN_RUN, IMALT(X_4));
-//    GDM(GD_I_WIN_STRU, IMALT(X_7));
+    GDM(GD_I_WIN_STRU, " nt");
     GDM(GD_I_WIN_GITH, " gitl");
     GDM(GD_I_WIN_GITC, " gitd");
     GDM(GD_I_REC_FILE, " fo");
@@ -30,7 +30,7 @@ bool gdkMacro_vi(uint16_t keycode) {
     GDM(GD_I_RINF, " sr");
     GDM(GD_I_FACT, " fc");
 //    GDM(GD_I_REL_FILE, "");             // RubyMine goto-view / controller
-//    GDM(GD_I_REL_SYM, OMALT(IMCTL(X_HOME)));
+    GDM(GD_I_REL_SYM, " fs");
     GDM(GD_I_EX_SEL, " ss");
     GDM(GD_I_COMPLETE, IMCTL(X_SPACE));
     GDM(GD_I_FIXES, " la");
