@@ -57,6 +57,7 @@ bool gdkMacro_vi(uint16_t keycode) {
 //    GDM(GD_I_RUNS, OMSFT(IMALT(X_F10)));
 //    GDM(GD_I_RUNA,  OMSFT(OMALT(IMCTL(X_A))));
 
+    GDM(GD_PA_REC, " fp");
 #        endif
     return false;
 }
