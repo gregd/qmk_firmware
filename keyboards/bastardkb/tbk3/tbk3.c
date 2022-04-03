@@ -4,13 +4,13 @@ user_config_t user_config;
 
 bool is_alt_tab_active = false;
 uint16_t alt_tab_timer = 0;
-bool was_pol_layer = false;
 bool is_caps_on = false;
 
 void print_default_layer(void);
 void toggle_locked_shift(void);
 unsigned char get_default_layer(void);
 bool process_auto_caps(uint16_t keycode, keyrecord_t *record);
+bool process_select_word(uint16_t keycode, keyrecord_t *record);
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     //uprintf("process kc: 0x%04X, pressed: %b, count: %u, time: %u, interrupt: %b\n", keycode, record->event.pressed, record->tap.count, record->event.time, record->tap.interrupted);
@@ -26,25 +26,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
     }
 
+    if (!process_select_word(keycode, record)) {
+        return false;
+    }
+
     switch (keycode) {
         case GD_TGL_POL:
             if (record->event.pressed) {
-                if (get_default_layer() == _POLISH) {
-                    //default_layer_set(1UL << _QWERTY);
-                    //was_pol_layer = false;
-                } else {
+                if (get_default_layer() != _POLISH) {
                     default_layer_set(1UL << _POLISH);
-                    was_pol_layer = true;
-                    tap_code(KC_P);
+//                    tap_code(KC_P);
+//                    wait_ms(250);
+//                    tap_code(KC_BSPACE);
                 }
             }
             return false;
 
         case GD_TGL_FSPC:
             if (record->event.pressed) {
-                if (get_default_layer() == _FAST_SPC) {
-                    //default_layer_set(1UL << _QWERTY);
-                } else {
+                if (get_default_layer() != _FAST_SPC) {
                     default_layer_set(1UL << _FAST_SPC);
                 }
             }
@@ -53,7 +53,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case GD_TGL_NAV:
             if (record->event.pressed) {
                 if (get_default_layer() == _NAV) {
-                    default_layer_set(1UL << (was_pol_layer ? _POLISH : _QWERTY));
+                    default_layer_set(1UL << _QWERTY);
                 } else {
                     default_layer_set(1UL << _NAV);
                 }
@@ -62,13 +62,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         case GD_TGL_VIM:
             if (record->event.pressed) {
-                if (gdk_get_mode() == GD_VI_MODE) {
-                    //if (gdk_was_mac()) {
-                    //    gdk_set_mode(GD_MAC_MODE, false);
-                    //} else {
-                    //    gdk_set_mode(GD_LINUX_MODE, false);
-                    //}
-                } else {
+                if (gdk_get_mode() != GD_VI_MODE) {
                     gdk_set_mode(GD_VI_MODE, false);
                 }
             }
@@ -110,9 +104,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-        case GD_DCOLN:
+        case GD_LPRN_PIPE:
             if (record->event.pressed) {
-                SEND_STRING("::");
+                SEND_STRING("(|");
+            }
+            return false;
+
+        case GD_CN_QU:
+            if (record->event.pressed) {
+                SEND_STRING(":?");
             }
             return false;
 
@@ -131,22 +131,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case GD_XPASTE:
             if (record->event.pressed) {
                 SEND_STRING(OMSFT(IMCTL(X_V)));
-            }
-            return false;
-
-        case GD_FUP:
-            if (record->event.pressed) {
-                for (uint8_t i = 0; i < 10; i++) {
-                    tap_code(KC_UP);
-                }
-            }
-            return false;
-
-        case GD_FDOWN:
-            if (record->event.pressed) {
-                for (uint8_t i = 0; i < 10; i++) {
-                    tap_code(KC_DOWN);
-                }
             }
             return false;
 
@@ -191,7 +175,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 clear_oneshot_mods();
                 clear_keyboard();
                 default_layer_set(1UL << _QWERTY);
-                was_pol_layer = false;
                 if (gdk_was_mac()) {
                     gdk_set_mode(GD_MAC_MODE, false);
                 } else {
@@ -342,3 +325,112 @@ bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
 //         return TAPPING_TERM;
 //     }
 // }
+
+// https://github.com/rafaelromao/keyboards/blob/main/src/qmk/users/rafaelromao/features/select_word.c
+// https://github.com/getreuer/qmk-keymap/blob/main/features/select_word.c
+
+void clear_locked_and_oneshot_mods(void) {
+    uint8_t oneshot_locked_mods = get_oneshot_locked_mods();
+    uint8_t oneshot_mods = get_oneshot_mods();
+    if (oneshot_locked_mods || oneshot_mods) {
+        clear_oneshot_mods();
+        clear_oneshot_locked_mods();
+        unregister_mods(MOD_LSFT);
+        unregister_mods(MOD_LCTL);
+        unregister_mods(MOD_LALT);
+        unregister_mods(MOD_RALT);
+        unregister_mods(MOD_LGUI);
+    }
+}
+
+typedef enum {
+    STATE_NONE,
+    STATE_LINE_SELECTED,
+    STATE_WORD_SELECTED,
+    STATE_WORD,
+    STATE_FIRST_LINE,
+    STATE_LINE
+} select_word_state_t;
+
+typedef struct {
+    select_word_state_t state;
+} select_word_t;
+
+select_word_t select_word = {
+    .state = STATE_NONE
+};
+
+bool process_select_word(uint16_t keycode, keyrecord_t* record) {
+    if (keycode == GD_SE_WORD && record->event.pressed) {
+        bool isShifted = get_mods() & MOD_MASK_SHIFT ||
+                         get_oneshot_mods() & MOD_MASK_SHIFT ||
+                         get_oneshot_locked_mods() & MOD_MASK_SHIFT;
+        if (isShifted || select_word.state == STATE_LINE_SELECTED) {
+            // Select Line
+            clear_mods();
+            clear_locked_and_oneshot_mods();
+            if (select_word.state == STATE_NONE) {
+                tap_code(KC_HOME);
+                register_mods(MOD_LSFT);
+                tap_code(KC_END);
+                select_word.state = STATE_FIRST_LINE;
+            } else {
+                register_mods(MOD_LSFT);
+                register_code(KC_DOWN);
+                select_word.state = STATE_LINE;
+            }
+        } else {
+            // Select Word
+            if (gdk_was_mac()) {
+                register_code(KC_LALT);
+            } else {
+                register_code(KC_LCTL);
+            }
+            if (select_word.state == STATE_NONE) {
+                tap_code(KC_RIGHT);
+                tap_code(KC_LEFT);
+            }
+            register_mods(MOD_LSFT);
+            register_code(KC_RGHT);
+            select_word.state = STATE_WORD;
+        }
+        return false;
+    }
+
+    switch (select_word.state) {
+        case STATE_WORD:
+            unregister_code(KC_RGHT);
+            unregister_mods(MOD_LSFT);
+            if (gdk_was_mac()) {
+                unregister_code(KC_LALT);
+            } else {
+                unregister_code(KC_LCTL);
+            }
+            select_word.state = STATE_WORD_SELECTED;
+            break;
+
+        case STATE_FIRST_LINE:
+            unregister_mods(MOD_LSFT);
+            select_word.state = STATE_LINE_SELECTED;
+            break;
+
+        case STATE_LINE:
+            unregister_mods(MOD_LSFT);
+            unregister_code(KC_DOWN);
+            select_word.state = STATE_LINE_SELECTED;
+            break;
+
+        case STATE_WORD_SELECTED:
+        case STATE_LINE_SELECTED:
+            if (keycode != GD_SE_WORD && record->event.pressed) {
+                unregister_mods(MOD_LSFT);
+                tap_code(KC_RGHT);
+                select_word.state = STATE_NONE;
+                return true;
+            }
+        default:
+            select_word.state = STATE_NONE;
+    }
+
+    return true;
+}

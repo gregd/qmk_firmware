@@ -53,17 +53,17 @@ enum userspace_custom_keycodes {
     GD_TGL_NAV,
     GD_TGE_SHT,
     GD_ALT_TAB,
+    GD_SE_WORD,
     GD_CAPS,
     GD_ARROW,
     GD_FARROW,
     GD_EQSP,
+    GD_LPRN_PIPE,
+    GD_CN_QU,
     GD_HDIR,
-    GD_DCOLN,
     GD_TMUX,
     GD_XCOPY,
     GD_XPASTE,
-    GD_FUP,
-    GD_FDOWN,
     GD_INFO
 };
 

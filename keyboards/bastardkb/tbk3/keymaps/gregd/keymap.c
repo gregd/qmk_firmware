@@ -6,8 +6,8 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_split_4x6_3( \
     /*                 pinky  ring   middle index                                                          index         middle       ring     pinky */
-    GD_RST,            KC_1,  KC_2,  KC_3,  KC_4,  KC_5,                               /**/ KC_6,          KC_7,         KC_8,        KC_9,    KC_0,     GD_TGL_NAV, \
-    OSM(MOD_LSFT),     KC_Q,  KC_W,  KC_E,  KC_R,  KC_T,                               /**/ KC_Y,          KC_U,         KC_I,        KC_O,    KC_P,     GD_CAPS, \
+    GD_RST,            KC_1,  KC_2,  KC_3,  KC_4,  KC_5,                               /**/ KC_6,          KC_7,         KC_8,        KC_9,    KC_0,     GD_TGL_POL, \
+    GD_CAPS,           KC_Q,  KC_W,  KC_E,  KC_R,  KC_T,                               /**/ KC_Y,          KC_U,         KC_I,        KC_O,    KC_P,     OSM(MOD_LSFT), \
     OSM(MOD_LCTL),     KC_A,  KC_S,  KC_D,  KC_F,  KC_G,                               /**/ KC_H,          KC_J,         KC_K,        KC_L,    KC_SCLN,  OSM(MOD_RCTL), \
     KC_LGUI,           KC_Z,  KC_X,  KC_C,  KC_V,  KC_B,                               /**/ KC_N,          KC_M,         KC_COMM,     KC_DOT,  KC_SLSH,  KC_RGUI, \
     \
@@ -29,41 +29,41 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______,                              /**/ _______, _______, _______, _______, _______, _______, \
     _______, _______, _______, _______, _______, _______,                              /**/ _______, _______, _______, _______, _______, _______, \
     \
-    _______, LT(_SYMBOLS, KC_ENT), _______,                                            /**/ _______, KC_SPC, _______),
+    _______, _______, _______,                                                         /**/ _______, KC_SPC, _______),
 
   [_NAV] = LAYOUT_split_4x6_3( \
     /*            pinky         ring          middle        index                                        index        middle     ring         pinky */
-    GD_RST,       GD_APP_CLOSE, GD_WIN_NEXT,  GD_REPLACE,   GD_B_ZOOMI, GD_B_ZOOMO,    /**/ GD_GO_SD,    GD_UNDO,     GD_REDO,   GD_I_SE_DUP, GD_I_COLM,     _______, \
-    GD_WIN_LFT,   GD_WIN_FULL,  GD_WIN_HIDE,  GD_FIND,      GD_B_NEWT,  GD_B_CTAB,     /**/ GD_GO_SL,    GD_GO_LW,    KC_PGUP,   GD_I_EX_SEL, GD_TGE_SHT,    GD_SE_ALL, \
-    GD_WIN_CEN,   GD_RUNAPP,    GD_ALT_TAB,   GD_FNEXT,     GD_B_NTAB,  GD_B_URL,      /**/ KC_LEFT,     KC_DOWN,     KC_UP,     KC_RIGHT,    GD_COPY,       GD_CUT, \
-    GD_WIN_RGT,   GD_APP_SAVE,  GD_APP_NEXT,  GD_FPREV,     GD_B_PTAB,  GD_B_RLOAD,    /**/ GD_GO_ED,    KC_PGDN,     GD_GO_RW,  GD_GO_EL,    GD_PASTE ,     GD_PA_REC, \
+    GD_RST,       GD_APP_CLOSE, GD_WIN_NEXT,  GD_REPLACE,   GD_B_ZOOMI, GD_B_ZOOMO,    /**/ GD_GO_SD,    GD_UNDO,     GD_REDO,   GD_TGE_SHT,  GD_I_SE_DUP,   GD_I_COLM, \
+    GD_WIN_LFT,   GD_WIN_FULL,  GD_WIN_HIDE,  GD_FIND,      GD_B_NEWT,  GD_B_REOPEN,   /**/ GD_GO_SL,    GD_GO_LW,    KC_PGUP,   GD_I_EX_SEL, GD_SE_WORD,    GD_SE_ALL, \
+    GD_WIN_CEN,   GD_RUNAPP,    GD_ALT_TAB,   GD_FNEXT,     GD_B_URL,   GD_B_CTAB,     /**/ KC_LEFT,     KC_DOWN,     KC_UP,     KC_RIGHT,    GD_COPY,       GD_CUT, \
+    GD_WIN_RGT,   GD_APP_SAVE,  GD_APP_NEXT,  GD_B_PTAB,    GD_B_NTAB,  GD_B_DTOOLS,   /**/ GD_GO_ED,    KC_PGDN,     GD_GO_RW,  GD_GO_EL,    GD_PASTE ,     GD_PA_REC, \
     \
     _______, _______, _______,                                                         /**/ _______, _______, _______),
 
   [_SYMBOLS] = LAYOUT_split_4x6_3( \
     /*            pinky     ring      middle    index                                                  index      middle    ring       pinky */
-    GD_RST,       KC_NO,    KC_CIRC,  GD_ARROW, GD_FARROW, KC_NO,                      /**/ KC_NO,     KC_LABK,   KC_RABK,  KC_QUES,   KC_NO,     _______, \
-    GD_HDIR,      KC_BSLASH,KC_7,     KC_8,     KC_9,      KC_PIPE,                    /**/ KC_QUOT,   KC_LCBR,   KC_RCBR,  KC_MINS,   KC_PLUS,   KC_DLR, \
-    KC_GRV,       GD_EQSP,  KC_4,     KC_5,     KC_6,      KC_0,                       /**/ KC_DQUO,   KC_LPRN,   KC_RPRN,  KC_UNDS,   KC_PEQL,   KC_AT, \
-    KC_TILD,      KC_PERC,  KC_1,     KC_2,     KC_3,      KC_COLN,                    /**/ KC_EXLM,   KC_LBRC,   KC_RBRC,  KC_ASTR,   KC_AMPR,   KC_HASH, \
+    GD_RST,       KC_NO,    KC_CIRC,  GD_ARROW, GD_FARROW, GD_LPRN_PIPE,               /**/ KC_GRV,    KC_LABK,   KC_RABK,  GD_CN_QU,  KC_NO,     _______, \
+    GD_HDIR,      KC_BSLASH,KC_1,     KC_2,     KC_3,      KC_PIPE,                    /**/ KC_QUOT,   KC_LCBR,   KC_RCBR,  KC_MINS,   KC_PLUS,   KC_DLR, \
+    GD_EQSP,      KC_GRV,   KC_4,     KC_5,     KC_6,      KC_0,                       /**/ KC_DQUO,   KC_LPRN,   KC_RPRN,  KC_UNDS,   KC_PEQL,   KC_AT, \
+    KC_TILD,      KC_PERC,  KC_7,     KC_8,     KC_9,      KC_COLN,                    /**/ KC_EXLM,   KC_LBRC,   KC_RBRC,  KC_ASTR,   KC_AMPR,   KC_HASH, \
     \
-    GD_DEL_2LNE, GD_I_NEW_LINE, KC_APP,                                                /**/ GD_I_FIXES, GD_I_COMPLETE, GD_DEL_LWORD),
+    GD_DEL_2LNE, KC_NO, KC_APP,                                                        /**/ GD_I_FIXES, GD_I_COMPLETE, GD_DEL_LWORD),
 
   [_IDE_LEFT] = LAYOUT_split_4x6_3( \
-    /*            pinky      ring        middle       index                                                  index           middle         ring           pinky */
-    RESET,        KC_F1,     KC_F2,      KC_F3,       KC_F4,       KC_F5,              /**/ KC_F6,         KC_F7,          KC_F8,         KC_F9,         KC_NO,         GD_INFO, \
-    KC_NO,        KC_MYCM,   GD_B_REOPEN,GD_XPASTE,   GD_XCOPY,    KC_NO,              /**/ GD_I_REL_FILE, GD_I_QDOC,      GD_I_USAGES,   GD_I_RENAME,   GD_I_REFACTOR, KC_F10, \
-    GD_SCR_CSEL,  KC_CALC,   KC_WSCH,    GD_TMUX,     KC_F2,       GD_B_DTOOLS,        /**/ GD_I_REL_SYM,  GD_I_GO_DEF,    GD_I_NEXT_FN,  GD_I_REFORMAT, GD_I_RINF,     KC_F11, \
-    GD_SCR_CFULL, KC_MAIL,   GD_CUT,     GD_PASTE,    GD_COPY,     KC_NO,              /**/ GD_I_GO_FWD,   GD_I_GO_BACK,   GD_I_PREV_FN,  GD_I_COMMENT,  GD_I_TGL_CASE, KC_F12, \
-
+    /*         pinky         ring        middle       index                                                index           middle         ring           pinky */
+    RESET,     KC_NO,        KC_NO,      KC_NO,       KC_NO,       KC_NO,              /**/ KC_F6,         KC_F7,          KC_F8,         KC_F9,         KC_F10,        GD_INFO, \
+    KC_NO,     KC_NO,        KC_NO,      GD_XCOPY,    GD_XPASTE,   KC_NO,              /**/ GD_I_REL_FILE, GD_I_QDOC,      GD_I_USAGES,   GD_I_RENAME,   GD_I_REFACTOR, KC_F11, \
+    KC_NO,     GD_SCR_CSEL,  KC_CALC,    KC_MYCM,     KC_F2,       KC_NO,              /**/ GD_I_REL_SYM,  GD_I_GO_DEF,    GD_I_NEXT_FN,  GD_I_REFORMAT, GD_I_RINF,     KC_F12, \
+    KC_NO,     GD_SCR_CFULL, KC_MAIL,    KC_WSCH,     KC_F4,       KC_NO,              /**/ GD_I_GO_FWD,   GD_I_GO_BACK,   GD_I_PREV_FN,  GD_I_COMMENT,  GD_I_TGL_CASE, KC_NO, \
+    \
     _______, _______, _______,                                                         /**/ _______, _______, _______),
 
   [_IDE_RIGHT] = LAYOUT_split_4x6_3( \
     /*            pinky       ring           middle        index                                         index         middle       ring          pinky */
     RESET,        KC_F1,      KC_F2,         KC_F3,        KC_F4,         KC_F5,       /**/ KC_MUTE,     KC_MPLY,      KC_MNXT,     KC_MPRV,      GD_M_MAC,    GD_INFO, \
-    KC_NO,        GD_I_FACT,  GD_I_WIN_GITH, GD_I_FINF,    GD_I_REC_LOC,  GD_I_GO_L_ED,/**/ GD_TGL_FSPC, GD_TGL_VIM,   GD_TGL_POL,  GD_T_EDIT,    GD_M_LINUX,  KC_F10, \
-    GD_I_WIN_STRU,GD_I_BUILD, GD_I_WIN_GITC, GD_I_GOTOL,   GD_I_REC_FILE, GD_I_WIN_RUN,/**/ KC_INS,      GD_FDOWN,     GD_FUP,      GD_T_NEXT,    GD_T_CREATE, KC_F11, \
-    KC_NO,        GD_I_RUNA,  GD_I_RUNL,     GD_I_WIN_SEA, GD_I_GO_FILE,  GD_I_RUNS,   /**/ KC_WHOM,     GD_COPY,      GD_PASTE,    GD_T_PREV,    KC_NO,       KC_F12, \
+    KC_NO,        GD_I_FACT,  GD_I_WIN_GITH, GD_I_FINF,    GD_I_REC_LOC,  GD_I_GO_L_ED,/**/ GD_TGL_FSPC, GD_TGL_VIM,   GD_T_EDIT,   KC_NO,        GD_M_LINUX,  KC_NO, \
+    GD_I_WIN_STRU,GD_I_BUILD, GD_I_WIN_GITC, GD_I_GOTOL,   GD_I_REC_FILE, GD_I_WIN_RUN,/**/ KC_INS,      GD_T_PREV,    GD_T_NEXT,   GD_TMUX,      GD_T_CREATE, KC_NO, \
+    KC_NO,        GD_I_RUNA,  GD_I_RUNL,     GD_I_WIN_SEA, GD_I_GO_FILE,  GD_I_RUNS,   /**/ KC_NO,       GD_CUT,       GD_COPY,     GD_PASTE,     KC_NO,       KC_NO, \
     \
-    GD_DEL_LINE, _______, _______,                                                     /**/ _______, _______, _______),
+    _______, _______, _______,                                                         /**/ _______, _______, _______),
 };

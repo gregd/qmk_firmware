@@ -197,7 +197,6 @@ enum gdk_keycodes {
     GD_I_COMMENT,
     GD_I_REFORMAT,
     GD_I_COLM,
-    GD_I_NEW_LINE,
     GD_I_SE_DUP,
     GD_I_TGL_CASE,
     GD_I_BUILD,
