@@ -125,11 +125,6 @@ bool gdkMacro_mac(uint16_t keycode) {
     GDM(GD_I_RUNL, IMCTL(X_R));
     GDM(GD_I_RUNS, OMALT(IMCTL(X_R)));
     GDM(GD_I_RUNA, OMSFT(OMALT(IMGUI(X_A))));
-    GDM(GD_T_CREATE, IMCTL(X_A) "c" IMCTL(X_A) ",");
-    GDM(GD_T_NEXT, IMCTL(X_A) "n");
-    GDM(GD_T_PREV, IMCTL(X_A) "p");
-    GDM(GD_T_EDIT, IMCTL(X_A) "[");
-    GDM(GD_T_NORM, IMCTL(X_BSLASH) IMCTL(X_N));
 #        endif
 
     // Todo, ring bell, flash light, show user this isn't supported

@@ -28,7 +28,6 @@
 enum userspace_layers {
     _QWERTY=0,
     _POLISH,
-    _FAST_SPC,
     _NAV,
     _SYMBOLS,
     _IDE_LEFT,
@@ -48,8 +47,6 @@ enum userspace_custom_keycodes {
     GD_M_MAC,
     GD_M_LINUX,
     GD_TGL_POL,
-    GD_TGL_FSPC,
-    GD_TGL_VIM,
     GD_TGL_NAV,
     GD_TGE_SHT,
     GD_ALT_TAB,
@@ -57,11 +54,10 @@ enum userspace_custom_keycodes {
     GD_CAPS,
     GD_ARROW,
     GD_FARROW,
-    GD_EQSP,
-    GD_LPRN_PIPE,
-    GD_CN_QU,
+    GD_EQSP,  // the equal sign with spaces around
+    GD_SA_CA, // the Kotlin safe call operator
+    GD_ELVIS, // the Kotlin Elis operator
     GD_HDIR,
-    GD_TMUX,
     GD_XCOPY,
     GD_XPASTE,
     GD_INFO

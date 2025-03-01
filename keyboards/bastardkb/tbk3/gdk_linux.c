@@ -52,7 +52,7 @@ bool gdkMacro_linux(uint16_t keycode) {
     /* GDM( GD_REPLACE , (SS_LCTL("r"))	); // KDE */
     GDM(GD_REPLACE, SS_LCTL("h"));  // Gnome*/
     GDM(GD_APP_CLOSE, IMALT(X_F4));
-    GDM(GD_RUNAPP, SS_TAP(X_LGUI));
+    GDM(GD_RUNAPP, IMALT(X_SPACE));
     GDM(GD_APP_NEXT, IMALT(X_TAB));
     GDM(GD_APP_LAST, OMSFT(IMALT(X_TAB)));
     GDM(GD_APP_SAVE, SS_LCTL("s"));
@@ -64,6 +64,10 @@ bool gdkMacro_linux(uint16_t keycode) {
     GDM(GD_WIN_CEN, OMALT(IMCTL(X_KP_8)));
     GDM(GD_WIN_LFT, OMALT(IMCTL(X_KP_4)));
     GDM(GD_WIN_RGT, OMALT(IMCTL(X_KP_6)));
+    GDM(GD_WIN_D1, IMGUI(X_F1));
+    GDM(GD_WIN_D2, IMGUI(X_F2));
+    GDM(GD_WIN_D3, IMGUI(X_F3));
+    GDM(GD_WIN_D4, IMGUI(X_F4));
     // GDM( GD_HELP,		(SS_TAP(X_F1))	); // NA?
 
     GDM(GD_LOCK, OMCTL(IMALT(X_L)));
@@ -125,11 +129,6 @@ bool gdkMacro_linux(uint16_t keycode) {
     GDM(GD_I_RUNL, IMSFT(X_F10));
     GDM(GD_I_RUNS, OMSFT(IMALT(X_F10)));
     GDM(GD_I_RUNA,  OMSFT(OMALT(IMCTL(X_A))));
-    GDM(GD_T_CREATE, IMCTL(X_A) "c" IMCTL(X_A) ",");
-    GDM(GD_T_NEXT, IMCTL(X_A) "n");
-    GDM(GD_T_PREV, IMCTL(X_A) "p");
-    GDM(GD_T_EDIT, IMCTL(X_A) "[");
-    GDM(GD_T_NORM, IMCTL(X_BSLASH) IMCTL(X_N));
 #        endif
 
     // Todo, ring bell, flash light, show user this isn't supported

@@ -42,28 +42,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-        case GD_TGL_FSPC:
-            if (record->event.pressed) {
-                if (get_default_layer() != _FAST_SPC) {
-                    default_layer_set(1UL << _FAST_SPC);
-                }
-            }
-            return false;
-
         case GD_TGL_NAV:
             if (record->event.pressed) {
                 if (get_default_layer() == _NAV) {
                     default_layer_set(1UL << _QWERTY);
                 } else {
                     default_layer_set(1UL << _NAV);
-                }
-            }
-            return false;
-
-        case GD_TGL_VIM:
-            if (record->event.pressed) {
-                if (gdk_get_mode() != GD_VI_MODE) {
-                    gdk_set_mode(GD_VI_MODE, false);
                 }
             }
             return false;
@@ -104,21 +88,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-        case GD_LPRN_PIPE:
+        case GD_SA_CA:
             if (record->event.pressed) {
-                SEND_STRING("(|");
+                SEND_STRING("?.");
             }
             return false;
 
-        case GD_CN_QU:
+        case GD_ELVIS:
             if (record->event.pressed) {
-                SEND_STRING(":?");
-            }
-            return false;
-
-        case GD_TMUX:
-            if (record->event.pressed) {
-                SEND_STRING(IMCTL(X_A));
+                SEND_STRING("?:");
             }
             return false;
 
@@ -251,7 +229,6 @@ void toggle_locked_shift(void) {
 unsigned char get_default_layer(void)  {
     if (layer_state_cmp(default_layer_state, _QWERTY)) return _QWERTY;
     if (layer_state_cmp(default_layer_state, _POLISH)) return _POLISH;
-    if (layer_state_cmp(default_layer_state, _FAST_SPC)) return _FAST_SPC;
     if (layer_state_cmp(default_layer_state, _NAV)) return _NAV;
     return 255;
 }
@@ -260,7 +237,6 @@ void print_default_layer(void) {
     switch (get_default_layer()) {
         case _QWERTY: SEND_STRING("Qwerty"); break;
         case _POLISH: SEND_STRING("Pol"); break;
-        case _FAST_SPC: SEND_STRING("FastSpc"); break;
         case _NAV: SEND_STRING("Nav"); break;
         default: SEND_STRING("??? "); break;
     }

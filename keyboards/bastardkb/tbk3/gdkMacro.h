@@ -25,17 +25,8 @@ enum gdk_modes {
 #    ifdef GD_MAC
     GD_MAC_MODE,
 #    endif
-#    ifdef GD_READMUX
-    GD_READMUX_MODE,
-#    endif
 #    ifdef GD_WINDOWS
     GD_WINDOWS_MODE,
-#    endif
-#    ifdef GD_VI
-    GD_VI_MODE,
-#    endif
-#    ifdef GD_EMACS
-    GD_EMACS_MODE,
 #    endif
     GD_MODEMAX
 };
@@ -140,6 +131,10 @@ enum gdk_keycodes {
     GD_WIN_CEN,
     GD_WIN_LFT,
     GD_WIN_RGT,
+    GD_WIN_D1,
+    GD_WIN_D2,
+    GD_WIN_D3,
+    GD_WIN_D4,
     GD_APP_CLOSE,
     GD_HELP,
     GD_LOCK,
@@ -203,11 +198,6 @@ enum gdk_keycodes {
     GD_I_RUNL,
     GD_I_RUNS,
     GD_I_RUNA,
-    GD_T_CREATE,
-    GD_T_NEXT,
-    GD_T_PREV,
-    GD_T_EDIT,
-    GD_T_NORM,
 #    endif
 
 // Macros for mode switching
@@ -219,15 +209,6 @@ enum gdk_keycodes {
 #    endif
 #    ifdef GD_LINUX
     GD_DO_LINUX,
-#    endif
-#    ifdef GD_EMACS
-    GD_DO_EMACS,
-#    endif
-#    ifdef GD_VI
-    GD_DO_VI,
-#    endif
-#    ifdef GD_READMUX
-    GD_DO_READMUX,
 #    endif
     GDK_END_RANGE
 };
@@ -245,13 +226,4 @@ bool gdkMacro_mac(uint16_t keycode);
 #    endif
 #    ifdef GD_LINUX
 bool gdkMacro_linux(uint16_t keycode);
-#    endif
-#    ifdef GD_EMACS
-bool gdkMacro_emacs(uint16_t keycode);
-#    endif
-#    ifdef GD_VI
-bool gdkMacro_vi(uint16_t keycode);
-#    endif
-#    ifdef GD_READMUX
-bool gdkMacro_readmux(uint16_t keycode);
 #    endif

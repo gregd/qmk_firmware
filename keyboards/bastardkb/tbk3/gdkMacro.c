@@ -73,28 +73,6 @@ But that makes for a *lot* of ifdefs.
 bool gdkMacro(uint16_t keycode) {
     // handle the OS/mode  switching first
 
-#    ifdef GD_VI
-    if (keycode == GD_DO_VI) {
-        gdk_set_mode(GD_VI_MODE, false);
-        gdk_led_user();
-        return true;
-    }
-    if (gdk_mode == GD_VI_MODE) {
-        if (gdkMacro_vi(keycode)) {
-            return true;
-        }
-        if (gdk_was_mac()) {
-            if (gdkMacro_mac(keycode)) {
-                return true;
-            }
-        } else {
-            if (gdkMacro_linux(keycode)) {
-                return true;
-            }
-        }
-    }
-#    endif
-
 #    ifdef GD_MAC
     if (keycode == GD_DO_MAC) {
         gdk_set_mode(GD_MAC_MODE, true);
@@ -109,18 +87,6 @@ bool gdkMacro(uint16_t keycode) {
     }
 #    endif
 
-#    ifdef GD_VI
-    if (keycode == GD_DO_VI) {
-        gdk_set_mode(GD_VI_MODE, false);
-        gdk_led_user();
-        return true;
-    }
-    if (gdk_mode == GD_VI_MODE) {
-        if (gdkMacro_vi(keycode)) {
-            return true;
-        }
-    }
-#    endif
 #    ifdef GD_WINDOWS
     if (keycode == GD_DO_WINDOWS) {
         gdk_set_mode(GD_WINDOWS_MODE, true);
@@ -133,6 +99,7 @@ bool gdkMacro(uint16_t keycode) {
         }
     }
 #    endif
+
 #    ifdef GD_LINUX
     if (keycode == GD_DO_LINUX) {
         gdk_set_mode(GD_LINUX_MODE, true);
@@ -141,30 +108,6 @@ bool gdkMacro(uint16_t keycode) {
     }
     if (gdk_mode == GD_LINUX_MODE) {
         if (gdkMacro_linux(keycode)) {
-            return true;
-        }
-    }
-#    endif
-#    ifdef GD_EMACS
-    if (keycode == GD_DO_EMACS) {
-        gdk_set_mode(GD_EMACS_MODE, false);
-        gdk_led_user();
-        return true;
-    }
-    if (gdk_mode == GD_EMACS_MODE) {
-        if (gdkMacro_emacs(keycode)) {
-            return true;
-        }
-    }
-#    endif
-#    ifdef GD_READMUX
-    if (keycode == GD_DO_READMUX) {
-        gdk_set_mode(GD_READMUX_MODE, false);
-        gdk_led_user();
-        return true;
-    }
-    if (gdk_mode == GD_READMUX_MODE) {
-        if (gdkMacro_readmux(keycode)) {
             return true;
         }
     }

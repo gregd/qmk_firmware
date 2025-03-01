@@ -25,4 +25,4 @@ AUTO_SHIFT_ENABLE = yes
 SPLIT_KEYBOARD = yes
 LTO_ENABLE = yes
 
-SRC += gdkMacro.c gdk_linux.c gdk_mac.c gdk_vi.c
+SRC += gdkMacro.c gdk_linux.c gdk_mac.c

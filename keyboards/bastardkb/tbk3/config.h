@@ -53,9 +53,6 @@
 //#define GD_WINDOWS
 #define GD_MAC
 #define GD_LINUX
-#define GD_VI
-//#define GD_READMUX
-//#define GD_EMACS
 
 //// These enable subsets of gdk macros. Disable options to save space
 #define GD_MOVE // Uncomment to add basic cursor movement

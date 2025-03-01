@@ -20,3 +20,5 @@ See the [keyboard build instructions](https://docs.bastardkb.com)
 If you modify this firmware, make sure to always have a RESET key that can be triggered using only the master side ! This way you ensure that you can always flash the keyboard, even if you mess up.
 
 Otherwise if you're stuck, open the case and reset manually by shorting Gnd and Rst, or pressing the RST button.
+
+## GD test
